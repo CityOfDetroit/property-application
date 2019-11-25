@@ -1,0 +1,27 @@
+{
+  "name": "property-application",
+  "version": "0.0.1",
+  "description": "Intake form for property purchase application for the City of Detroit.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CityOfDetroit/property-application.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Edgar Montes",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/browser": "^5.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.12.0"
+  }
+}
