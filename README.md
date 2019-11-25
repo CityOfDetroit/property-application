@@ -1,6 +1,6 @@
 # property-application
 
-Simple app to lookup city services based on a location
+Intake form for property purchase application for the City of Detroit.
 
 ## Getting Started
 
