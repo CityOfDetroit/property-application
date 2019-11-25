@@ -5,9 +5,9 @@ Simple app to lookup city services based on a location
 ## Getting Started
 
 This project was created using:
- -[React](https://reactjs.org/) for application state management.
- -[Parcel](https://parceljs.org/) as a web application bundler.
- -[Jest](https://jestjs.io/) for testing.
+ - [React](https://reactjs.org/) for application state management.
+ - [Parcel](https://parceljs.org/) as a web application bundler.
+ - [Jest](https://jestjs.io/) for testing.
 
 ## Setup Local Environment.
 
