@@ -1,14 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import Card from './components/Card/Card';
+import App from './components/App/App';
 
-class App extends React.Component{
-    render(){
-        return(
-            <Card title="Property Application Form"></Card>
-        )
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('App'))
