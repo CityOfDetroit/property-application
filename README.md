@@ -23,7 +23,7 @@ This project was created using:
 
 3. Run local instance.
     ```
-    $ parcel index.html
+    $ parcel src/index.html
     ```
 
 4. Run local instance.
