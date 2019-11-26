@@ -26,7 +26,7 @@ This project was created using:
     $ parcel src/index.html
     ```
 
-4. Run local instance.
+4. Run test suite.
     ```
     $ yarn test
     ```
