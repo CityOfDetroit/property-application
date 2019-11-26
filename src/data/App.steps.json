@@ -1,0 +1,56 @@
+{
+    "steps": [
+        {
+            "items" : {
+                "cards": [
+                    {
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "Welcome to City of Detroit Property Application Intake."
+                        },
+                        "content"   : {
+                            "type"      : "text",
+                            "markup"    : "Thanks for your interest! Here is what you can expect:<br>This intake application includes 2 questions and should take about 5 min.<br>Following staff review, you will receive an invitation to the full application."
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                     "id": 0   
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [],
+                "forms": [
+                    {
+                     "id": 1   
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {
+                        "title"     : {
+                            "type"  : "",
+                            "value" : "Helpful Hints and Tips:"
+                        },
+                        "content"   : {
+                            "type"      : "text",
+                            "markup"    : "Additional definition of Affiliated Company here."
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                     "id": 2   
+                    }
+                ]
+            }
+        }
+    ]
+}

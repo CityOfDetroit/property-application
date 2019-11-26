@@ -1,0 +1,44 @@
+{
+    "questions":{
+        "total": 3,
+        "list": [
+            {
+                "type"  : "single-click",
+                "options": [
+                    {
+                        "value" : true,
+                        "text"  : "Yes"
+                    }
+                ]
+            },
+            {
+                "type": "multi-option",
+                "q": "Are you a resident of Detroit?",
+                "options": [
+                    {
+                        "value" : true,
+                        "text"  : "Yes"
+                    },
+                    {
+                        "value" : false,
+                        "text"  : "No"
+                    }
+                ]
+            },
+            {
+                "type": "multi-option",
+                "q": "Do you or any affiliated company currently own property in Detroit?",
+                "options": [
+                    {
+                        "value" : true,
+                        "text"  : "Yes"
+                    },
+                    {
+                        "value" : false,
+                        "text"  : "No"
+                    }
+                ]
+            }
+        ]
+    }
+}
