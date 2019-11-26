@@ -30,10 +30,6 @@ This project was created using:
     ```
     $ yarn test
     ```
-    or
-    ```
-    $ jest
-    ```
 ## Resources
 
 * SLACK - #webteam
