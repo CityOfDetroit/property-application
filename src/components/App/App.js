@@ -13,7 +13,7 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        console.log(data);
+        
     }
   
     componentWillUnmount() {
@@ -22,9 +22,8 @@ class App extends React.Component{
 
     buildContent(){
         const markup = data.steps[this.state.step].items.cards.map((card) =>
-            <Card key={card.toString()} title={card.title.value} titleType={card.title.type} content={card.content.markup} contentTyp={card.content.type}></Card>
+            <Card key={card.toString()} type={card.type} title={card.title.value} titleType={card.title.type} body={card.body.markup} bodyType={card.body.type}></Card>
         );
-        console.log(markup);
         return markup;
     }
   

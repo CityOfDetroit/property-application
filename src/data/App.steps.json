@@ -3,14 +3,28 @@
         {
             "items" : {
                 "cards": [
-                    {
+                    {   
+                        "type"      : "center pop-up color-2",
                         "title"     : {
                             "type"  : "medium",
                             "value" : "Welcome to City of Detroit Property Application Intake."
                         },
-                        "content"   : {
+                        "body"   : {
                             "type"      : "text",
-                            "markup"    : "Thanks for your interest! Here is what you can expect:<br>This intake application includes 2 questions and should take about 5 min.<br>Following staff review, you will receive an invitation to the full application."
+                            "markup"    : [
+                                {
+                                    "tag"       : "p",
+                                    "content"   : "Thanks for your interest! Here is what you can expect:" 
+                                },
+                                {
+                                    "tag"       : "p",
+                                    "content"   : "This intake application includes 2 questions and should take about 5 min." 
+                                },
+                                {
+                                    "tag"       : "p",
+                                    "content"   : "Following staff review, you will receive an invitation to the full application." 
+                                }
+                            ]
                         }
                     }
                 ],
@@ -35,13 +49,19 @@
             "items" : {
                 "cards": [
                     {
+                        "type"      : "tip",
                         "title"     : {
                             "type"  : "",
                             "value" : "Helpful Hints and Tips:"
                         },
-                        "content"   : {
+                        "body"   : {
                             "type"      : "text",
-                            "markup"    : "Additional definition of Affiliated Company here."
+                            "markup"    : [
+                                {
+                                    "tag"       : "p",
+                                    "content"   : "Additional definition of Affiliated Company here."
+                                }
+                            ]
                         }
                     }
                 ],
