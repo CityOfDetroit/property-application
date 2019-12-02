@@ -18,6 +18,7 @@ class Button extends React.Component {
     }
 
     handleClick(){
+        this.props.onButtonClick(!this.state.isToggleOn);
         this.setState(state => ({
             isToggleOn: !state.isToggleOn
         }));

@@ -3,8 +3,9 @@
         "total": 3,
         "list": [
             {
-                "type"  : "single-click",
-                "options": [
+                "type"      : "single-click",
+                "label"     : "Test",
+                "options"   : [
                     {
                         "value" : true,
                         "text"  : "Yes"
@@ -12,9 +13,9 @@
                 ]
             },
             {
-                "type": "multi-option",
-                "q": "Are you a resident of Detroit?",
-                "options": [
+                "type"      : "multi-option",
+                "label"     : "Are you a resident of Detroit?",
+                "options"   : [
                     {
                         "value" : true,
                         "text"  : "Yes"
@@ -26,9 +27,9 @@
                 ]
             },
             {
-                "type": "multi-option",
-                "q": "Do you or any affiliated company currently own property in Detroit?",
-                "options": [
+                "type"      : "multi-option",
+                "label"     : "Do you or any affiliated company currently own property in Detroit?",
+                "options"   : [
                     {
                         "value" : true,
                         "text"  : "Yes"

@@ -10,6 +10,7 @@ class App extends React.Component{
         this.state = {
             step : 0 
         };
+        this.updateStep = this.updateStep.bind(this);
     }
 
     componentDidMount() {
@@ -21,8 +22,24 @@ class App extends React.Component{
     }
 
     buildContent(){
-        const markup = data.steps[this.state.step].items.cards.map((card) =>
-            <Card key={card.toString()} type={card.type} title={card.title.value} titleType={card.title.type} body={card.body.markup} bodyType={card.body.type}></Card>
+        const markup = this.buildCards(data.steps[this.state.step].items);
+        return markup;
+    }
+
+    buildCards(items){
+        const markup = items.cards.map((card) =>
+            <Card  
+                key={card.toString()} 
+                type={card.type} 
+                title={card.title.value} 
+                titleType={card.title.type} 
+                body={card.body.markup} 
+                bodyType={card.button.type}
+                button={card.button.text} 
+                buttonType={card.body.type}
+                forms={items.forms}
+                onStateChange={this.updateStep}>
+            </Card>
         );
         return markup;
     }

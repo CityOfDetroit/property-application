@@ -13,24 +13,46 @@
                             "type"      : "text",
                             "markup"    : [
                                 {
+                                    "id"        : 0,
                                     "tag"       : "p",
                                     "content"   : "Thanks for your interest! Here is what you can expect:" 
                                 },
                                 {
+                                    "id"        : 1,
                                     "tag"       : "p",
                                     "content"   : "This intake application includes 2 questions and should take about 5 min." 
                                 },
                                 {
+                                    "id"        : 2,
                                     "tag"       : "p",
                                     "content"   : "Following staff review, you will receive an invitation to the full application." 
                                 }
                             ]
+                        },
+                        "button" : {
+                            "id"    : 0,
+                            "type"  : "single",
+                            "text"  : "Start",
+                            "value" : "start"
                         }
                     }
                 ],
                 "forms": [
                     {
-                     "id": 0   
+                        "type"          : "single-button",
+                        "requirements"  : [],
+                        "text"          : null,
+                        "sections"      : [
+                            {
+                                "items" : [
+                                    {
+                                        "type"  : "button",
+                                        "value" : "start",
+                                        "text"  : "START"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
