@@ -8,6 +8,9 @@ This project was created using:
  - [React](https://reactjs.org/) for application state management.
  - [Parcel](https://parceljs.org/) as a web application bundler.
  - [Jest](https://jestjs.io/) for testing.
+ - [NPM](https://www.npmjs.com/) and [Yarn](https://yarnpkg.com/en/) for 3rd party library use and management.
+
+Please make sure these are installed locally
 
 ## Setup Local Environment.
 
