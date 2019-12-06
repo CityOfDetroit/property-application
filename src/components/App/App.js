@@ -1,66 +1,67 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState }from 'react';
 import './App.scss';
 import Card from '../Card/Card';
+import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
 
-class App extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            step : 0 
-        };
-        this.updateStep = this.updateStep.bind(this);
-    }
+function App() {
+    const [step, setStep] = useState(0);
+    const [used, setUsed] = useState(false);
 
-    componentDidMount() {
-        
-    }
-  
-    componentWillUnmount() {
-  
-    }
-
-    buildContent(){
-        const markup = this.buildCards(data.steps[this.state.step].items);
+    const buildContent = () => {
+        const markup = 
+        <article id="App">
+            {buildCards(data.steps[step].items)}
+            {buildForms(data.steps[step].items)}
+        </article>
         return markup;
     }
 
-    buildCards(items){
+    const handleSubmit = () => {
+        console.log('submited');
+    }
+
+    const buildCards = (items) => {
         const markup = items.cards.map((card) =>
             <Card  
-                key={card.toString()} 
+                key={card.id} 
                 type={card.type} 
                 title={card.title.value} 
                 titleType={card.title.type} 
                 body={card.body.markup} 
-                bodyType={card.button.type}
-                button={card.button.text} 
-                buttonType={card.body.type}
-                forms={items.forms}
-                onStateChange={this.updateStep}>
+                bodyType={card.body.type}>
             </Card>
         );
         return markup;
     }
+
+    const buildForms = (items) => {
+        const markup = items.forms.map((form) =>
+            <Form  
+                key={form.id} 
+                type={form.type} 
+                requirements={form.requirements}
+                text={form.text}
+                sections={form.sections}
+                onSubmit={handleSubmit}>
+            </Form>
+        );
+        return markup;
+    }
   
-    updateStep(e){
-        let newState = this.setState.step;
+    const updateStep = (e) => {
+        let newState = step;
         if(e){
             newState++;
         }else{
             newState--;
         }
-        this.setState({
-            step : newState
-        });
+        setStep(newState);
     }
 
-    render(){
-        return(
-            this.buildContent()
-        )
-    }
+    return(
+        buildContent()
+    )
 }
 
 export default App;

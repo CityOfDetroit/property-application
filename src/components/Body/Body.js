@@ -4,7 +4,7 @@ import './Body.scss';;
 class Body extends React.Component {
     buildContent(){
         const markup = this.props.content.map((item) =>
-            <item.tag key={item.id.toString()}>{item.content}</item.tag>
+            <item.tag key={item.id}>{item.content}</item.tag>
         );
         return markup;
     }

@@ -1,35 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Form.scss';
 
-class Form extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {used: false};
+function Form({type, requirements, text, sections, onSubmit}) {
+
+
+    const buildSections = (items) => {
+        const markup = items.map((item) =>
+            <item.tag id={item.id} type={item.type}>{item.text}</item.tag>
+        );
+        return markup;
     }
 
-    componentDidMount() {
-        
-    }
-  
-    componentWillUnmount() {
-  
+    const buildContent = () => {
+        const markup = 
+        <form className={type} onSubmit={onSubmit}>
+            {buildSections(sections)}
+        </form>
+        return markup;
     }
 
-    render(){
-        let formType = "Form";
-        if (this.props.type){
-            formType += ` ${this.props.type}`;
-            return (
-                <form className={formType}>
-                </form>
-            )
-        }else{
-            return (
-                <form className="Form default">
-                </form>
-            )
-        }
-    }
+    return (
+        buildContent()
+    )
 }
 
 export default Form;
