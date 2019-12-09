@@ -37,13 +37,18 @@
                         "id"            : "step-0-form-0",
                         "type"          : "single-button",
                         "requirements"  : [],
-                        "text"          : null,
+                        "text"          : {
+                            "type"      : null,
+                            "markup"    : []
+                        },
                         "sections"      : [
                             {
+                                "id"    : "step-0-form-0-section-0",
                                 "items" : [
-                                    {
-                                        "tag"  : "button",
-                                        "type" : "submit",
+                                    {   
+                                        "id"    : "step-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
                                         "text"  : "START"
                                     }
                                 ]

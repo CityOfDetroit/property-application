@@ -7,6 +7,7 @@ import data from '../../data/App.steps.json';
 function App() {
     const [step, setStep] = useState(0);
     const [used, setUsed] = useState(false);
+    const [formData, setFormData] = useState({});
 
     const buildContent = () => {
         const markup = 
@@ -17,8 +18,8 @@ function App() {
         return markup;
     }
 
-    const handleSubmit = () => {
-        console.log('submited');
+    const handleSubmit = (data) => {
+        console.log(data);
     }
 
     const buildCards = (items) => {

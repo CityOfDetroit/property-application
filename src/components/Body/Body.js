@@ -18,6 +18,8 @@ class Body extends React.Component {
                     {this.buildContent()}
                 </article>
             )
+        }else{
+            return ""
         }
     }
 }
