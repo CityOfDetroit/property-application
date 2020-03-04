@@ -2,56 +2,134 @@ import React, { useState } from 'react';
 import './Form.scss';
 import Body from '../Body/Body';
 
-function Form({type, requirements, text, sections, onSubmit}) {
+function Form(props) {
 
-    const [questionState, setQuestion] = useState([
-        {question: '', value: ''}
-    ]);
+    const {
+        step: [step, setStep],
+        formData: [formData, setFormData]
+    } = {
+        step: useState(0),
+        formData: useState(0),
+        ...(props.state || {})
+    };
+    const [btnState, setbtnState] = useState();
+    const [agents, setAgents] = useState(0);
 
     const buildContent = () => {
+        const formClass = `${props.type} ${props.position}`; 
         const markup = 
-        <form className={type} onSubmit={handleSubmit}>
-            <Body type={text.type} content={text.markup}></Body>
+        <form className={formClass} onSubmit={handleSubmit}>
+            <Body type={props.text.type} content={props.text.markup}></Body>
             {buildSections()}
         </form>
         return markup;
     }
 
     const buildSections = () => {
-        const markup = sections.map((section) =>
+        const markup = props.sections.map((section) =>
            <fieldset key={section.id}>
                {buildItems(section.items)}
+               {buildAgents()}
+               {(agents > 0) ? <button type="submit" onClick={(e)=>{setbtnState(e.target.innerText)}}>Done</button> : ''}
            </fieldset>
         );
         return markup;
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit(e);
-    }
-
-    const buildItems = (items) => {
-        const markup = items.map((item) => {
-            questionState.map((val, idx) => {
-                const qID = `question-${idx}`;
-                return (
-                    <div key={item.key}>
-                        {(item.label) ? <label htmlFor={idx}>{item.labelText}</label> : ''}
-                        <item.tag
-                            key={qID} 
-                            type={item.type}>
-                            {item.text}
-                        </item.tag>
-                    </div>
-                );      
-            });
-        });
+    const buildAgents = () => {
+        let agentsArr = [];
+        for (let index = 0; index < agents; index++) {
+            agentsArr.push(`agent-${index}`);
+        }
+        const markup = agentsArr.map((agent) =>
+            <div key={agent}>
+                <label htmlFor={agent}>Name:</label>
+                <input id={agent} type="text" placeholder="Enter First and Last name." required></input>
+            </div>
+        );
         return markup;
     }
 
+    const buildItems = (items) => {
+        const markup = items.map((item) => 
+            <div key={item.id}>
+                {(item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : ''}
+                {buildTag(item)}
+            </div>
+        );
+        return markup;
+    }
+
+    const buildTag = (item) =>{
+        let markup;
+        if(item.tag == 'button'){
+            switch (item.type) {
+                case 'submit':
+                    markup = <button onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                    break;
+
+                case 'add':
+                    markup = <button onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
+                    break;
+            
+                default:
+                    break;
+            }
+        }else{
+            markup = <item.tag type={item.type}>
+            {item.text}
+            </item.tag>;
+        }
+        return markup;
+    }
+
+    const handleSubmit = (e) => {
+        console.log(e.target);
+        e.preventDefault();
+        let tempFormData;
+        switch (step) {
+            case 0:
+                setStep(1);
+                break;
+
+            case 1:
+                setFormData({
+                    q1: {
+                        values: [btnState]
+                    }
+                });
+                setStep(2);
+                break;
+
+            case 2:
+                tempFormData = formData;
+                tempFormData.q2 = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                (btnState == 'Yes') ? setStep(3) : setStep(4);
+                break;
+
+            case 3:
+                let tempAgents = [];
+                for (let index = 0; index < agents; index++) {
+                    tempAgents.push(e.target.elements[`agent-${index}`].value);
+                }
+                tempFormData = formData;
+                tempFormData.q3 = {
+                    values: [tempAgents]
+                }
+                setFormData(tempFormData);
+                setStep(4);
+                break;
+        
+            default:
+                break;
+        }
+    }
+
     return (
-        buildContent(sections)
+        buildContent(props.sections)
     )
 }
 

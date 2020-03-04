@@ -6,15 +6,16 @@ import data from '../../data/App.steps.json';
 
 function App() {
     const [step, setStep] = useState(0);
-    const [used, setUsed] = useState(false);
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState();
 
     const buildContent = () => {
         const markup = 
-        <article id="App">
+        <section id="App">
+            <article className="Panel">
             {buildCards(data.steps[step].items)}
             {buildForms(data.steps[step].items)}
-        </article>
+            </article>
+        </section>
         return markup;
     }
 
@@ -40,24 +41,16 @@ function App() {
         const markup = items.forms.map((form) =>
             <Form  
                 key={form.id} 
-                type={form.type} 
+                type={form.type}
+                position={form.position}  
                 requirements={form.requirements}
                 text={form.text}
                 sections={form.sections}
-                onSubmit={handleSubmit}>
+                onSubmit={handleSubmit}
+                state={{ formData: [formData, setFormData], step: [step, setStep] }}>
             </Form>
         );
         return markup;
-    }
-  
-    const updateStep = (e) => {
-        let newState = step;
-        if(e){
-            newState++;
-        }else{
-            newState--;
-        }
-        setStep(newState);
     }
 
     return(
