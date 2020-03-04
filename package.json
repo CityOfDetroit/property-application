@@ -9,22 +9,21 @@
   },
   "scripts": {
     "start": "parcel src/index.html --https --no-cache -p 3000",
-    "test": "jest",
+    "test": "./node_modules/.bin/cypress open",
     "build": "parcel build src/index.js --no-cache --public-url '.' -d build"
   },
   "author": "Edgar Montes",
   "license": "MIT",
   "dependencies": {
-    "@sentry/browser": "^5.13.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
-    "babel-jest": "^24.9.0",
+    "cypress": "^4.1.0",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "jest": "^24.9.0",
     "react-test-renderer": "^16.13.0",
     "sass": "^1.26.2"
   }
