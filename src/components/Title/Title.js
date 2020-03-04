@@ -1,30 +1,35 @@
 import React from 'react';
 import './Title.scss';
 
-class Title extends React.Component {
-    render(){
-        if(this.props.name){
-            switch (this.props.type) {
+function Title(props) {
+
+    const buildTitle = () => {
+        if(props.name){
+            switch (props.type) {
                 case "large":
-                    return <h1>{this.props.name}</h1>
+                    return <h1>{props.name}</h1>
                     break;
     
                 case "medium":
-                    return <h3>{this.props.name}</h3>
+                    return <h3>{props.name}</h3>
                     break;
     
                 case "small":
-                    return <h5>{this.props.name}</h5>
+                    return <h5>{props.name}</h5>
                     break;
             
                 default:
-                    return <p><strong>{this.props.name}</strong></p>
+                    return <p><strong>{props.name}</strong></p>
                     break;
             }
         }else{
             return;
         }
     }
+
+    return(
+        buildTitle()
+    )
 }
 
 export default Title;

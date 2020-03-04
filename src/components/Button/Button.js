@@ -1,40 +1,31 @@
-import React from 'react';
+import React, { useState }from 'react';
 import './Button.scss';;
 
-class Button extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {isToggleOn: false};
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
+function Button(props) {
+    const [toggle, setToggle] = useState(false);
 
-    componentDidMount() {
-        
-    }
-  
-    componentWillUnmount() {
-  
-    }
-
-    handleClick(){
-        this.props.onButtonClick(!this.state.isToggleOn);
+    const handleClick = () => {
+        props.onButtonClick(!this.state.isToggleOn);
         this.setState(state => ({
             isToggleOn: !state.isToggleOn
         }));
     }
 
-    render(){
-        if(this.props.value){
+    const buildButton = () => {
+        if(props.value){
             return (
-            <button value={this.props.value} onClick={this.handleClick}>
-                {this.props.text}
+            <button value={props.value} onClick={this.handleClick}>
+                {props.text}
             </button>
             );
         }else{
             return ""
         }
     }
+
+    render(
+        buildButton()
+    )
 }
 
 export default Button;

@@ -4,6 +4,10 @@ import Body from '../Body/Body';
 
 function Form({type, requirements, text, sections, onSubmit}) {
 
+    const [questionState, setQuestion] = useState([
+        {question: '', value: ''}
+    ]);
+
     const buildContent = () => {
         const markup = 
         <form className={type} onSubmit={handleSubmit}>
@@ -28,13 +32,21 @@ function Form({type, requirements, text, sections, onSubmit}) {
     }
 
     const buildItems = (items) => {
-        const markup = items.map((item) =>
-            <item.tag 
-                key={item.id} 
-                type={item.type}>
-                {item.text}
-            </item.tag>
-        );
+        const markup = items.map((item) => {
+            questionState.map((val, idx) => {
+                const qID = `question-${idx}`;
+                return (
+                    <div key={item.key}>
+                        {(item.label) ? <label htmlFor={idx}>{item.labelText}</label> : ''}
+                        <item.tag
+                            key={qID} 
+                            type={item.type}>
+                            {item.text}
+                        </item.tag>
+                    </div>
+                );      
+            });
+        });
         return markup;
     }
 

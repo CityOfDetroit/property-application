@@ -8,22 +8,24 @@
     "url": "https://github.com/CityOfDetroit/property-application.git"
   },
   "scripts": {
-    "test": "jest"
+    "start": "parcel src/index.html --https --no-cache -p 3000",
+    "test": "jest",
+    "build": "parcel build src/index.js --no-cache --public-url '.' -d build"
   },
   "author": "Edgar Montes",
   "license": "MIT",
   "dependencies": {
-    "@sentry/browser": "^5.9.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "@sentry/browser": "^5.13.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
     "babel-jest": "^24.9.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "jest": "^24.9.0",
-    "react-test-renderer": "^16.12.0",
-    "sass": "^1.23.7"
+    "react-test-renderer": "^16.13.0",
+    "sass": "^1.26.2"
   }
 }

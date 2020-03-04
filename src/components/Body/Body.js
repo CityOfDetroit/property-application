@@ -1,27 +1,31 @@
 import React from 'react';
-import './Body.scss';;
+import './Body.scss';
 
-class Body extends React.Component {
-    buildContent(){
-        const markup = this.props.content.map((item) =>
+function Body(props) {
+    const buildContent = () => {
+        const markup = props.content.map((item) =>
             <item.tag key={item.id}>{item.content}</item.tag>
         );
         return markup;
     }
 
-    render(){
+    const buildBody = () => {
         let bodyType = "Card-Body";
-        if (this.props.type){
-            bodyType += ` ${this.props.type}`;
+        if (props.type){
+            bodyType += ` ${props.type}`;
             return (
                 <article className={bodyType}>
-                    {this.buildContent()}
+                    {buildContent()}
                 </article>
             )
         }else{
             return ""
         }
     }
+
+    return(
+        buildBody()
+    )
 }
 
 export default Body;

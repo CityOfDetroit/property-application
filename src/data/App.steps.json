@@ -49,7 +49,10 @@
                                         "id"    : "step-0-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "text"  : "START"
+                                        "name"  : "start-form",
+                                        "description"   : "Button to start application.",
+                                        "text"  : "START",
+                                        "label" : false
                                     }
                                 ]
                             }
