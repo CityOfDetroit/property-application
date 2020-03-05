@@ -6,10 +6,12 @@ function Form(props) {
 
     const {
         step: [step, setStep],
-        formData: [formData, setFormData]
+        formData: [formData, setFormData],
+        buildType: [buildType, setBuildType]
     } = {
         step: useState(0),
         formData: useState(0),
+        buildType: useState(0),
         ...(props.state || {})
     };
     const [btnState, setbtnState] = useState();
@@ -89,7 +91,12 @@ function Form(props) {
         let tempFormData;
         switch (step) {
             case 0:
-                setStep(1);
+                if(btnState == 'Start New Application'){
+                    setStep(1);
+                }else{
+                    setBuildType('status');
+                    setStep(0);
+                }
                 break;
 
             case 1:
@@ -121,6 +128,37 @@ function Form(props) {
                 }
                 setFormData(tempFormData);
                 setStep(4);
+                break;
+
+            case 4:
+                if(btnState == 'Yes'){
+                    setStep(5);
+                }else{
+                    tempFormData = formData;
+                    tempFormData.q4 = {
+                        values: [btnState]
+                    }
+                    setFormData(tempFormData);
+                    setStep(6);
+                }
+                break;
+
+            case 5:
+                setFormData(undefined);
+                setStep(0);
+                break;
+
+            case 6:
+                if(btnState == 'No'){
+                    setStep(7);
+                }else{
+                    tempFormData = formData;
+                    tempFormData.q5 = {
+                        values: [btnState]
+                    }
+                    setFormData(tempFormData);
+                    setStep(8);
+                }
                 break;
         
             default:

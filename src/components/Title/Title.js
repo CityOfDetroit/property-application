@@ -23,7 +23,7 @@ function Title(props) {
                     break;
             }
         }else{
-            return;
+            return '';
         }
     }
 

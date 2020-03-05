@@ -1,5 +1,5 @@
 {
-    "steps": [
+    "application": [
         {
             "items" : {
                 "cards": [
@@ -52,7 +52,16 @@
                                         "type"  : "submit",
                                         "name"  : "start-form",
                                         "description"   : "Button to start application.",
-                                        "text"  : "START",
+                                        "text"  : "Start New Application",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-0-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "check-status",
+                                        "description"   : "Button to check past application status.",
+                                        "text"  : "Check Application Status",
                                         "label" : false
                                     }
                                 ]
@@ -290,10 +299,276 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-1-form-0-section-0",
+                                "id"    : "step-4-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-1-form-0-section-0-item-0",
+                                        "id"    : "step-4-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "delinquent",
+                                        "description"   : "Delinquent on any property taxes or blight tickets",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-4-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-delinquent",
+                                        "description"   : "Not delinquent on any property taxes or blight tickets",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "step-5-card-0",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Helpful hints and tips"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "100% of our successful applicants have their property taxes in the City of Detroit up-to-date. " 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Here is a link to pay your taxes: linkhere" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-5-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Please check the status of your blight tickets here, pay your property taxes here and return to the application once you have completed payment."
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-5-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-5-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "close",
+                                        "description"   : "Close Application",
+                                        "text"  : "End Application",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [],
+                "forms": [
+                    {
+                        "id"            : "step-6-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Have you found a property?"
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-6-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-6-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "found-property",
+                                        "description"   : "Found a property",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-6-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-found-property",
+                                        "description"   : "Haven't found a property",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "step-7-card-0",
+                        "type"      : "center pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Thanks for your interest! Here are some resources that can assist you right now:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://google.com",
+                                    "content"   : "View Property Map" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "a",
+                                    "link"      : "https://google.com",
+                                    "content"   : "View other web" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-7-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-7-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-7-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "close",
+                                        "description"   : "Close Application",
+                                        "text"  : "End Application",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "status" : [
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "status-0-card-0",
+                        "type"      : "center pop-up color-2",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : "Application Status Form"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : []
+                        }
+                    },
+                    {   
+                        "id"        : "status-0-card-1",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Helpful hints and tips"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the email you provided when creating your application." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "An application number was given to you after successfully completing your form." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "status-0-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Enter required information."
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "status-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "own-property",
@@ -302,7 +577,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-1-form-0-section-0-item-1",
+                                        "id"    : "status-0-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-own-property",

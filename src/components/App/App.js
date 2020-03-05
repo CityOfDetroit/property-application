@@ -7,20 +7,17 @@ import data from '../../data/App.steps.json';
 function App() {
     const [step, setStep] = useState(0);
     const [formData, setFormData] = useState();
+    const [buildType, setBuildType] = useState('application');
 
     const buildContent = () => {
         const markup = 
         <section id="App">
             <article className="Panel">
-            {buildCards(data.steps[step].items)}
-            {buildForms(data.steps[step].items)}
+            {buildCards(data[buildType][step].items)}
+            {buildForms(data[buildType][step].items)}
             </article>
         </section>
         return markup;
-    }
-
-    const handleSubmit = (data) => {
-        console.log(data);
     }
 
     const buildCards = (items) => {
@@ -46,8 +43,7 @@ function App() {
                 requirements={form.requirements}
                 text={form.text}
                 sections={form.sections}
-                onSubmit={handleSubmit}
-                state={{ formData: [formData, setFormData], step: [step, setStep] }}>
+                state={{ formData: [formData, setFormData], step: [step, setStep], buildType: [buildType, setBuildType] }}>
             </Form>
         );
         return markup;
