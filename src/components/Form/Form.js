@@ -64,23 +64,35 @@ function Form(props) {
 
     const buildTag = (item) =>{
         let markup;
-        if(item.tag == 'button'){
-            switch (item.type) {
-                case 'submit':
-                    markup = <button onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
-                    break;
-
-                case 'add':
-                    markup = <button onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
-                    break;
-            
-                default:
-                    break;
-            }
-        }else{
-            markup = <item.tag type={item.type}>
-            {item.text}
-            </item.tag>;
+        switch (item.tag) {
+            case 'button':
+                switch (item.type) {
+                    case 'submit':
+                        markup = <button onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                        break;
+    
+                    case 'add':
+                        markup = <button onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
+                        break;
+                
+                    default:
+                        break;
+                }
+                break;
+        
+            default:
+                switch (item.type) {
+                    case 'radio':
+                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value}></input>;
+                        break;
+                
+                    default:
+                        markup = <item.tag type={item.type}>
+                        {item.text}
+                        </item.tag>;
+                        break;
+                }
+                break;
         }
         return markup;
     }
@@ -158,6 +170,24 @@ function Form(props) {
                     }
                     setFormData(tempFormData);
                     setStep(8);
+                }
+                break;
+
+            case 7:
+                setFormData(undefined);
+                setStep(0);
+                break;
+
+            case 8:
+                tempFormData = formData;
+                tempFormData.q6 = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                if(btnState == 'Someone else'){
+                    setStep(9);
+                }else{
+                    setStep(10);
                 }
                 break;
         

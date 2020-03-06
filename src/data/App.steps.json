@@ -505,6 +505,164 @@
                     }
                 ]
             }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "step-8-card-0",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Helpful Hints and Tips"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few slides." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-8-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "step-8-card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Are you applying for yourself or on behalf of someone else?"
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-8-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-8-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "myself",
+                                        "description"   : "Applying for myself",
+                                        "text"  : "Myself",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-8-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "someone-else",
+                                        "description"   : "Applying for someone else",
+                                        "text"  : "Someone else",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "step-9-card-0",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : []
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-9-form-0",
+                        "type"          : "radio-button-plus-other",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "step-9-card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Great! Can you tell us a bit more about your role in this project?"
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-9-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "broker",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "value"         : "broker",
+                                        "placeholder"   : null,
+                                        "name"          : "role",
+                                        "description"   : "Broker",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Broker"
+                                    },
+                                    {   
+                                        "id"            : "consultant",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "value"         : "consultant",
+                                        "placeholder"   : null,
+                                        "name"          : "role",
+                                        "description"   : "Development Consultant",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Development Consultant"
+                                    },
+                                    {   
+                                        "id"            : "officer",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "value"         : "officer",
+                                        "placeholder"   : null,
+                                        "name"          : "role",
+                                        "description"   : "Principal / Officer",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Principal / Officer"
+                                    },
+                                    {   
+                                        "id"            : "other",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "value"         : "other",
+                                        "placeholder"   : null,
+                                        "name"          : "role",
+                                        "description"   : "Other",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Other"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     ],
     "status" : [
