@@ -656,6 +656,85 @@
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Other"
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Submit information",
+                                        "text"          : "Submit",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "cards": [
+                    {   
+                        "id"        : "step-10-card-0",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Helpful hints and tips"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few questions." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-10-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Are you an individual or business?"
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-10-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-10-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "individual",
+                                        "description"   : "I'm an individual",
+                                        "text"  : "Individual",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-10-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "business",
+                                        "description"   : "I'm a business",
+                                        "text"  : "Business",
+                                        "label" : false
                                     }
                                 ]
                             }

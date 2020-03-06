@@ -16,6 +16,7 @@ function Form(props) {
     };
     const [btnState, setbtnState] = useState();
     const [agents, setAgents] = useState(0);
+    const [otherInput, setOtherInput] = useState();
 
     const buildContent = () => {
         const formClass = `${props.type} ${props.position}`; 
@@ -52,6 +53,15 @@ function Form(props) {
         return markup;
     }
 
+    const buildOtherInputOption = (e) => {
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = `Enter ${e.id}`;
+        input.setAttribute('id', `${e.id}-input`);
+        input.setAttribute('name', e.name);
+        return input;
+    }
+
     const buildItems = (items) => {
         const markup = items.map((item) => 
             <div key={item.id}>
@@ -83,7 +93,11 @@ function Form(props) {
             default:
                 switch (item.type) {
                     case 'radio':
-                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value}></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required></input>;
+                        break;
+                    
+                    case 'text':
+                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} disabled={item.disabled} placeholder={item.placeholder}></input>;
                         break;
                 
                     default:
@@ -185,13 +199,51 @@ function Form(props) {
                 }
                 setFormData(tempFormData);
                 if(btnState == 'Someone else'){
+                    tempFormData.q7 = {
+                        values: [null]
+                    }
                     setStep(9);
                 }else{
                     setStep(10);
                 }
                 break;
+
+            case 9:
+                tempFormData = formData;
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        if(element.id == 'other'){
+                            tempFormData.q7 = {
+                                values: [e.target.elements['other-input'].value]
+                            }
+                        }else{
+                            tempFormData.q7 = {
+                                values: [element.value]
+                            }
+                        }
+                    }
+                });
+                setFormData(tempFormData);
+                setStep(10);
+                break;
         
             default:
+                break;
+        }
+    }
+
+    const handleChange = (e) => {
+        switch (e.target.id) {
+            case 'other':
+                setOtherInput(`${e.target.id}-input`);
+                e.target.after(buildOtherInputOption(e.target));
+                break;
+        
+            default:
+                if(otherInput){
+                    document.getElementById(otherInput).remove();
+                    setOtherInput(undefined);
+                }
                 break;
         }
     }
