@@ -28,23 +28,21 @@
     }
 }
 #App{
-    width: 25em;
-    max-width: 90%;
-    position: fixed;
     display: flex;
-    bottom: .5em;
-    right: .5em;
     z-index: 5;
+    padding: .5em;
+    height: 100vh;
 
     .Panel{
-        height: 35em;
+        width: 100%;
+        height: calc(100% - 1em);
         position: relative;
         margin: auto;
         display: flex;
         flex-direction: column;
         background-color: $grey;
 
-        .chat{
+        .intake{
             margin-bottom: .5em;
             flex: 1;
             overflow: hidden;
@@ -74,10 +72,7 @@
                     margin-left: 1em;
 
                     button{
-                        top: -.05em;
-                        position: relative;
-                        font-size: 3em;
-                        color: $white;
+                         color: $white;
                         font-weight: bold;
                         background-color: $color-1;
                         border: none;
@@ -87,13 +82,15 @@
                     button:hover{
                         color: $color-2;
                     }
+
+                    button.restart{
+                        top: -.05em;
+                        position: relative;
+                        font-size: 3em;
+                       
+                    }
                 }
             }
-        }
-
-        .conversation{
-            height: 29em;
-            overflow-y: auto;
         }
     }
 }

@@ -8,6 +8,7 @@ function App() {
     const [step, setStep] = useState(0);
     const [formData, setFormData] = useState();
     const [buildType, setBuildType] = useState('application');
+    const [btnState, setbtnState] = useState();
 
     const buildContent = () => {
         const markup = 
@@ -19,19 +20,25 @@ function App() {
         return markup;
     }
 
-    const closeChat = (e) => {
+    const restartApp = (e) => {
         e.preventDefault();
-        setFormData(undefined);
-        setBuildType('application');
-        setStep(undefined);
+        if(btnState == 'x') {
+            setFormData(undefined);
+            setBuildType('application');
+            setStep(0);
+        }else{
+            let tempStep = step - 1;
+            setStep(tempStep);
+        }
     }
 
     const buildHeader = (items) => {
         const markup = items.header.map((header) =>
             <div key={header.id} className="header">
                 <p><img src={header.logoURL} alt={header.logoAlt}></img> <span>{header.text}</span></p>
-                <form onSubmit={closeChat}>
-                    <button>x</button>
+                <form onSubmit={restartApp}>
+                    {(step > 0) ? <button onClick={(e)=>{setbtnState(e.target.innerText)}}>Back</button> : ""}
+                    <button className="restart" onClick={(e)=>{setbtnState(e.target.innerText)}}>x</button>
                 </form>
             </div>
         );
@@ -40,12 +47,10 @@ function App() {
 
     const buildChat = () => {
         const markup = 
-        <article className="chat">
+        <article className="intake">
             {buildHeader(data[buildType][step].items)}
-            <div className="conversation">
             {buildCards(data[buildType][step].items)}
             {buildForms(data[buildType][step].items)}
-            </div>
         </article>
         return markup;
     }
