@@ -13,10 +13,40 @@ function App() {
         const markup = 
         <section id="App">
             <article className="Panel">
-            {buildCards(data[buildType][step].items)}
-            {buildForms(data[buildType][step].items)}
+            {buildChat()}
             </article>
         </section>
+        return markup;
+    }
+
+    const closeChat = (e) => {
+        e.preventDefault();
+        setFormData(undefined);
+        setBuildType('application');
+        setStep(undefined);
+    }
+
+    const buildHeader = (items) => {
+        const markup = items.header.map((header) =>
+            <div key={header.id} className="header">
+                <p><img src={header.logoURL} alt={header.logoAlt}></img> <span>{header.text}</span></p>
+                <form onSubmit={closeChat}>
+                    <button>x</button>
+                </form>
+            </div>
+        );
+        return markup;
+    }
+
+    const buildChat = () => {
+        const markup = 
+        <article className="chat">
+            {buildHeader(data[buildType][step].items)}
+            <div className="conversation">
+            {buildCards(data[buildType][step].items)}
+            {buildForms(data[buildType][step].items)}
+            </div>
+        </article>
         return markup;
     }
 

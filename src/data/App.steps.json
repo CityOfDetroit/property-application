@@ -2,6 +2,16 @@
     "application": [
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-0-card-0",
@@ -73,6 +83,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [],
                 "forms": [
                     {
@@ -121,6 +141,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-2-card-0",
@@ -188,6 +218,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-3-card-0",
@@ -251,6 +291,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-4-card-0",
@@ -328,6 +378,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-5-card-0",
@@ -396,6 +456,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [],
                 "forms": [
                     {
@@ -444,6 +514,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-7-card-0",
@@ -508,6 +588,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-8-card-0",
@@ -575,6 +665,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-9-card-0",
@@ -678,6 +778,16 @@
         },
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "step-10-card-0",
@@ -747,6 +857,16 @@
     "status" : [
         {
             "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
                 "cards": [
                     {   
                         "id"        : "status-0-card-0",

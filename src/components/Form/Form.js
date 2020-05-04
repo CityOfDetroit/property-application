@@ -30,11 +30,11 @@ function Form(props) {
 
     const buildSections = () => {
         const markup = props.sections.map((section) =>
-           <fieldset key={section.id}>
+           <section key={section.id} className="grouping">
                {buildItems(section.items)}
                {buildAgents()}
                {(agents > 0) ? <button type="submit" onClick={(e)=>{setbtnState(e.target.innerText)}}>Done</button> : ''}
-           </fieldset>
+           </section>
         );
         return markup;
     }
@@ -65,8 +65,9 @@ function Form(props) {
     const buildItems = (items) => {
         const markup = items.map((item) => 
             <div key={item.id}>
-                {(item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : ''}
+                {(item.labelPosition != "after") ? (item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : '' : ''}
                 {buildTag(item)}
+                {(item.labelPosition == "after") ? (item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : '' : ''}
             </div>
         );
         return markup;
@@ -93,11 +94,19 @@ function Form(props) {
             default:
                 switch (item.type) {
                     case 'radio':
-                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required}></input>;
+                        break;
+
+                    case 'checkbox':
+                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping}></input>;
                         break;
                     
                     case 'text':
-                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} disabled={item.disabled} placeholder={item.placeholder}></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required}></input>;
+                        break;
+
+                    case 'number':
+                        markup = <input type={item.type} id={item.id} name={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required}></input>;
                         break;
                 
                     default:
@@ -111,27 +120,101 @@ function Form(props) {
         return markup;
     }
 
+    const handleGroupingRequired = (e) => {
+        let isChecked = false;
+        if(e.target.getAttribute('data-grouping') == 'true'){
+            Array.from(e.target.parentElement.parentElement.parentElement.elements).forEach(element => {
+                if(element.checked){
+                    isChecked = true;
+                }
+            });
+            if(isChecked){
+                Array.from(e.target.parentElement.parentElement.parentElement.elements).forEach(element => {
+                    element.required = false;
+                });
+            }
+        }
+    }
+
     const handleSubmit = (e) => {
-        console.log(e.target);
         e.preventDefault();
         let tempFormData;
+        let tempSynthoms = [];
         switch (step) {
             case 0:
-                if(btnState == 'Start New Application'){
-                    setStep(1);
-                }else{
-                    setBuildType('status');
-                    setStep(0);
+                switch (buildType) {
+                    case "application":
+                        switch (btnState) {
+                            case "Start New Application":
+                                setStep(1);
+                                break;
+        
+                            case "Check Application Status":
+                                setBuildType('status');
+                                setStep(0);
+                            break;
+                        
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case "status":
+                        switch (btnState) {
+                            case "Food":
+                                setStep(1);
+                                break;
+        
+                            case "Water":
+                                setStep(5);
+                                break;
+        
+                            case "Jobs":
+                                setStep(6);
+                                break;
+                        
+                            default:
+                                break;
+                        }
+                        break;
+                
+                    default:
+                        break;
                 }
                 break;
 
             case 1:
-                setFormData({
-                    q1: {
-                        values: [btnState]
-                    }
-                });
-                setStep(2);
+                switch (buildType) {
+                    case "application":
+                        if(btnState == 'Detroit'){
+                            setStep(3);
+                        }else{
+                            setStep(2);
+                        }
+                        break;
+
+                    case "status":
+                        switch (btnState) {
+                            case "Meals for Children":
+                                setStep(2);
+                                break;
+        
+                            case "Meals for Seniors":
+                                setStep(3);
+                                break;
+        
+                            case "Groceries for Families":
+                                setStep(4);
+                                break;
+                        
+                            default:
+                                break;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
                 break;
 
             case 2:
@@ -144,16 +227,21 @@ function Form(props) {
                 break;
 
             case 3:
-                let tempAgents = [];
-                for (let index = 0; index < agents; index++) {
-                    tempAgents.push(e.target.elements[`agent-${index}`].value);
+                // let tempAgents = [];
+                // for (let index = 0; index < agents; index++) {
+                //     tempAgents.push(e.target.elements[`agent-${index}`].value);
+                // }
+                // tempFormData = formData;
+                // tempFormData.q3 = {
+                //     values: [tempAgents]
+                // }
+                // setFormData(tempFormData);
+                // setStep(4);
+                if(btnState == 'Yes'){
+                    setStep(5);
+                }else{
+                    setStep(4);
                 }
-                tempFormData = formData;
-                tempFormData.q3 = {
-                    values: [tempAgents]
-                }
-                setFormData(tempFormData);
-                setStep(4);
                 break;
 
             case 4:
@@ -170,61 +258,298 @@ function Form(props) {
                 break;
 
             case 5:
-                setFormData(undefined);
-                setStep(0);
+                setFormData({
+                    age: {
+                        values: [parseInt(e.target.elements['age'].value)]
+                    }
+                });
+                if(e.target.elements['age'].value >= 2){
+                    setStep(9);
+                }else{
+                    setStep(6);
+                }
                 break;
 
             case 6:
-                if(btnState == 'No'){
-                    setStep(7);
-                }else{
-                    tempFormData = formData;
-                    tempFormData.q5 = {
-                        values: [btnState]
-                    }
-                    setFormData(tempFormData);
+                if(btnState == 'Not experiencing any life-threatening symptoms'){
                     setStep(8);
+                }else{
+                    
+                    setStep(7);
                 }
                 break;
 
             case 7:
-                setFormData(undefined);
-                setStep(0);
                 break;
 
             case 8:
-                tempFormData = formData;
-                tempFormData.q6 = {
-                    values: [btnState]
-                }
-                setFormData(tempFormData);
-                if(btnState == 'Someone else'){
-                    tempFormData.q7 = {
-                        values: [null]
-                    }
-                    setStep(9);
-                }else{
-                    setStep(10);
-                }
                 break;
 
             case 9:
                 tempFormData = formData;
-                Array.from(e.target.elements).forEach(element => {
-                    if(element.checked){
-                        if(element.id == 'other'){
-                            tempFormData.q7 = {
-                                values: [e.target.elements['other-input'].value]
-                            }
-                        }else{
-                            tempFormData.q7 = {
-                                values: [element.value]
-                            }
-                        }
-                    }
-                });
+                tempFormData.gender = {
+                    values: [btnState]
+                }
                 setFormData(tempFormData);
                 setStep(10);
+                break;
+
+            case 10:
+                if(btnState == 'Not experiencing any life-threatening symptoms'){
+                    if(formData.age.values[0] > 1 && formData.age.values[0] < 5){
+                        setStep(11);
+                    }else{
+                        setStep(12);
+                    }
+                }else{
+                    setStep(7);
+                }
+                break;
+
+            case 11:
+                if(btnState == 'None of the above'){
+                    setStep(14);
+                }else{
+                    setStep(13);
+                }
+                break;
+
+            case 12:
+                if(btnState == 'None of the above'){
+                    setStep(14);
+                }else{
+                    setStep(13);
+                }
+                break;
+
+            case 13:
+                break;
+
+            case 14:
+                if(btnState == 'Yes'){
+                    setStep(15);
+                }else{
+                    setStep(28); 
+                }
+                break;
+
+            case 15:
+                tempSynthoms = [];
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        tempSynthoms.push(element.id);
+                    }
+                });
+                if(tempSynthoms.length > 1){
+                    setStep(16);
+                }else{
+                    (tempSynthoms[0] == 'other') ? setStep(20) : setStep(16);
+                }
+                break;
+
+            case 16:
+                if(btnState == 'Yes'){
+                    setStep(17);
+                }else{
+                    if(formData.age.values[0] >= 19){
+                        setStep(18);
+                    }else{
+                        setStep(20);
+                    }
+                }
+                break;
+
+            case 17:
+                break;
+
+            case 18:
+                if(btnState == 'Yes'){
+                    setStep(19);
+                }else{
+                    setStep(20);
+                }
+                break;
+
+            case 19:
+                break;
+
+            case 20:
+                tempSynthoms = [];
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        tempSynthoms.push(element.id);
+                    }
+                });
+                if(tempSynthoms.length > 1){
+                    setStep(21);
+                }else{
+                    (tempSynthoms[0] == 'other') ? setStep(22) : setStep(21);
+                }
+                break; 
+
+            case 21:
+                break;
+
+            case 22:
+                break;
+
+            case 23:
+                setStep(24);
+                break;
+
+            case 24:
+                if(btnState == 'Yes'){
+                    setStep(17);
+                }else{
+                    if(formData.age.values[0] >= 19){
+                        setStep(25);
+                    }else{
+                        setStep(27);
+                    }
+                }
+                break;
+
+            case 25:
+                if(btnState == 'Yes'){
+                    setStep(26);
+                }else{
+                    setStep(27);
+                }
+                break;
+
+            case 26:
+                break;
+
+            case 27:
+                setStep(26);
+                break;
+
+            case 28:
+                tempSynthoms = [];
+                let covidCout = 0;
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        tempSynthoms.push(element.id);
+                    }
+                });
+                if(tempSynthoms.length > 1){
+                    tempSynthoms.forEach((syn) => {
+                        (syn == 'other') ? 0 : covidCout++;
+                    });
+                    if(covidCout > 1){
+                        setStep(34);
+                    }else{
+                        setStep(30);
+                    }
+                }else{
+                    (tempSynthoms[0] == 'other') ? setStep(29) : setStep(30);
+                }
+                break;
+
+            case 29:
+                setStep(26);
+                break;
+
+            case 30:
+                if(btnState == 'Yes'){
+                    setStep(17);
+                }else{
+                    if(formData.age.values[0] >= 19){
+                        setStep(31);
+                    }else{
+                        setStep(32);
+                    }
+                }
+                break;
+
+            case 31:
+                if(btnState == 'Yes'){
+                    setStep(33);
+                }else{
+                    setStep(32);
+                }
+                break;
+
+            case 32:
+                setStep(22);
+                break;
+
+            case 33:
+                break;
+
+            case 34:
+                if(btnState == 'Yes'){
+                    setStep(17);
+                }else{
+                    if(formData.age.values[0] >= 65){
+                        setStep(38);
+                    }else{
+                        setStep(35);
+                    }
+                }
+                break;
+
+            case 35:
+                tempSynthoms = [];
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        tempSynthoms.push(element.id);
+                    }
+                });
+                if(tempSynthoms.length > 1){
+                    if(formData.age.values[0] >= 19){
+                        setStep(36);
+                    }else{
+                        setStep(21);
+                    }
+                }else{
+                    if(formData.age.values[0] >= 19){
+                        setStep(36);
+                    }else{
+                        setStep(22);
+                    }
+                }
+                break;
+
+            case 36:
+                if(btnState == 'Yes'){
+                    setStep(37);
+                }else{
+                    setStep(22);
+                }
+                break;
+
+            case 37:
+                break;
+
+            case 38:
+                tempSynthoms = [];
+                Array.from(e.target.elements).forEach(element => {
+                    if(element.checked){
+                        tempSynthoms.push(element.id);
+                    }
+                });
+                if(tempSynthoms.length > 1){
+                    setStep(40);
+                }else{
+                    (tempSynthoms[0] == 'other') ? setStep(39) : setStep(40);
+                }
+                break;
+
+            case 39:
+                if(btnState == 'Yes'){
+                    setStep(19);
+                }else{
+                    setStep(42);
+                }
+                break;
+
+            case 40:
+                if(btnState == 'Yes'){
+                    setStep(41);
+                }else{
+                    setStep(21);
+                }
                 break;
         
             default:
