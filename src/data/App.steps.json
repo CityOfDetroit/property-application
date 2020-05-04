@@ -73,6 +73,15 @@
                                         "description"   : "Button to check past application status.",
                                         "text"  : "Check Application Status",
                                         "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-0-form-0-section-0-item-2",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "load",
+                                        "description"   : "Load previous application.",
+                                        "text"  : "Finish/Edit Previous Application",
+                                        "label" : false
                                     }
                                 ]
                             }
@@ -859,8 +868,8 @@
             "items" : {
                 "header": [
                     {
-                        "id": "application",
-                        "text": "Property Application",
+                        "id": "check-application",
+                        "text": "Check Application Status",
                         "logo": true,
                         "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
                         "logoAlt": "City of Detroit",
@@ -935,6 +944,102 @@
                                     },
                                     {   
                                         "id"    : "status-0-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-own-property",
+                                        "description"   : "Don't own property in Detroit",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "load" : [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Edit Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-0-card-0",
+                        "type"      : "center pop-up color-2",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : "Application Status Form"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : []
+                        }
+                    },
+                    {   
+                        "id"        : "load-0-card-1",
+                        "type"      : "right pop-up color-3",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Helpful hints and tips"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the email you provided when creating your application." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "An application number was given to you after successfully completing your form." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-0-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "legend",
+                                    "content"   : "Enter required information."
+                                }
+                            ]
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "load-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "own-property",
+                                        "description"   : "Own property in Detroit",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "load-0-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-own-property",

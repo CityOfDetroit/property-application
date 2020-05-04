@@ -153,6 +153,11 @@ function Form(props) {
                                 setBuildType('status');
                                 setStep(0);
                             break;
+
+                            case "Finish/Edit Previous Application":
+                                setBuildType('load');
+                                setStep(0);
+                            break;
                         
                             default:
                                 break;
