@@ -2,11 +2,15 @@
 @import '../colors.scss';
 
 .Card{
-    padding: 0 .5em;
+    padding: .5em;
     margin: .5em;
 
     .Card-Body{
         padding: .25em;
+    }
+
+    h1,h2,h3,h4,h5{
+        margin: 0;
     }
 }
 

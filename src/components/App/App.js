@@ -37,7 +37,7 @@ function App() {
             <div key={header.id} className="header">
                 <p><img src={header.logoURL} alt={header.logoAlt}></img> <span>{header.text}</span></p>
                 <form onSubmit={restartApp}>
-                    {(step > 0) ? <button onClick={(e)=>{setbtnState(e.target.innerText)}}>Back</button> : ""}
+                    {(step > 0) ? <button className="back" onClick={(e)=>{setbtnState(e.target.innerText)}}><span>&laquo;</span> Back</button> : ""}
                     <button className="restart" onClick={(e)=>{setbtnState(e.target.innerText)}}>x</button>
                 </form>
             </div>

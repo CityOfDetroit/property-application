@@ -71,23 +71,39 @@
                 form{
                     margin-left: 1em;
 
-                    button{
-                         color: $white;
+                    button.back{
                         font-weight: bold;
-                        background-color: $color-1;
                         border: none;
                         cursor: pointer;
+                        background: $color-2;
+                        color: $color-1;
+                        padding: 0.3em 0.5em 0.6em 0.5em;
+
+                        span{
+                            font-size: 1.5em;
+                        }
                     }
 
-                    button:hover{
-                        color: $color-2;
+                    button.back:hover{
+                        color: $black;
+                        background-color: $color-3;
                     }
 
                     button.restart{
-                        top: -.05em;
+                        font-weight: bold;
+                        border: none;
+                        cursor: pointer;
+                        padding: 0 .25em .1em .25em;
+                        color: $white;
+                        background-color: $color-4;
+                        font-size: 1.75em;
                         position: relative;
-                        font-size: 3em;
-                       
+                        top: .12em;  
+                        margin-left: .15em;                 
+                    }
+
+                    button.restart:hover{
+                        color: $black;
                     }
                 }
             }
