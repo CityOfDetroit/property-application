@@ -30,12 +30,10 @@
 #App{
     display: flex;
     z-index: 5;
-    padding: .5em;
     height: 100vh;
 
     .Panel{
         width: 100%;
-        height: calc(100% - 1em);
         position: relative;
         margin: auto;
         display: flex;
@@ -105,6 +103,37 @@
                     button.restart:hover{
                         color: $black;
                     }
+                }
+            }
+
+            .intake-container{
+                .intake-hint{
+                    position: absolute;
+                    top: 3.755em;
+                    width: 100%;
+                    z-index: 5;
+                }
+
+                .hint-btn.close-hint{
+                    position: absolute;
+                    top: .35em;
+                    right: .25em;
+                    border: 0;
+                    background-color: transparent;
+                    color: $color-2;
+                    cursor: pointer;
+                    font-size: 1.75em;
+                }
+
+                .hint-btn.show-hint{
+                    position: absolute;
+                    top: 2.5em;
+                    right: .25em;
+                    border: 0;
+                    background-color: transparent;
+                    color: $color-1;
+                    cursor: pointer;
+                    font-size: 1.75em;
                 }
             }
         }

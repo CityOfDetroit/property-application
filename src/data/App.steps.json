@@ -118,6 +118,37 @@
                             }
                         ]
                     }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-0-hint-0",
+                        "type"      : "center pop-up color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are seeking a City-Owned or DLBA property,  please use this map to identify eligible properties." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://google.com",
+                                    "content"   : "View Property Map" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "If a property is DLBA owned and apart of a specific program: Sidelot program, rehabbed and ready, Auction  or Own it Now, please use those programs, and do not use this application for those purchases / inquires. " 
+                                }
+                            ]
+                        }
+                    }
                 ]
             }
         },
@@ -316,7 +347,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "hints": []
             }
         },
         {

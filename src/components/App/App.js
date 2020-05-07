@@ -5,10 +5,11 @@ import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
 
 function App() {
-    const [step, setStep] = useState(0);
-    const [formData, setFormData] = useState();
+    const [step, setStep]           = useState(0);
+    const [formData, setFormData]   = useState();
     const [buildType, setBuildType] = useState('application');
-    const [btnState, setbtnState] = useState();
+    const [btnState, setbtnState]   = useState();
+    const [hint, hintState]         = useState();
 
     const buildContent = () => {
         const markup = 
@@ -47,12 +48,35 @@ function App() {
 
     const buildChat = () => {
         const markup = 
-        <article className="intake">
+        <section className="intake">
             {buildHeader(data[buildType][step].items)}
-            {buildCards(data[buildType][step].items)}
-            {buildForms(data[buildType][step].items)}
-        </article>
+            <section className="intake-container">
+                <article className="intake-body">
+                    {buildCards(data[buildType][step].items)}
+                    {buildForms(data[buildType][step].items)}
+                </article>
+                <article className="intake-hint">
+                    <button className="hint-btn close-hint" onClick={(e)=>{setbtnState(e.target.innerText)}}><i class="fas fa-times-circle"></i></button>
+                    {buildHints(data[buildType][step].items)}
+                </article>
+                <button className="hint-btn show-hint" onClick={(e)=>{setbtnState(e.target.innerText)}}><i class="fas fa-exclamation-circle"></i></button>
+            </section>
+        </section>
         return markup;
+    }
+
+    const buildHints = (items) => {
+        const markup = items.hints.map((card) =>
+        <Card  
+            key={card.id} 
+            type={card.type} 
+            title={card.title.value} 
+            titleType={card.title.type} 
+            body={card.body.markup} 
+            bodyType={card.body.type}>
+        </Card>
+    );
+    return markup;
     }
 
     const buildCards = (items) => {
