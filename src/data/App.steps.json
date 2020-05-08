@@ -119,7 +119,37 @@
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are seeking a City-Owned or DLBA property,  please use this map to identify eligible properties." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://google.com",
+                                    "content"   : "View Property Map" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "If a property is DLBA owned and apart of a specific program: Sidelot program, rehabbed and ready, Auction  or Own it Now, please use those programs, and do not use this application for those purchases / inquires. " 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -332,18 +362,24 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "If you are seeking a City-Owned or DLBA property,  please use this map to identify eligible properties." 
+                                    "content"   : "To apply for a film permit:" 
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
                                     "tag"       : "a",
-                                    "link"      : "https://google.com",
-                                    "content"   : "View Property Map" 
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
+                                    "content"   : "Apply now" 
                                 },
                                 {
                                     "id"        : "hint-0-body-2",
                                     "tag"       : "p",
-                                    "content"   : "If a property is DLBA owned and apart of a specific program: Sidelot program, rehabbed and ready, Auction  or Own it Now, please use those programs, and do not use this application for those purchases / inquires. " 
+                                    "content"   : "To apply for a special events permit: " 
+                                }, 
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/special-events",
+                                    "content"   : "Apply now" 
                                 }
                             ]
                         }
@@ -366,10 +402,10 @@
                 "cards": [
                     {   
                         "id"        : "step-2-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful hints and tips"
+                            "value" : ""
                         },
                         "body"   : {
                             "type"      : "text",
@@ -377,7 +413,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Need definition of affiliated company." 
+                                    "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
                                 }
                             ]
                         }
@@ -391,34 +427,28 @@
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Do you or any affiliated company currently own property in Detroit?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-1-form-0-section-0",
+                                "id"    : "step-2-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-1-form-0-section-0-item-0",
+                                        "id"    : "step-2-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "own-property",
-                                        "description"   : "Own property in Detroit",
-                                        "text"  : "Yes",
+                                        "name"  : "myself",
+                                        "description"   : "User is representing himself/herself",
+                                        "text"  : "Myself",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-1-form-0-section-0-item-1",
+                                        "id"    : "step-2-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-own-property",
-                                        "description"   : "Don't own property in Detroit",
-                                        "text"  : "No",
+                                        "name"  : "someone-else-entity",
+                                        "description"   : "User is representing someone else or an entity",
+                                        "text"  : "Someone else / entity",
                                         "label" : false
                                     }
                                 ]
@@ -426,7 +456,26 @@
                         ]
                     }
                 ],
-                "hints":[]
+                "hints": [
+                    {   
+                        "id"        : "step-2-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the application." 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -444,10 +493,10 @@
                 "cards": [
                     {   
                         "id"        : "step-3-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful hints and tips"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -455,48 +504,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "A Registered Agent is a business or individual designated to receive service of process when a business entity is party to a legal action." 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "A registered agent for a business entity may be an officer or employee of the company, or a third party, such as the organization’s lawyer or service company." 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "card-1-body-0-list-0",
-                                            "tag"       : "p",
-                                            "content"   : "This intake application should take 30-45 minutes" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-0-list-1",
-                                            "tag"       : "p",
-                                            "content"   : "This process includes a review by the Housing and Revitalization Department, the Detroit Land Bank Authority (if applicable), the Detroit Building Authority (if applicable) and final approval by the Detroit City Council." 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-0-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "The whole process from intake form to purchase agreement is estimated to take 8 - 10 weeks long" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-0-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "If you are submitting this information on behalf of an entity/  or individual, please use their information (i.e not your own)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-0-list-4",
-                                            "tag"       : "p",
-                                            "content"   : "You can check your status of your application by " 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-0-list-5",
-                                            "tag"       : "p",
-                                            "content"   : "If you are submitting this information on behalf of an entity/  or individual, please use their information (i.e not your own)" 
-                                        }
-                                    ]
+                                    "content"   : "Input the best contact information to reach the applicant and/or the representative." 
                                 }
                             ]
                         }
@@ -505,35 +513,94 @@
                 "forms": [
                     {
                         "id"            : "step-3-form-0",
-                        "type"          : "multi-input",
-                        "position"      : "left",
+                        "type"          : "input-submit",
+                        "position"      : "center",
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Who are your registered agents?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
                                 "id"    : "step-3-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-3-form-0-section-0-item-1",
+                                        "id"            : "name",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter full name.",
+                                        "name"          : "name",
+                                        "description"   : "Name of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "email",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter email",
+                                        "name"          : "email",
+                                        "description"   : "Email of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Email",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "name",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. (313)333-3333",
+                                        "name"          : "name",
+                                        "description"   : "Phone of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Phone",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "next-step",
                                         "tag"   : "button",
                                         "type"  : "add",
-                                        "name"  : "add-agent",
-                                        "description"   : "Add Registered agent",
-                                        "text"  : "Add",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-2-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please include the best way to in in touch with the applicant or his/her representative." 
+                                }
+                            ]
+                        }
                     }
                 ]
             }
@@ -622,7 +689,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "hints" :[]
             }
         },
         {

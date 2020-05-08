@@ -138,7 +138,7 @@ function Form(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let tempFormData;
+        let tempFormData = {};
         let tempSynthoms = [];
         switch (step) {
             case 0:
@@ -165,22 +165,9 @@ function Form(props) {
                         break;
 
                     case "status":
-                        switch (btnState) {
-                            case "Food":
-                                setStep(1);
-                                break;
-        
-                            case "Water":
-                                setStep(5);
-                                break;
-        
-                            case "Jobs":
-                                setStep(6);
-                                break;
-                        
-                            default:
-                                break;
-                        }
+                        break;
+
+                    case "load":
                         break;
                 
                     default:
@@ -191,30 +178,13 @@ function Form(props) {
             case 1:
                 switch (buildType) {
                     case "application":
-                        if(btnState == 'Detroit'){
-                            setStep(3);
-                        }else{
-                            setStep(2);
-                        }
+                        setStep(2);
                         break;
 
                     case "status":
-                        switch (btnState) {
-                            case "Meals for Children":
-                                setStep(2);
-                                break;
-        
-                            case "Meals for Seniors":
-                                setStep(3);
-                                break;
-        
-                            case "Groceries for Families":
-                                setStep(4);
-                                break;
-                        
-                            default:
-                                break;
-                        }
+                        break;
+
+                    case "load":
                         break;
 
                     default:
@@ -223,12 +193,30 @@ function Form(props) {
                 break;
 
             case 2:
-                tempFormData = formData;
-                tempFormData.q2 = {
-                    values: [btnState]
+                // tempFormData = formData;
+                // tempFormData.q2 = {
+                //     values: [btnState]
+                // }
+                // setFormData(tempFormData);
+                // (btnState == 'Yes') ? setStep(3) : setStep(4);
+                switch (buildType) {
+                    case "application":
+                        tempFormData.represent = {
+                            values: [btnState]
+                        }
+                        setFormData(tempFormData);
+                        setStep(3);
+                        break;
+
+                    case "status":
+                        break;
+
+                    case "load":
+                        break;
+
+                    default:
+                        break;
                 }
-                setFormData(tempFormData);
-                (btnState == 'Yes') ? setStep(3) : setStep(4);
                 break;
 
             case 3:
@@ -242,10 +230,24 @@ function Form(props) {
                 // }
                 // setFormData(tempFormData);
                 // setStep(4);
-                if(btnState == 'Yes'){
-                    setStep(5);
-                }else{
-                    setStep(4);
+                switch (buildType) {
+                    case "application":
+                        tempFormData = formData;
+                        tempFormData.represent = {
+                            values: [btnState]
+                        }
+                        setFormData(tempFormData);
+                        setStep(4);
+                        break;
+
+                    case "status":
+                        break;
+
+                    case "load":
+                        break;
+
+                    default:
+                        break;
                 }
                 break;
 
@@ -579,7 +581,7 @@ function Form(props) {
     }
 
     return (
-        buildContent(props.sections)
+        buildContent()
     )
 }
 

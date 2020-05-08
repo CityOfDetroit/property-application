@@ -53,8 +53,8 @@ function App() {
             <section className="intake-container">
                 <article className="intake-body">
                     {buildCards(data[buildType][step].items)}
-                    {buildForms(data[buildType][step].items)}
                 </article>
+                {buildForms(data[buildType][step].items)}
                 {buildHints(data[buildType][step].items)}
             </section>
         </section>
