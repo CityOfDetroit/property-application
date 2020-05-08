@@ -9,13 +9,13 @@ function App() {
     const [formData, setFormData]   = useState();
     const [buildType, setBuildType] = useState('application');
     const [btnState, setbtnState]   = useState();
-    const [hint, hintState]         = useState();
+    const [hint, setHint]           = useState();
 
     const buildContent = () => {
         const markup = 
         <section id="App">
             <article className="Panel">
-            {buildChat()}
+            {buildPanel()}
             </article>
         </section>
         return markup;
@@ -46,7 +46,7 @@ function App() {
         return markup;
     }
 
-    const buildChat = () => {
+    const buildPanel = () => {
         const markup = 
         <section className="intake">
             {buildHeader(data[buildType][step].items)}
@@ -55,17 +55,27 @@ function App() {
                     {buildCards(data[buildType][step].items)}
                     {buildForms(data[buildType][step].items)}
                 </article>
-                <article className="intake-hint">
-                    <button className="hint-btn close-hint" onClick={(e)=>{setbtnState(e.target.innerText)}}><i class="fas fa-times-circle"></i></button>
-                    {buildHints(data[buildType][step].items)}
-                </article>
-                <button className="hint-btn show-hint" onClick={(e)=>{setbtnState(e.target.innerText)}}><i class="fas fa-exclamation-circle"></i></button>
+                {buildHints(data[buildType][step].items)}
             </section>
         </section>
         return markup;
     }
 
     const buildHints = (items) => {
+        let hintClass;
+        if(hint) {hintClass = "intake-hint active"}else{hintClass = "intake-hint"}
+        const markup = 
+        <article className={hintClass}>
+            {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn show-hint" onClick={(e)=>{setHint(true)}}><i className="fas fa-exclamation-circle"></i></button> : '' }
+            <article className="intake-hint-group">
+                {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn close-hint" onClick={(e)=>{setHint(undefined)}}><i className="fas fa-times-circle"></i></button> : '' }
+                {buildHint(items)}
+            </article>
+        </article>;
+        return markup;
+    }
+
+    const buildHint = (items) => {
         const markup = items.hints.map((card) =>
         <Card  
             key={card.id} 
@@ -75,8 +85,8 @@ function App() {
             body={card.body.markup} 
             bodyType={card.body.type}>
         </Card>
-    );
-    return markup;
+        );
+        return markup;
     }
 
     const buildCards = (items) => {

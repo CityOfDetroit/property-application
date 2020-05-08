@@ -17,6 +17,10 @@
 .Card.color-1{
     background-color: $color-1;
     color: $white;
+
+    a, a:active{
+        color: $white;
+    }
 }
 .Card.color-2{
     background-color: $color-2;

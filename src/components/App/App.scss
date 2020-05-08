@@ -107,11 +107,27 @@
             }
 
             .intake-container{
+
+
                 .intake-hint{
                     position: absolute;
-                    top: 3.755em;
+                    top: 3.75em;
                     width: 100%;
                     z-index: 5;
+
+                    .intake-hint-group{
+                        display: none;
+                        opacity: 0;
+                        transition: all 1s ease-in-out;
+                    }
+                }
+                .intake-hint.active{
+                    
+                    .intake-hint-group{
+                        display: block;
+                        opacity: 1;
+                        transition: all 1s ease-in-out;
+                    }
                 }
 
                 .hint-btn.close-hint{
@@ -127,8 +143,8 @@
 
                 .hint-btn.show-hint{
                     position: absolute;
-                    top: 2.5em;
-                    right: .25em;
+                    top: .5em;
+                    right: .15em;
                     border: 0;
                     background-color: transparent;
                     color: $color-1;
