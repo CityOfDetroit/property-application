@@ -6,20 +6,17 @@ form.single-button{
         border: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
 
         div{
-            margin-right: .5em;
             margin-bottom: .5em;
 
             button{
                 background-color: $color-1;
                 color: $white;
-                padding: .5em;
+                padding: 1em;
                 border: none;
                 cursor: pointer;
+                width: 100%;
             }
 
             button:hover{
@@ -37,23 +34,16 @@ form.input-submit{
         border: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        align-items: stretch;
-
-        div:first-child{
-            flex: 1;
-
-            input{
-                width: 100%;
-                padding: .31em;
-            }
-        }
 
         div{
+            position: relative;
+            margin-bottom: 1em;
+
             button{
                 background-color: $color-1;
                 color: $white;
-                padding: .5em;
+                padding: 1em;
+                width: 100%;
                 border: none;
                 cursor: pointer;
                 margin-right: 1em;
@@ -62,6 +52,57 @@ form.input-submit{
             button:hover{
                 background-color: $color-3;
                 color: $black;
+            }
+
+            input{
+                padding: 1.5em .5em .5em.5em;
+                border: none;
+                width: 100%;
+            }
+
+            label{
+                position: absolute;
+                top: .25em;
+                left: .5em;
+                font-size: .85em;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+form.radio-buttons{
+    padding: .5em;
+
+    .grouping{
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        div{
+            position: relative;
+            margin-bottom: 1em;
+
+            button{
+                background-color: $color-1;
+                color: $white;
+                padding: 1em;
+                width: 100%;
+                border: none;
+                cursor: pointer;
+                margin-right: 1em;
+            }
+
+            button:hover{
+                background-color: $color-3;
+                color: $black;
+            }
+
+            input{
+                padding: 1.5em .5em .5em.5em;
+                border: none;
+                width: 100%;
             }
         }
     }

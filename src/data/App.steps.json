@@ -545,7 +545,7 @@
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
-                                        "placeholder"   : "Enter email",
+                                        "placeholder"   : "Ex. name@gmai.com",
                                         "name"          : "email",
                                         "description"   : "Email of applicant or representative",
                                         "text"          : "",
@@ -555,13 +555,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "name",
+                                        "id"            : "phone",
                                         "tag"           : "input",
                                         "type"          : "number",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. (313)333-3333",
-                                        "name"          : "name",
+                                        "name"          : "phone",
                                         "description"   : "Phone of applicant or representative",
                                         "text"          : "",
                                         "label"         : true,
@@ -570,9 +570,69 @@
                                         "required"      : true
                                     },
                                     {   
+                                        "id"            : "address",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. 1550 Woodward",
+                                        "name"          : "address",
+                                        "description"   : "Address of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Address",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "city",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. Detroit",
+                                        "name"          : "city",
+                                        "description"   : "City of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "City",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "state",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. MI",
+                                        "name"          : "state",
+                                        "description"   : "State of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "State",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "country",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. United States",
+                                        "name"          : "country",
+                                        "description"   : "Country of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Country",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
                                         "id"    : "next-step",
                                         "tag"   : "button",
-                                        "type"  : "add",
+                                        "type"  : "submit",
                                         "name"  : "next",
                                         "description"   : "Move to next step",
                                         "text"  : "Next",
@@ -597,7 +657,7 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please include the best way to in in touch with the applicant or his/her representative." 
+                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few slides." 
                                 }
                             ]
                         }
@@ -620,10 +680,10 @@
                 "cards": [
                     {   
                         "id"        : "step-4-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful hints and tips"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -631,17 +691,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "100% of our successful applicants have their property taxes in the City of Detroit up-to-date. " 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "Here is a link to pay your taxes: linkhere" 
+                                    "content"   : "Is the applicant an individual or business? (check one)" 
                                 }
                             ]
                         }
@@ -650,40 +700,62 @@
                 "forms": [
                     {
                         "id"            : "step-4-form-0",
-                        "type"          : "single-button",
+                        "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Are you delinquent on any property taxes or blight tickets in the City of Detroit?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
                                 "id"    : "step-4-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-4-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "delinquent",
-                                        "description"   : "Delinquent on any property taxes or blight tickets",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "individual",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "value"         : "individual",
+                                        "placeholder"   : null,
+                                        "name"          : "individual-business",
+                                        "description"   : "Broker",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"             : "Individual",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherID"               : null
                                     },
                                     {   
-                                        "id"    : "step-4-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "not-delinquent",
-                                        "description"   : "Not delinquent on any property taxes or blight tickets",
-                                        "text"  : "No",
-                                        "label" : false
+                                        "id"                    : "business",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "business",
+                                        "placeholder"           : null,
+                                        "name"                  : "individual-business",
+                                        "description"           : "business",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "business",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter good/service of business",
+                                        "otherID"               : "business-type"
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Submit information",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
                                     }
                                 ]
                             }

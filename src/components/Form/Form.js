@@ -94,7 +94,7 @@ function Form(props) {
             default:
                 switch (item.type) {
                     case 'radio':
-                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required}></input>;
+                        markup = addSpecialType(item);
                         break;
 
                     case 'checkbox':
@@ -120,6 +120,15 @@ function Form(props) {
         return markup;
     }
 
+    const addSpecialType = (item) => {
+        console.log(item);
+        if(item.hasSpecialAttribute){
+            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} data-specialType="other"></input>;
+        }else{
+            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} ></input>;
+        }
+    }
+
     const handleGroupingRequired = (e) => {
         let isChecked = false;
         if(e.target.getAttribute('data-grouping') == 'true'){
@@ -140,6 +149,7 @@ function Form(props) {
         e.preventDefault();
         let tempFormData = {};
         let tempSynthoms = [];
+        let inputData    = [];
         switch (step) {
             case 0:
                 switch (buildType) {
@@ -220,16 +230,18 @@ function Form(props) {
                 break;
 
             case 3:
-                // let tempAgents = [];
-                // for (let index = 0; index < agents; index++) {
-                //     tempAgents.push(e.target.elements[`agent-${index}`].value);
-                // }
-                // tempFormData = formData;
-                // tempFormData.q3 = {
-                //     values: [tempAgents]
-                // }
-                // setFormData(tempFormData);
-                // setStep(4);
+                console.log(e.target.elements);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.contact = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                setStep(4);
                 switch (buildType) {
                     case "application":
                         tempFormData = formData;
@@ -565,10 +577,12 @@ function Form(props) {
     }
 
     const handleChange = (e) => {
-        switch (e.target.id) {
+        console.log(e.target);
+        switch (e.target.getAttribute('data-specialType')) {
             case 'other':
                 setOtherInput(`${e.target.id}-input`);
-                e.target.after(buildOtherInputOption(e.target));
+                console.log(e.target);
+                e.target.parentElement.after(buildOtherInputOption(e.target));
                 break;
         
             default:
