@@ -94,15 +94,26 @@ form.radio-buttons{
                 margin-right: 1em;
             }
 
+            input[type=text]{
+                padding: 1.5em .5em .5em.5em;
+                border: none;
+                width: 100%;
+            }
+
             button:hover{
                 background-color: $color-3;
                 color: $black;
             }
+        }
 
-            input{
-                padding: 1.5em .5em .5em.5em;
-                border: none;
-                width: 100%;
+        div.other-input{
+            label{
+                position: absolute;
+                top: .25em;
+                left: .5em;
+                font-size: .85em;
+                font-weight: bold;
+                text-transform: uppercase;
             }
         }
     }

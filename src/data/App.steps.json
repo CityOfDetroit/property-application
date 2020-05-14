@@ -712,21 +712,23 @@
                                 "id"    : "step-4-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "individual",
-                                        "tag"           : "input",
-                                        "type"          : "radio",
-                                        "value"         : "individual",
-                                        "placeholder"   : null,
-                                        "name"          : "individual-business",
-                                        "description"   : "Broker",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelPosition" : "after",
+                                        "id"                    : "individual",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "individual",
+                                        "placeholder"           : null,
+                                        "name"                  : "individual-business",
+                                        "description"           : "Broker",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
                                         "labelText"             : "Individual",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
-                                        "otherID"               : null
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
                                     },
                                     {   
                                         "id"                    : "business",
@@ -739,23 +741,25 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "business",
+                                        "labelText"             : "Business",
                                         "hasSpecialAttribute"   : true,
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter good/service of business",
-                                        "otherID"               : "business-type"
+                                        "otherLabel"            : "Business Type",
+                                        "otherID"               : "business-type",
+                                        "required"              : true
                                     },
                                     {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Submit information",
-                                        "text"          : "Next",
-                                        "label"         : false,
-                                        "labelText"     : null
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
                                     }
                                 ]
                             }
@@ -780,10 +784,10 @@
                 "cards": [
                     {   
                         "id"        : "step-5-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful hints and tips"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -791,17 +795,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "100% of our successful applicants have their property taxes in the City of Detroit up-to-date. " 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "Here is a link to pay your taxes: linkhere" 
+                                    "content"   : "Information" 
                                 }
                             ]
                         }
@@ -810,35 +804,184 @@
                 "forms": [
                     {
                         "id"            : "step-5-form-0",
-                        "type"          : "single-button",
+                        "type"          : "input-submit",
                         "position"      : "center",
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Please check the status of your blight tickets here, pay your property taxes here and return to the application once you have completed payment."
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
                                 "id"    : "step-5-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-5-form-0-section-0-item-0",
+                                        "id"            : "name",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter full name.",
+                                        "name"          : "name",
+                                        "description"   : "Name of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "business-name",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter business name.",
+                                        "name"          : "business-name",
+                                        "description"   : "Name of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Business Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "business-type",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter business type.",
+                                        "name"          : "business-type",
+                                        "description"   : "Type of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Business Type",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "email",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. name@gmai.com",
+                                        "name"          : "email",
+                                        "description"   : "Email of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Email",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "phone",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. (313)333-3333",
+                                        "name"          : "phone",
+                                        "description"   : "Phone of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Phone",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "address",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. 1550 Woodward",
+                                        "name"          : "address",
+                                        "description"   : "Address of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Address",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "city",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. Detroit",
+                                        "name"          : "city",
+                                        "description"   : "City of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "City",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "state",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. MI",
+                                        "name"          : "state",
+                                        "description"   : "State of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "State",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "country",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. United States",
+                                        "name"          : "country",
+                                        "description"   : "Country of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Country",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "next-step",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "close",
-                                        "description"   : "Close Application",
-                                        "text"  : "End Application",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-5-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please include your business name and type if it is applicable." 
+                                }
+                            ]
+                        }
                     }
                 ]
             }
@@ -855,50 +998,160 @@
                         "form": true
                     }
                 ],
-                "cards": [],
-                "forms": [
-                    {
-                        "id"            : "step-6-form-0",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "requirements"  : [],
-                        "text"          : {
+                "cards": [
+                    {   
+                        "id"        : "step-6-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
                             "type"      : "text",
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Have you found a property?"
+                                    "tag"       : "p",
+                                    "content"   : "Information" 
                                 }
                             ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-6-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
                                 "id"    : "step-6-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-6-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "found-property",
-                                        "description"   : "Found a property",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "name",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter full name.",
+                                        "name"          : "name",
+                                        "description"   : "Name of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-6-form-0-section-0-item-1",
+                                        "id"            : "email",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. name@gmai.com",
+                                        "name"          : "email",
+                                        "description"   : "Email of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Email",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "phone",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. (313)333-3333",
+                                        "name"          : "phone",
+                                        "description"   : "Phone of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Phone",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "address",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. 1550 Woodward",
+                                        "name"          : "address",
+                                        "description"   : "Address of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Address",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "city",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. Detroit",
+                                        "name"          : "city",
+                                        "description"   : "City of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "City",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "state",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. MI",
+                                        "name"          : "state",
+                                        "description"   : "State of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "State",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "country",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. United States",
+                                        "name"          : "country",
+                                        "description"   : "Country of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Country",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "next-step",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-found-property",
-                                        "description"   : "Haven't found a property",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "hints": []
             }
         },
         {
@@ -927,19 +1180,14 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Thanks for your interest! Here are some resources that can assist you right now:" 
+                                    "link"      : null,
+                                    "content"   : "Is the applicant or business in Detroit?*" 
                                 },
                                 {
                                     "id"        : "card-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://google.com",
-                                    "content"   : "View Property Map" 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "a",
-                                    "link"      : "https://google.com",
-                                    "content"   : "View other web" 
+                                    "tag"       : "small",
+                                    "link"      : null,
+                                    "content"   : "Resident includes renters in the City of Detroit." 
                                 }
                             ]
                         }
@@ -963,16 +1211,26 @@
                                         "id"    : "step-7-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "close",
-                                        "description"   : "Close Application",
-                                        "text"  : "End Application",
+                                        "name"  : "in-detroit",
+                                        "description"   : "Applicant or business is in Detroit",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-7-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-in-detroit",
+                                        "description"   : "Applicant or business is not Detroit",
+                                        "text"  : "No",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "hints": []
             }
         },
         {

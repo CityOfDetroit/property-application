@@ -5,18 +5,20 @@ import Body from '../Body/Body';
 function Form(props) {
 
     const {
-        step: [step, setStep],
-        formData: [formData, setFormData],
-        buildType: [buildType, setBuildType]
+        step        : [step, setStep],
+        stepHistory : [stepHistory, setStepHistory],
+        formData    : [formData, setFormData],
+        buildType   : [buildType, setBuildType]
     } = {
-        step: useState(0),
-        formData: useState(0),
-        buildType: useState(0),
+        step        : useState(0),
+        stepHistory : useState(0),
+        formData    : useState(0),
+        buildType   : useState(0),
         ...(props.state || {})
     };
-    const [btnState, setbtnState] = useState();
-    const [agents, setAgents] = useState(0);
-    const [otherInput, setOtherInput] = useState();
+    const [btnState, setbtnState]       = useState();
+    const [agents, setAgents]           = useState(0);
+    const [otherInput, setOtherInput]   = useState();
 
     const buildContent = () => {
         const formClass = `${props.type} ${props.position}`; 
@@ -54,12 +56,20 @@ function Form(props) {
     }
 
     const buildOtherInputOption = (e) => {
+        let container = document.createElement('div');
         let input = document.createElement('input');
+        let label = document.createElement('label');
+        container.id = `${e.getAttribute('data-special-id')}-container`;
+        container.className = "other-input";
+        label.innerText = e.getAttribute('data-special-label');
+        container.appendChild(label);
+        container.appendChild(input);
         input.type = 'text';
-        input.placeholder = `Enter ${e.id}`;
-        input.setAttribute('id', `${e.id}-input`);
+        input.id = e.getAttribute('data-special-id');
+        input.required = true;
+        input.setAttribute('placeholder', e.getAttribute('data-special-text'));
         input.setAttribute('name', e.name);
-        return input;
+        return container;
     }
 
     const buildItems = (items) => {
@@ -94,7 +104,7 @@ function Form(props) {
             default:
                 switch (item.type) {
                     case 'radio':
-                        markup = addSpecialType(item);
+                        markup = addspecialType(item);
                         break;
 
                     case 'checkbox':
@@ -120,10 +130,9 @@ function Form(props) {
         return markup;
     }
 
-    const addSpecialType = (item) => {
-        console.log(item);
+    const addspecialType = (item) => {
         if(item.hasSpecialAttribute){
-            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} data-specialType="other"></input>;
+            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
         }else{
             return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} ></input>;
         }
@@ -150,12 +159,16 @@ function Form(props) {
         let tempFormData = {};
         let tempSynthoms = [];
         let inputData    = [];
+        let tempHistory  = [];
         switch (step) {
             case 0:
                 switch (buildType) {
                     case "application":
                         switch (btnState) {
                             case "Start New Application":
+                                tempHistory = stepHistory;
+                                tempHistory.push(0);
+                                setStepHistory(tempHistory);
                                 setStep(1);
                                 break;
         
@@ -188,6 +201,9 @@ function Form(props) {
             case 1:
                 switch (buildType) {
                     case "application":
+                        tempHistory = stepHistory;
+                        tempHistory.push(1);
+                        setStepHistory(tempHistory);
                         setStep(2);
                         break;
 
@@ -215,6 +231,9 @@ function Form(props) {
                             values: [btnState]
                         }
                         setFormData(tempFormData);
+                        tempHistory = stepHistory;
+                        tempHistory.push(2);
+                        setStepHistory(tempHistory);
                         setStep(3);
                         break;
 
@@ -230,25 +249,21 @@ function Form(props) {
                 break;
 
             case 3:
-                console.log(e.target.elements);
-                for (let index = 0; index < e.target.elements.length; index++) {
-                    if(e.target.elements[index].tagName == 'INPUT'){
-                        inputData.push(e.target.elements[index].value);
-                    }
-                }
-                tempFormData = formData;
-                tempFormData.contact = {
-                    values: [inputData]
-                }
-                setFormData(tempFormData);
-                setStep(4);
                 switch (buildType) {
                     case "application":
+                        for (let index = 0; index < e.target.elements.length; index++) {
+                            if(e.target.elements[index].tagName == 'INPUT'){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }
                         tempFormData = formData;
-                        tempFormData.represent = {
-                            values: [btnState]
+                        tempFormData.contact = {
+                            values: [inputData]
                         }
                         setFormData(tempFormData);
+                        tempHistory = stepHistory;
+                        tempHistory.push(3);
+                        setStepHistory(tempHistory);
                         setStep(4);
                         break;
 
@@ -264,15 +279,45 @@ function Form(props) {
                 break;
 
             case 4:
-                if(btnState == 'Yes'){
-                    setStep(5);
-                }else{
-                    tempFormData = formData;
-                    tempFormData.q4 = {
-                        values: [btnState]
-                    }
-                    setFormData(tempFormData);
-                    setStep(6);
+                switch (buildType) {
+                    case "application":
+                        console.log(e.target.elements);
+                        let specialType = false;
+                        for (let index = 0; index < e.target.elements.length; index++) {
+                            console.log(e.target.elements[index]);
+                            if(e.target.elements[index].tagName == 'INPUT'){
+                                if(e.target.elements[index].type == 'radio'){
+                                    if(e.target.elements[index].checked == true){
+                                        inputData.push(e.target.elements[index].value);
+                                    }
+                                }else{
+                                    inputData.push(e.target.elements[index].value);
+                                }
+                            }
+                        }
+                        tempFormData = formData;
+                        tempFormData.applicantType = {
+                            values: [inputData]
+                        }
+                        setFormData(tempFormData);
+                        tempHistory = stepHistory;
+                        tempHistory.push(4);
+                        setStepHistory(tempHistory);
+                        if(formData.applicantType.values[0].length > 1){
+                            setStep(5);
+                        }else{
+                            setStep(6);
+                        }
+                        break;
+
+                    case "status":
+                        break;
+
+                    case "load":
+                        break;
+
+                    default:
+                        break;
                 }
                 break;
 
@@ -578,9 +623,9 @@ function Form(props) {
 
     const handleChange = (e) => {
         console.log(e.target);
-        switch (e.target.getAttribute('data-specialType')) {
+        switch (e.target.getAttribute('data-special-type')) {
             case 'other':
-                setOtherInput(`${e.target.id}-input`);
+                setOtherInput(`${e.target.getAttribute('data-special-id')}-container`);
                 console.log(e.target);
                 e.target.parentElement.after(buildOtherInputOption(e.target));
                 break;

@@ -5,11 +5,12 @@ import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
 
 function App() {
-    const [step, setStep]           = useState(0);
-    const [formData, setFormData]   = useState();
-    const [buildType, setBuildType] = useState('application');
-    const [btnState, setbtnState]   = useState();
-    const [hint, setHint]           = useState();
+    const [stepHistory, setStepHistory] = useState([]);
+    const [step, setStep]               = useState(0);
+    const [formData, setFormData]       = useState();
+    const [buildType, setBuildType]     = useState('application');
+    const [btnState, setbtnState]       = useState();
+    const [hint, setHint]               = useState();
 
     const buildContent = () => {
         const markup = 
@@ -28,7 +29,10 @@ function App() {
             setBuildType('application');
             setStep(0);
         }else{
-            let tempStep = step - 1;
+            let tempStep = stepHistory[stepHistory.length - 1];
+            let tempHistory = stepHistory;
+            tempHistory.pop();
+            setStepHistory(tempHistory);
             setStep(tempStep);
         }
     }
@@ -112,7 +116,7 @@ function App() {
                 requirements={form.requirements}
                 text={form.text}
                 sections={form.sections}
-                state={{ formData: [formData, setFormData], step: [step, setStep], buildType: [buildType, setBuildType] }}>
+                state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType] }}>
             </Form>
         );
         return markup;
