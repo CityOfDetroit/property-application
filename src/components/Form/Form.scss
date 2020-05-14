@@ -54,10 +54,10 @@ form.input-submit{
                 color: $black;
             }
 
-            input{
+            input, textarea{
+                width: calc(100% - 1em);
                 padding: 1.5em .5em .5em.5em;
                 border: none;
-                width: 100%;
             }
 
             label{
@@ -67,6 +67,7 @@ form.input-submit{
                 font-size: .85em;
                 font-weight: bold;
                 text-transform: uppercase;
+                background-color: $white;
             }
         }
     }

@@ -1169,7 +1169,7 @@
                 "cards": [
                     {   
                         "id"        : "step-7-card-0",
-                        "type"      : "center pop-up color-3",
+                        "type"      : "center pop-up color-2",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -1248,7 +1248,7 @@
                 "cards": [
                     {   
                         "id"        : "step-8-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
                             "value" : "Helpful Hints and Tips"
@@ -1259,7 +1259,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few slides." 
+                                    "content"   : "Is the applicant apart of the Detroit Land Bank Authority  Community Partnership Program or is working with a partner?" 
                                 }
                             ]
                         }
@@ -1273,13 +1273,7 @@
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "step-8-card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Are you applying for yourself or on behalf of someone else?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
@@ -1289,23 +1283,49 @@
                                         "id"    : "step-8-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "myself",
-                                        "description"   : "Applying for myself",
-                                        "text"  : "Myself",
+                                        "name"  : "part-of-program",
+                                        "description"   : "Part of Detroit Land Bank Authority Community Partnership Program",
+                                        "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
                                         "id"    : "step-8-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "someone-else",
-                                        "description"   : "Applying for someone else",
-                                        "text"  : "Someone else",
+                                        "name"  : "not-part-of-program",
+                                        "description"   : "Not part of Detroit Land Bank Authority Community Partnership Program",
+                                        "text"  : "No",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-8-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Visit the Detroit Land Bank Authority Community Partnership Program page." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://buildingdetroit.org/community-partnership",
+                                    "content"   : "Detroit Land Bank Authority Community Partnership Program" 
+                                }
+                            ]
+                        }
                     }
                 ]
             }
@@ -1325,84 +1345,48 @@
                 "cards": [
                     {   
                         "id"        : "step-9-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
-                            "markup"    : []
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "What is the name of your partner(s)?" 
+                                }
+                            ]
                         }
                     }
                 ],
                 "forms": [
                     {
                         "id"            : "step-9-form-0",
-                        "type"          : "radio-button-plus-other",
+                        "type"          : "input-submit",
                         "position"      : "center",
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "step-9-card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Great! Can you tell us a bit more about your role in this project?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
                                 "id"    : "step-9-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "broker",
-                                        "tag"           : "input",
-                                        "type"          : "radio",
-                                        "value"         : "broker",
-                                        "placeholder"   : null,
-                                        "name"          : "role",
-                                        "description"   : "Broker",
+                                        "id"            : "partners",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter all partners.",
+                                        "name"          : "partners",
+                                        "description"   : "List of all partners",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Broker"
-                                    },
-                                    {   
-                                        "id"            : "consultant",
-                                        "tag"           : "input",
-                                        "type"          : "radio",
-                                        "value"         : "consultant",
-                                        "placeholder"   : null,
-                                        "name"          : "role",
-                                        "description"   : "Development Consultant",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Development Consultant"
-                                    },
-                                    {   
-                                        "id"            : "officer",
-                                        "tag"           : "input",
-                                        "type"          : "radio",
-                                        "value"         : "officer",
-                                        "placeholder"   : null,
-                                        "name"          : "role",
-                                        "description"   : "Principal / Officer",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Principal / Officer"
-                                    },
-                                    {   
-                                        "id"            : "other",
-                                        "tag"           : "input",
-                                        "type"          : "radio",
-                                        "value"         : "other",
-                                        "placeholder"   : null,
-                                        "name"          : "role",
-                                        "description"   : "Other",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Other"
+                                        "labelText"     : "Parter List"
                                     },
                                     {   
                                         "id"            : "submit",
@@ -1411,14 +1395,40 @@
                                         "value"         : "submit",
                                         "placeholder"   : null,
                                         "name"          : "submit",
-                                        "description"   : "Submit information",
-                                        "text"          : "Submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
                                         "label"         : false,
                                         "labelText"     : null
                                     }
                                 ]
                             }
                         ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-9-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Visit the Detroit Land Bank Authority Community Partnership Program page." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://buildingdetroit.org/community-partnership",
+                                    "content"   : "Detroit Land Bank Authority Community Partnership Program" 
+                                }
+                            ]
+                        }
                     }
                 ]
             }

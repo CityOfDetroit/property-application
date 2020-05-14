@@ -219,12 +219,6 @@ function Form(props) {
                 break;
 
             case 2:
-                // tempFormData = formData;
-                // tempFormData.q2 = {
-                //     values: [btnState]
-                // }
-                // setFormData(tempFormData);
-                // (btnState == 'Yes') ? setStep(3) : setStep(4);
                 switch (buildType) {
                     case "application":
                         tempFormData.represent = {
@@ -322,31 +316,61 @@ function Form(props) {
                 break;
 
             case 5:
-                setFormData({
-                    age: {
-                        values: [parseInt(e.target.elements['age'].value)]
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
                     }
-                });
-                if(e.target.elements['age'].value >= 2){
-                    setStep(9);
-                }else{
-                    setStep(6);
                 }
+                tempFormData = formData;
+                tempFormData.contactBusiness = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(5);
+                setStepHistory(tempHistory);
+                setStep(7);
                 break;
 
             case 6:
-                if(btnState == 'Not experiencing any life-threatening symptoms'){
-                    setStep(8);
-                }else{
-                    
-                    setStep(7);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData.contactIndividual = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(6);
+                setStepHistory(tempHistory);
+                setStep(7);
                 break;
 
             case 7:
+                tempFormData = formData;
+                tempFormData.inDetroit = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(7);
+                setStepHistory(tempHistory);
+                setStep(8);
                 break;
 
             case 8:
+                tempFormData = formData;
+                tempFormData.DLBACommunityPartner = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(8);
+                setStepHistory(tempHistory);
+                setStep(9);
                 break;
 
             case 9:
