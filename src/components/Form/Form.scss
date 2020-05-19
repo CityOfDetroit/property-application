@@ -54,10 +54,14 @@ form.input-submit{
                 color: $black;
             }
 
-            input, textarea{
+            input, textarea, select{
                 width: calc(100% - 1em);
                 padding: 1.5em .5em .5em.5em;
                 border: none;
+            }
+
+            select{
+                width: 100%;
             }
 
             label{

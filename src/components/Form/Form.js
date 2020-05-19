@@ -85,20 +85,25 @@ function Form(props) {
 
     const buildTag = (item) =>{
         let markup;
+        console.log(item.tag);
         switch (item.tag) {
             case 'button':
                 switch (item.type) {
                     case 'submit':
-                        markup = <button onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                         break;
     
                     case 'add':
-                        markup = <button onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
+                        markup = <button role="button" aria-label={item.name} onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
                         break;
                 
                     default:
                         break;
                 }
+                break;
+
+            case 'select':
+                markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
                 break;
         
             default:
@@ -108,19 +113,19 @@ function Form(props) {
                         break;
 
                     case 'checkbox':
-                        markup = <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping}></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping}></input>;
                         break;
                     
                     case 'text':
-                        markup = <input type={item.type} id={item.id} name={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required}></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         break;
 
                     case 'number':
-                        markup = <input type={item.type} id={item.id} name={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required}></input>;
+                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         break;
                 
                     default:
-                        markup = <item.tag type={item.type}>
+                        markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
                         {item.text}
                         </item.tag>;
                         break;
@@ -130,11 +135,28 @@ function Form(props) {
         return markup;
     }
 
+    const buildSelectOptions = (id,options) => {
+        const markup = options.map((option, index) => 
+            <option key={buildNewKey(id,index)} value={option.value}>{option.text}</option>
+        );
+        return markup;
+        // Array.from(options).forEach((option, index) => {
+        //     console.log(option);
+        //     console.log(index);
+        //     let tempKey = `${id}-option-${index}`;
+        //     return <option key={tempKey} value={option.value}>{option.text}</option>
+        // });
+    }
+
+    const buildNewKey = (id, index) => {
+        return `${id}-${index}`;
+    }
+
     const addspecialType = (item) => {
         if(item.hasSpecialAttribute){
-            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
+            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
         }else{
-            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} ></input>;
+            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required}></input>;
         }
     }
 

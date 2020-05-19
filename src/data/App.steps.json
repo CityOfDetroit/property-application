@@ -601,7 +601,7 @@
                                     },
                                     {   
                                         "id"            : "state",
-                                        "tag"           : "input",
+                                        "tag"           : "select",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
@@ -612,11 +612,21 @@
                                         "label"         : true,
                                         "labelText"     : "State",
                                         "labelPosition" : "before",
-                                        "required"      : true
+                                        "required"      : false,
+                                        "selectOptions" : [
+                                            { 
+                                                "value" : "",
+                                                "text"  : "-- Please choose a state --"
+                                            },
+                                            {
+                                                "value" : "MI",
+                                                "text"  : "Michigan"
+                                            }
+                                        ]
                                     },
                                     {   
                                         "id"            : "country",
-                                        "tag"           : "input",
+                                        "tag"           : "select",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
@@ -627,7 +637,21 @@
                                         "label"         : true,
                                         "labelText"     : "Country",
                                         "labelPosition" : "before",
-                                        "required"      : true
+                                        "required"      : true,
+                                        "selectOptions" : [
+                                            {
+                                                "value" : "",
+                                                "text"  : "-- Please choose a Country --"
+                                            },
+                                            {
+                                                "value" : "US",
+                                                "text"  : "United States"
+                                            },
+                                            {
+                                                "value" : "other",
+                                                "text"  : "Other"
+                                            }
+                                        ]
                                     },
                                     {   
                                         "id"    : "next-step",
