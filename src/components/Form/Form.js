@@ -268,7 +268,7 @@ function Form(props) {
                 switch (buildType) {
                     case "application":
                         for (let index = 0; index < e.target.elements.length; index++) {
-                            if(e.target.elements[index].tagName == 'INPUT'){
+                            if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
                                 inputData.push(e.target.elements[index].value);
                             }
                         }
@@ -322,7 +322,17 @@ function Form(props) {
                         if(formData.applicantType.values[0].length > 1){
                             setStep(5);
                         }else{
-                            setStep(6);
+                            console.log(formData);
+                            if(formData.represent.values[0] == "Myself"){
+                                tempFormData = formData;
+                                tempFormData.contactIndividual = {
+                                    values: formData.contact.values
+                                }
+                                setFormData(tempFormData);
+                                setStep(7);
+                            }else{
+                                setStep(6);
+                            }
                         }
                         break;
 
