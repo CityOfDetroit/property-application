@@ -73,6 +73,11 @@ form.input-submit{
                 text-transform: uppercase;
                 background-color: $white;
             }
+
+            label.required-field:after{
+                color: $color-4;
+                content: " *";
+            }
         }
     }
 }
@@ -119,6 +124,11 @@ form.radio-buttons{
                 font-size: .85em;
                 font-weight: bold;
                 text-transform: uppercase;
+            }
+
+            label.required-field:after{
+                color: $color-4;
+                content: " *";
             }
         }
     }

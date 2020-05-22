@@ -1486,7 +1486,7 @@
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful Hints and Tips"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -1621,7 +1621,8 @@
                                         "description"   : "List of all partners",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Parter List"
+                                        "labelText"     : "Parter List",
+                                        "required"      : true
                                     },
                                     {   
                                         "id"            : "submit",
@@ -1683,10 +1684,10 @@
                 "cards": [
                     {   
                         "id"        : "step-10-card-0",
-                        "type"      : "right pop-up color-3",
+                        "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
-                            "value" : "Helpful hints and tips"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -1694,7 +1695,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few questions." 
+                                    "content"   : "Does the applicant or any affiliated company currently own property in Detroit?*" 
                                 }
                             ]
                         }
@@ -1708,13 +1709,7 @@
                         "requirements"  : [],
                         "text"          : {
                             "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "legend",
-                                    "content"   : "Are you an individual or business?"
-                                }
-                            ]
+                            "markup"    : []
                         },
                         "sections"      : [
                             {
@@ -1724,25 +1719,115 @@
                                         "id"    : "step-10-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "individual",
-                                        "description"   : "I'm an individual",
-                                        "text"  : "Individual",
+                                        "name"  : "own-property-in-detroit",
+                                        "description"   : "Applicant does own property in Detroit",
+                                        "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
                                         "id"    : "step-10-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "business",
-                                        "description"   : "I'm a business",
-                                        "text"  : "Business",
+                                        "name"  : "not-own-property-in-detroit",
+                                        "description"   : "Applicant does not own property in Detroit",
+                                        "text"  : "No",
                                         "label" : false
                                     }
                                 ]
                             }
                         ]
                     }
-                ]
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-11-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Part of the City’s initial screening of the applicants inquiry includes a review of the property that the applicant owns to confirm tax status  and blight ticket status. Please add any addresses of property that the applicant owns in Detroit." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-11-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-11-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "detroit-property-0",
+                                        "tag"   : "GEOCODER",
+                                        "type"  : "text",
+                                        "name"  : "detroit-property",
+                                        "description"   : "Address of Detroit property",
+                                        "placeholder"   : "Ex. 1301 Third st.",
+                                        "text"  : "Yes",
+                                        "label" : false,
+                                        "labelText" : "Property Address",
+                                        "required"  : true
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "add",
+                                        "name"  : "add",
+                                        "description"   : "Add more properties",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "detroit-property"
+                                    },
+                                    {   
+                                        "id"    : "step-11-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
             }
         }
     ],

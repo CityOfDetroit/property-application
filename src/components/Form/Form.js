@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import Body from '../Body/Body';
+import Geocoder from '../Geocoder/Geocoder';
 
 function Form(props) {
 
@@ -75,17 +76,22 @@ function Form(props) {
     const buildItems = (items) => {
         const markup = items.map((item) => 
             <div key={item.id}>
-                {(item.labelPosition != "after") ? (item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : '' : ''}
+                {(item.labelPosition != "after") ? (item.label) ? <label htmlFor={item.id} className={getLabelClass(item.required)}>{item.labelText}</label> : '' : ''}
                 {buildTag(item)}
-                {(item.labelPosition == "after") ? (item.label) ? <label htmlFor={item.id}>{item.labelText}</label> : '' : ''}
+                {(item.labelPosition == "after") ? (item.label) ? <label htmlFor={item.id} className={getLabelClass(item.required)}>{item.labelText}</label> : '' : ''}
             </div>
         );
         return markup;
     }
 
+    const getLabelClass = (data) => {
+        let tempClass = '';
+        (data) ? tempClass = "required-field" : tempClass = "";
+        return tempClass;
+    }
+
     const buildTag = (item) =>{
         let markup;
-        console.log(item.tag);
         switch (item.tag) {
             case 'button':
                 switch (item.type) {
@@ -104,6 +110,23 @@ function Form(props) {
 
             case 'select':
                 markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                break;
+
+            case 'textarea':
+                markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                break;
+
+            case 'GEOCODER':
+                markup = 
+                <Geocoder 
+                id={item.id} 
+                name={item.name} 
+                placeholder={item.placeholder} 
+                required={item.required} 
+                ariaRequired={item.required}
+                description={item.description}
+                label={item.labelText}
+                ></Geocoder>;
                 break;
         
             default:
@@ -297,10 +320,8 @@ function Form(props) {
             case 4:
                 switch (buildType) {
                     case "application":
-                        console.log(e.target.elements);
                         let specialType = false;
                         for (let index = 0; index < e.target.elements.length; index++) {
-                            console.log(e.target.elements[index]);
                             if(e.target.elements[index].tagName == 'INPUT'){
                                 if(e.target.elements[index].type == 'radio'){
                                     if(e.target.elements[index].checked == true){
@@ -322,7 +343,6 @@ function Form(props) {
                         if(formData.applicantType.values[0].length > 1){
                             setStep(5);
                         }else{
-                            console.log(formData);
                             if(formData.represent.values[0] == "Myself"){
                                 tempFormData = formData;
                                 tempFormData.contactIndividual = {
@@ -402,27 +422,43 @@ function Form(props) {
                 tempHistory = stepHistory;
                 tempHistory.push(8);
                 setStepHistory(tempHistory);
-                setStep(9);
+                if(btnState == "Yes"){
+                    setStep(9);
+                }else{
+                    setStep(10);
+                }
                 break;
 
             case 9:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
                 tempFormData = formData;
-                tempFormData.gender = {
-                    values: [btnState]
+                tempFormData.partnerList = {
+                    values: [inputData]
                 }
                 setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(9);
+                setStepHistory(tempHistory);
                 setStep(10);
                 break;
 
             case 10:
-                if(btnState == 'Not experiencing any life-threatening symptoms'){
-                    if(formData.age.values[0] > 1 && formData.age.values[0] < 5){
-                        setStep(11);
-                    }else{
-                        setStep(12);
-                    }
+                tempFormData = formData;
+                tempFormData.ownDetroitProperty = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(10);
+                setStepHistory(tempHistory);
+                if(btnState == "Yes"){
+                    setStep(11);
                 }else{
-                    setStep(7);
+                    setStep(12);
                 }
                 break;
 
@@ -678,7 +714,6 @@ function Form(props) {
     }
 
     const handleChange = (e) => {
-        console.log(e.target);
         switch (e.target.getAttribute('data-special-type')) {
             case 'other':
                 setOtherInput(`${e.target.getAttribute('data-special-id')}-container`);
