@@ -60,7 +60,7 @@ function Geocoder(props) {
   return (
       <div>
         <label className="required-field" htmlFor={props.id}>{props.label}</label>
-        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} placeholder={props.placeholder} aria-describedby={props.description} onChange={handleChange}></input>
+        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} placeholder={props.placeholder} onChange={handleChange} aria-required={props.required} required={props.required}></input>
         <datalist id={buildNames()}>
             {(sugg) ? buildOptions() : ''}
         </datalist>

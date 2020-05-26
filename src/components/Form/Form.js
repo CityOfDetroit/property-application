@@ -18,7 +18,8 @@ function Form(props) {
         ...(props.state || {})
     };
     const [btnState, setbtnState]       = useState();
-    const [agents, setAgents]           = useState(0);
+    const [extras, setExtras]           = useState();
+    const [extrasCount, setExtrasCount] = useState(0);
     const [otherInput, setOtherInput]   = useState();
 
     const buildContent = () => {
@@ -34,25 +35,50 @@ function Form(props) {
     const buildSections = () => {
         const markup = props.sections.map((section) =>
            <section key={section.id} className="grouping">
+               {buildExtras()}
                {buildItems(section.items)}
-               {buildAgents()}
-               {(agents > 0) ? <button type="submit" onClick={(e)=>{setbtnState(e.target.innerText)}}>Done</button> : ''}
            </section>
         );
         return markup;
     }
 
-    const buildAgents = () => {
-        let agentsArr = [];
-        for (let index = 0; index < agents; index++) {
-            agentsArr.push(`agent-${index}`);
+    const buildExtras = () => {
+        let extrasArr = [];
+        let markup = "";
+        console.log(extras);
+        for (let index = 0; index < extrasCount; index++) {
+            extrasArr.push(`${extras.getAttribute('data-special-id')}-${index}`);
         }
-        const markup = agentsArr.map((agent) =>
-            <div key={agent}>
-                <label htmlFor={agent}>Name:</label>
-                <input id={agent} type="text" placeholder="Enter First and Last name." required></input>
-            </div>
-        );
+        if(extrasCount > 0){
+            switch (extras.getAttribute('data-special-type')) {
+                case "geocoder":
+                    markup = extrasArr.map((extra) =>
+                    <Geocoder 
+                    key={extra}
+                    id={extra} 
+                    name={extra} 
+                    placeholder={extras.getAttribute('data-special-text')} 
+                    required={true}
+                    ariaRequired={true}
+                    label={extras.getAttribute('data-special-label')} 
+                    ></Geocoder>
+                    );
+                    break;
+
+                case "text":
+                    markup = extrasArr.map((extra) =>
+                    <div>
+                        <label htmlFor={extra} className={getLabelClass(true)}>{extras.getAttribute('data-special-label')}</label>
+                        <input key={extra} type={extras.getAttribute('data-special-type')} id={extra} name={extra} aria-label={extra} placeholder={extras.getAttribute('data-special-text')} required={true} aria-required={true}></input>
+                    </div>
+                    );
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+       
         return markup;
     }
 
@@ -100,7 +126,7 @@ function Form(props) {
                         break;
     
                     case 'add':
-                        markup = <button role="button" aria-label={item.name} onClick={()=>{setAgents(agents + 1)}} type={item.type}>{item.text}</button>;
+                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
                         break;
                 
                     default:
@@ -124,7 +150,6 @@ function Form(props) {
                 placeholder={item.placeholder} 
                 required={item.required} 
                 ariaRequired={item.required}
-                description={item.description}
                 label={item.labelText}
                 ></Geocoder>;
                 break;
@@ -463,19 +488,40 @@ function Form(props) {
                 break;
 
             case 11:
-                if(btnState == 'None of the above'){
-                    setStep(14);
-                }else{
-                    setStep(13);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
+                        inputData.push(tempProperty);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData.detroitProperties = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(11);
+                setStepHistory(tempHistory);
+                setExtrasCount(0);
+                setExtras(undefined);
+                setStep(12);
                 break;
 
             case 12:
-                if(btnState == 'None of the above'){
-                    setStep(14);
-                }else{
-                    setStep(13);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData.LLCs = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(12);
+                setStepHistory(tempHistory);
+                setStep(13);
                 break;
 
             case 13:

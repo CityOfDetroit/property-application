@@ -225,7 +225,7 @@
                                     "id"        : "card-0-body-2",
                                     "tag"       : "i",
                                     "content"   : "Completing this application does not put a “hold” on any properties." 
-                                },
+                                }
                             ]
                         }
                     },
@@ -1812,6 +1812,103 @@
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
                                         "otherLabel"            : "Property Address",
                                         "otherID"               : "detroit-property"
+                                    },
+                                    {   
+                                        "id"    : "step-11-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-12-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "What LLCs/Entities does the applicant operate under?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "small",
+                                    "content"   : "Applicant must list all entities they do business under.  Any omissions will delay processing the application." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-12-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-12-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "llc-entities-0",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter LLC's name",
+                                        "name"          : "llc",
+                                        "description"   : "Name of LLCs or entities that the applicant operates",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "LLC's Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "add",
+                                        "name"  : "add",
+                                        "description"   : "Add more properties",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "text",
+                                        "otherPlaceholder"      : "Enter LLC's name",
+                                        "otherLabel"            : "LLC's Name",
+                                        "otherID"               : "llc-entities"
                                     },
                                     {   
                                         "id"    : "step-11-form-0-section-0-item-1",
