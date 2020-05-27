@@ -525,14 +525,22 @@ function Form(props) {
                 break;
 
             case 13:
+                tempFormData = formData;
+                tempFormData.delinquencyStatus = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(13);
+                setStepHistory(tempHistory);
+                if(btnState == "Yes"){
+                    setStep(14);
+                }else{
+                    setStep(15);
+                }
                 break;
 
             case 14:
-                if(btnState == 'Yes'){
-                    setStep(15);
-                }else{
-                    setStep(28); 
-                }
                 break;
 
             case 15:
