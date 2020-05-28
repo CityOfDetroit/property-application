@@ -2280,6 +2280,131 @@
                     }
                 ]
             }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-17-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-17-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-17-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "interested-property-0",
+                                        "tag"   : "GEOCODER",
+                                        "type"  : "text",
+                                        "name"  : "interested-property",
+                                        "description"   : "Address of interested property",
+                                        "placeholder"   : "Ex. 1301 Third st.",
+                                        "text"  : "Yes",
+                                        "label" : false,
+                                        "labelText" : "Property Address",
+                                        "required"  : true
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "add",
+                                        "name"  : "add",
+                                        "description"   : "Add more properties",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "interested-property"
+                                    },
+                                    {   
+                                        "id"    : "step-17-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-17-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the map to locate addresses." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Use the zoning portal to check zoning of the property." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "a",
+                                    "link"      : "https://zoning.detroitmi.gov/",
+                                    "content"   : "Visit Zoning Portal" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
         }
     ],
     "status" : [

@@ -544,29 +544,33 @@ function Form(props) {
                 break;
 
             case 15:
-                tempSynthoms = [];
-                Array.from(e.target.elements).forEach(element => {
-                    if(element.checked){
-                        tempSynthoms.push(element.id);
-                    }
-                });
-                if(tempSynthoms.length > 1){
-                    setStep(16);
+                // tempSynthoms = [];
+                // Array.from(e.target.elements).forEach(element => {
+                //     if(element.checked){
+                //         tempSynthoms.push(element.id);
+                //     }
+                // });
+                // if(tempSynthoms.length > 1){
+                //     setStep(16);
+                // }else{
+                //     (tempSynthoms[0] == 'other') ? setStep(20) : setStep(16);
+                // }
+                tempFormData = formData;
+                tempFormData.identifiedProperty = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(15);
+                setStepHistory(tempHistory);
+                if(btnState == "Yes"){
+                    setStep(17);
                 }else{
-                    (tempSynthoms[0] == 'other') ? setStep(20) : setStep(16);
+                    setStep(16);
                 }
                 break;
 
             case 16:
-                if(btnState == 'Yes'){
-                    setStep(17);
-                }else{
-                    if(formData.age.values[0] >= 19){
-                        setStep(18);
-                    }else{
-                        setStep(20);
-                    }
-                }
                 break;
 
             case 17:
