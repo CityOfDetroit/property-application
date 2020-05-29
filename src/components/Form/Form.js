@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Form.scss';
 import Body from '../Body/Body';
 import Geocoder from '../Geocoder/Geocoder';
+import Connector from '../Connector/Connector';
 
 function Form(props) {
 
@@ -17,6 +18,8 @@ function Form(props) {
         buildType   : useState(0),
         ...(props.state || {})
     };
+    const [appID, setAppID]             = useState();
+    const [error, setError]             = useState();
     const [btnState, setbtnState]       = useState();
     const [extras, setExtras]           = useState();
     const [extrasCount, setExtrasCount] = useState(0);
@@ -224,6 +227,10 @@ function Form(props) {
         }
     }
 
+    const handleAPICalls = (e) => {
+        console.log(e);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let tempFormData = {};
@@ -236,6 +243,7 @@ function Form(props) {
                     case "application":
                         switch (btnState) {
                             case "Start New Application":
+                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls},(e)=>{handleAPICalls});
                                 tempHistory = stepHistory;
                                 tempHistory.push(0);
                                 setStepHistory(tempHistory);
@@ -653,13 +661,92 @@ function Form(props) {
                 break; 
 
             case 21:
+                tempFormData = formData;
+                tempFormData.purchaseOrLease = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(21);
+                setStepHistory(tempHistory);
+                if(btnState == "Purchase"){
+                    setStep(22);
+                }else{
+                    //come back
+                    setStep(20);
+                }
                 break;
 
             case 22:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.offer = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(22);
+                setStepHistory(tempHistory);
+                setStep(23);
                 break;
 
             case 23:
-                setStep(24);
+                specialType = false;
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if(e.target.elements[index].type == 'radio'){
+                            if(e.target.elements[index].checked == true){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }else{
+                            inputData.push(e.target.elements[index].value);
+                        }
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.propertyUse = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(23);
+                setStepHistory(tempHistory);
+                if(formData.applicantType.values[0].length > 1){
+                    setStep(5);
+                }else{
+                    switch (formData.applicantType.values[0]) {
+                        case "commercial-retail":
+                            setStep(24);
+                            break;
+
+                        case "mixed-use":
+                            setStep(24);
+                            break;
+
+                        case "residential-multifamily":
+                            setStep(24);
+                            break;
+
+                        case "residential-single-family":
+                            setStep(24);
+                            break;
+
+                        case "industrial":
+                            setStep(24);
+                            break;
+
+                        case "parking-lot-auto-related":
+                            setStep(24);
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
                 break;
 
             case 24:

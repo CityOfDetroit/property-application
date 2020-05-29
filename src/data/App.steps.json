@@ -2779,6 +2779,1423 @@
                     }
                 ]
             }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-22-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value." 
+                                },
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Enter your offer." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-22-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-22-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "offer",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter offer here",
+                                        "name"          : "offer",
+                                        "description"   : "Applicant's offer",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Offer",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "step-22-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-22-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Properties are priced using fair market value.  DBA owned land may be more expensive than land owned by the Detroit Land Bank Authority due to the location or special features. DBA brokers recommended pricing based on comparable sales and other market values." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Fair market value  for a property means that prices may be higher in an area where market demand is increasing land costs nearby.  Prices also may be higher for commercial or specially zoned properties" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "The range for a typical 3,200 sf residential lot as of 2019 is $800-$1,600, but this can be higher in some neighborhoods based onmarket demand. Commercial properties often cost far more." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-23-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value." 
+                                },
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Enter your offer." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-23-form-0",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-23-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "commercial-retail",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "commercial-retail",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Commercial/Retail",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Commercial use (i.e retail, office, hotel etc)",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "mixed-use",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "mixed-use",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Mixed Use",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Buildings with a mix of commercial and residential uses",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "residential-multifamily",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "residential-multifamily",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Residential Multifamily",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Duplex/Triplex, and Multi-Family (+4) Units",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "residential-single-family",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "residential-single-family",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Residential Single Family",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Single Family residential home",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "parking-lot-auto-related",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "parking-lot-auto-related",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Parking Lot/Auto Related",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land used primarily for the parking of cars or Auto related business (i.e car wash, salvage etc.)",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "land-based-project",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "land-based-project",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Land Based Project",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land for urban gardens or farms, Green stormwater Infrastructure, and beautification",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "industrial",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "industrial",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Industrial",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land used primarily for industrial use / manufacturing",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "film",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "film",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Film",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land or Building use for temporary filming",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "commercial-land-lease-temporary",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "commercial-land-lease-temporary",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Commercial Land/Building Lease or Temporary Use",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land or Building use for temporary commercial purposes",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "cell-tower",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "cell-tower",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Cell Tower",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Placement of Cellular Tower",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "public-gathering",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "public-gathering",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "Public Gathering",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Land or Building use for special event",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "property-use",
+                                        "description"           : "other",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter primary use",
+                                        "otherLabel"            : "Primary Use",
+                                        "otherID"               : "property-use",
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-24-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Do you want a want to purchase a land or property for a parking lot  or Auto-related business?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-24-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-24-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-24-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "parking-lot",
+                                        "description"   : "Parking lot",
+                                        "text"  : "Parking Lot",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-24-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "auto-related-business",
+                                        "description"   : "Auto Related Business",
+                                        "text"  : "Auto Related Business",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-25-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "How many Parking spots do you need?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-25-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-25-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "parking-spots",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter number of parking spots",
+                                        "name"          : "offer",
+                                        "description"   : "Number of parking spots needed",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Parking spots",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "step-25-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-26-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "How many Parking spots do you currently have?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-26-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-26-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "parking-spots",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter number of parking spots",
+                                        "name"          : "offer",
+                                        "description"   : "Number of parking spots currently owned",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Parking spots",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "step-26-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-27-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Did you review the PDD/BSEED requirements for parking?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-27-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-27-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-27-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "Applicant reviewed PDD/BSEED requirements for parking.",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-27-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "Applicant did not reviewed PDD/BSEED requirements for parking.",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-28-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Check all work that the applicant anticipates completing on this parcel(s):" 
+                                },
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Enter your offer." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-28-form-0",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-28-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "new-construction",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "new-construction",
+                                        "placeholder"           : null,
+                                        "name"                  : "work-anticipated",
+                                        "description"           : "new construction",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "New Construction",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "rehab",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "rehab",
+                                        "placeholder"           : null,
+                                        "name"                  : "work-anticipated",
+                                        "description"           : "Rehab",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Rehab",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "demolition-blight-clearance",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "demolition-blight-clearance",
+                                        "placeholder"           : null,
+                                        "name"                  : "work-anticipated",
+                                        "description"           : "Demolition/Blight Clearance",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Demolition/Blight Clearance",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "work-anticipated",
+                                        "description"           : "other",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter anticipated work",
+                                        "otherLabel"            : "Anticipated Work",
+                                        "otherID"               : "work-anticipated",
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-29-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Detroit is actively seeking viable projects that creates the highest probability of success." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Provide the applicants proposal for the property below." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-29-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-29-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "proposal",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter proposal here.",
+                                        "name"          : "partners",
+                                        "description"   : "Proposal for the property",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Proposal",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-30-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Is the Proposed Zoning Compliant?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-30-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-30-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-30-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "rent",
+                                        "description"   : "Rent",
+                                        "text"  : "Rent",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-30-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "own",
+                                        "description"   : "Own",
+                                        "text"  : "own",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-30-form-0-section-0-item-2",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no-unsure",
+                                        "description"   : "No/Unsure",
+                                        "text"  : "No/Unsure",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-30-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the zoning portal to check for zoning requirements." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://zoning.detroitmi.gov",
+                                    "content"   : "Visit Zoning Portal" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-31-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "What is the applicants total development costs?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "What is the applicants construction timeline?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "What is the applicants funding source?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-31-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-31-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "development-cost",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter total cost",
+                                        "name"          : "development-cost",
+                                        "description"   : "Applicants total development cost",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Development Cost",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "construction-timeline",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter contrunction timeline",
+                                        "name"          : "construction-timeline",
+                                        "description"   : "Applicants Construction Timeline",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Construction Timeline",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "funding-source",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter funding source",
+                                        "name"          : "offer",
+                                        "description"   : "Applicants funding source",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Funding Source",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "step-31-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-32-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Attach any additional information or support letters." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-32-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-32-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "additional-files-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "",
+                                        "description"   : "Additional Information and files.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "add",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "additional-files"
+                                    },
+                                    {   
+                                        "id"    : "step-31-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Property Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-33-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "I acknowledge that failure to disclose a material fact or to misrepresent a fact can result in a rejection of my application." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that all of the information contained in my application to purchase is true and correct." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "I understand by signing this, I am authorizing the Owner, its affiliates and agents to conduct a credit check and additional background checks, as applicable." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "I acknowledge that the Owner, its affiliates and agents may decline my offer for any reason or no reason." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-4",
+                                            "tag"       : "p",
+                                            "content"   : "I acknowledge that the property(ies) that I am seeking is(are) subject to all land use and zoning requirements and restrictions, and I agree that I must comply with all applicable land use, zoning, and property maintenance laws and ordinances.  I understand and agree that it is my sole responsibility to determine whether the zoning permits my intended use." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-5",
+                                            "tag"       : "p",
+                                            "content"   : "I acknowledge that the Owner is only offering property \"AS IS\" with no warranty whatsoever.   I understand that I am assuming the risks for any and all defects in the property. Applicant assumes the responsibility to investigate." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-6",
+                                            "tag"       : "p",
+                                            "content"   : "I acknowledge that the Owner is conveying the property via Quit Claim Deed, and does not warrant a title." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-7",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I (or principal or officer if on behalf of a partnership or corporation or affiliated companies) am not in default for the payment of income taxes or property taxes payable to the City of Detroit." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-8",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I (or any principal or officer if on behalf of a partnership or corporation or affiliated companies), have no unpaid blight violations owing to the City of Detroit." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-9",
+                                            "tag"       : "p",
+                                            "content"   : "I understand that if the Owner discovers that I have outstanding blight tickets or taxes at any time prior to the closing, the closing may be delayed until all outstanding balances have been paid." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-10",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I (or any principal or officer if on behalf of a partnership or corporation or affiliated companies) have no unpaid water bills owing to the City of Detroit." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-11",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I have read, understand, and agree to be bound by all the terms of this application.   I further certify that all of the statements set forth in this application are complete and true." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-12",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I am authorized to execute this application on behalf of the applicant." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-33-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-33-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "agreement-understanding",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Type your full name here to signify your agreement and understanding.",
+                                        "name"          : "agreement-understanding",
+                                        "description"   : "Type your full name here to signify your agreement and understanding.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Signature",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "today-date",
+                                        "tag"           : "input",
+                                        "type"          : "date",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Type in todays date",
+                                        "name"          : "today-date",
+                                        "description"   : "Type in todays date",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Date",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "step-33-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "finish",
+                                        "description"   : "Submit application",
+                                        "text"  : "Finish",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
         }
     ],
     "status" : [
