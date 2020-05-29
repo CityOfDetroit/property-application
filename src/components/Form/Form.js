@@ -574,10 +574,35 @@ function Form(props) {
                 break;
 
             case 17:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
+                        inputData.push(tempProperty);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.interestedProperty = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(17);
+                setStepHistory(tempHistory);
+                setExtrasCount(0);
+                setExtras(undefined);
+                setStep(18);
                 break;
 
             case 18:
-                if(btnState == 'Yes'){
+                tempFormData = formData;
+                tempFormData.adjacentPropertyisOwned = {
+                    values: [btnState]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(18);
+                setStepHistory(tempHistory);
+                if(btnState == "Yes"){
                     setStep(19);
                 }else{
                     setStep(20);
@@ -585,20 +610,46 @@ function Form(props) {
                 break;
 
             case 19:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
+                        inputData.push(tempProperty);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.adjacentProperty = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(19);
+                setStepHistory(tempHistory);
+                setExtrasCount(0);
+                setExtras(undefined);
+                setStep(20);
                 break;
 
             case 20:
-                tempSynthoms = [];
-                Array.from(e.target.elements).forEach(element => {
-                    if(element.checked){
-                        tempSynthoms.push(element.id);
-                    }
-                });
-                if(tempSynthoms.length > 1){
-                    setStep(21);
-                }else{
-                    (tempSynthoms[0] == 'other') ? setStep(22) : setStep(21);
+                // tempSynthoms = [];
+                // Array.from(e.target.elements).forEach(element => {
+                //     if(element.checked){
+                //         tempSynthoms.push(element.id);
+                //     }
+                // });
+                // if(tempSynthoms.length > 1){
+                //     setStep(21);
+                // }else{
+                //     (tempSynthoms[0] == 'other') ? setStep(22) : setStep(21);
+                // }
+                tempFormData = formData;
+                tempFormData.previouslyOwnRent = {
+                    values: [btnState]
                 }
+                setFormData(tempFormData);
+                tempHistory = stepHistory;
+                tempHistory.push(20);
+                setStepHistory(tempHistory);
+                setStep(21);
                 break; 
 
             case 21:
