@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Form.scss';
 import Body from '../Body/Body';
 import Geocoder from '../Geocoder/Geocoder';
@@ -7,23 +7,44 @@ import Connector from '../Connector/Connector';
 function Form(props) {
 
     const {
+        appID       : [appID, setAppID],
         step        : [step, setStep],
         stepHistory : [stepHistory, setStepHistory],
         formData    : [formData, setFormData],
         buildType   : [buildType, setBuildType]
     } = {
-        step        : useState(0),
-        stepHistory : useState(0),
-        formData    : useState(0),
-        buildType   : useState(0),
+        appID       : useState(),
+        step        : useState(),
+        stepHistory : useState(),
+        formData    : useState(),
+        buildType   : useState(),
         ...(props.state || {})
     };
-    const [appID, setAppID]             = useState();
     const [error, setError]             = useState();
     const [btnState, setbtnState]       = useState();
     const [extras, setExtras]           = useState();
     const [extrasCount, setExtrasCount] = useState(0);
     const [otherInput, setOtherInput]   = useState();
+
+    const handleAPICalls = (e, callType) => {
+        console.log(e);
+        console.log(callType);
+        if(e.status >= 200 && e.status < 300){
+            switch (callType) {
+                case 'getID':
+                    e.json().then(data => {
+                        console.log(data.id);
+                        setAppID(data.id);
+                    })
+                    break;
+            
+                default:
+                    break;
+            }
+        }else{
+
+        }
+    }
 
     const buildContent = () => {
         const formClass = `${props.type} ${props.position}`; 
@@ -48,7 +69,6 @@ function Form(props) {
     const buildExtras = () => {
         let extrasArr = [];
         let markup = "";
-        console.log(extras);
         for (let index = 0; index < extrasCount; index++) {
             extrasArr.push(`${extras.getAttribute('data-special-id')}-${index}`);
         }
@@ -227,10 +247,6 @@ function Form(props) {
         }
     }
 
-    const handleAPICalls = (e) => {
-        console.log(e);
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         let tempFormData = {};
@@ -243,7 +259,7 @@ function Form(props) {
                     case "application":
                         switch (btnState) {
                             case "Start New Application":
-                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e)},(e)=>{handleAPICalls(e)});
+                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e, 'getID')},(e)=>{handleAPICalls(e, 'getID')});
                                 tempHistory = stepHistory;
                                 tempHistory.push(0);
                                 setStepHistory(tempHistory);

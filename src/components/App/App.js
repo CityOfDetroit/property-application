@@ -6,6 +6,7 @@ import data from '../../data/App.steps.json';
 import token from '../../../local/token.json';
 
 function App() {
+    const [appID, setAppID]             = useState();
     const [stepHistory, setStepHistory] = useState([]);
     const [step, setStep]               = useState(0);
     const [formData, setFormData]       = useState();
@@ -118,7 +119,7 @@ function App() {
                 text={form.text}
                 sections={form.sections}
                 token={token}
-                state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType] }}>
+                state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
             </Form>
         );
         return markup;
