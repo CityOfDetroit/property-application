@@ -243,7 +243,7 @@ function Form(props) {
                     case "application":
                         switch (btnState) {
                             case "Start New Application":
-                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls},(e)=>{handleAPICalls});
+                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e)},(e)=>{handleAPICalls(e)});
                                 tempHistory = stepHistory;
                                 tempHistory.push(0);
                                 setStepHistory(tempHistory);
@@ -720,23 +720,23 @@ function Form(props) {
                 }else{
                     switch (formData.applicantType.values[0]) {
                         case "commercial-retail":
-                            setStep(24);
+                            setStep(28);
                             break;
 
                         case "mixed-use":
-                            setStep(24);
+                            setStep(28);
                             break;
 
                         case "residential-multifamily":
-                            setStep(24);
+                            setStep(28);
                             break;
 
                         case "residential-single-family":
-                            setStep(24);
+                            setStep(28);
                             break;
 
                         case "industrial":
-                            setStep(24);
+                            setStep(28);
                             break;
 
                         case "parking-lot-auto-related":

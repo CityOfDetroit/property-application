@@ -6,14 +6,14 @@ export default class Connector {
     console.log(credentials);
     let r = new Request(url, {
       method: 'POST',
-      withCredentials: needCredentials,
       body: JSON.stringify(data),
       headers: new Headers({
         'Content-type'    : 'application/json',
-      })
+      }),
+      redirect: 'follow'
     });
     if(needCredentials){
-      r.headers.append('Authorization',`Auth-Token: ${credentials['Auth-Token']}`);
+      r.headers.append('Auth-Token',credentials['Auth-Token']);
     }
     return r;
   }
