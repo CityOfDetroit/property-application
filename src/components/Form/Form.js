@@ -337,7 +337,7 @@ function Form(props) {
                 switch (buildType) {
                     case "application":
                         tempFormData.represent = {
-                            values: [btnState]
+                            values: btnState
                         }
                         setFormData(tempFormData);
                         postData.answers = tempFormData;
@@ -365,7 +365,7 @@ function Form(props) {
                         }
                         tempFormData = formData;
                         tempFormData.contact = {
-                            values: [inputData]
+                            values: inputData
                         }
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, 4)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -399,9 +399,9 @@ function Form(props) {
                         }
                         tempFormData = formData;
                         tempFormData.applicantType = {
-                            values: [inputData]
+                            values: inputData
                         }
-                        if(formData.applicantType.values[0].length > 1){
+                        if(formData.applicantType.values.length > 1){
                             nextStep = 5;
                         }else{
                             if(formData.represent.values[0] == "Myself"){
@@ -439,7 +439,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.contactBusiness = {
-                    values: [inputData]
+                    values: inputData
                 }
                 nextStep = 7;
                 postData.answers = tempFormData;
@@ -454,7 +454,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.contactIndividual = {
-                    values: [inputData]
+                    values: inputData
                 }
                 nextStep = 7;
                 postData.answers = tempFormData;
@@ -464,7 +464,7 @@ function Form(props) {
             case 7:
                 tempFormData = formData;
                 tempFormData.inDetroit = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 nextStep = 8;
@@ -475,7 +475,7 @@ function Form(props) {
             case 8:
                 tempFormData = formData;
                 tempFormData.DLBACommunityPartner = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
@@ -495,7 +495,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.partnerList = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 10;
@@ -506,7 +506,7 @@ function Form(props) {
             case 10:
                 tempFormData = formData;
                 tempFormData.ownDetroitProperty = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
@@ -521,13 +521,13 @@ function Form(props) {
             case 11:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
-                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
-                        inputData.push(tempProperty);
+                        inputData.push(e.target.elements[index].value);
+                        (e.target.elements[index].getAttribute('data-parcel') == null) ? inputData.push('') : inputData.push(e.target.elements[index].getAttribute('data-parcel'));
                     }
                 }
                 tempFormData = formData;
                 tempFormData.detroitProperties = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 setStepHistory(tempHistory);
@@ -546,7 +546,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.LLCs = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 13;
@@ -557,7 +557,7 @@ function Form(props) {
             case 13:
                 tempFormData = formData;
                 tempFormData.delinquencyStatus = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
@@ -586,7 +586,7 @@ function Form(props) {
                 // }
                 tempFormData = formData;
                 tempFormData.identifiedProperty = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
@@ -604,13 +604,13 @@ function Form(props) {
             case 17:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
-                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
-                        inputData.push(tempProperty);
+                        inputData.push(e.target.elements[index].value);
+                        (e.target.elements[index].getAttribute('data-parcel') == null) ? inputData.push('') : inputData.push(e.target.elements[index].getAttribute('data-parcel'));
                     }
                 }
                 tempFormData = formData;
                 tempFormData.interestedProperty = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 setExtrasCount(0);
@@ -623,7 +623,7 @@ function Form(props) {
             case 18:
                 tempFormData = formData;
                 tempFormData.adjacentPropertyisOwned = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
@@ -638,13 +638,13 @@ function Form(props) {
             case 19:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
-                        let tempProperty = {address: e.target.elements[index].value, parcel: e.target.elements[index].getAttribute('data-parcel')}
-                        inputData.push(tempProperty);
+                        inputData.push(e.target.elements[index].value);
+                        (e.target.elements[index].getAttribute('data-parcel') == null) ? inputData.push('') : inputData.push(e.target.elements[index].getAttribute('data-parcel'));
                     }
                 }
                 tempFormData = formData;
                 tempFormData.adjacentProperty = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 setExtrasCount(0);
@@ -668,7 +668,7 @@ function Form(props) {
                 // }
                 tempFormData = formData;
                 tempFormData.previouslyOwnRent = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 nextStep = 21;
@@ -679,7 +679,7 @@ function Form(props) {
             case 21:
                 tempFormData = formData;
                 tempFormData.purchaseOrLease = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Purchase"){
@@ -701,7 +701,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.offer = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 23;
@@ -724,10 +724,10 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.propertyUse = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
-                if(formData.propertyUse.values[0].length > 1){
+                if(formData.propertyUse.values.length > 1){
                     // come back
                     nextStep = 5;
                 }else{
@@ -807,7 +807,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.anticipadedWork = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 29;
@@ -842,7 +842,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.proposal = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 30;
@@ -853,7 +853,7 @@ function Form(props) {
             case 30:
                 tempFormData = formData;
                 tempFormData.propozedZoning = {
-                    values: [btnState]
+                    values: btnState
                 }
                 setFormData(tempFormData);
                 nextStep = 31;
@@ -869,7 +869,7 @@ function Form(props) {
                 }
                 tempFormData = formData;
                 tempFormData.costTimelineFunding = {
-                    values: [inputData]
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 32;
