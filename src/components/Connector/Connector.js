@@ -3,7 +3,6 @@
 export default class Connector {
 
   static buildRequest(url, data, needCredentials, credentials){
-    console.log(credentials);
     let r = new Request(url, {
       method: 'POST',
       body: JSON.stringify(data),

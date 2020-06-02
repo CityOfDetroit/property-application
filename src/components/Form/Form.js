@@ -26,16 +26,17 @@ function Form(props) {
     const [extrasCount, setExtrasCount] = useState(0);
     const [otherInput, setOtherInput]   = useState();
 
-    const handleAPICalls = (e, callType) => {
-        console.log(e);
-        console.log(callType);
+    const handleAPICalls = (e, callType, currentStep, nextStep) => {
         if(e.status >= 200 && e.status < 300){
             switch (callType) {
                 case 'getID':
                     e.json().then(data => {
-                        console.log(data.id);
                         setAppID(data.id);
-                    })
+                    });
+                    let tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
                     break;
             
                 default:
@@ -253,13 +254,13 @@ function Form(props) {
         let tempSynthoms = [];
         let inputData    = [];
         let tempHistory  = [];
+        let postData     = {answers:null};
         switch (step) {
             case 0:
                 switch (buildType) {
                     case "application":
                         switch (btnState) {
-                            case "Start New Application":
-                                Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e, 'getID')},(e)=>{handleAPICalls(e, 'getID')});
+                            case "Start New Application": 
                                 tempHistory = stepHistory;
                                 tempHistory.push(0);
                                 setStepHistory(tempHistory);
@@ -295,10 +296,7 @@ function Form(props) {
             case 1:
                 switch (buildType) {
                     case "application":
-                        tempHistory = stepHistory;
-                        tempHistory.push(1);
-                        setStepHistory(tempHistory);
-                        setStep(2);
+                        Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e, 'getID', 1, 2)},(e)=>{handleAPICalls(e, 'getID', 1)});
                         break;
 
                     case "status":
@@ -319,10 +317,12 @@ function Form(props) {
                             values: [btnState]
                         }
                         setFormData(tempFormData);
-                        tempHistory = stepHistory;
-                        tempHistory.push(2);
-                        setStepHistory(tempHistory);
-                        setStep(3);
+                        postData.answers = {represent:'Myself'};
+                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', 2, 3)},(e)=>{handleAPICalls(e, 'saveForm', 0)});
+                        // tempHistory = stepHistory;
+                        // tempHistory.push(2);
+                        // setStepHistory(tempHistory);
+                        // setStep(3);
                         break;
 
                     case "status":
