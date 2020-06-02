@@ -27,18 +27,26 @@ function Form(props) {
     const [otherInput, setOtherInput]   = useState();
 
     const handleAPICalls = (e, callType, currentStep, nextStep) => {
+        let tempHistory;
         if(e.status >= 200 && e.status < 300){
             switch (callType) {
                 case 'getID':
                     e.json().then(data => {
                         setAppID(data.id);
                     });
-                    let tempHistory = stepHistory;
+                    tempHistory = stepHistory;
                     tempHistory.push(currentStep);
                     setStepHistory(tempHistory);
                     setStep(nextStep);
                     break;
-            
+
+                case 'saveForm':
+                    tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
+                    break;
+
                 default:
                     break;
             }
@@ -94,6 +102,15 @@ function Form(props) {
                     <div>
                         <label htmlFor={extra} className={getLabelClass(true)}>{extras.getAttribute('data-special-label')}</label>
                         <input key={extra} type={extras.getAttribute('data-special-type')} id={extra} name={extra} aria-label={extra} placeholder={extras.getAttribute('data-special-text')} required={true} aria-required={true}></input>
+                    </div>
+                    );
+                    break;
+
+                case "file":
+                    markup = extrasArr.map((extra) =>
+                    <div>
+                        <label htmlFor={extra} className={getLabelClass(true)}>{extras.getAttribute('data-special-label')}</label>
+                        <input key={extra} type={extras.getAttribute('data-special-type')} id={extra} name={extra} aria-label={extra} required={true} aria-required={true}></input>
                     </div>
                     );
                     break;
@@ -192,6 +209,10 @@ function Form(props) {
                         markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         break;
 
+                    case 'file':
+                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} required={item.required} aria-required={item.required}></input>;
+                        break;
+
                     case 'number':
                         markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         break;
@@ -250,11 +271,13 @@ function Form(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let specialType  = false;
         let tempFormData = {};
         let tempSynthoms = [];
         let inputData    = [];
         let tempHistory  = [];
         let postData     = {answers:null};
+        let nextStep;
         switch (step) {
             case 0:
                 switch (buildType) {
@@ -262,7 +285,7 @@ function Form(props) {
                         switch (btnState) {
                             case "Start New Application": 
                                 tempHistory = stepHistory;
-                                tempHistory.push(0);
+                                tempHistory.push(step);
                                 setStepHistory(tempHistory);
                                 setStep(1);
                                 break;
@@ -296,7 +319,7 @@ function Form(props) {
             case 1:
                 switch (buildType) {
                     case "application":
-                        Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e, 'getID', 1, 2)},(e)=>{handleAPICalls(e, 'getID', 1)});
+                        Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,(e)=>{handleAPICalls(e, 'getID', step, 2)},(e)=>{handleAPICalls(e, 'getID', step)});
                         break;
 
                     case "status":
@@ -317,12 +340,8 @@ function Form(props) {
                             values: [btnState]
                         }
                         setFormData(tempFormData);
-                        postData.answers = {represent:'Myself'};
-                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', 2, 3)},(e)=>{handleAPICalls(e, 'saveForm', 0)});
-                        // tempHistory = stepHistory;
-                        // tempHistory.push(2);
-                        // setStepHistory(tempHistory);
-                        // setStep(3);
+                        postData.answers = tempFormData;
+                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, 3)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                         break;
 
                     case "status":
@@ -348,11 +367,8 @@ function Form(props) {
                         tempFormData.contact = {
                             values: [inputData]
                         }
-                        setFormData(tempFormData);
-                        tempHistory = stepHistory;
-                        tempHistory.push(3);
-                        setStepHistory(tempHistory);
-                        setStep(4);
+                        postData.answers = tempFormData;
+                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, 4)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                         break;
 
                     case "status":
@@ -369,7 +385,7 @@ function Form(props) {
             case 4:
                 switch (buildType) {
                     case "application":
-                        let specialType = false;
+                        specialType = false;
                         for (let index = 0; index < e.target.elements.length; index++) {
                             if(e.target.elements[index].tagName == 'INPUT'){
                                 if(e.target.elements[index].type == 'radio'){
@@ -385,12 +401,8 @@ function Form(props) {
                         tempFormData.applicantType = {
                             values: [inputData]
                         }
-                        setFormData(tempFormData);
-                        tempHistory = stepHistory;
-                        tempHistory.push(4);
-                        setStepHistory(tempHistory);
                         if(formData.applicantType.values[0].length > 1){
-                            setStep(5);
+                            nextStep = 5;
                         }else{
                             if(formData.represent.values[0] == "Myself"){
                                 tempFormData = formData;
@@ -398,11 +410,14 @@ function Form(props) {
                                     values: formData.contact.values
                                 }
                                 setFormData(tempFormData);
-                                setStep(7);
+                                nextStep = 7;
                             }else{
+                                nextStep = 6;
                                 setStep(6);
                             }
                         }
+                        postData.answers = tempFormData;
+                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                         break;
 
                     case "status":
@@ -426,11 +441,9 @@ function Form(props) {
                 tempFormData.contactBusiness = {
                     values: [inputData]
                 }
-                setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(5);
-                setStepHistory(tempHistory);
-                setStep(7);
+                nextStep = 7;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 6:
@@ -443,11 +456,9 @@ function Form(props) {
                 tempFormData.contactIndividual = {
                     values: [inputData]
                 }
-                setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(6);
-                setStepHistory(tempHistory);
-                setStep(7);
+                nextStep = 7;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 7:
@@ -456,10 +467,9 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(7);
-                setStepHistory(tempHistory);
-                setStep(8);
+                nextStep = 8;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 8:
@@ -468,14 +478,13 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(8);
-                setStepHistory(tempHistory);
                 if(btnState == "Yes"){
-                    setStep(9);
+                    nextStep = 9;
                 }else{
-                    setStep(10);
+                    nextStep = 10;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 9:
@@ -489,10 +498,9 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(9);
-                setStepHistory(tempHistory);
-                setStep(10);
+                nextStep = 10;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 10:
@@ -501,14 +509,13 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(10);
-                setStepHistory(tempHistory);
                 if(btnState == "Yes"){
-                    setStep(11);
+                    nextStep = 11;
                 }else{
-                    setStep(12);
+                    nextStep = 12;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 11:
@@ -523,12 +530,12 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(11);
                 setStepHistory(tempHistory);
                 setExtrasCount(0);
                 setExtras(undefined);
-                setStep(12);
+                nextStep = 12;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 12:
@@ -542,10 +549,9 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(12);
-                setStepHistory(tempHistory);
-                setStep(13);
+                nextStep = 13;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 13:
@@ -554,14 +560,13 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(13);
-                setStepHistory(tempHistory);
                 if(btnState == "Yes"){
-                    setStep(14);
+                    nextStep = 14
                 }else{
-                    setStep(15);
+                    nextStep = 15;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 14:
@@ -584,14 +589,13 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(15);
-                setStepHistory(tempHistory);
                 if(btnState == "Yes"){
-                    setStep(17);
+                    nextStep = 17;
                 }else{
-                    setStep(16);
+                    nextStep = 18;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 16:
@@ -609,12 +613,11 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(17);
-                setStepHistory(tempHistory);
                 setExtrasCount(0);
                 setExtras(undefined);
-                setStep(18);
+                nextStep = 18;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 18:
@@ -623,14 +626,13 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(18);
-                setStepHistory(tempHistory);
                 if(btnState == "Yes"){
-                    setStep(19);
+                    nextStep = 19;
                 }else{
-                    setStep(20);
+                    nextStep = 20;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 19:
@@ -645,12 +647,11 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(19);
-                setStepHistory(tempHistory);
                 setExtrasCount(0);
                 setExtras(undefined);
-                setStep(20);
+                nextStep = 20;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 20:
@@ -670,10 +671,9 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(20);
-                setStepHistory(tempHistory);
-                setStep(21);
+                nextStep = 21;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break; 
 
             case 21:
@@ -682,15 +682,15 @@ function Form(props) {
                     values: [btnState]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(21);
-                setStepHistory(tempHistory);
                 if(btnState == "Purchase"){
                     setStep(22);
+                    nextStep = 22;
                 }else{
                     //come back
-                    setStep(20);
+                    nextStep = 20;
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 22:
@@ -704,10 +704,9 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(22);
-                setStepHistory(tempHistory);
-                setStep(23);
+                nextStep = 23;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 23:
@@ -728,41 +727,42 @@ function Form(props) {
                     values: [inputData]
                 }
                 setFormData(tempFormData);
-                tempHistory = stepHistory;
-                tempHistory.push(23);
-                setStepHistory(tempHistory);
-                if(formData.applicantType.values[0].length > 1){
-                    setStep(5);
+                if(formData.propertyUse.values[0].length > 1){
+                    // come back
+                    nextStep = 5;
                 }else{
-                    switch (formData.applicantType.values[0]) {
+                    switch (formData.propertyUse.values[0][0]) {
                         case "commercial-retail":
-                            setStep(28);
+                            nextStep = 28;
                             break;
 
                         case "mixed-use":
-                            setStep(28);
+                            nextStep = 28;
                             break;
 
                         case "residential-multifamily":
-                            setStep(28);
+                            nextStep = 28;
                             break;
 
                         case "residential-single-family":
-                            setStep(28);
+                            nextStep = 28;
                             break;
 
                         case "industrial":
-                            setStep(28);
+                            nextStep = 28;
                             break;
 
                         case "parking-lot-auto-related":
                             setStep(24);
+                            nextStep = 24;
                             break;
                     
                         default:
                             break;
                     }
                 }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 24:
@@ -793,53 +793,92 @@ function Form(props) {
                 break;
 
             case 28:
-                tempSynthoms = [];
-                let covidCout = 0;
-                Array.from(e.target.elements).forEach(element => {
-                    if(element.checked){
-                        tempSynthoms.push(element.id);
+                specialType = false;
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if(e.target.elements[index].type == 'radio'){
+                            if(e.target.elements[index].checked == true){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }else{
+                            inputData.push(e.target.elements[index].value);
+                        }
                     }
-                });
-                if(tempSynthoms.length > 1){
-                    tempSynthoms.forEach((syn) => {
-                        (syn == 'other') ? 0 : covidCout++;
-                    });
-                    if(covidCout > 1){
-                        setStep(34);
-                    }else{
-                        setStep(30);
-                    }
-                }else{
-                    (tempSynthoms[0] == 'other') ? setStep(29) : setStep(30);
                 }
+                tempFormData = formData;
+                tempFormData.anticipadedWork = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                nextStep = 29;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                // tempSynthoms = [];
+                // let covidCout = 0;
+                // Array.from(e.target.elements).forEach(element => {
+                //     if(element.checked){
+                //         tempSynthoms.push(element.id);
+                //     }
+                // });
+                // if(tempSynthoms.length > 1){
+                //     tempSynthoms.forEach((syn) => {
+                //         (syn == 'other') ? 0 : covidCout++;
+                //     });
+                //     if(covidCout > 1){
+                //         setStep(34);
+                //     }else{
+                //         setStep(30);
+                //     }
+                // }else{
+                //     (tempSynthoms[0] == 'other') ? setStep(29) : setStep(30);
+                // }
                 break;
 
             case 29:
-                setStep(26);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData.proposal = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                nextStep = 30;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 30:
-                if(btnState == 'Yes'){
-                    setStep(17);
-                }else{
-                    if(formData.age.values[0] >= 19){
-                        setStep(31);
-                    }else{
-                        setStep(32);
-                    }
+                tempFormData = formData;
+                tempFormData.propozedZoning = {
+                    values: [btnState]
                 }
+                setFormData(tempFormData);
+                nextStep = 31;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 31:
-                if(btnState == 'Yes'){
-                    setStep(33);
-                }else{
-                    setStep(32);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData.costTimelineFunding = {
+                    values: [inputData]
+                }
+                setFormData(tempFormData);
+                nextStep = 32;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 32:
-                setStep(22);
+                
                 break;
 
             case 33:

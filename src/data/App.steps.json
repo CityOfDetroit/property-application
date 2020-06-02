@@ -2809,7 +2809,7 @@
                                     "content"   : "The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value." 
                                 },
                                 {
-                                    "id"        : "card-0-body-0",
+                                    "id"        : "card-0-body-1",
                                     "tag"       : "p",
                                     "content"   : "Enter your offer." 
                                 }
@@ -2918,10 +2918,10 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value." 
+                                    "content"   : "Select the primary use for the property" 
                                 },
                                 {
-                                    "id"        : "card-0-body-0",
+                                    "id"        : "card-0-body-1",
                                     "tag"       : "p",
                                     "content"   : "Enter your offer." 
                                 }
