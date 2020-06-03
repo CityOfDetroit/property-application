@@ -216,6 +216,10 @@ function Form(props) {
                     case 'number':
                         markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         break;
+
+                    case 'date':
+                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} required={item.required} aria-required={item.required}></input>;
+                        break;
                 
                     default:
                         markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
@@ -890,6 +894,7 @@ function Form(props) {
                 break;
 
             case 33:
+                // come back - needs to go last step
                 break;
 
             case 34:
