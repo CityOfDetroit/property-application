@@ -3999,7 +3999,7 @@
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "",
+                                        "name"          : "additional-files",
                                         "description"   : "Additional Information and files.",
                                         "text"          : "",
                                         "label"         : true,
