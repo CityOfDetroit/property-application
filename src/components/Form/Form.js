@@ -47,6 +47,22 @@ function Form(props) {
                     setStep(nextStep);
                     break;
 
+                case 'getStatus':
+                    e.json().then(data => {
+                        switch (data.status) {
+                            case 'incomplete':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(1);
+                                break;
+                        
+                            default:
+                                break;
+                        }
+                    });
+                    break;
+
                 default:
                     break;
             }
@@ -310,6 +326,13 @@ function Form(props) {
                         break;
 
                     case "status":
+                        inputData = [];
+                        for (let index = 0; index < e.target.elements.length; index++) {
+                            if(e.target.elements[index].tagName == 'INPUT'){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }
+                        Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/status/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'getStatus', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
                         break;
 
                     case "load":
@@ -327,9 +350,17 @@ function Form(props) {
                         break;
 
                     case "status":
+                        
                         break;
 
                     case "load":
+                        inputData = [];
+                        for (let index = 0; index < e.target.elements.length; index++) {
+                            if(e.target.elements[index].tagName == 'INPUT'){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }
+                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/answers/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'loadForm', step, 2)},(e)=>{handleAPICalls(e, 'loadForm', step)});
                         break;
 
                     default:

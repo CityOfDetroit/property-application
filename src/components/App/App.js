@@ -3,6 +3,7 @@ import './App.scss';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
+import token from '../../../local/token.json';
 
 function App() {
     const [appID, setAppID]             = useState();
@@ -117,6 +118,7 @@ function App() {
                 requirements={form.requirements}
                 text={form.text}
                 sections={form.sections}
+                token={token}
                 state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
             </Form>
         );
