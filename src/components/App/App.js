@@ -27,6 +27,7 @@ function App() {
     const restartApp = (e) => {
         e.preventDefault();
         if(btnState == 'x') {
+            setStepHistory([]);
             setFormData(undefined);
             setBuildType('application');
             setStep(0);

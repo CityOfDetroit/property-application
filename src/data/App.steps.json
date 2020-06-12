@@ -4514,6 +4514,69 @@
                     }
                 ]
             }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-1-card-0",
+                        "type"      : "center pop-up color-2",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Your application has been loaded successfully." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-1-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "start-review",
+                                        "description"   : "Start the application review.",
+                                        "text"  : "Start Review",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
         }
     ]
 }
