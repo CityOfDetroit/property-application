@@ -26,66 +26,11 @@ function Form(props) {
     const [extrasCount, setExtrasCount] = useState(0);
     const [otherInput, setOtherInput]   = useState();
 
-    const handleAPICalls = (e, callType, currentStep, nextStep) => {
-        let tempHistory;
-        if(e.status >= 200 && e.status < 300){
-            switch (callType) {
-                case 'getID':
-                    e.json().then(data => {
-                        setAppID(data.id);
-                    });
-                    tempHistory = stepHistory;
-                    tempHistory.push(currentStep);
-                    setStepHistory(tempHistory);
-                    setStep(nextStep);
-                    break;
-
-                case 'saveForm':
-                    tempHistory = stepHistory;
-                    tempHistory.push(currentStep);
-                    setStepHistory(tempHistory);
-                    setStep(nextStep);
-                    break;
-
-                case 'getStatus':
-                    e.json().then(data => {
-                        switch (data.status) {
-                            case 'incomplete':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(1);
-                                break;
-                        
-                            default:
-                                break;
-                        }
-                    });
-                    break;
-
-                case 'loadApplication':
-                    e.json().then(data => {
-                        setAppID(data.id);
-                        setFormData(data.answers);
-                        tempHistory = stepHistory;
-                        tempHistory.push(currentStep);
-                        setStepHistory(tempHistory);
-                        setStep(1);
-                    });
-                    break;
-
-                default:
-                    break;
-            }
-        }else{
-
-        }
-    }
-
+    // ================== Builder Section ====================
     const buildContent = () => {
         const formClass = `${props.type} ${props.position}`; 
         const markup = 
-        <form className={formClass} onSubmit={handleSubmit}>
+        <form id={props.id} className={formClass} onSubmit={handleSubmit}>
             <Body type={props.text.type} content={props.text.markup}></Body>
             {buildSections()}
         </form>
@@ -190,7 +135,23 @@ function Form(props) {
             case 'button':
                 switch (item.type) {
                     case 'submit':
-                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                        if(props.savedData){
+                            if(formData == undefined){
+                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                            }else{
+                                if(formData[props.id] == undefined){
+                                    markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                                }else{
+                                    if(formData[props.id][0] == item.text){
+                                        markup = <button className="selected" role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                                    }else{
+                                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                                    }
+                                }
+                            }
+                        }else{
+                            markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
+                        }
                         break;
     
                     case 'add':
@@ -284,6 +245,63 @@ function Form(props) {
         }
     }
 
+    // ================== Handler  Section ====================
+    const handleAPICalls = (e, callType, currentStep, nextStep) => {
+        let tempHistory;
+        if(e.status >= 200 && e.status < 300){
+            switch (callType) {
+                case 'getID':
+                    e.json().then(data => {
+                        setAppID(data.id);
+                    });
+                    tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
+                    break;
+
+                case 'saveForm':
+                    tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
+                    break;
+
+                case 'getStatus':
+                    e.json().then(data => {
+                        switch (data.status) {
+                            case 'incomplete':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(1);
+                                break;
+                        
+                            default:
+                                break;
+                        }
+                    });
+                    break;
+
+                case 'loadApplication':
+                    e.json().then(data => {
+                        setAppID(data.id);
+                        setFormData(data.answers);
+                        tempHistory = stepHistory;
+                        tempHistory.push(currentStep);
+                        setStepHistory(tempHistory);
+                        setStep(1);
+                    });
+                    break;
+
+                default:
+                    break;
+            }
+        }else{
+
+        }
+    }
+
     const handleGroupingRequired = (e) => {
         let isChecked = false;
         if(e.target.getAttribute('data-grouping') == 'true'){
@@ -297,6 +315,23 @@ function Form(props) {
                     element.required = false;
                 });
             }
+        }
+    }
+
+    const handleChange = (e) => {
+        switch (e.target.getAttribute('data-special-type')) {
+            case 'other':
+                setOtherInput(`${e.target.getAttribute('data-special-id')}-container`);
+                console.log(e.target);
+                e.target.parentElement.after(buildOtherInputOption(e.target));
+                break;
+        
+            default:
+                if(otherInput){
+                    document.getElementById(otherInput).remove();
+                    setOtherInput(undefined);
+                }
+                break;
         }
     }
 
@@ -364,7 +399,6 @@ function Form(props) {
             case 1:
                 switch (buildType) {
                     case "application":
-                        console.log(appID);
                         if(appID == undefined){
                             Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, 2)},(e)=>{handleAPICalls(e, 'getID', step)});
                         }else{
@@ -393,7 +427,7 @@ function Form(props) {
             case 2:
                 switch (buildType) {
                     case "application":
-                        tempFormData.represent = {
+                        tempFormData[e.target.id] = {
                             values: btnState
                         }
                         setFormData(tempFormData);
@@ -421,7 +455,7 @@ function Form(props) {
                             }
                         }
                         tempFormData = formData;
-                        tempFormData.contact = {
+                        tempFormData[e.target.id] = {
                             values: inputData
                         }
                         postData.answers = tempFormData;
@@ -455,7 +489,7 @@ function Form(props) {
                             }
                         }
                         tempFormData = formData;
-                        tempFormData.applicantType = {
+                        tempFormData[e.target.id] = {
                             values: inputData
                         }
                         if(formData.applicantType.values.length > 1){
@@ -495,7 +529,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.contactBusiness = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 nextStep = 7;
@@ -510,7 +544,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.contactIndividual = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 nextStep = 7;
@@ -520,7 +554,7 @@ function Form(props) {
 
             case 7:
                 tempFormData = formData;
-                tempFormData.inDetroit = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -532,7 +566,7 @@ function Form(props) {
 
             case 8:
                 tempFormData = formData;
-                tempFormData.DLBACommunityPartner = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -552,7 +586,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.partnerList = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -563,7 +597,7 @@ function Form(props) {
 
             case 10:
                 tempFormData = formData;
-                tempFormData.ownDetroitProperty = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -584,7 +618,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.detroitProperties = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -603,7 +637,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.LLCs = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -614,7 +648,7 @@ function Form(props) {
 
             case 13:
                 tempFormData = formData;
-                tempFormData.delinquencyStatus = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -643,7 +677,7 @@ function Form(props) {
                 //     (tempSynthoms[0] == 'other') ? setStep(20) : setStep(16);
                 // }
                 tempFormData = formData;
-                tempFormData.identifiedProperty = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -667,7 +701,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.interestedProperty = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -680,7 +714,7 @@ function Form(props) {
 
             case 18:
                 tempFormData = formData;
-                tempFormData.adjacentPropertyisOwned = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -701,7 +735,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.adjacentProperty = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -725,7 +759,7 @@ function Form(props) {
                 //     (tempSynthoms[0] == 'other') ? setStep(22) : setStep(21);
                 // }
                 tempFormData = formData;
-                tempFormData.previouslyOwnRent = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -736,7 +770,7 @@ function Form(props) {
 
             case 21:
                 tempFormData = formData;
-                tempFormData.purchaseOrLease = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -758,7 +792,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.offer = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -781,7 +815,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.propertyUse = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -811,7 +845,6 @@ function Form(props) {
                             break;
 
                         case "parking-lot-auto-related":
-                            setStep(24);
                             nextStep = 24;
                             break;
                     
@@ -824,30 +857,61 @@ function Form(props) {
                 break;
 
             case 24:
-                if(btnState == 'Yes'){
-                    setStep(17);
-                }else{
-                    if(formData.age.values[0] >= 19){
-                        setStep(25);
-                    }else{
-                        setStep(27);
-                    }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
                 }
+                setFormData(tempFormData);
+                if(btnState == 'Parking Lot'){
+                    nextStep = 25;
+                }else{
+                    nextStep = 28;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 25:
-                if(btnState == 'Yes'){
-                    setStep(26);
-                }else{
-                    setStep(27);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 26;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 26:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 27;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 27:
-                setStep(26);
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                nextStep = 28;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 28:
@@ -864,7 +928,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.anticipadedWork = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -899,7 +963,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.proposal = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -910,7 +974,7 @@ function Form(props) {
 
             case 30:
                 tempFormData = formData;
-                tempFormData.propozedZoning = {
+                tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
@@ -926,7 +990,7 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData.costTimelineFunding = {
+                tempFormData[e.target.id] = {
                     values: inputData
                 }
                 setFormData(tempFormData);
@@ -948,7 +1012,20 @@ function Form(props) {
                 break;
 
             case 33:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
                 // come back - needs to go last step
+                nextStep = 34;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 34:
@@ -1027,23 +1104,6 @@ function Form(props) {
                 break;
         
             default:
-                break;
-        }
-    }
-
-    const handleChange = (e) => {
-        switch (e.target.getAttribute('data-special-type')) {
-            case 'other':
-                setOtherInput(`${e.target.getAttribute('data-special-id')}-container`);
-                console.log(e.target);
-                e.target.parentElement.after(buildOtherInputOption(e.target));
-                break;
-        
-            default:
-                if(otherInput){
-                    document.getElementById(otherInput).remove();
-                    setOtherInput(undefined);
-                }
                 break;
         }
     }

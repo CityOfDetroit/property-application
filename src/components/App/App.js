@@ -27,11 +27,15 @@ function App() {
     const restartApp = (e) => {
         e.preventDefault();
         if(btnState == 'x') {
+            setAppID(undefined);
             setStepHistory([]);
             setFormData(undefined);
             setBuildType('application');
             setStep(0);
         }else{
+            if(stepHistory[stepHistory.length - 1] == 0){
+                setAppID(undefined);
+            }
             let tempStep = stepHistory[stepHistory.length - 1];
             let tempHistory = stepHistory;
             tempHistory.pop();
@@ -112,7 +116,9 @@ function App() {
 
     const buildForms = (items) => {
         const markup = items.forms.map((form) =>
-            <Form  
+            <Form
+                id={form.id}
+                savedData={form.savedData}
                 key={form.id} 
                 type={form.type}
                 position={form.position}  

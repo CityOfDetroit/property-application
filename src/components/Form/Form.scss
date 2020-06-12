@@ -19,7 +19,7 @@ form.single-button{
                 width: 100%;
             }
 
-            button:hover{
+            button:hover,button.selected{
                 background-color: $color-3;
                 color: $black;
             }
@@ -49,7 +49,7 @@ form.input-submit{
                 margin-right: 1em;
             }
 
-            button:hover{
+            button:hover,button.selected{
                 background-color: $color-3;
                 color: $black;
             }
@@ -110,7 +110,7 @@ form.radio-buttons{
                 width: 100%;
             }
 
-            button:hover{
+            button:hover,button.selected{
                 background-color: $color-3;
                 color: $black;
             }
@@ -197,7 +197,7 @@ form.checkbox-set{
                 margin-right: 1em;
             }
 
-            button:hover{
+            button:hover,button.selected{
                 background-color: $color-3;
                 color: $black;
             }
