@@ -113,10 +113,10 @@ function Form(props) {
     }
 
     const buildItems = (items) => {
-        const markup = items.map((item) => 
+        const markup = items.map((item, index) => 
             <div key={item.id}>
                 {(item.labelPosition != "after") ? (item.label) ? <label htmlFor={item.id} className={getLabelClass(item.required)}>{item.labelText}</label> : '' : ''}
-                {buildTag(item)}
+                {buildTag(item, index)}
                 {(item.labelPosition == "after") ? (item.label) ? <label htmlFor={item.id} className={getLabelClass(item.required)}>{item.labelText}</label> : '' : ''}
             </div>
         );
@@ -129,7 +129,7 @@ function Form(props) {
         return tempClass;
     }
 
-    const buildTag = (item) =>{
+    const buildTag = (item, index) =>{
         let markup;
         switch (item.tag) {
             case 'button':
@@ -142,7 +142,7 @@ function Form(props) {
                                 if(formData[props.id] == undefined){
                                     markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                                 }else{
-                                    if(formData[props.id][0] == item.text){
+                                    if(formData[props.id][index] == item.text){
                                         markup = <button className="selected" role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                                     }else{
                                         markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
@@ -154,8 +154,26 @@ function Form(props) {
                         }
                         break;
     
-                    case 'add':
-                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
+                    case 'button':
+                        switch (item.text) {
+                            case 'Add':
+                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
+                                break;
+
+                            case 'Remove':
+                                markup = <button 
+                            role="button" 
+                            aria-label={item.name} 
+                            onClick={(e)=>{
+                                console.log(extrasCount);
+                                if(extrasCount > 0){setExtrasCount(extrasCount - 1);setExtras(e.target);} 
+                            }} 
+                            type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
+                                break;
+                        
+                            default:
+                                break;
+                        }
                         break;
                 
                     default:
@@ -164,23 +182,87 @@ function Form(props) {
                 break;
 
             case 'select':
-                markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                if(props.savedData){
+                    if(formData == undefined){
+                        markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                    }else{
+                        if(formData[props.id] == undefined){
+                            markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                        }else{
+                            markup = <select id={item.id} name={item.name} aria-label={item.name} vallue={formData[props.id][index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                        }
+                    }
+                }else{
+                    markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                }
                 break;
 
             case 'textarea':
-                markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                if(props.savedData){
+                    if(formData == undefined){
+                        markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                    }else{
+                        if(formData[props.id] == undefined){
+                            markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                        }else{
+                            markup = <textarea id={item.id} name={item.name} value={formData[props.id][index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                        }
+                    }
+                }else{
+                    markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                }
                 break;
 
             case 'GEOCODER':
-                markup = 
-                <Geocoder 
-                id={item.id} 
-                name={item.name} 
-                placeholder={item.placeholder} 
-                required={item.required} 
-                ariaRequired={item.required}
-                label={item.labelText}
-                ></Geocoder>;
+                if(props.savedData){
+                    if(formData == undefined){
+                        markup = 
+                        <Geocoder 
+                        id={item.id} 
+                        name={item.name} 
+                        placeholder={item.placeholder} 
+                        required={item.required} 
+                        ariaRequired={item.required}
+                        label={item.labelText}
+                        value={item.value}
+                        ></Geocoder>;
+                    }else{
+                        if(formData[props.id] == undefined){
+                            markup = 
+                            <Geocoder 
+                            id={item.id} 
+                            name={item.name} 
+                            placeholder={item.placeholder} 
+                            required={item.required} 
+                            ariaRequired={item.required}
+                            label={item.labelText}
+                            value={item.value}
+                            ></Geocoder>;
+                        }else{
+                            markup = 
+                            <Geocoder 
+                            id={item.id} 
+                            name={item.name} 
+                            placeholder={item.placeholder} 
+                            required={item.required} 
+                            ariaRequired={item.required}
+                            label={item.labelText}
+                            value={formData[props.id][index]}
+                            ></Geocoder>;
+                        }
+                    }
+                }else{
+                    markup = 
+                    <Geocoder 
+                    id={item.id} 
+                    name={item.name} 
+                    placeholder={item.placeholder} 
+                    required={item.required} 
+                    ariaRequired={item.required}
+                    label={item.labelText}
+                    value={item.value}
+                    ></Geocoder>;
+                }
                 break;
         
             default:
@@ -194,7 +276,19 @@ function Form(props) {
                         break;
                     
                     case 'text':
-                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                        if(props.savedData){
+                            if(formData == undefined){
+                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            }else{
+                                if(formData[props.id] == undefined){
+                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }else{
+                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id][index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }
+                            }
+                        }else{
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                        }
                         break;
 
                     case 'file':
@@ -372,7 +466,6 @@ function Form(props) {
                         break;
 
                     case "status":
-                        inputData = [];
                         for (let index = 0; index < e.target.elements.length; index++) {
                             if(e.target.elements[index].tagName == 'INPUT'){
                                 inputData.push(e.target.elements[index].value);
@@ -382,7 +475,6 @@ function Form(props) {
                         break;
 
                     case "load":
-                        inputData = [];
                         for (let index = 0; index < e.target.elements.length; index++) {
                             if(e.target.elements[index].tagName == 'INPUT'){
                                 inputData.push(e.target.elements[index].value);
@@ -427,9 +519,14 @@ function Form(props) {
             case 2:
                 switch (buildType) {
                     case "application":
+                        console.log(formData);
+                        if(formData != undefined){
+                            tempFormData = formData;
+                        }
                         tempFormData[e.target.id] = {
                             values: btnState
                         }
+                        console.log(tempFormData);
                         setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 3)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -458,6 +555,8 @@ function Form(props) {
                         tempFormData[e.target.id] = {
                             values: inputData
                         }
+                        console.log(tempFormData);
+                        setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 4)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                         break;
@@ -507,6 +606,8 @@ function Form(props) {
                                 setStep(6);
                             }
                         }
+                        console.log(tempFormData);
+                        setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                         break;
@@ -532,6 +633,8 @@ function Form(props) {
                 tempFormData[e.target.id] = {
                     values: inputData
                 }
+                console.log(tempFormData);
+                        setFormData(tempFormData);
                 nextStep = 7;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -560,7 +663,6 @@ function Form(props) {
                 setFormData(tempFormData);
                 nextStep = 8;
                 postData.answers = tempFormData;
-                console.log(formData);
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
