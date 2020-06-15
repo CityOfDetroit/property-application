@@ -165,7 +165,6 @@ function Form(props) {
                             role="button" 
                             aria-label={item.name} 
                             onClick={(e)=>{
-                                console.log(extrasCount);
                                 if(extrasCount > 0){setExtrasCount(extrasCount - 1);setExtras(e.target);} 
                             }} 
                             type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
@@ -355,10 +354,18 @@ function Form(props) {
                     break;
 
                 case 'saveForm':
-                    tempHistory = stepHistory;
-                    tempHistory.push(currentStep);
-                    setStepHistory(tempHistory);
-                    setStep(nextStep);
+                    switch (currentStep) {
+                        case 33:
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', currentStep)});
+                            break;
+                    
+                        default:
+                            tempHistory = stepHistory;
+                            tempHistory.push(currentStep);
+                            setStepHistory(tempHistory);
+                            setStep(nextStep);
+                            break;
+                    }
                     break;
 
                 case 'getStatus':
@@ -416,7 +423,6 @@ function Form(props) {
         switch (e.target.getAttribute('data-special-type')) {
             case 'other':
                 setOtherInput(`${e.target.getAttribute('data-special-id')}-container`);
-                console.log(e.target);
                 e.target.parentElement.after(buildOtherInputOption(e.target));
                 break;
         
@@ -519,14 +525,12 @@ function Form(props) {
             case 2:
                 switch (buildType) {
                     case "application":
-                        console.log(formData);
                         if(formData != undefined){
                             tempFormData = formData;
                         }
                         tempFormData[e.target.id] = {
                             values: btnState
                         }
-                        console.log(tempFormData);
                         setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 3)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -555,7 +559,6 @@ function Form(props) {
                         tempFormData[e.target.id] = {
                             values: inputData
                         }
-                        console.log(tempFormData);
                         setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 4)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -606,7 +609,6 @@ function Form(props) {
                                 setStep(6);
                             }
                         }
-                        console.log(tempFormData);
                         setFormData(tempFormData);
                         postData.answers = tempFormData;
                         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -633,8 +635,7 @@ function Form(props) {
                 tempFormData[e.target.id] = {
                     values: inputData
                 }
-                console.log(tempFormData);
-                        setFormData(tempFormData);
+                setFormData(tempFormData);
                 nextStep = 7;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -1105,7 +1106,6 @@ function Form(props) {
                 postData = new FormData();
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
-                        console.log(e.target.elements[index]);
                         postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
                     }
                 }

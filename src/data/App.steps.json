@@ -4284,6 +4284,48 @@
                 ],
                 "hints": []
             }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-34-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Thank you! You should receive a response within in 15 business days. You can learn more about how to prepare for a smooth property purchase at “xxx” link." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": []
+            }
         }
     ],
     "status" : [
