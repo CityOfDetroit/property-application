@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 import './App.scss';
+import Bar from '../Bar/Bar';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
@@ -57,10 +58,21 @@ function App() {
         return markup;
     }
 
+    const buildProgressBar = () => {
+        if(buildType == 'application' && step > 1){
+            let progress = ((step - 1)/(data[buildType].length - 1)) * 100;
+            let spacing = (data[buildType][step].items.hints.length > 0) ? spacing = true : spacing = false;
+            return <Bar progress={progress} spacing={spacing}></Bar>;
+        }else{
+            return '';
+        }
+    }
+
     const buildPanel = () => {
         const markup = 
         <section className="intake">
             {buildHeader(data[buildType][step].items)}
+            {buildProgressBar()}
             <section className="intake-container">
                 <article className="intake-body">
                     {buildAppIDCard()}
@@ -76,17 +88,17 @@ function App() {
     const buildAppIDCard = () => {
         let tempBody = [
             {
-                "id"        : "card-0-body-0",
+                "id"        : "app-id-0-body-0",
                 "tag"       : "b",
                 "content"   : "Application ID" 
             },
             {
-                "id"        : "card-0-body-1",
+                "id"        : "app-id-0-body-1",
                 "tag"       : "p",
                 "content"   : `${appID}`
             },
             {
-                "id"        : "card-0-body-1",
+                "id"        : "app-id-0-body-1",
                 "tag"       : "p",
                 "content"   : "This is the ID for your appliation. Remember to keep this ID for your records."
             }
