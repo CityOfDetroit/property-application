@@ -356,7 +356,7 @@ function Form(props) {
                 case 'saveForm':
                     switch (currentStep) {
                         case 33:
-                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', currentStep)});
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
                             break;
                     
                         default:
@@ -377,6 +377,13 @@ function Form(props) {
                                 setStepHistory(tempHistory);
                                 setStep(1);
                                 break;
+
+                            case 'complete':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(2);
+                                break;
                         
                             default:
                                 break;
@@ -396,6 +403,10 @@ function Form(props) {
                     break;
 
                 default:
+                    tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
                     break;
             }
         }else{
@@ -438,6 +449,7 @@ function Form(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         let specialType  = false;
+        let attachments  = 0;
         let tempFormData = {};
         let tempSynthoms = [];
         let inputData    = [];
@@ -787,7 +799,7 @@ function Form(props) {
                 if(btnState == "Yes"){
                     nextStep = 17;
                 }else{
-                    nextStep = 18;
+                    nextStep = 16;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -1106,11 +1118,24 @@ function Form(props) {
                 postData = new FormData();
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
-                        postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
                     }
                 }
-                nextStep = 33;
-                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                console.log(attachments);
+                if(attachments > 0){
+                    nextStep = 33;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(33);
+                }
+                
                 break;
 
             case 33:

@@ -3819,6 +3819,11 @@
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
                                     "content"   : "Is the Proposed Zoning Compliant?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "small",
+                                    "content"   : "Note: Zoning will be verified and your purchase will be fully completed once a special uses hearing is held, which is an additional cost" 
                                 }
                             ]
                         }
@@ -3843,27 +3848,18 @@
                                         "id"    : "step-30-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "rent",
-                                        "description"   : "Rent",
-                                        "text"  : "Rent",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
                                         "id"    : "step-30-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "own",
-                                        "description"   : "Own",
-                                        "text"  : "own",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-30-form-0-section-0-item-2",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no-unsure",
-                                        "description"   : "No/Unsure",
-                                        "text"  : "No/Unsure",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
                                         "label" : false
                                     }
                                 ]
@@ -4078,7 +4074,7 @@
                                         "label"         : true,
                                         "labelText"     : "Add File",
                                         "labelPosition" : "before",
-                                        "required"      : true
+                                        "required"      : false
                                     },
                                     {   
                                         "id"    : "add",
@@ -4517,7 +4513,7 @@
                                 {
                                     "id"        : "card-0-body-1",
                                     "tag"       : "strong",
-                                    "content"   : "Completedm," 
+                                    "content"   : "Completed," 
                                 }
                             ]
                         }
