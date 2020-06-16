@@ -63,6 +63,7 @@ function App() {
             {buildHeader(data[buildType][step].items)}
             <section className="intake-container">
                 <article className="intake-body">
+                    {buildAppIDCard()}
                     {buildCards(data[buildType][step].items)}
                 </article>
                 {buildForms(data[buildType][step].items)}
@@ -70,6 +71,36 @@ function App() {
             </section>
         </section>
         return markup;
+    }
+
+    const buildAppIDCard = () => {
+        let tempBody = [
+            {
+                "id"        : "card-0-body-0",
+                "tag"       : "b",
+                "content"   : "Application ID" 
+            },
+            {
+                "id"        : "card-0-body-1",
+                "tag"       : "p",
+                "content"   : `${appID}`
+            },
+            {
+                "id"        : "card-0-body-1",
+                "tag"       : "p",
+                "content"   : "This is the ID for your appliation. Remember to keep this ID for your records."
+            }
+        ];
+        if(appID != undefined && step == 2){
+            return <Card  
+                key="app-id-card" 
+                type="right pop-up color-3"
+                title={null}
+                titleType={null}
+                body={tempBody} 
+                bodyType="text">
+            </Card>;
+        }
     }
 
     const buildHints = (items) => {

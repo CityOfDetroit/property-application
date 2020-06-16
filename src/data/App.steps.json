@@ -1882,6 +1882,84 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Does the applicant operate under any LLC’s or Entities in the City of Detroit?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "small",
+                                    "content"   : "Applicant must disclose all entities they do business under in the City of Detroit. Any omissions will delay processing the application." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "hasLLC",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-12-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-12-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "operates-under-llc",
+                                        "description"   : "Applicant operates under a LLC",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-12-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "does-not-operates-under-llc",
+                                        "description"   : "Applicant does not operates under a LLC",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-13-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "What LLCs/Entities does the applicant operate under?" 
                                 },
                                 {
@@ -1906,7 +1984,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-12-form-0-section-0",
+                                "id"    : "step-13-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "llc-entities-0",
@@ -1952,7 +2030,7 @@
                                         "otherID"               : "llc-entities"
                                     },
                                     {   
-                                        "id"    : "step-11-form-0-section-0-item-1",
+                                        "id"    : "step-13-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -1982,7 +2060,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-13-card-0",
+                        "id"        : "step-14-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2018,10 +2096,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-13-form-0-section-0",
+                                "id"    : "step-14-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-13-form-0-section-0-item-0",
+                                        "id"    : "step-14-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "delinquent-taxes-blight",
@@ -2030,7 +2108,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-13-form-0-section-0-item-1",
+                                        "id"    : "step-14-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no-delinquent-taxes-blight",
@@ -2045,7 +2123,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-13-hint-0",
+                        "id"        : "step-14-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2096,7 +2174,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-14-card-0",
+                        "id"        : "step-15-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2139,7 +2217,7 @@
                 "forms": [],
                 "hints": [
                     {   
-                        "id"        : "step-14-hint-0",
+                        "id"        : "step-15-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2173,7 +2251,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-15-card-0",
+                        "id"        : "step-16-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2204,10 +2282,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-15-form-0-section-0",
+                                "id"    : "step-16-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-15-form-0-section-0-item-0",
+                                        "id"    : "step-16-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "identified-property",
@@ -2216,7 +2294,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-15-form-0-section-0-item-1",
+                                        "id"    : "step-16-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no-delinquent-taxes-blight",
@@ -2229,73 +2307,6 @@
                         ]
                     }
                 ],
-                "hints": [
-                    {   
-                        "id"        : "step-15-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-16-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Thanks for your interest! Here are some resources that can assist your search.  Please submit this application when you have a property identified." 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [],
                 "hints": [
                     {   
                         "id"        : "step-16-hint-0",
@@ -2350,6 +2361,73 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Thanks for your interest! Here are some resources that can assist your search.  Please submit this application when you have a property identified." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-17-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-18-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing." 
                                 }
                             ]
@@ -2369,7 +2447,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-17-form-0-section-0",
+                                "id"    : "step-18-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "interested-property-0",
@@ -2412,7 +2490,7 @@
                                         "otherID"               : "interested-property"
                                     },
                                     {   
-                                        "id"    : "step-17-form-0-section-0-item-1",
+                                        "id"    : "step-18-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -2427,7 +2505,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-17-hint-0",
+                        "id"        : "step-18-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2478,7 +2556,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-18-card-0",
+                        "id"        : "step-19-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2509,10 +2587,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-18-form-0-section-0",
+                                "id"    : "step-19-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-18-form-0-section-0-item-0",
+                                        "id"    : "step-19-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "adjacent-property",
@@ -2521,113 +2599,12 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-18-form-0-section-0-item-1",
+                                        "id"    : "step-19-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-adjacent-property",
                                         "description"   : "Property is not adjacent to another property that the applicant owns.",
                                         "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-18-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Use the map to to help determine adjacency." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-19-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Please add the address(es) of the adjacent property." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "adjacentProperty",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-19-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "adjacent-property-0",
-                                        "tag"   : "GEOCODER",
-                                        "type"  : "text",
-                                        "name"  : "adjacent-property",
-                                        "description"   : "Address of adjacent property",
-                                        "placeholder"   : "Ex. 1301 Third st.",
-                                        "text"  : "Yes",
-                                        "label" : false,
-                                        "labelText" : "Property Address",
-                                        "required"  : true
-                                    },
-                                    {   
-                                        "id"    : "step-19-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step",
-                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -2689,6 +2666,107 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Please add the address(es) of the adjacent property." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "adjacentProperty",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-20-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "adjacent-property-0",
+                                        "tag"   : "GEOCODER",
+                                        "type"  : "text",
+                                        "name"  : "adjacent-property",
+                                        "description"   : "Address of adjacent property",
+                                        "placeholder"   : "Ex. 1301 Third st.",
+                                        "text"  : "Yes",
+                                        "label" : false,
+                                        "labelText" : "Property Address",
+                                        "required"  : true
+                                    },
+                                    {   
+                                        "id"    : "step-20-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-20-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the map to to help determine adjacency." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-21-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "Did the applicant previously own or rent  this property?" 
                                 },
                                 {
@@ -2713,10 +2791,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-20-form-0-section-0",
+                                "id"    : "step-21-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-20-form-0-section-0-item-0",
+                                        "id"    : "step-21-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "adjacent-property",
@@ -2725,7 +2803,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-20-form-0-section-0-item-1",
+                                        "id"    : "step-21-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-adjacent-property",
@@ -2734,7 +2812,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-20-form-0-section-0-item-2",
+                                        "id"    : "step-21-form-0-section-0-item-2",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-adjacent-property",
@@ -2764,7 +2842,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-21-card-0",
+                        "id"        : "step-22-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2795,10 +2873,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-21-form-0-section-0",
+                                "id"    : "step-22-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-21-form-0-section-0-item-0",
+                                        "id"    : "step-22-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "purchase-property",
@@ -2807,7 +2885,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-21-form-0-section-0-item-1",
+                                        "id"    : "step-22-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "lease-property",
@@ -2822,7 +2900,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-21-hint-0",
+                        "id"        : "step-22-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2856,7 +2934,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-22-card-0",
+                        "id"        : "step-23-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -2892,7 +2970,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-22-form-0-section-0",
+                                "id"    : "step-23-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "offer",
@@ -2910,7 +2988,7 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-22-form-0-section-0-item-1",
+                                        "id"    : "step-23-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -2925,7 +3003,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-22-hint-0",
+                        "id"        : "step-23-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2969,7 +3047,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-23-card-0",
+                        "id"        : "step-24-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -3005,7 +3083,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-23-form-0-section-0",
+                                "id"    : "step-24-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "commercial-retail",
@@ -3269,7 +3347,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-24-card-0",
+                        "id"        : "step-25-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -3300,10 +3378,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-24-form-0-section-0",
+                                "id"    : "step-25-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-24-form-0-section-0-item-0",
+                                        "id"    : "step-25-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "parking-lot",
@@ -3312,91 +3390,12 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-24-form-0-section-0-item-1",
+                                        "id"    : "step-25-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "auto-related-business",
                                         "description"   : "Auto Related Business",
                                         "text"  : "Auto Related Business",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-25-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "How many Parking spots do you need?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "parkingSpots",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-25-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "parking-spots",
-                                        "tag"           : "input",
-                                        "type"          : "number",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter number of parking spots",
-                                        "name"          : "offer",
-                                        "description"   : "Number of parking spots needed",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Parking spots",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"    : "step-25-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -3433,7 +3432,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "How many Parking spots do you currently have?" 
+                                    "content"   : "How many Parking spots do you need?" 
                                 }
                             ]
                         }
@@ -3441,7 +3440,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "currentParkingSpots",
+                        "id"            : "parkingSpots",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
@@ -3462,7 +3461,7 @@
                                         "value"         : "",
                                         "placeholder"   : "Enter number of parking spots",
                                         "name"          : "offer",
-                                        "description"   : "Number of parking spots currently owned",
+                                        "description"   : "Number of parking spots needed",
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Parking spots",
@@ -3512,7 +3511,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Did you review the PDD/BSEED requirements for parking?" 
+                                    "content"   : "How many Parking spots do you currently have?" 
                                 }
                             ]
                         }
@@ -3520,7 +3519,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "reviewParkingReq",
+                        "id"            : "currentParkingSpots",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
@@ -3534,21 +3533,27 @@
                                 "id"    : "step-27-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-27-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "Applicant reviewed PDD/BSEED requirements for parking.",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "parking-spots",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter number of parking spots",
+                                        "name"          : "offer",
+                                        "description"   : "Number of parking spots currently owned",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Parking spots",
+                                        "labelPosition" : "before",
+                                        "required"      : true
                                     },
                                     {   
                                         "id"    : "step-27-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "Applicant did not reviewed PDD/BSEED requirements for parking.",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -3585,6 +3590,79 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Did you review the PDD/BSEED requirements for parking?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "reviewParkingReq",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-28-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-28-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "Applicant reviewed PDD/BSEED requirements for parking.",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-28-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "Applicant did not reviewed PDD/BSEED requirements for parking.",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-29-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "Check all work that the applicant anticipates completing on this parcel(s):" 
                                 },
                                 {
@@ -3609,7 +3687,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-28-form-0-section-0",
+                                "id"    : "step-29-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "new-construction",
@@ -3721,7 +3799,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-29-card-0",
+                        "id"        : "step-30-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -3757,7 +3835,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-29-form-0-section-0",
+                                "id"    : "step-30-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "proposal",
@@ -3806,7 +3884,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-30-card-0",
+                        "id"        : "step-31-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -3842,10 +3920,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-30-form-0-section-0",
+                                "id"    : "step-31-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-30-form-0-section-0-item-0",
+                                        "id"    : "step-31-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "yes",
@@ -3854,7 +3932,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-30-form-0-section-0-item-1",
+                                        "id"    : "step-31-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no",
@@ -3869,7 +3947,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-30-hint-0",
+                        "id"        : "step-31-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -3909,7 +3987,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-31-card-0",
+                        "id"        : "step-32-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -3950,7 +4028,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-31-form-0-section-0",
+                                "id"    : "step-32-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "development-cost",
@@ -3998,7 +4076,7 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-31-form-0-section-0-item-1",
+                                        "id"    : "step-32-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -4028,7 +4106,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-32-card-0",
+                        "id"        : "step-33-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -4059,7 +4137,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-32-form-0-section-0",
+                                "id"    : "step-33-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "additional-files-0",
@@ -4105,7 +4183,7 @@
                                         "otherID"               : "additional-files"
                                     },
                                     {   
-                                        "id"    : "step-31-form-0-section-0-item-1",
+                                        "id"    : "step-33-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -4135,7 +4213,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-33-card-0",
+                        "id"        : "step-34-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -4232,7 +4310,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-33-form-0-section-0",
+                                "id"    : "step-34-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "agreement-understanding",
@@ -4265,7 +4343,7 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-33-form-0-section-0-item-1",
+                                        "id"    : "step-34-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "finish",
@@ -4295,7 +4373,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-34-card-0",
+                        "id"        : "step-35-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",

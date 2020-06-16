@@ -746,6 +746,21 @@ function Form(props) {
                 break;
 
             case 12:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 13
+                }else{
+                    nextStep = 14;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 13:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
@@ -756,30 +771,30 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 13;
+                nextStep = 14;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 13:
+            case 14:
                 tempFormData = formData;
                 tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
-                    nextStep = 14
+                    nextStep = 15
                 }else{
-                    nextStep = 15;
+                    nextStep = 16;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 14:
+            case 15:
                 break;
 
-            case 15:
+            case 16:
                 // tempSynthoms = [];
                 // Array.from(e.target.elements).forEach(element => {
                 //     if(element.checked){
@@ -797,18 +812,18 @@ function Form(props) {
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
-                    nextStep = 17;
+                    nextStep = 18;
                 }else{
-                    nextStep = 16;
+                    nextStep = 17;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 16:
+            case 17:
                 break;
 
-            case 17:
+            case 18:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
@@ -822,27 +837,27 @@ function Form(props) {
                 setFormData(tempFormData);
                 setExtrasCount(0);
                 setExtras(undefined);
-                nextStep = 18;
+                nextStep = 19;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 18:
+            case 19:
                 tempFormData = formData;
                 tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Yes"){
-                    nextStep = 19;
-                }else{
                     nextStep = 20;
+                }else{
+                    nextStep = 21;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 19:
+            case 20:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
@@ -856,12 +871,12 @@ function Form(props) {
                 setFormData(tempFormData);
                 setExtrasCount(0);
                 setExtras(undefined);
-                nextStep = 20;
+                nextStep = 21;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 20:
+            case 21:
                 // tempSynthoms = [];
                 // Array.from(e.target.elements).forEach(element => {
                 //     if(element.checked){
@@ -878,29 +893,28 @@ function Form(props) {
                     values: btnState
                 }
                 setFormData(tempFormData);
-                nextStep = 21;
+                nextStep = 22;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break; 
 
-            case 21:
+            case 22:
                 tempFormData = formData;
                 tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == "Purchase"){
-                    setStep(22);
-                    nextStep = 22;
+                    nextStep = 23;
                 }else{
                     //come back
-                    nextStep = 20;
+                    nextStep = 21;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 22:
+            case 23:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
@@ -911,12 +925,12 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 23;
+                nextStep = 24;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 23:
+            case 24:
                 specialType = false;
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
@@ -940,27 +954,27 @@ function Form(props) {
                 }else{
                     switch (formData.propertyUse.values[0]) {
                         case "commercial-retail":
-                            nextStep = 28;
+                            nextStep = 29;
                             break;
 
                         case "mixed-use":
-                            nextStep = 28;
+                            nextStep = 29;
                             break;
 
                         case "residential-multifamily":
-                            nextStep = 28;
+                            nextStep = 29;
                             break;
 
                         case "residential-single-family":
-                            nextStep = 28;
+                            nextStep = 29;
                             break;
 
                         case "industrial":
-                            nextStep = 28;
+                            nextStep = 29;
                             break;
 
                         case "parking-lot-auto-related":
-                            nextStep = 24;
+                            nextStep = 25;
                             break;
                     
                         default:
@@ -971,33 +985,17 @@ function Form(props) {
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 24:
+            case 25:
                 tempFormData = formData;
                 tempFormData[e.target.id] = {
                     values: btnState
                 }
                 setFormData(tempFormData);
                 if(btnState == 'Parking Lot'){
-                    nextStep = 25;
+                    nextStep = 26;
                 }else{
-                    nextStep = 28;
+                    nextStep = 29;
                 }
-                postData.answers = tempFormData;
-                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                break;
-
-            case 25:
-                for (let index = 0; index < e.target.elements.length; index++) {
-                    if(e.target.elements[index].tagName == 'INPUT'){
-                        inputData.push(e.target.elements[index].value);
-                    }
-                }
-                tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: inputData
-                }
-                setFormData(tempFormData);
-                nextStep = 26;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
@@ -1019,9 +1017,14 @@ function Form(props) {
                 break;
 
             case 27:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
                 tempFormData = formData;
                 tempFormData[e.target.id] = {
-                    values: btnState
+                    values: inputData
                 }
                 setFormData(tempFormData);
                 nextStep = 28;
@@ -1030,6 +1033,17 @@ function Form(props) {
                 break;
 
             case 28:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                nextStep = 29;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 29:
                 specialType = false;
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
@@ -1047,7 +1061,7 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 29;
+                nextStep = 30;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 // tempSynthoms = [];
@@ -1071,7 +1085,7 @@ function Form(props) {
                 // }
                 break;
 
-            case 29:
+            case 30:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'TEXTAREA'){
                         inputData.push(e.target.elements[index].value);
@@ -1082,23 +1096,23 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 30;
-                postData.answers = tempFormData;
-                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                break;
-
-            case 30:
-                tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: btnState
-                }
-                setFormData(tempFormData);
                 nextStep = 31;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
             case 31:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                nextStep = 32;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 32:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
                         inputData.push(e.target.elements[index].value);
@@ -1109,12 +1123,12 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 32;
+                nextStep = 33;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 32:
+            case 33:
                 postData = new FormData();
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
@@ -1127,18 +1141,18 @@ function Form(props) {
                 }
                 console.log(attachments);
                 if(attachments > 0){
-                    nextStep = 33;
+                    nextStep = 34;
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 }else{
                     tempHistory = stepHistory;
                     tempHistory.push(step);
                     setStepHistory(tempHistory);
-                    setStep(33);
+                    setStep(34);
                 }
                 
                 break;
 
-            case 33:
+            case 34:
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
@@ -1150,12 +1164,12 @@ function Form(props) {
                 }
                 setFormData(tempFormData);
                 // come back - needs to go last step
-                nextStep = 34;
+                nextStep = 35;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
 
-            case 34:
+            case 35:
                 if(btnState == 'Yes'){
                     setStep(17);
                 }else{
@@ -1167,7 +1181,7 @@ function Form(props) {
                 }
                 break;
 
-            case 35:
+            case 36:
                 tempSynthoms = [];
                 Array.from(e.target.elements).forEach(element => {
                     if(element.checked){
@@ -1189,7 +1203,7 @@ function Form(props) {
                 }
                 break;
 
-            case 36:
+            case 37:
                 if(btnState == 'Yes'){
                     setStep(37);
                 }else{
