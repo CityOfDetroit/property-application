@@ -252,32 +252,37 @@
                                         {
                                             "id"        : "card-1-body-1-list-0",
                                             "tag"       : "p",
-                                            "content"   : "Photos of current conditions from sidewalk" 
+                                            "content"   : "Experience you and your partners have relevant to the success of the project" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-1",
                                             "tag"       : "p",
-                                            "content"   : "Plot Plan" 
+                                            "content"   : "Plan for clearing the land of debris and fixing any other problems with the land" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-2",
                                             "tag"       : "p",
-                                            "content"   : "Pesticide Agreement Certifications" 
+                                            "content"   : "Photo or photos of the current conditions of the property - taken from the sidewalk (do not enter the property)" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-3",
                                             "tag"       : "p",
-                                            "content"   : "Development Timeline" 
+                                            "content"   : "A list of physical improvements you are going to make to the property" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-4",
                                             "tag"       : "p",
-                                            "content"   : "Cost of materials and activities" 
+                                            "content"   : "If you are using agricultural chemicals or pesticides, create a plan on what chemicals and pesticides you will use, how often you will use them and how you will use and store them.  This applies even if you are using organic methods and products.  If you have certification to use these items, have that ready" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-5",
                                             "tag"       : "p",
-                                            "content"   : "Source of Funds" 
+                                            "content"   : "A plot plan" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-1-list-6",
+                                            "tag"       : "p",
+                                            "content"   : "Information on the financial, in-kind, and volunteer resources you will use to complete the project" 
                                         }
                                     ]
                                 },
@@ -4357,6 +4362,889 @@
                     }
                 ],
                 "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-35-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please describe any training, certifications, qualifications or other background you and your partners bring to this project." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "For example, if you plan to build a fence and benches and you are a trained carpenter, mention that. You can also mention work or volunteer activities you already do in the neighborhood and how this project relates to that work." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseQualifications",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-35-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "qualifications",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "qualifications",
+                                        "description"   : "List of qualifications",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Qualifications",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-36-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Are you applying to create an urban agriculture project?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "agriculturalProject",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-36-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-36-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-36-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-36-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "NEED HINT HERE" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-37-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Do you own or manage any other gardens or farms, either directly?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "agriculturalProject",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-37-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-37-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-37-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-38-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please describe these other gardens or farms." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "gardensFarms",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-38-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "gardens-farms",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "gardens-farms",
+                                        "description"   : "Description of gardens or farms owned",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Gardens/Farms",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-39-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Do you have partners or supporting organizations who are helping you?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "communityEngaged",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-39-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-39-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-39-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-40-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please provide examples of your community engagements." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "communityEngagementExamples",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-40-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "engagement-examples",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "engagement-examples",
+                                        "description"   : "Description of community engagements",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Community Engagements",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-41-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Do you have partners or supporting organizations who are helping you with your land based project?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseSupport",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-41-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-41-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-41-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-42-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please tell us who these partners are, and how they are supporting you to successfully complete your project." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseSupportDescription",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-42-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "support-description",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "qualifications",
+                                        "description"   : "Description of how partners are supporting the project",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Partner Support",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-43-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please tell us who these partners are, and how they are supporting you to successfully complete your project." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseProjectType",
+                        "type"          : "checkbox-set",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-43-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "beutification-cleanup",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "beutification-cleanup",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Beautification / Cleanup",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Beautification / Cleanup"
+                                    },
+                                    {   
+                                        "id"            : "urban-agriculture-one-acre",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "urban-agriculture-one-acre",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Urban Agriculture (less than or equal to 1 acre)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Urban Agriculture (less than or equal to 1 acre)"
+                                    },
+                                    {   
+                                        "id"            : "urban-agriculture-one-acre-plus",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "urban-agriculture-one-acre-plus",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Urban Agriculture (greater than 1 acre)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Urban Agriculture (greater than 1 acre)"
+                                    },
+                                    {   
+                                        "id"            : "community-gathering",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "community-gathering",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Community gathering space or social space",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Community gathering space or social space"
+                                    },
+                                    {   
+                                        "id"            : "greenstormwater",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "greenstormwater",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Greenstormwater Infrastructure Project",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Greenstormwater Infrastructure Project"
+                                    },
+                                    {   
+                                        "id"            : "art-project",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "art-project",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Art Project",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Art Project"
+                                    },
+                                    {   
+                                        "id"            : "commercial-business",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "commercial-business",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Commercial business to host events and gatherings",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Commercial business to host events and gatherings"
+                                    },
+                                    {   
+                                        "id"            : "habitat-birds-bees",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "habitat-birds-bees",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "land-based-project-type",
+                                        "description"   : "Habitat for Birds and Bees",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Habitat for Birds and Bees"
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "checkbox",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-based-project-type",
+                                        "description"           : "business",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter project type",
+                                        "otherLabel"            : "Project Type",
+                                        "otherID"               : "land-based-project-type",
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Submit",
+                                        "text"          : "Submit",
+                                        "label"         : false,
+                                        "labelPosition" : null,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-43-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "An urban agriculture project under 1 acre or exactly one acre is considered an urban garden under the City’s Agriculture Ordinance." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "An urban agricultural project over one acre is consider an urban farm." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "hint-0-body-2-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Beautification/Cleanup" 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-2-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Urban Agriculture (less than or equal to 1 acre)" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
