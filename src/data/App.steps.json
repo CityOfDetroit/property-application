@@ -5261,6 +5261,1051 @@
                 ],
                 "cards": [
                     {   
+                        "id"        : "step-44-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you successfully purchase a property from the City, the property must be cleared of any debris within 30 days of closing. To make sure you are able to do this, please tell us about what the property (or properties) you would like to purchase are like right now and how you will fix any issues or problems so they are ready for your project." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Provide the following:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Issue description" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Action or strategy" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Estimated time needed to address issue" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBasePropertyDescription",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-44-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "property-description",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "property-description",
+                                        "description"   : "Description of property",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Property Description",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-45-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please attach and submit photos taken from the sidewalk which show the current condition of the properties you would like to purchase. (Please do not enter the property.)" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "currentConditionFiles",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-45-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "current-condition-files-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "current-condition-files",
+                                        "description"   : "Photos taken from the sidewalk which show the current condition of the properties you would like to purchase..",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "current-condition-files"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra files",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "current-condition-files"
+                                    },
+                                    {   
+                                        "id"    : "step-45-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-46-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Physical Improvements Description: Please attach a list of physical improvements you will be making to the property, including any new structures or the demolishing of existing structures. When creating your list, please consider the following items:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Structures: Will your project include any built structures or uses,such as hoop houses / high tunnels, sheds, storage containers,garages, gazebos, or other structures? If you are planning to build a structure over 120 square feet in size (with the exception of a hoop house), please note that you will need extra permitting  in order to do so when you are ready to start building your project." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Fences and Borders: Will you have a fence or any other way of defining the edge of your project?" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Signage: You should include a sign for your project that has the name of your project, your name, and your phone number." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Other Physical Improvements: Tell us about other physical improvements and investments you will be making at the site." 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "These may include, but are not limited, to the following:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-3-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Compost: If you will be storing compost on your site, it should be stored toward the rear of the site and be 20 ft from another property. Tell us about how much compost you expect to store  and where you will locate it on the site." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-3-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Trees: New trees and preservation of existing trees. Note that having over 9 trees for sale or harvest on one lot creates an orchard, which is a conditional use." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-3-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Planting: Flower beds, raised garden beds, in-ground garden beds" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-3-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Water: How you will get water access to the site" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-3-list-4",
+                                            "tag"       : "p",
+                                            "content"   : "Art: Sculptures, murals, other art pieces" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseListImprovements",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-46-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "list-of-improvements",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "1000 character limit.",
+                                        "name"          : "list-of-improvements",
+                                        "description"   : "List of improvements",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "List of Improvements",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-47-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Plot Plan: Please submit a plot plan which shows all relevant elements" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "currentConditionFiles",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-47-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "plot-plan-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "current-condition-files",
+                                        "description"   : "Plot plan which shows all relevant elements",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "plot-plan"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra files",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "plot-plan"
+                                    },
+                                    {   
+                                        "id"    : "step-47-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-48-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Are you planing to use agricultural chemicals or pesticides?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "pesticideAgreement",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-48-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-31-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-48-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-49-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Attach the following:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Plan on what chemicals and pesticides I will use, how often I will use them, and how I will use and store them." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Proof of any certifications I hold related to these items." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "pesticideAgreementFiles",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-49-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "pesticide-agreement-file-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "pesticide-agreement-file",
+                                        "description"   : "Pesticide agreement files",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "pesticide-agreement-file"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra files",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "pesticide-agreement-file"
+                                    },
+                                    {   
+                                        "id"    : "step-49-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-50-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Development Timeline: Please create and attach a development timeline for your project. Your timeline should include items such as:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Clean up of the land and clearing it of debris. Generally, this must be done within 30 days after closing with a restricted deed but can be adjusted depending on weather and existing conditions." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Total time it will take to set up and complete your project. This is typically done within 12 to 18 months, but you can indicate whether you need more time." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "developemtTimeline",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-50-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "developement-timeline",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "placeholder"   : "500 character limit.",
+                                        "name"          : "developement-timeline",
+                                        "description"   : "Developement Timeline",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Developement Timeline",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [],
+                "forms": [
+                    {
+                        "id"            : "projectUses",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-51-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "property-clean-up-site-preparation",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "property-clean-up-site-preparation",
+                                        "description"   : "Property clean up and site preparation",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Property clean up and site preparation",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "site-utilities",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "site-utilities",
+                                        "description"   : "Site Utilities (water, electric, gas)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Site Utilities (water, electric, gas)",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "signage",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "signage",
+                                        "description"   : "Signage",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Signage",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "site-infrastructure",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "site-infrastructure",
+                                        "description"   : "Site Infrastructure (fencing, structures)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Site Infrastructure (fencing, structures)",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "other-construction",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "other-construction",
+                                        "description"   : "Other Construction",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Other Construction",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "first-year-maintenance",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "first-year-maintenance",
+                                        "description"   : "First Year of Maintenance",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "First Year of Maintenance",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "professional-design",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "professional-design",
+                                        "description"   : "Professional Design Needs (if any)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Professional Design Needs (if any)",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "stipends-contractual-services",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "stipends-contractual-services",
+                                        "description"   : "Stipends or contractual services (i.e paid labor or outsourced specialty services)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Stipends or contractual services (i.e paid labor or outsourced specialty services)",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "total-cost",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter cost",
+                                        "name"          : "total-cost",
+                                        "description"   : "Total Cost",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Total Cost",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [],
+                "forms": [
+                    {
+                        "id"            : "projectSources",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-52-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "cash",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter amount",
+                                        "name"          : "cash",
+                                        "description"   : "cash",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Cash",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "loans",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter amount",
+                                        "name"          : "loans",
+                                        "description"   : "Loans",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Loans",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "pending-grants",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter amount",
+                                        "name"          : "pending-grants",
+                                        "description"   : "Pending Grants",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Pending Grants",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "total-cost",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter amount",
+                                        "name"          : "total-cost",
+                                        "description"   : "Total Cost",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Total Cost",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
                         "id"        : "step-35-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
