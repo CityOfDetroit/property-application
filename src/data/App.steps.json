@@ -6304,117 +6304,9 @@
                         "form": true
                     }
                 ],
-                "cards": [],
-                "forms": [
-                    {
-                        "id"            : "projectSources",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-53-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "cash",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter amount",
-                                        "name"          : "cash",
-                                        "description"   : "cash",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Cash",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "loans",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter amount",
-                                        "name"          : "loans",
-                                        "description"   : "Loans",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Loans",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "pending-grants",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter amount",
-                                        "name"          : "pending-grants",
-                                        "description"   : "Pending Grants",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Pending Grants",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "total-cost",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter amount",
-                                        "name"          : "total-cost",
-                                        "description"   : "Total Cost",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Total Cost",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Next step",
-                                        "text"          : "Next",
-                                        "label"         : false,
-                                        "labelText"     : null
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
                 "cards": [
                     {   
-                        "id"        : "step-54-card-0",
+                        "id"        : "step-53-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6445,7 +6337,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-54-form-0-section-0",
+                                "id"    : "step-53-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "number-volunteers",
@@ -6526,7 +6418,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-55-card-0",
+                        "id"        : "step-54-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6557,7 +6449,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-55-form-0-section-0",
+                                "id"    : "step-54-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "in-kind-donations",
@@ -6608,7 +6500,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-56-card-0",
+                        "id"        : "step-55-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6644,7 +6536,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-56-form-0-section-0",
+                                "id"    : "step-55-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "revenue-resources",
@@ -6695,7 +6587,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-57-card-0",
+                        "id"        : "step-56-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6731,12 +6623,12 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-57-form-0-section-0",
+                                "id"    : "step-56-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "land-base-offer",
                                         "tag"           : "input",
-                                        "type"          : "text",
+                                        "type"          : "number",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter offer",
@@ -6767,7 +6659,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-43-hint-0",
+                        "id"        : "step-56-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -6811,7 +6703,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-58-card-0",
+                        "id"        : "step-57-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6847,7 +6739,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-58-form-0-section-0",
+                                "id"    : "step-57-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "land-base-additional-files-0",
@@ -6893,7 +6785,7 @@
                                         "otherID"               : "land-base-additional-file"
                                     },
                                     {   
-                                        "id"    : "step-58-form-0-section-0-item-1",
+                                        "id"    : "step-57-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -6923,7 +6815,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-59-card-0",
+                        "id"        : "step-58-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -6954,7 +6846,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-59-form-0-section-0",
+                                "id"    : "step-58-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "commercial-lease",
@@ -7036,17 +6928,13 @@
                                         "required"              : true
                                     },
                                     {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Submit",
-                                        "text"          : "Submit",
-                                        "label"         : false,
-                                        "labelPosition" : null,
-                                        "labelText"     : null
+                                        "id"    : "step-58-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
                                     }
                                 ]
                             }
@@ -7055,7 +6943,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-59-hint-0",
+                        "id"        : "step-58-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7089,7 +6977,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-60-card-0",
+                        "id"        : "step-59-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -7120,7 +7008,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-60-form-0-section-0",
+                                "id"    : "step-59-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "start-date",
@@ -7171,7 +7059,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-60-hint-0",
+                        "id"        : "step-59-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7205,7 +7093,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-61-card-0",
+                        "id"        : "step-60-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -7218,6 +7106,98 @@
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
                                     "content"   : "Is this for a special event?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "commercialLeaseSpecialEvent",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-60-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-60-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "yes",
+                                        "description"   : "yes",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-60-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no",
+                                        "description"   : "no",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-60-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Add in list of special events that require a permit" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-61-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Do you have a special event permit?" 
                                 }
                             ]
                         }
@@ -7275,7 +7255,7 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Add in list of special events that require a permit" 
+                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
                                 }
                             ]
                         }
@@ -7309,98 +7289,6 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Do you have a special event permit?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "commercialLeaseSpecialEvent",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-62-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-62-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-62-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-62-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-63-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
                                     "content"   : "You can apply for a special events permit here:" 
                                 },
                                 {
@@ -7416,7 +7304,7 @@
                 "forms": [],
                 "hints": [
                     {   
-                        "id"        : "step-63-hint-0",
+                        "id"        : "step-62-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7460,7 +7348,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-64-card-0",
+                        "id"        : "step-63-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -7491,10 +7379,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-64-form-0-section-0",
+                                "id"    : "step-63-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-64-form-0-section-0-item-0",
+                                        "id"    : "step-63-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "yes",
@@ -7503,13 +7391,125 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-64-form-0-section-0-item-1",
+                                        "id"    : "step-63-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no",
                                         "description"   : "no",
                                         "text"  : "No",
                                         "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-63-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having a city contract does not guarantee access to city-owned land." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-64-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please enter contract information." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "commercialLeaseCityContractInfo",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-64-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "city-department",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "value"         : "",
+                                        "placeholder"   : "Enter department name",
+                                        "name"          : "city-department",
+                                        "description"   : "City Department",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "City Department",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "contract-number",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "value"         : "",
+                                        "placeholder"   : "Enter contract number",
+                                        "name"          : "contract-number",
+                                        "description"   : "Contract Number",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Contract Number",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
                                     }
                                 ]
                             }
@@ -7564,7 +7564,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please enter contract information." 
+                                    "content"   : "Is the land vacant or is there a structure on it?" 
                                 }
                             ]
                         }
@@ -7572,7 +7572,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "commercialLeaseCityContractInfo",
+                        "id"            : "commercialLeaseLandStatus",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
@@ -7583,71 +7583,32 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-35-form-0-section-0",
+                                "id"    : "step-65-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "city-department",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "value"         : "",
-                                        "placeholder"   : "Enter department name",
-                                        "name"          : "city-department",
-                                        "description"   : "City Department",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "City Department",
-                                        "required"      : true
+                                        "id"    : "step-65-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "Vacant",
+                                        "description"   : "Vacant",
+                                        "text"  : "Vacant",
+                                        "label" : false
                                     },
                                     {   
-                                        "id"            : "contract-number",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "value"         : "",
-                                        "placeholder"   : "Enter contract number",
-                                        "name"          : "contract-number",
-                                        "description"   : "Contract Number",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Contract Number",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Next step",
-                                        "text"          : "Next",
-                                        "label"         : false,
-                                        "labelText"     : null
+                                        "id"    : "step-65-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "structure",
+                                        "description"   : "structure",
+                                        "text"  : "Structure",
+                                        "label" : false
                                     }
                                 ]
                             }
                         ]
                     }
                 ],
-                "hints": [
-                    {   
-                        "id"        : "step-65-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Having a city contract does not guarantee access to city-owned land." 
-                                }
-                            ]
-                        }
-                    }
-                ]
+                "hints": []
             }
         },
         {
@@ -7676,7 +7637,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Is the land vacant or is there a structure on it?" 
+                                    "content"   : "Will property be used for construction staging?" 
                                 }
                             ]
                         }
@@ -7749,79 +7710,6 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Will property be used for construction staging?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "commercialLeaseLandStatus",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-67-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-67-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-67-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-68-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
                                     "content"   : "What are you staging on the site?" 
                                 },
                                 {
@@ -7846,7 +7734,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-68-form-0-section-0",
+                                "id"    : "step-67-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "stagin-on-site",
@@ -7895,7 +7783,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-69-card-0",
+                        "id"        : "step-68-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -7931,7 +7819,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-69-form-0-section-0",
+                                "id"    : "step-68-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "property-plan",
@@ -7980,7 +7868,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-70-card-0",
+                        "id"        : "step-69-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8011,10 +7899,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-70-form-0-section-0",
+                                "id"    : "step-69-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-70-form-0-section-0-item-0",
+                                        "id"    : "step-69-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "yes",
@@ -8023,7 +7911,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-70-form-0-section-0-item-1",
+                                        "id"    : "step-69-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no",
@@ -8053,7 +7941,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-71-card-0",
+                        "id"        : "step-70-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8084,7 +7972,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-71-form-0-section-0",
+                                "id"    : "step-70-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "traffic-flow-noise",
@@ -8133,7 +8021,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-72-card-0",
+                        "id"        : "step-71-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8164,10 +8052,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-72-form-0-section-0",
+                                "id"    : "step-71-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-72-form-0-section-0-item-0",
+                                        "id"    : "step-71-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "yes",
@@ -8176,12 +8064,115 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-72-form-0-section-0-item-1",
+                                        "id"    : "step-71-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no",
                                         "description"   : "no",
                                         "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-71-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "All film productions must complete a permit application prior to filming in the City of Detroit, including still photography, documentaries, drones and commercials." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Having approval to film is separate from approval to use city property." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-72-card-0",
+                        "type"      : "right pop-up color-2",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please upload your signed film agreement" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "filmAgreement",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-72-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "film-agreement-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "film-agreement",
+                                        "description"   : "Signed Film Agreement.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "step-72-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -8242,56 +8233,13 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please upload your signed film agreement" 
+                                    "content"   : "A filming permit is required prior to requesting the use of city-owned land. Please return to this application once you have secured your film permit." 
                                 }
                             ]
                         }
                     }
                 ],
-                "forms": [
-                    {
-                        "id"            : "filmAgreement",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-73-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "film-agreement-0",
-                                        "tag"           : "input",
-                                        "type"          : "file",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "",
-                                        "name"          : "film-agreement",
-                                        "description"   : "Signed Film Agreement.",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Add File",
-                                        "labelPosition" : "before",
-                                        "required"      : false
-                                    },
-                                    {   
-                                        "id"    : "step-73-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
+                "forms": [],
                 "hints": [
                     {   
                         "id"        : "step-73-hint-0",
@@ -8306,12 +8254,13 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "All film productions must complete a permit application prior to filming in the City of Detroit, including still photography, documentaries, drones and commercials." 
+                                    "content"   : "For more information about how to apply for a filming permit:" 
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Having approval to film is separate from approval to use city property." 
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
+                                    "content"   : "Visit the Detroit Film Office page." 
                                 }
                             ]
                         }
@@ -8345,7 +8294,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "A filming permit is required prior to requesting the use of city-owned land. Please return to this application once you have secured your film permit." 
+                                    "content"   : "NEED CELL TOWER FORM" 
                                 }
                             ]
                         }
@@ -8406,67 +8355,6 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "NEED CELL TOWER FORM" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [],
-                "hints": [
-                    {   
-                        "id"        : "step-75-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "For more information about how to apply for a filming permit:" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
-                                    "content"   : "Visit the Detroit Film Office page." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-76-card-0",
-                        "type"      : "right pop-up color-2",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
                                     "content"   : "What type of public gathering will occur?" 
                                 }
                             ]
@@ -8486,7 +8374,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-76-form-0-section-0",
+                                "id"    : "step-75-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "concert",
@@ -8602,7 +8490,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-76-hint-0",
+                        "id"        : "step-75-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -8641,7 +8529,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-77-card-0",
+                        "id"        : "step-76-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8665,10 +8553,41 @@
                         }
                     }
                 ],
-                "forms": [],
+                "forms": [
+                    {
+                        "id"            : "applySpecialPermit",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : false,
+                        "requirements"  : [],
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-76-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
                 "hints": [
                     {   
-                        "id"        : "step-77-hint-0",
+                        "id"        : "step-76-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -8712,7 +8631,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-78-card-0",
+                        "id"        : "step-77-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8743,7 +8662,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-78-form-0-section-0",
+                                "id"    : "step-77-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "property-start-date",
@@ -8839,7 +8758,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-79-card-0",
+                        "id"        : "step-78-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8870,7 +8789,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-79-form-0-section-0",
+                                "id"    : "step-78-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "public-gathering-people",
@@ -8921,7 +8840,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-80-card-0",
+                        "id"        : "step-79-card-0",
                         "type"      : "right pop-up color-2",
                         "title"     : {
                             "type"  : "small",
@@ -8957,7 +8876,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-80-form-0-section-0",
+                                "id"    : "step-79-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "public-gathering-description",

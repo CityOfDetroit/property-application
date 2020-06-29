@@ -355,7 +355,23 @@ function Form(props) {
 
                 case 'saveForm':
                     switch (currentStep) {
-                        case 33:
+                        case 34:
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
+                            break;
+
+                        case 69:
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
+                            break;
+
+                        case 70:
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
+                            break;
+
+                        case 79:
+                            Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
+                            break;
+
+                        case 80:
                             Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/finish/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'finish', currentStep, nextStep)},(e)=>{handleAPICalls(e, 'finish', currentStep)});
                             break;
                     
@@ -949,7 +965,7 @@ function Form(props) {
                 }
                 setFormData(tempFormData);
                 if(formData.propertyUse.values.length > 1){
-                    nextStep = 59;
+                    nextStep = 58;
                 }else{
                     switch (formData.propertyUse.values[0]) {
                         case "commercial-retail":
@@ -981,19 +997,19 @@ function Form(props) {
                             break;
 
                         case "commercial-land-lease-temporary":
-                            nextStep = 59;
+                            nextStep = 58;
                             break;
 
                         case "film":
-                            nextStep = 59;
+                            nextStep = 58;
                             break;
 
                         case "cell-tower":
-                            nextStep = 59;
+                            nextStep = 58;
                             break;
 
                         case "public-gathering":
-                            nextStep = 59;
+                            nextStep = 58;
                             break;
                     
                         default:
@@ -1158,7 +1174,6 @@ function Form(props) {
                         
                     }
                 }
-                console.log(attachments);
                 if(attachments > 0){
                     nextStep = 34;
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -1168,7 +1183,6 @@ function Form(props) {
                     setStepHistory(tempHistory);
                     setStep(34);
                 }
-                
                 break;
 
             case 34:
@@ -1182,7 +1196,7 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                nextStep = 82;
+                nextStep = 81;
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
@@ -1265,11 +1279,703 @@ function Form(props) {
                 break;
 
             case 40:
-                if(btnState == 'Yes'){
-                    setStep(41);
-                }else{
-                    setStep(21);
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
                 }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 41;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 41:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 42;
+                }else{
+                    nextStep = 43;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 42:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 43;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 43:
+                specialType = false;
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if(e.target.elements[index].type == 'checkbox'){
+                            if(e.target.elements[index].checked == true){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }else{
+                            inputData.push(e.target.elements[index].value);
+                        }
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 44;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 44:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 45;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 45:
+                postData = new FormData();
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
+                    }
+                }
+                console.log(attachments);
+                if(attachments > 0){
+                    nextStep = 46;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(46);
+                }
+                break;
+
+            case 46:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 47;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 47:
+                postData = new FormData();
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
+                    }
+                }
+                console.log(attachments);
+                if(attachments > 0){
+                    nextStep = 48;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(48);
+                }
+                break;
+
+            case 48:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 49;
+                }else{
+                    nextStep = 50;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 49:
+                postData = new FormData();
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
+                    }
+                }
+                console.log(attachments);
+                if(attachments > 0){
+                    nextStep = 50;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(50);
+                }
+                break;
+
+            case 50:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 51;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 51:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 52;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 52:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 53;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 53:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 54;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 54:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 55;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 55:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 56;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 56:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 57;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 57:
+                postData = new FormData();
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
+                    }
+                }
+                if(attachments > 0){
+                    nextStep = 58;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(58);
+                }
+                break;
+
+            case 58:
+                specialType = false;
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if(e.target.elements[index].type == 'radio'){
+                            if(e.target.elements[index].checked == true){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }else{
+                            inputData.push(e.target.elements[index].value);
+                        }
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                switch (formData.propertyUse.values[0]) {
+                    case "commercial-lease":
+                        nextStep = 59;
+                        break;
+
+                    case "filming":
+                        nextStep = 71;
+                        break;
+
+                    case "cell-tower":
+                        nextStep = 74;
+                        break;
+
+                    case "public-gathering":
+                        nextStep = 75;
+                        break;
+
+                    case "other":
+                        // come back
+                        nextStep = 80;
+                        break;
+                
+                    default:
+                        break;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 59:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 60;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 60:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 61;
+                }else{
+                    nextStep = 63;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 61:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 62;
+                }else{
+                    nextStep = 63;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 62:
+                break;
+
+            case 63:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 64;
+                }else{
+                    nextStep = 65;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 64:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 65;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 65:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                nextStep = 66;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 66:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 67;
+                }else{
+                    nextStep = 68;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 67:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 69;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 68:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 69;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 69:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 70;
+                }else{
+                    nextStep = 81;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 70:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 81;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 71:
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                if(btnState == "Yes"){
+                    nextStep = 72;
+                }else{
+                    nextStep = 73;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 72:
+                postData = new FormData();
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if( e.target.elements[index].files.length > 0 ){
+                            postData.append(e.target.elements[index].id, e.target.elements[index].files[0]);
+                            attachments++;
+                        }
+                        
+                    }
+                }
+                if(attachments > 0){
+                    nextStep = 74;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(74);
+                }
+                break;
+
+            case 73:
+                break;
+
+            case 74:
+                break;
+
+            case 75:
+                specialType = false;
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        if(e.target.elements[index].type == 'radio'){
+                            if(e.target.elements[index].checked == true){
+                                inputData.push(e.target.elements[index].value);
+                            }
+                        }else{
+                            inputData.push(e.target.elements[index].value);
+                        }
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                switch (formData.propertyUse.values[0]) {
+                    case "concert":
+                        nextStep = 76;
+                        break;
+
+                    case "festival":
+                        nextStep = 76;
+                        break;
+
+                    case "parade":
+                        nextStep = 76;
+                        break;
+
+                    case "block-party":
+                        nextStep = 77;
+                        break;
+
+                    case "picnic":
+                        nextStep = 77;
+                        break;
+
+                    case "other":
+                        nextStep = 77;
+                        break;
+                
+                    default:
+                        break;
+                }
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 76:
+                tempHistory = stepHistory;
+                tempHistory.push(step);
+                setStepHistory(tempHistory);
+                setStep(77);
+                break;
+
+            case 77:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 78;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 78:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'INPUT'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 79;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 79:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 81;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                break;
+
+            case 80:
+                for (let index = 0; index < e.target.elements.length; index++) {
+                    if(e.target.elements[index].tagName == 'TEXTAREA'){
+                        inputData.push(e.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[e.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                nextStep = 81;
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 break;
         
             default:
