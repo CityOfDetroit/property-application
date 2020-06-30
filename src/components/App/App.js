@@ -60,7 +60,8 @@ function App() {
 
     const buildProgressBar = () => {
         if(buildType == 'application' && step > 1){
-            let progress = ((step - 1)/(data[buildType].length - 1)) * 100;
+            let progress = ((step - 1)/(data[buildType].length - 2)) * 100;
+            console.log(progress);
             let spacing = (data[buildType][step].items.hints.length > 0) ? spacing = true : spacing = false;
             return <Bar progress={progress} spacing={spacing}></Bar>;
         }else{

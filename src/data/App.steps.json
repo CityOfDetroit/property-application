@@ -3505,11 +3505,6 @@
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
                                     "content"   : "Select the primary use for the property" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Enter your offer." 
                                 }
                             ]
                         }
@@ -4109,11 +4104,6 @@
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
                                     "content"   : "Check all work that the applicant anticipates completing on this parcel(s):" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Enter your offer." 
                                 }
                             ]
                         }

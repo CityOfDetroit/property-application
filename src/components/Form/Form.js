@@ -923,8 +923,7 @@ function Form(props) {
                 if(btnState == "Purchase"){
                     nextStep = 23;
                 }else{
-                    //come back
-                    nextStep = 21;
+                    nextStep = 58;
                 }
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
