@@ -292,8 +292,7 @@ context('Appliation Scenario 2', () => {
         cy.contains('Purchase').click()
 
         cy.contains('The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value.')
-
-        cy.get('#offer').type('$5,500')
+        cy.get('input#offer').type('555555')
     })
 
     it('Test Hints', () => {
@@ -327,7 +326,7 @@ context('Appliation Scenario 2', () => {
 
         cy.contains('Detroit is actively seeking viable projects that creates the highest probability of success.')
 
-        cy.get('#proposal').type('Test Proposal here.')
+        cy.get('textarea#proposal').type('Test Proposal here.')
     })
 
     it('Zoning Compliant', () => {
@@ -346,19 +345,7 @@ context('Appliation Scenario 2', () => {
         cy.get('.intake-hint.active').should('not.be.visible')
     })
 
-    it('Zoning Compliant', () => {
-        cy.contains('Yes').click()
-
-        cy.contains('What is the applicants total development costs?')
-        cy.contains('What is the applicants construction timeline?')
-        cy.contains('What is the applicants funding source?')
-
-        cy.get('#development-cost').type('$500')
-        cy.get('#construction-timeline').type('5 months')
-        cy.get('#funding-source').type('Mom')
-    })
-
-    it('Zoning Compliant', () => {
+    it('Development, Timeline and Funding', () => {
         cy.contains('Yes').click()
 
         cy.contains('What is the applicants total development costs?')
@@ -392,11 +379,11 @@ context('Appliation Scenario 2', () => {
         cy.contains('I acknowledge that failure to disclose a material fact or to misrepresent a fact can result in a rejection of my application.')
 
         cy.get('#agreement-understanding').type('John Doe')
-        cy.get('#today-date').type('07/01/2020')
+        cy.get('#today-date').type('2020-07-01')
     })
 
     it('Finished Application', () => {
-        cy.contains('Next').click()
+        cy.contains('Finish').click()
 
         cy.contains('Thank you! You should receive a response within in 15 business days. You can learn more about how to prepare for a smooth property purchase at “xxx” link.')
     })

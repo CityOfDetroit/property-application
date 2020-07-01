@@ -3145,6 +3145,34 @@
                                         "required"  : true
                                     },
                                     {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more properties",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "adjacent-property"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra properties",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "adjacent-property"
+                                    },
+                                    {   
                                         "id"    : "step-20-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
