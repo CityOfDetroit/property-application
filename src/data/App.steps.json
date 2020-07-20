@@ -2531,7 +2531,7 @@
                 "forms": [
                     {
                         "id"            : "delinquencyStatus",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -2717,7 +2717,7 @@
                 "forms": [
                     {
                         "id"            : "identifiedProperty",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -3022,7 +3022,7 @@
                 "forms": [
                     {
                         "id"            : "adjacentPropertyisOwned",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -3254,7 +3254,7 @@
                 "forms": [
                     {
                         "id"            : "previouslyOwnRent",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -3336,7 +3336,7 @@
                 "forms": [
                     {
                         "id"            : "purchaseOrLease",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -3836,7 +3836,7 @@
                 "forms": [
                     {
                         "id"            : "parkingAutoBusiness",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -4067,7 +4067,7 @@
                 "forms": [
                     {
                         "id"            : "reviewParkingReq",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -4373,7 +4373,7 @@
                 "forms": [
                     {
                         "id"            : "propozedZoning",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -4942,7 +4942,7 @@
                 "forms": [
                     {
                         "id"            : "agriculturalProject",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -5034,7 +5034,7 @@
                 "forms": [
                     {
                         "id"            : "agriculturalProject",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -5187,7 +5187,7 @@
                 "forms": [
                     {
                         "id"            : "communityEngaged",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -5340,7 +5340,7 @@
                 "forms": [
                     {
                         "id"            : "landBaseSupport",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -6202,7 +6202,7 @@
                 "forms": [
                     {
                         "id"            : "pesticideAgreement",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -7572,7 +7572,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseSpecialEvent",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -7664,7 +7664,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseSpecialEvent",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -7827,7 +7827,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseCityContract",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -8031,7 +8031,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseLandStatus",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -8104,7 +8104,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseLandStatus",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -8347,7 +8347,7 @@
                 "forms": [
                     {
                         "id"            : "commercialLeaseLandStatus",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -8500,7 +8500,7 @@
                 "forms": [
                     {
                         "id"            : "filmingApproval",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -9014,7 +9014,7 @@
                 "forms": [
                     {
                         "id"            : "applySpecialPermit",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : false,
                         "requirements"  : [],
@@ -9849,7 +9849,7 @@
                 "forms": [
                     {
                         "id"            : "load-1-form-0",
-                        "type"          : "input-submit",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "requirements"  : [],
                         "text"          : {

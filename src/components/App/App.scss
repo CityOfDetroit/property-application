@@ -89,6 +89,8 @@ body{
                     top: 3.75em;
                     width: 100%;
                     z-index: 5;
+                    height: auto;
+                    background-color: transparent;
 
                     .intake-hint-group{
                         display: none;
@@ -97,6 +99,8 @@ body{
                     }
                 }
                 .intake-hint.active{
+                    height: 100%;
+                    background-color: transparentize($color: $white, $amount: .2);
                     
                     .intake-hint-group{
                         display: block;

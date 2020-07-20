@@ -90,21 +90,26 @@ function App() {
         let tempBody = [
             {
                 "id"        : "app-id-0-body-0",
+                "tag"       : "small",
+                "content"   : "(Remember to keep this ID for your records)"
+            },
+            {
+                "id"        : "app-id-0-body-0",
+                "tag"       : "br",
+                "content"   : ""
+            },
+            {
+                "id"        : "app-id-0-body-1",
                 "tag"       : "b",
-                "content"   : "Application ID" 
+                "content"   : "Application ID:" 
             },
             {
-                "id"        : "app-id-0-body-1",
-                "tag"       : "p",
-                "content"   : `${appID}`
-            },
-            {
-                "id"        : "app-id-0-body-1",
-                "tag"       : "p",
-                "content"   : "This is the ID for your appliation. Remember to keep this ID for your records."
+                "id"        : "app-id-0-body-2",
+                "tag"       : "span",
+                "content"   : `${appID} `
             }
         ];
-        if(appID != undefined && step == 2){
+        if(appID != undefined && step >= 2){
             return <Card  
                 key="app-id-card" 
                 type="right pop-up color-3"

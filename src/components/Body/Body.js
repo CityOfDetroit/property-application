@@ -18,6 +18,10 @@ function Body(props) {
             case 'ul':
                 return <item.tag key={item.id}>{buildList(item.content)}</item.tag>
                 break;
+
+            case 'br':
+                return <item.tag></item.tag>
+                break;
         
             default:
                 return <item.tag key={item.id}>{item.content}</item.tag>
