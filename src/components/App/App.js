@@ -1,6 +1,5 @@
 import React, { useState }from 'react';
 import './App.scss';
-import Bar from '../Bar/Bar';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
@@ -58,22 +57,10 @@ function App() {
         return markup;
     }
 
-    const buildProgressBar = () => {
-        if(buildType == 'application' && step > 1){
-            let progress = ((step - 1)/(data[buildType].length - 2)) * 100;
-            console.log(progress);
-            let spacing = (data[buildType][step].items.hints.length > 0) ? spacing = true : spacing = false;
-            return <Bar progress={progress} spacing={spacing}></Bar>;
-        }else{
-            return '';
-        }
-    }
-
     const buildPanel = () => {
         const markup = 
         <section className="intake">
             {buildHeader(data[buildType][step].items)}
-            {buildProgressBar()}
             <section className="intake-container">
                 <article className="intake-body">
                     {buildAppIDCard()}
@@ -126,9 +113,9 @@ function App() {
         if(hint) {hintClass = "intake-hint active"}else{hintClass = "intake-hint"}
         const markup = 
         <article className={hintClass}>
-            {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn show-hint" onClick={(e)=>{setHint(true)}}><i className="fas fa-exclamation-circle"></i></button> : '' }
+            {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn show-hint" onClick={(e)=>{setHint(true)}}><i className="far fa-lightbulb"></i><br></br><small>Hint</small></button> : '' }
             <article className="intake-hint-group">
-                {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn close-hint" onClick={(e)=>{setHint(undefined)}}><i className="fas fa-times-circle"></i></button> : '' }
+                {(data[buildType][step].items.hints.length > 0) ? <button className="hint-btn close-hint" onClick={(e)=>{setHint(undefined)}}><i className="fas fa-times"></i></button> : '' }
                 {buildHint(items)}
             </article>
         </article>;
