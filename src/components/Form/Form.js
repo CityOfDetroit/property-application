@@ -129,30 +129,60 @@ function Form(props) {
         return tempClass;
     }
 
+    const checkPreviousAnswer = (item, index, tag, type) => {
+        if(props.savedData){
+            if(formData == undefined){
+                return false;
+            }else{
+                if(formData[props.id] == undefined){
+                    return false
+                }else{
+                    switch (tag) {
+                        case 'button':
+                            if(formData[props.id].values == item.text){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                            break;
+
+                        case 'select':
+                            return true;
+                            break;
+
+                        case 'input':
+                            switch (type) {
+                                case 'radio':
+                                    if(formData[props.id].values == item.value){
+                                        return true;
+                                    }else{
+                                        return false;
+                                    }
+                                    break;
+                            
+                                default:
+                                    break;
+                            }
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+            }
+        }else{
+            return false;
+        }
+    }
+
     const buildTag = (item, index) =>{
         let markup;
         switch (item.tag) {
             case 'button':
                 switch (item.type) {
                     case 'submit':
-                        console.log('submit');
-                        console.log(props.savedData);
-                        if(props.savedData){
-                            console.log(formData);
-                            if(formData == undefined){
-                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
-                            }else{
-                                console.log(formData[props.id]);
-                                if(formData[props.id] == undefined){
-                                    markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
-                                }else{
-                                    if(formData[props.id].values == item.text){
-                                        markup = <button className="selected" role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
-                                    }else{
-                                        markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
-                                    }
-                                }
-                            }
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <button className="selected" role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                         }else{
                             markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                         }
@@ -185,16 +215,8 @@ function Form(props) {
                 break;
 
             case 'select':
-                if(props.savedData){
-                    if(formData == undefined){
-                        markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
-                    }else{
-                        if(formData[props.id] == undefined){
-                            markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
-                        }else{
-                            markup = <select id={item.id} name={item.name} aria-label={item.name} value={formData[props.id][index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
-                        }
-                    }
+                if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    markup = markup = <select id={item.id} name={item.name} aria-label={item.name} value={formData[props.id].values[index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
                 }else{
                     markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
                 }
@@ -208,7 +230,7 @@ function Form(props) {
                         if(formData[props.id] == undefined){
                             markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
                         }else{
-                            markup = <textarea id={item.id} name={item.name} value={formData[props.id][index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                            markup = <textarea id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
                         }
                     }
                 }else{
@@ -271,7 +293,7 @@ function Form(props) {
             default:
                 switch (item.type) {
                     case 'radio':
-                        markup = addspecialType(item);
+                        markup = addspecialType(item, index);
                         break;
 
                     case 'checkbox':
@@ -377,11 +399,19 @@ function Form(props) {
         return `${id}-${index}`;
     }
 
-    const addspecialType = (item) => {
+    const addspecialType = (item, index) => {
         if(item.hasSpecialAttribute){
-            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
+            if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} checked='true'></input>;
+            }else{
+                return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
+            }
         }else{
-            return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required}></input>;
+            if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} checked='true'></input>;
+            }else{
+                return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required}></input>;
+            }
         }
     }
 
@@ -536,7 +566,7 @@ function Form(props) {
                                 setStep(0);
                             break;
 
-                            case "Finish/Edit Previous Application":
+                            case "Finish Previous Application":
                                 setBuildType('load');
                                 setStep(0);
                             break;

@@ -112,7 +112,7 @@
                                         "type"  : "submit",
                                         "name"  : "load",
                                         "description"   : "Load previous application.",
-                                        "text"  : "Finish/Edit Previous Application",
+                                        "text"  : "Finish Previous Application",
                                         "label" : false
                                     }
                                 ]
@@ -419,7 +419,7 @@
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
-                                    "tag"       : "strong",
+                                    "tag"       : "p",
                                     "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
                                 }
                             ]
