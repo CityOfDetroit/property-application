@@ -150,6 +150,10 @@ function Form(props) {
                             return true;
                             break;
 
+                        case 'textarea':
+                            return true;
+                            break;
+
                         case 'input':
                             switch (type) {
                                 case 'radio':
@@ -161,6 +165,7 @@ function Form(props) {
                                     break;
                             
                                 default:
+                                    return true;
                                     break;
                             }
                             break;
@@ -223,59 +228,25 @@ function Form(props) {
                 break;
 
             case 'textarea':
-                if(props.savedData){
-                    if(formData == undefined){
-                        markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
-                    }else{
-                        if(formData[props.id] == undefined){
-                            markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
-                        }else{
-                            markup = <textarea id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
-                        }
-                    }
+                if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    markup = <textarea id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
                 }else{
                     markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
                 }
                 break;
 
             case 'GEOCODER':
-                if(props.savedData){
-                    if(formData == undefined){
-                        markup = 
-                        <Geocoder 
-                        id={item.id} 
-                        name={item.name} 
-                        placeholder={item.placeholder} 
-                        required={item.required} 
-                        ariaRequired={item.required}
-                        label={item.labelText}
-                        value={item.value}
-                        ></Geocoder>;
-                    }else{
-                        if(formData[props.id] == undefined){
-                            markup = 
-                            <Geocoder 
-                            id={item.id} 
-                            name={item.name} 
-                            placeholder={item.placeholder} 
-                            required={item.required} 
-                            ariaRequired={item.required}
-                            label={item.labelText}
-                            value={item.value}
-                            ></Geocoder>;
-                        }else{
-                            markup = 
-                            <Geocoder 
-                            id={item.id} 
-                            name={item.name} 
-                            placeholder={item.placeholder} 
-                            required={item.required} 
-                            ariaRequired={item.required}
-                            label={item.labelText}
-                            value={formData[props.id][index]}
-                            ></Geocoder>;
-                        }
-                    }
+                if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    markup = 
+                    <Geocoder 
+                    id={item.id} 
+                    name={item.name} 
+                    placeholder={item.placeholder} 
+                    required={item.required} 
+                    ariaRequired={item.required}
+                    label={item.labelText}
+                    value={formData[props.id].values[index]}
+                    ></Geocoder>;
                 }else{
                     markup = 
                     <Geocoder 
@@ -301,16 +272,8 @@ function Form(props) {
                         break;
                     
                     case 'text':
-                        if(props.savedData){
-                            if(formData == undefined){
-                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                            }else{
-                                if(formData[props.id] == undefined){
-                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }else{
-                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }
-                            }
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
@@ -321,60 +284,25 @@ function Form(props) {
                         break;
 
                     case 'number':
-                        if(props.savedData){
-                            if(formData == undefined){
-                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                            }else{
-                                if(formData[props.id] == undefined){
-                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }else{
-                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }
-                            }
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
                         break;
 
                     case 'date':
-                        if(props.savedData){
-                            if(formData == undefined){
-                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                            }else{
-                                if(formData[props.id] == undefined){
-                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }else{
-                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                }
-                            }
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
                         break;
                 
                     default:
-                        if(props.savedData){
-                            if(formData == undefined){
-                                markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
-                                    {item.text}
-                                    </item.tag>;
-                            }else{
-                                if(formData[props.id] == undefined){
-                                    markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
-                                    {item.text}
-                                    </item.tag>;
-                                }else{
-                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
-                                    markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
-                                    {item.text}
-                                    </item.tag>;
-                                }
-                            }
-                        }else{
-                            markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
-                                    {item.text}
-                                    </item.tag>;
-                        }
+                        markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
+                        {item.text}
+                        </item.tag>;
                         break;
                 }
                 break;
@@ -732,7 +660,7 @@ function Form(props) {
 
             case 5:
                 for (let index = 0; index < e.target.elements.length; index++) {
-                    if(e.target.elements[index].tagName == 'INPUT'){
+                    if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
                         inputData.push(e.target.elements[index].value);
                     }
                 }
@@ -748,7 +676,7 @@ function Form(props) {
 
             case 6:
                 for (let index = 0; index < e.target.elements.length; index++) {
-                    if(e.target.elements[index].tagName == 'INPUT'){
+                    if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
                         inputData.push(e.target.elements[index].value);
                     }
                 }
