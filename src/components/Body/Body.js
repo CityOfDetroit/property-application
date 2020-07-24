@@ -12,7 +12,7 @@ function Body(props) {
     const buildItem = (item) => {
         switch (item.tag) {
             case 'a':
-                return <item.tag key={item.id} href={item.link} target='_blank'>{item.content}</item.tag>
+                return <item.tag key={item.id} href={item.link} target='_blank' rel='noopener'>{item.content}</item.tag>
                 break;
 
             case 'ul':

@@ -419,7 +419,7 @@
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
-                                    "tag"       : "p",
+                                    "tag"       : "strong",
                                     "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
                                 }
                             ]

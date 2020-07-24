@@ -135,14 +135,18 @@ function Form(props) {
             case 'button':
                 switch (item.type) {
                     case 'submit':
+                        console.log('submit');
+                        console.log(props.savedData);
                         if(props.savedData){
+                            console.log(formData);
                             if(formData == undefined){
                                 markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                             }else{
+                                console.log(formData[props.id]);
                                 if(formData[props.id] == undefined){
                                     markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                                 }else{
-                                    if(formData[props.id][index] == item.text){
+                                    if(formData[props.id].values == item.text){
                                         markup = <button className="selected" role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
                                     }else{
                                         markup = <button role="button" aria-label={item.name} onClick={(e)=>{setbtnState(e.target.innerText)}} type={item.type}>{item.text}</button>;
@@ -188,7 +192,7 @@ function Form(props) {
                         if(formData[props.id] == undefined){
                             markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
                         }else{
-                            markup = <select id={item.id} name={item.name} aria-label={item.name} vallue={formData[props.id][index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                            markup = <select id={item.id} name={item.name} aria-label={item.name} value={formData[props.id][index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
                         }
                     }
                 }else{
@@ -282,7 +286,7 @@ function Form(props) {
                                 if(formData[props.id] == undefined){
                                     markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                                 }else{
-                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id][index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                                 }
                             }
                         }else{
@@ -295,17 +299,60 @@ function Form(props) {
                         break;
 
                     case 'number':
-                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                        if(props.savedData){
+                            if(formData == undefined){
+                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            }else{
+                                if(formData[props.id] == undefined){
+                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }else{
+                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }
+                            }
+                        }else{
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                        }
                         break;
 
                     case 'date':
-                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} required={item.required} aria-required={item.required}></input>;
+                        if(props.savedData){
+                            if(formData == undefined){
+                                markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            }else{
+                                if(formData[props.id] == undefined){
+                                    markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }else{
+                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                }
+                            }
+                        }else{
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                        }
                         break;
                 
                     default:
-                        markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
-                        {item.text}
-                        </item.tag>;
+                        if(props.savedData){
+                            if(formData == undefined){
+                                markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
+                                    {item.text}
+                                    </item.tag>;
+                            }else{
+                                if(formData[props.id] == undefined){
+                                    markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
+                                    {item.text}
+                                    </item.tag>;
+                                }else{
+                                    markup = <input type={item.type} id={item.id} name={item.name} value={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                                    markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
+                                    {item.text}
+                                    </item.tag>;
+                                }
+                            }
+                        }else{
+                            markup = <item.tag type={item.type} aria-label={item.name} id={item.id}>
+                                    {item.text}
+                                    </item.tag>;
+                        }
                         break;
                 }
                 break;
