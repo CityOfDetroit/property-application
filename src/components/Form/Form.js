@@ -150,6 +150,10 @@ function Form(props) {
                             return true;
                             break;
 
+                        case 'GEOCODER':
+                            return true;
+                            break;
+
                         case 'textarea':
                             return true;
                             break;
@@ -157,6 +161,14 @@ function Form(props) {
                         case 'input':
                             switch (type) {
                                 case 'radio':
+                                    if(formData[props.id].values == item.value){
+                                        return true;
+                                    }else{
+                                        return false;
+                                    }
+                                    break;
+
+                                case 'checkbox':
                                     if(formData[props.id].values == item.value){
                                         return true;
                                     }else{
@@ -237,6 +249,7 @@ function Form(props) {
 
             case 'GEOCODER':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    console.log('loading geocoder address');
                     markup = 
                     <Geocoder 
                     id={item.id} 
@@ -472,7 +485,6 @@ function Form(props) {
         let specialType  = false;
         let attachments  = 0;
         let tempFormData = {};
-        let tempSynthoms = [];
         let inputData    = [];
         let tempHistory  = [];
         let postData     = {answers:null};
@@ -848,7 +860,7 @@ function Form(props) {
                 for (let index = 0; index < e.target.elements.length; index++) {
                     if(e.target.elements[index].tagName == 'INPUT'){
                         inputData.push(e.target.elements[index].value);
-                        (e.target.elements[index].getAttribute('data-parcel') == null) ? inputData.push('') : inputData.push(e.target.elements[index].getAttribute('data-parcel'));
+                        // (e.target.elements[index].getAttribute('data-parcel') == null) ? '' : inputData.push(e.target.elements[index].getAttribute('data-parcel'));
                     }
                 }
                 tempFormData = formData;
