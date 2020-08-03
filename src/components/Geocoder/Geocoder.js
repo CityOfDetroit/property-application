@@ -57,9 +57,17 @@ function Geocoder(props) {
     return `${props.id}-list`;
   }
 
+  const getClassName = () => {
+    if(props.required){
+      return 'required-field';
+    }else{
+      return '';
+    }
+  }
+
   return (
       <div>
-        <label className="required-field" htmlFor={props.id}>{props.label}</label>
+        <label className={getClassName()} htmlFor={props.id}>{props.label}</label>
         <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} placeholder={props.placeholder} onChange={handleChange} aria-required={props.required} required={props.required}></input>
         <datalist id={buildNames()}>
             {(sugg) ? buildOptions() : ''}

@@ -249,16 +249,15 @@ function Form(props) {
 
             case 'GEOCODER':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                    console.log('loading geocoder address');
                     markup = 
                     <Geocoder 
                     id={item.id} 
                     name={item.name} 
-                    placeholder={item.placeholder} 
-                    required={item.required} 
+                    placeholder={formData[props.id].values[index]} 
+                    required={false}
                     ariaRequired={item.required}
                     label={item.labelText}
-                    value={formData[props.id].values[index]}
+                    value={item.value}
                     ></Geocoder>;
                 }else{
                     markup = 
@@ -766,8 +765,10 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: inputData
+                if(inputData.length > 0 && inputData[0] != ''){
+                    tempFormData[e.target.id] = {
+                        values: inputData
+                    }
                 }
                 setFormData(tempFormData);
                 setStepHistory(tempHistory);
@@ -864,8 +865,10 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: inputData
+                if(inputData.length > 0 && inputData[0] != ''){
+                    tempFormData[e.target.id] = {
+                        values: inputData
+                    }
                 }
                 setFormData(tempFormData);
                 setExtrasCount(0);
@@ -898,8 +901,10 @@ function Form(props) {
                     }
                 }
                 tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: inputData
+                if(inputData.length > 0 && inputData[0] != ''){
+                    tempFormData[e.target.id] = {
+                        values: inputData
+                    }
                 }
                 setFormData(tempFormData);
                 setExtrasCount(0);
