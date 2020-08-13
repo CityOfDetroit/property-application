@@ -1646,7 +1646,7 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                switch (formData.propertyUse.values[0]) {
+                switch (tempFormData[e.target.id].values[0]) {
                     case "commercial-lease":
                         nextStep = 59;
                         break;
@@ -1664,7 +1664,6 @@ function Form(props) {
                         break;
 
                     case "other":
-                        // come back
                         nextStep = 80;
                         break;
                 
@@ -1905,7 +1904,7 @@ function Form(props) {
                     values: inputData
                 }
                 setFormData(tempFormData);
-                switch (formData.propertyUse.values[0]) {
+                switch (tempFormData[e.target.id].values[0]) {
                     case "concert":
                         nextStep = 76;
                         break;
