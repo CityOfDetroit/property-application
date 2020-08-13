@@ -18,7 +18,7 @@
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
-                            "value" : "Welcome to City of Detroit Property Application Intake."
+                            "value" : "Thanks for your interest!"
                         },
                         "body"   : {
                             "type"      : "text",
@@ -26,44 +26,39 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "A Registered Agent is a business or individual designated to receive service of process when a business entity is party to a legal action." 
+                                    "content"   : "Here is what you can expect:" 
                                 },
                                 {
                                     "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "A registered agent for a business entity may be an officer or employee of the company, or a third party, such as the organization’s lawyer or service company." 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
                                     "tag"       : "ul",
                                     "content"   : [
                                         {
-                                            "id"        : "card-0-body-2-list-0",
+                                            "id"        : "card-0-body-1-list-0",
                                             "tag"       : "p",
                                             "content"   : "This intake application should take 30-45 minutes" 
                                         },
                                         {
-                                            "id"        : "card-0-body-2-list-1",
+                                            "id"        : "card-0-body-1-list-1",
                                             "tag"       : "p",
-                                            "content"   : "This process includes a review by the Housing and Revitalization Department, the Detroit Land Bank Authority (if applicable), the Detroit Building Authority (if applicable) and final approval by the Detroit City Council." 
+                                            "content"   : "This process includes a review by the various stakeholders and City Departments and final approval by the Detroit City Council" 
                                         },
                                         {
-                                            "id"        : "card-0-body-2-list-2",
+                                            "id"        : "card-0-body-1-list-2",
                                             "tag"       : "p",
-                                            "content"   : "The whole process from intake form to purchase agreement is estimated to take 8 - 10 weeks long" 
+                                            "content"   : "The whole process from intake form to purchase agreement is estimated to take 8 - 12 weeks long" 
                                         },
                                         {
-                                            "id"        : "card-0-body-2-list-3",
+                                            "id"        : "card-0-body-1-list-3",
                                             "tag"       : "p",
                                             "content"   : "If you are submitting this information on behalf of an entity/  or individual, please use their information (i.e not your own)" 
                                         },
                                         {
-                                            "id"        : "card-0-body-2-list-4",
+                                            "id"        : "card-0-body-1-list-4",
                                             "tag"       : "p",
                                             "content"   : "You can check your status of your application by going to the Check Application Status section and providing the information given to you upon submittion." 
                                         },
                                         {
-                                            "id"        : "card-0-body-2-list-5",
+                                            "id"        : "card-0-body-1-list-5",
                                             "tag"       : "p",
                                             "content"   : "You can finish previously started applications or submitted application by going to the Finish/Edit Previous Application section and providing the information given to you upon submittion/save." 
                                         }
@@ -188,35 +183,25 @@
                                         {
                                             "id"        : "card-0-body-1-list-0",
                                             "tag"       : "p",
-                                            "content"   : "This intake application should take 30-45 minutes" 
+                                            "content"   : "City of Detroit taxes are paid (or there is a payment plan in place)" 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-1",
                                             "tag"       : "p",
-                                            "content"   : "City of Detroit Taxes are paid (or there is a payment plan in place)" 
+                                            "content"   : "Blight tickets are paid (or there is an agreement in place)" 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-2",
                                             "tag"       : "p",
-                                            "content"   : "Blight Tickets are paid (or there is an agreement in place)" 
+                                            "content"   : "City Owned or Detroit Land Bank Authority property/properties are identified" 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-3",
                                             "tag"       : "p",
-                                            "content"   : "City of Detroit water and sewage is paid (or there is a payment plan in place)" 
+                                            "content"   : "Proposal for the intended use of the property / properties is prepared and ready to submit" 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-4",
-                                            "tag"       : "p",
-                                            "content"   : "City Owned or Detroit Land Bank Authority property/properties are identified" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-5",
-                                            "tag"       : "p",
-                                            "content"   : "Proposal for the intended use of the property / properties is completed" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-6",
                                             "tag"       : "p",
                                             "content"   : "Estimate of total development costs and timeline of project" 
                                         }
@@ -2172,7 +2157,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Does the applicant or any affiliated company currently own property in Detroit?*" 
+                                    "content"   : "Does the applicant or any affiliated company currently own property in Detroit?" 
                                 }
                             ]
                         }
@@ -7316,7 +7301,7 @@
                 "forms": [
                     {
                         "id"            : "specialProjectPurpose",
-                        "type"          : "checkbox-set",
+                        "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -7331,7 +7316,7 @@
                                     {   
                                         "id"            : "commercial-lease",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "commercial-lease",
                                         "required"      : true,
@@ -7346,7 +7331,7 @@
                                     {   
                                         "id"            : "filming",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "filming",
                                         "required"      : true,
@@ -7361,7 +7346,7 @@
                                     {   
                                         "id"            : "cell-tower",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "cell-tower",
                                         "required"      : true,
@@ -7376,7 +7361,7 @@
                                     {   
                                         "id"            : "public-gathering",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "public-gathering",
                                         "required"      : true,
@@ -7391,7 +7376,7 @@
                                     {   
                                         "id"                    : "other",
                                         "tag"                   : "input",
-                                        "type"                  : "checkbox",
+                                        "type"                  : "radio",
                                         "value"                 : "other",
                                         "placeholder"           : null,
                                         "name"                  : "special-project-purpose",

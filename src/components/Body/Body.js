@@ -10,7 +10,7 @@ function Body(props) {
     }
 
     const buildItem = (item) => {
-        if(Array.isArray(item.content)){
+        if(Array.isArray(item.content) && item.tag != 'ul'){
             return item.content.map((subItem) => 
                 buildItem(subItem)
             );
