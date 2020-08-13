@@ -10,22 +10,28 @@ function Body(props) {
     }
 
     const buildItem = (item) => {
-        switch (item.tag) {
-            case 'a':
-                return <item.tag key={item.id} href={item.link} target='_blank' rel='noopener'>{item.content}</item.tag>
-                break;
-
-            case 'ul':
-                return <item.tag key={item.id}>{buildList(item.content)}</item.tag>
-                break;
-
-            case 'br':
-                return <item.tag></item.tag>
-                break;
-        
-            default:
-                return <item.tag key={item.id}>{item.content}</item.tag>
-                break;
+        if(Array.isArray(item.content)){
+            return item.content.map((subItem) => 
+                buildItem(subItem)
+            );
+        }else{
+            switch (item.tag) {
+                case 'a':
+                    return <item.tag key={item.id} href={item.link} target='_blank' rel='noopener'>{item.content}</item.tag>
+                    break;
+    
+                case 'ul':
+                    return <item.tag key={item.id}>{buildList(item.content)}</item.tag>
+                    break;
+    
+                case 'br':
+                    return <item.tag></item.tag>
+                    break;
+            
+                default:
+                    return <item.tag key={item.id}>{item.content}</item.tag>
+                    break;
+            }
         }
     }
 
@@ -39,7 +45,7 @@ function Body(props) {
     }
 
     const buildBody = () => {
-        let bodyType = "Card-Body";
+        let bodyType = "card-body";
         if (props.type){
             bodyType += ` ${props.type}`;
             return (

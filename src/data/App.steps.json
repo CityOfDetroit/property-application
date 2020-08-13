@@ -420,7 +420,18 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q1: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -512,7 +523,18 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Input the best contact information to reach the applicant and/or the representative." 
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q1: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Input the best contact information to reach the applicant and/or the representative." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -9743,7 +9765,18 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please enter the Application ID you wish to finish." 
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Instructions: "
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Please enter the ID of the application you wish to finish."
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -9829,7 +9862,7 @@
                 "cards": [
                     {   
                         "id"        : "load-1-card-0",
-                        "type"      : "center pop-up",
+                        "type"      : "center pop-up color-2",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null
@@ -9840,7 +9873,18 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Your application has been loaded successfully." 
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Good News. " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Your application has been loaded successfully. You can now review, edit and submit your form." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
