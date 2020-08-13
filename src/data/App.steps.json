@@ -15,7 +15,7 @@
                 "cards": [
                     {   
                         "id"        : "step-0-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
                             "value" : "Welcome to City of Detroit Property Application Intake."
@@ -168,7 +168,7 @@
                 "cards": [
                     {   
                         "id"        : "step-1-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
                             "value" : "BEFORE YOU BEGIN CHECKLIST"
@@ -232,7 +232,7 @@
                     },
                     {   
                         "id"        : "step-1-card-1",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
                             "value" : "BEFORE YOU BEGIN CHECKLIST FOR SPECIFIC USES"
@@ -409,7 +409,7 @@
                 "cards": [
                     {   
                         "id"        : "step-2-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : ""
@@ -501,7 +501,7 @@
                 "cards": [
                     {   
                         "id"        : "step-3-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -924,7 +924,7 @@
                 "cards": [
                     {   
                         "id"        : "step-4-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -1029,7 +1029,7 @@
                 "cards": [
                     {   
                         "id"        : "step-5-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -1467,7 +1467,7 @@
                 "cards": [
                     {   
                         "id"        : "step-6-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -1856,7 +1856,7 @@
                 "cards": [
                     {   
                         "id"        : "step-7-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -1936,7 +1936,7 @@
                 "cards": [
                     {   
                         "id"        : "step-8-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2034,7 +2034,7 @@
                 "cards": [
                     {   
                         "id"        : "step-9-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2139,7 +2139,7 @@
                 "cards": [
                     {   
                         "id"        : "step-10-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2212,7 +2212,7 @@
                 "cards": [
                     {   
                         "id"        : "step-11-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2316,7 +2316,7 @@
                 "cards": [
                     {   
                         "id"        : "step-12-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2394,7 +2394,7 @@
                 "cards": [
                     {   
                         "id"        : "step-13-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2506,7 +2506,7 @@
                 "cards": [
                     {   
                         "id"        : "step-14-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2620,7 +2620,7 @@
                 "cards": [
                     {   
                         "id"        : "step-15-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2697,7 +2697,7 @@
                 "cards": [
                     {   
                         "id"        : "step-16-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2795,7 +2795,7 @@
                 "cards": [
                     {   
                         "id"        : "step-17-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -2862,7 +2862,7 @@
                 "cards": [
                     {   
                         "id"        : "step-18-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3002,7 +3002,7 @@
                 "cards": [
                     {   
                         "id"        : "step-19-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3100,7 +3100,7 @@
                 "cards": [
                     {   
                         "id"        : "step-20-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3229,7 +3229,7 @@
                 "cards": [
                     {   
                         "id"        : "step-21-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3316,7 +3316,7 @@
                 "cards": [
                     {   
                         "id"        : "step-22-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3408,7 +3408,7 @@
                 "cards": [
                     {   
                         "id"        : "step-23-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3521,7 +3521,7 @@
                 "cards": [
                     {   
                         "id"        : "step-24-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3816,7 +3816,7 @@
                 "cards": [
                     {   
                         "id"        : "step-25-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3889,7 +3889,7 @@
                 "cards": [
                     {   
                         "id"        : "step-26-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -3968,7 +3968,7 @@
                 "cards": [
                     {   
                         "id"        : "step-27-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4047,7 +4047,7 @@
                 "cards": [
                     {   
                         "id"        : "step-28-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4120,7 +4120,7 @@
                 "cards": [
                     {   
                         "id"        : "step-29-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4263,7 +4263,7 @@
                 "cards": [
                     {   
                         "id"        : "step-30-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4348,7 +4348,7 @@
                 "cards": [
                     {   
                         "id"        : "step-31-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4451,7 +4451,7 @@
                 "cards": [
                     {   
                         "id"        : "step-32-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4570,7 +4570,7 @@
                 "cards": [
                     {   
                         "id"        : "step-33-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4677,7 +4677,7 @@
                 "cards": [
                     {   
                         "id"        : "step-34-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4837,7 +4837,7 @@
                 "cards": [
                     {   
                         "id"        : "step-35-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -4922,7 +4922,7 @@
                 "cards": [
                     {   
                         "id"        : "step-36-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5014,7 +5014,7 @@
                 "cards": [
                     {   
                         "id"        : "step-37-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5087,7 +5087,7 @@
                 "cards": [
                     {   
                         "id"        : "step-38-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5167,7 +5167,7 @@
                 "cards": [
                     {   
                         "id"        : "step-39-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5240,7 +5240,7 @@
                 "cards": [
                     {   
                         "id"        : "step-40-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5320,7 +5320,7 @@
                 "cards": [
                     {   
                         "id"        : "step-41-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5393,7 +5393,7 @@
                 "cards": [
                     {   
                         "id"        : "step-42-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5473,7 +5473,7 @@
                 "cards": [
                     {   
                         "id"        : "step-43-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5720,7 +5720,7 @@
                 "cards": [
                     {   
                         "id"        : "step-44-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5826,7 +5826,7 @@
                 "cards": [
                     {   
                         "id"        : "step-45-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -5933,7 +5933,7 @@
                 "cards": [
                     {   
                         "id"        : "step-46-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6075,7 +6075,7 @@
                 "cards": [
                     {   
                         "id"        : "step-47-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6182,7 +6182,7 @@
                 "cards": [
                     {   
                         "id"        : "step-48-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6255,7 +6255,7 @@
                 "cards": [
                     {   
                         "id"        : "step-49-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6378,7 +6378,7 @@
                 "cards": [
                     {   
                         "id"        : "step-50-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6765,7 +6765,7 @@
                 "cards": [
                     {   
                         "id"        : "step-53-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6877,7 +6877,7 @@
                 "cards": [
                     {   
                         "id"        : "step-54-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -6959,7 +6959,7 @@
                 "cards": [
                     {   
                         "id"        : "step-55-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7046,7 +7046,7 @@
                 "cards": [
                     {   
                         "id"        : "step-56-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7162,7 +7162,7 @@
                 "cards": [
                     {   
                         "id"        : "step-57-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7274,7 +7274,7 @@
                 "cards": [
                     {   
                         "id"        : "step-58-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7436,7 +7436,7 @@
                 "cards": [
                     {   
                         "id"        : "step-59-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7552,7 +7552,7 @@
                 "cards": [
                     {   
                         "id"        : "step-60-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7644,7 +7644,7 @@
                 "cards": [
                     {   
                         "id"        : "step-61-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7736,7 +7736,7 @@
                 "cards": [
                     {   
                         "id"        : "step-62-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7807,7 +7807,7 @@
                 "cards": [
                     {   
                         "id"        : "step-63-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -7899,7 +7899,7 @@
                 "cards": [
                     {   
                         "id"        : "step-64-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8011,7 +8011,7 @@
                 "cards": [
                     {   
                         "id"        : "step-65-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8084,7 +8084,7 @@
                 "cards": [
                     {   
                         "id"        : "step-66-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8157,7 +8157,7 @@
                 "cards": [
                     {   
                         "id"        : "step-67-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8242,7 +8242,7 @@
                 "cards": [
                     {   
                         "id"        : "step-68-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8327,7 +8327,7 @@
                 "cards": [
                     {   
                         "id"        : "step-69-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8400,7 +8400,7 @@
                 "cards": [
                     {   
                         "id"        : "step-70-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8480,7 +8480,7 @@
                 "cards": [
                     {   
                         "id"        : "step-71-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8577,7 +8577,7 @@
                 "cards": [
                     {   
                         "id"        : "step-72-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8680,7 +8680,7 @@
                 "cards": [
                     {   
                         "id"        : "step-73-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8741,7 +8741,7 @@
                 "cards": [
                     {   
                         "id"        : "step-74-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8802,7 +8802,7 @@
                 "cards": [
                     {   
                         "id"        : "step-75-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -8988,7 +8988,7 @@
                 "cards": [
                     {   
                         "id"        : "step-76-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9090,7 +9090,7 @@
                 "cards": [
                     {   
                         "id"        : "step-77-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9217,7 +9217,7 @@
                 "cards": [
                     {   
                         "id"        : "step-78-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9299,7 +9299,7 @@
                 "cards": [
                     {   
                         "id"        : "step-79-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9384,7 +9384,7 @@
                 "cards": [
                     {   
                         "id"        : "step-81-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9469,7 +9469,7 @@
                 "cards": [
                     {   
                         "id"        : "step-82-card-0",
-                        "type"      : "right pop-up color-2",
+                        "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
                             "value" : null
@@ -9513,7 +9513,7 @@
                 "cards": [
                     {   
                         "id"        : "status-0-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up no-margin",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null
@@ -9610,7 +9610,7 @@
                 "cards": [
                     {   
                         "id"        : "status-1-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null
@@ -9670,7 +9670,7 @@
                 "cards": [
                     {   
                         "id"        : "status-2-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null
@@ -9732,7 +9732,7 @@
                 "cards": [
                     {   
                         "id"        : "load-0-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up no-margin",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null
@@ -9743,7 +9743,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please enter the Application ID you wish to check." 
+                                    "content"   : "Please enter the Application ID you wish to finish." 
                                 }
                             ]
                         }
@@ -9829,7 +9829,7 @@
                 "cards": [
                     {   
                         "id"        : "load-1-card-0",
-                        "type"      : "center pop-up color-2",
+                        "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "Medium",
                             "value" : null

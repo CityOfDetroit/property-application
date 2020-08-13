@@ -99,7 +99,7 @@ function App() {
         if(appID != undefined && step >= 2){
             return <Card  
                 key="app-id-card" 
-                type="right pop-up color-3"
+                type="right pop-up color-2"
                 title={null}
                 titleType={null}
                 body={tempBody} 

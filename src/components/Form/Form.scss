@@ -61,6 +61,10 @@ form.input-submit{
                 border: none;
             }
 
+            input[type="text"]:focus, textarea:focus, select:focus{
+                outline: none;
+            }
+
             select{
                 width: 100%;
             }

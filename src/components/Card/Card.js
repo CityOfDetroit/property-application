@@ -6,7 +6,7 @@ import Body from '../Body/Body';
 function Card(props) {
 
     const buildCard = () => {
-        let cardType = "Card";
+        let cardType = "card";
         if (props.type){
             cardType += ` ${props.type}`;
             return (
