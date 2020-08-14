@@ -19,11 +19,11 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "cssnano": "^4.1.10",
-    "cypress": "^4.12.0",
+    "cypress": "^4.12.1",
     "eslint": "^7.6.0",
     "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-react-hooks": "^4.0.0",
