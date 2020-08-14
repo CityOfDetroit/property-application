@@ -8829,7 +8829,7 @@
                 "forms": [
                     {
                         "id"            : "specialPublicGathering",
-                        "type"          : "checkbox-set",
+                        "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : [],
@@ -8844,7 +8844,7 @@
                                     {   
                                         "id"            : "concert",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "concert",
                                         "required"      : true,
@@ -8859,7 +8859,7 @@
                                     {   
                                         "id"            : "festival",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "festival",
                                         "required"      : true,
@@ -8874,7 +8874,7 @@
                                     {   
                                         "id"            : "block-party",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "block-party",
                                         "required"      : true,
@@ -8889,7 +8889,7 @@
                                     {   
                                         "id"            : "parade",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "parade",
                                         "required"      : true,
@@ -8904,7 +8904,7 @@
                                     {   
                                         "id"            : "picnic",
                                         "tag"           : "input",
-                                        "type"          : "checkbox",
+                                        "type"          : "radio",
                                         "grouping"      : true,
                                         "value"         : "picnic",
                                         "required"      : true,
@@ -8919,7 +8919,7 @@
                                     {   
                                         "id"                    : "other",
                                         "tag"                   : "input",
-                                        "type"                  : "checkbox",
+                                        "type"                  : "radio",
                                         "value"                 : "other",
                                         "placeholder"           : null,
                                         "name"                  : "special-public-gathering",
@@ -8942,8 +8942,8 @@
                                         "value"         : "submit",
                                         "placeholder"   : null,
                                         "name"          : "submit",
-                                        "description"   : "Submit",
-                                        "text"          : "Submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
                                         "label"         : false,
                                         "labelPosition" : null,
                                         "labelText"     : null
