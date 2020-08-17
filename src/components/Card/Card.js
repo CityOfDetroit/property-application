@@ -6,7 +6,7 @@ import Body from '../Body/Body';
 function Card(props) {
 
     const buildCard = () => {
-        let cardType = "card";
+        let cardType = "Card";
         if (props.type){
             cardType += ` ${props.type}`;
             return (
@@ -17,7 +17,7 @@ function Card(props) {
             )
         }else{
             return (
-                <article className="card default">
+                <article className="Card default">
                     <Title name={props.title}></Title>
                     <Body type={props.bodyType} content={props.body}></Body>
                 </article>

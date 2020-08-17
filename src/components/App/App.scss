@@ -39,6 +39,7 @@ body{
 
                     span{
                         font-size: 1.15em;
+                        font-weight: bold;
                     }
                 }
 
@@ -51,7 +52,7 @@ body{
                         cursor: pointer;
                         background: $color-2;
                         color: $color-1;
-                        padding: 0.3em 0.5em 0.6em 0.5em;
+                        padding: .1em .5em .4em .5em;
 
                         span{
                             font-size: 1.5em;
@@ -117,7 +118,7 @@ body{
                     width: 3em;
                     height: 3em;
                     position: absolute;
-                    top: 1em;
+                    top: .75em;
                     right: 1em;
                     border: 0;
                     background-color: $color-1;
@@ -126,6 +127,18 @@ body{
 
                     i{
                         font-size: 1.5em;
+                    }
+                }
+
+                .hint-btn.show-hint{
+                    i{
+                        position: relative;
+                        top: .2em;
+                    }
+
+                    small{
+                        position: relative;
+                        top: -.25em;
                     }
                 }
 

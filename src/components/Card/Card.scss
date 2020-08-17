@@ -1,27 +1,23 @@
 // Colors
 @import '../colors.scss';
 
-.card{
+.Card{
     padding: .25em;
     margin: .5em;
-
-    .card-body{
-        padding: .25em;
-    }
 
     h1,h2,h3,h4,h5{
         margin: 0;
     }
 }
 
-.card.no-margin{
+.Card.no-margin{
 
     p{
         margin: 0;
     }
 }
 
-.card.color-1{
+.Card.color-1{
     background-color: $color-1;
     color: $white;
 
@@ -29,27 +25,27 @@
         color: $white;
     }
 }
-.card.color-2{
+.Card.color-2{
     background-color: $color-2;
     color: $color-1;
 }
-.card.color-3{
+.Card.color-3{
     background-color: $color-3;
     color: $black;
 }
-.card.color-4{
+.Card.color-4{
     background-color: $color-4;
     color: $black;
 }
-.card.color-5{
+.Card.color-5{
     background-color: $color-5;
     color: $white;
 }
-.card.color-light{
+.Card.color-light{
     background-color: $white;
     color: $black;
 }
-.card.color-dark{
+.Card.color-dark{
     background-color: $black;
     color: $white;
 }

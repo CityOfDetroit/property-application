@@ -45,7 +45,7 @@ function Body(props) {
     }
 
     const buildBody = () => {
-        let bodyType = "card-body";
+        let bodyType = "Card-body";
         if (props.type){
             bodyType += ` ${props.type}`;
             return (
