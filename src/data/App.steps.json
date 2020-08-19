@@ -78,25 +78,31 @@
                             "inputType"         : "button",
                             "needsNewID"        : false,
                             "nextGlobal"        : false,
-                            "isPostingGlobal"   : false,
+                            "isPosting"         : false,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : null,
+                            "isFinalStep"       : false,
                             "logic": [
                                 {
                                     "validation"            : "Start New Application",
                                     "next"                  : 1,
                                     "isSwitchingFormType"   : false,
-                                    "formType"              : "application"
+                                    "formType"              : "application",
+                                    "postingType"           : null
                                 },
                                 {
                                     "validation"            : "Check Application Status",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
-                                    "formType"              : "status"
+                                    "formType"              : "status",
+                                    "postingType"           : null
                                 },
                                 {
                                     "validation"            : "Finish Previous Application",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
-                                    "formType"              : "load"
+                                    "formType"              : "load",
+                                    "postingType"           : null
                                 }
                             ]
                         },
@@ -342,7 +348,16 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : false,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "button",
+                            "needsNewID"        : true,
+                            "nextGlobal"        : 2,
+                            "isPosting"         : false,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : null,
+                            "isFinalStep"       : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -9567,7 +9582,16 @@
                         "id"            : "status-0-form-0",
                         "type"          : "input-submit",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPosting"         : false,
+                            "isGetting"         : true,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : "status",
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -9797,7 +9821,17 @@
                         "id"            : "load-0-form-0",
                         "type"          : "input-submit",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPosting"         : false,
+                            "isGetting"         : true,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : "answers",
+                            "isFinalStep"       : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
