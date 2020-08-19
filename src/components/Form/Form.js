@@ -488,6 +488,67 @@ function Form(props) {
         e.target.checked = true;
     }
 
+    const handleButtonForms = (ev, requirements) => {
+        let tempFormData = {};
+        let postData     = {answers:null};
+        let tempHistory  = [];
+        if(requirements.logic.length){
+            let currentLogic; 
+            requirements.logic.some((l, index) => {
+                currentLogic = index;
+                return l.validation === btnState;
+            });
+            if(requirements.needsNewID){
+                if(appID == undefined){
+                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, next)},(e)=>{handleAPICalls(e, 'getID', step)});
+                }
+            }
+            if(requirements.logic[currentLogic].isSwitchingFormType){
+                setBuildType(requirements.logic[currentLogic].formType);
+                setStep(requirements.logic[currentLogic].next);
+            }else{
+                if(requirements.isPosting){
+                    if(formData != undefined){
+                        tempFormData = formData;
+                    }
+                    tempFormData[ev.target.id] = {
+                        values: btnState
+                    }
+                    setFormData(tempFormData);
+                    postData.answers = tempFormData;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.logic[currentLogic].next)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                    setStep(requirements.logic[currentLogic].next);
+                }
+            }
+        }else{
+            if(requirements.needsNewID){
+                if(appID == undefined){
+                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, next)},(e)=>{handleAPICalls(e, 'getID', step)});
+                }
+            }
+            if(requirements.isPosting){
+                if(formData != undefined){
+                    tempFormData = formData;
+                }
+                tempFormData[ev.target.id] = {
+                    values: btnState
+                }
+                setFormData(tempFormData);
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+            }else{
+                tempHistory = stepHistory;
+                tempHistory.push(step);
+                setStepHistory(tempHistory);
+                setStep(requirements.nextGlobal);
+            }
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let specialType  = false;
@@ -497,27 +558,36 @@ function Form(props) {
         let tempHistory  = [];
         let postData     = {answers:null};
         let nextStep;
+        console.log(props.requirements);
+        switch (props.requirements.inputType) {
+            case 'button':
+                handleButtonForms(e, props.requirements);
+                break;
+        
+            default:
+                break;
+        }
         switch (step) {
             case 0:
                 switch (buildType) {
                     case "application":
                         switch (btnState) {
-                            case "Start New Application": 
-                                tempHistory = stepHistory;
-                                tempHistory.push(step);
-                                setStepHistory(tempHistory);
-                                setStep(1);
-                                break;
+                            // case "Start New Application": 
+                            //     tempHistory = stepHistory;
+                            //     tempHistory.push(step);
+                            //     setStepHistory(tempHistory);
+                            //     setStep(1);
+                            //     break;
         
-                            case "Check Application Status":
-                                setBuildType('status');
-                                setStep(0);
-                            break;
+                            // case "Check Application Status":
+                            //     setBuildType('status');
+                            //     setStep(0);
+                            // break;
 
-                            case "Finish Previous Application":
-                                setBuildType('load');
-                                setStep(0);
-                            break;
+                            // case "Finish Previous Application":
+                            //     setBuildType('load');
+                            //     setStep(0);
+                            // break;
                         
                             default:
                                 break;

@@ -74,7 +74,32 @@
                         "savedData"     : false,
                         "type"          : "single-button",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "button",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPostingGlobal"   : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Start New Application",
+                                    "next"                  : 1,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application"
+                                },
+                                {
+                                    "validation"            : "Check Application Status",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status"
+                                },
+                                {
+                                    "validation"            : "Finish Previous Application",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "load"
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : null,
                             "markup"    : []

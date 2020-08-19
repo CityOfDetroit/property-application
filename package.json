@@ -1,6 +1,6 @@
 {
   "name": "property-application",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Intake form for property purchase application for the City of Detroit.",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/CityOfDetroit/property-application.git"
   },
   "scripts": {
-    "start": "parcel src/index.html --https --no-cache -p 3000",
+    "start": "parcel src/index.html --https --no-cache -p 3000 --open",
     "test": "./node_modules/.bin/cypress open",
     "build": "parcel build src/index.js --no-cache --public-url '.' -d build"
   },
