@@ -361,10 +361,12 @@ function Form(props) {
     // ================== Handler  Section ====================
     const handleAPICalls = (e, callType, currentStep, nextStep, isFinalStep) => {
         let tempHistory;
+        console.log(e);
         if(e.status >= 200 && e.status < 300){
             switch (callType) {
                 case 'getID':
                     e.json().then(data => {
+                        console.log(data)
                         setAppID(data.id);
                     });
                     tempHistory = stepHistory;
@@ -583,9 +585,13 @@ function Form(props) {
                 }
             }
         }else{
+            console.log('no logic');
             if(requirements.needsNewID){
+                console.log('needs new ID');
+                console.log(appID);
                 if(appID == undefined){
-                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.logic[currentLogic].next, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
+                    console.log('getting new id');
+                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
                 }
             }
             if(requirements.isPosting){
@@ -624,7 +630,7 @@ function Form(props) {
         }else{
             if(requirements.needsNewID){
                 if(appID == undefined){
-                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.logic[currentLogic].next, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
+                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
                 }
             }
             if(requirements.isPosting){
