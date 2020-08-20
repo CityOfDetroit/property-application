@@ -612,9 +612,16 @@ function Form(props) {
                         break;
                 }
             }else{
-                tempHistory = stepHistory;
-                tempHistory.push(step);
-                setStepHistory(tempHistory);
+                if(requirements.isSwitchingFormTypeGlobal){
+                    setBuildType(requirements.formTypeGlobal);
+                }
+                if(requirements.historyOverrite != null){
+                    setStepHistory(requirements.historyOverrite);
+                }else{
+                    tempHistory = stepHistory;
+                    tempHistory.push(step);
+                    setStepHistory(tempHistory);
+                }
                 setStep(requirements.nextGlobal);
             }
         }
