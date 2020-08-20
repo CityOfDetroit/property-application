@@ -1028,7 +1028,42 @@
                         "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Start New Application",
+                                    "next"                  : 1,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null
+                                },
+                                {
+                                    "validation"            : "Check Application Status",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null
+                                },
+                                {
+                                    "validation"            : "Finish Previous Application",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "load",
+                                    "postingType"           : null
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []

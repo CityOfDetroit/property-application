@@ -680,6 +680,60 @@ function Form(props) {
         }
     };
 
+    const handleRadioForms = (ev, requirements) => {
+        let specialType  = false;
+        let inputData    = [];
+        let tempFormData = {};
+        let postData     = {answers:null};
+        let tempHistory  = [];
+        if(requirements.logic.length){
+
+        }else{
+            if(requirements.needsNewID){
+                if(appID == undefined){
+                    Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
+                }
+            }
+            if(requirements.isPosting){
+                for (let index = 0; index < ev.target.elements.length; index++) {
+                    if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT'){
+                        inputData.push(ev.target.elements[index].value);
+                    }
+                }
+                tempFormData = formData;
+                tempFormData[ev.target.id] = {
+                    values: inputData
+                }
+                setFormData(tempFormData);
+                postData.answers = tempFormData;
+                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+            }
+            if(requirements.isGetting){
+                if(requirements.isPostingFullForm){
+                    
+                }else{
+                    for (let index = 0; index < ev.target.elements.length; index++) {
+                        if(ev.target.elements[index].tagName == 'INPUT'){
+                            inputData.push(ev.target.elements[index].value);
+                        }
+                    }
+                    switch (requirements.postingTypeGlobal) {
+                        case 'status':
+                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/status/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'getStatus', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
+                            break;
+
+                        case 'answers':
+                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let specialType  = false;
@@ -698,141 +752,15 @@ function Form(props) {
             case 'input-text':
                 handleInputTextForms(e, props.requirements);
                 break;
+
+            case 'radio':
+                handleRadioForms(e, props.requirements);
+                break;
         
             default:
                 break;
         }
         switch (step) {
-            case 0:
-                switch (buildType) {
-                    case "application":
-                        switch (btnState) {
-                            // case "Start New Application": 
-                            //     tempHistory = stepHistory;
-                            //     tempHistory.push(step);
-                            //     setStepHistory(tempHistory);
-                            //     setStep(1);
-                            //     break;
-        
-                            // case "Check Application Status":
-                            //     setBuildType('status');
-                            //     setStep(0);
-                            // break;
-
-                            // case "Finish Previous Application":
-                            //     setBuildType('load');
-                            //     setStep(0);
-                            // break;
-                        
-                            default:
-                                break;
-                        }
-                        break;
-
-                    case "status":
-                        // for (let index = 0; index < e.target.elements.length; index++) {
-                        //     if(e.target.elements[index].tagName == 'INPUT'){
-                        //         inputData.push(e.target.elements[index].value);
-                        //     }
-                        // }
-                        // Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/status/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'getStatus', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
-                        break;
-
-                    case "load":
-                        // for (let index = 0; index < e.target.elements.length; index++) {
-                        //     if(e.target.elements[index].tagName == 'INPUT'){
-                        //         inputData.push(e.target.elements[index].value);
-                        //     }
-                        // }
-                        // Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
-                        break;
-                
-                    default:
-                        break;
-                }
-                break;
-
-            case 1:
-                // switch (buildType) {
-                //     case "application":
-                //         if(appID == undefined){
-                //             Connector.start('post','https://apis.detroitmi.gov/property_applications/start/',null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, 2)},(e)=>{handleAPICalls(e, 'getID', step)});
-                //         }else{
-                //             tempHistory = stepHistory;
-                //             tempHistory.push(step);
-                //             setStepHistory(tempHistory);
-                //             setStep(3);
-                //         }
-                //         break;
-
-                //     case "status":
-                //         break;
-
-                //     case "load":
-                //         tempHistory = [0,1];
-                //         setBuildType('application');
-                //         setStepHistory(tempHistory);
-                //         setStep(2);
-                //         break;
-
-                //     default:
-                //         break;
-                // }
-                break;
-
-            case 2:
-                // switch (buildType) {
-                //     case "application":
-                //         if(formData != undefined){
-                //             tempFormData = formData;
-                //         }
-                //         tempFormData[e.target.id] = {
-                //             values: btnState
-                //         }
-                //         setFormData(tempFormData);
-                //         postData.answers = tempFormData;
-                //         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 3)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                //         break;
-
-                //     case "status":
-                //         break;
-
-                //     case "load":
-                //         break;
-
-                //     default:
-                //         break;
-                // }
-                break;
-
-            case 3:
-                // switch (buildType) {
-                //     case "application":
-                //         for (let index = 0; index < e.target.elements.length; index++) {
-                //             if(e.target.elements[index].tagName == 'INPUT' || e.target.elements[index].tagName == 'SELECT'){
-                //                 inputData.push(e.target.elements[index].value);
-                //             }
-                //         }
-                //         tempFormData = formData;
-                //         tempFormData[e.target.id] = {
-                //             values: inputData
-                //         }
-                //         setFormData(tempFormData);
-                //         postData.answers = tempFormData;
-                //         Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, 4)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                //         break;
-
-                //     case "status":
-                //         break;
-
-                //     case "load":
-                //         break;
-
-                //     default:
-                //         break;
-                // }
-                break;
-
             case 4:
                 switch (buildType) {
                     case "application":
