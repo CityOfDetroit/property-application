@@ -74,7 +74,42 @@
                         "savedData"     : false,
                         "type"          : "single-button",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Start New Application",
+                                    "next"                  : 1,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null
+                                },
+                                {
+                                    "validation"            : "Check Application Status",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null
+                                },
+                                {
+                                    "validation"            : "Finish Previous Application",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "load",
+                                    "postingType"           : null
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : null,
                             "markup"    : []
@@ -317,7 +352,20 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : false,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : true,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -428,7 +476,20 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 3,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -531,7 +592,20 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 4,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -9542,7 +9616,16 @@
                         "id"            : "status-0-form-0",
                         "type"          : "input-submit",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPosting"         : false,
+                            "isGetting"         : true,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : "status",
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -9772,7 +9855,20 @@
                         "id"            : "load-0-form-0",
                         "type"          : "input-submit",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "nextGlobal"                : false,
+                            "nextError"                 : 0,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -9880,7 +9976,20 @@
                         "id"            : "load-1-form-0",
                         "type"          : "single-button",
                         "position"      : "center",
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : "application",
+                            "isSwitchingFormTypeGlobal" : true,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : [0,1],
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
