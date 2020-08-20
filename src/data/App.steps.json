@@ -79,6 +79,7 @@
                             "needsNewID"        : false,
                             "nextGlobal"        : false,
                             "isPosting"         : false,
+                            "isGetting"         : false,
                             "isPostingFullForm" : false,
                             "postingTypeGlobal" : null,
                             "isFinalStep"       : false,
@@ -353,6 +354,7 @@
                             "needsNewID"        : true,
                             "nextGlobal"        : 2,
                             "isPosting"         : false,
+                            "isGetting"         : false,
                             "isPostingFullForm" : false,
                             "postingTypeGlobal" : null,
                             "isFinalStep"       : false,
@@ -468,7 +470,17 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "button",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : 3,
+                            "isPosting"         : true,
+                            "isGetting"         : false,
+                            "isPostingFullForm" : true,
+                            "postingTypeGlobal" : "answers",
+                            "isFinalStep"       : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -571,7 +583,17 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : 4,
+                            "isPosting"         : true,
+                            "isGetting"         : false,
+                            "isPostingFullForm" : true,
+                            "postingTypeGlobal" : "answers",
+                            "isFinalStep"       : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
