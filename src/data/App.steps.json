@@ -89,24 +89,36 @@
                             "logic": [
                                 {
                                     "validation"            : "Start New Application",
+                                    "validationType"        : "equal",
                                     "next"                  : 1,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : "application",
-                                    "postingType"           : null
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
                                 },
                                 {
                                     "validation"            : "Check Application Status",
+                                    "validationType"        : "equal",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
                                     "formType"              : "status",
-                                    "postingType"           : null
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
                                 },
                                 {
                                     "validation"            : "Finish Previous Application",
+                                    "validationType"        : "equal",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
                                     "formType"              : "load",
-                                    "postingType"           : null
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
                                 }
                             ]
                         },
@@ -1035,32 +1047,60 @@
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
                             "nextGlobal"                : false,
-                            "isPosting"                 : false,
+                            "isPosting"                 : true,
                             "isGetting"                 : false,
-                            "isPostingFullForm"         : false,
+                            "isPostingFullForm"         : true,
                             "postingTypeGlobal"         : null,
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "validation"            : "Start New Application",
-                                    "next"                  : 1,
+                                    "validation"            : "individual",
+                                    "validationType"        : "equal",
+                                    "next"                  : null,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : "application",
-                                    "postingType"           : null
+                                    "postingType"           : null,
+                                    "multiLogic"            : true,
+                                    "multiLogicOpts"        : [
+                                        {
+                                            "validation"    : "Myself",
+                                            "validationType": "equal",
+                                            "question"      : "represent",
+                                            "next"          : 7,
+                                            "specialTask"   : {
+                                                "taskType"      : "copy",
+                                                "copyCommand"   : {
+                                                    "origin"        : "contact",
+                                                    "destination"   : "contactIndividual"
+                                                }
+                                            }    
+                                        },
+                                        {
+                                            "validation"    : "Someone else / entity",
+                                            "validationType": "equal",
+                                            "question"      : "represent",
+                                            "next"          : 6,
+                                            "specialTask"   : null 
+                                        }
+                                    ],
+                                    "specialTask"           : null
                                 },
                                 {
-                                    "validation"            : "Check Application Status",
-                                    "next"                  : 0,
+                                    "validation"            : "business",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
                                     "isSwitchingFormType"   : true,
                                     "formType"              : "status",
-                                    "postingType"           : null
-                                },
-                                {
-                                    "validation"            : "Finish Previous Application",
-                                    "next"                  : 0,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "load",
-                                    "postingType"           : null
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"   : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactIndividual"
+                                        }
+                                    } 
                                 }
                             ]
                         },
