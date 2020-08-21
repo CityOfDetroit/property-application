@@ -50,20 +50,20 @@
                                         {
                                             "id"        : "card-0-body-1-list-3",
                                             "tag"       : "p",
-                                            "content"   : "If you are submitting this information on behalf of an entity/  or individual, please use their information (i.e not your own)" 
+                                            "content"   : "Check application status by saving the assigned application ID and logging in to the property intake form application." 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-4",
                                             "tag"       : "p",
-                                            "content"   : "You can check your status of your application by going to the Check Application Status section and providing the information given to you upon submittion." 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-5",
-                                            "tag"       : "p",
-                                            "content"   : "You can finish previously started applications or submitted application by going to the Finish/Edit Previous Application section and providing the information given to you upon submittion/save." 
+                                            "content"   : "You can finish previously started applications by going to the Finish Previous Application section and providing your application ID." 
                                         }
                                     ]
-                                }
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "strong",
+                                    "content"   : "SAVE YOUR APPLICATION ID!" 
+                                },
                             ]
                         }
                     }
@@ -176,19 +176,73 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "If you are seeking a City-Owned or DLBA property,  please use this map to identify eligible properties." 
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Use " 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                            "content"   : "this map" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "span",
+                                            "content"   : " to identify eligible properties." 
+                                        }
+                                    ]
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://google.com",
-                                    "content"   : "View Property Map" 
+                                    "tag"       : "p",
+                                    "content"   : "If a property is DLBA owned and part of a specific program:" 
                                 },
                                 {
                                     "id"        : "hint-0-body-2",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Sidelot program" 
+                                        },
+                                        {
+                                            "id"        : "list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Rehabbed and ready" 
+                                        },
+                                        {
+                                            "id"        : "list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Auction  or Own it Now" 
+                                        }
+                                    ] 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
                                     "tag"       : "p",
-                                    "content"   : "If a property is DLBA owned and apart of a specific program: Sidelot program, rehabbed and ready, Auction  or Own it Now, please use those programs, and do not use this application for those purchases / inquires. " 
-                                }
+                                    "content"   : [
+                                        {
+                                            "id"        : "body-3-item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Please use those " 
+                                        },
+                                        {
+                                            "id"        : "body-3-item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://buildingdetroit.org/",
+                                            "content"   : "programs" 
+                                        },
+                                        {
+                                            "id"        : "body-3-item-2",
+                                            "tag"       : "span",
+                                            "content"   : ", and do not use this application for those purchases  inquires." 
+                                        }
+                                    ]
+                                },
                             ]
                         }
                     }
@@ -220,7 +274,7 @@
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
-                                    "tag"       : "p",
+                                    "tag"       : "strong",
                                     "content"   : "For a successful application, have the following prepared before you proceed:" 
                                 },
                                 {
@@ -253,11 +307,6 @@
                                             "content"   : "Estimate of total development costs and timeline of project" 
                                         }
                                     ]
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "i",
-                                    "content"   : "Completing this application does not put a “hold” on any properties." 
                                 }
                             ]
                         }
@@ -267,7 +316,7 @@
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
-                            "value" : "BEFORE YOU BEGIN CHECKLIST FOR SPECIFIC USES"
+                            "value" : null
                         },
                         "body"   : {
                             "type"      : "text",
@@ -284,37 +333,27 @@
                                         {
                                             "id"        : "card-1-body-1-list-0",
                                             "tag"       : "p",
-                                            "content"   : "Experience you and your partners have relevant to the success of the project" 
+                                            "content"   : "Plot plan / site design" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-1",
                                             "tag"       : "p",
-                                            "content"   : "Plan for clearing the land of debris and fixing any other problems with the land" 
+                                            "content"   : "Pesticide agreement certifications (if applicable)" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-2",
                                             "tag"       : "p",
-                                            "content"   : "Photo or photos of the current conditions of the property - taken from the sidewalk (do not enter the property)" 
+                                            "content"   : "Development timeline" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-3",
                                             "tag"       : "p",
-                                            "content"   : "A list of physical improvements you are going to make to the property" 
+                                            "content"   : "Cost of materials and activities" 
                                         },
                                         {
                                             "id"        : "card-1-body-1-list-4",
                                             "tag"       : "p",
-                                            "content"   : "If you are using agricultural chemicals or pesticides, create a plan on what chemicals and pesticides you will use, how often you will use them and how you will use and store them.  This applies even if you are using organic methods and products.  If you have certification to use these items, have that ready" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-5",
-                                            "tag"       : "p",
-                                            "content"   : "A plot plan" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-6",
-                                            "tag"       : "p",
-                                            "content"   : "Information on the financial, in-kind, and volunteer resources you will use to complete the project" 
+                                            "content"   : "Source of funds" 
                                         }
                                     ]
                                 },
@@ -346,13 +385,18 @@
                                             "id"        : "card-1-body-3-list-3",
                                             "tag"       : "p",
                                             "content"   : "Event dates (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-3-list-4",
+                                            "tag"       : "em",
+                                            "content"   : "Note: A filming permit is required prior to applying to use the land. You will not be able to proceed without it." 
                                         }
                                     ]
                                 },
                                 {
                                     "id"        : "card-1-body-4",
-                                    "tag"       : "i",
-                                    "content"   : "Note: A filming permit is required prior to applying to use the land. You will not be able to proceed without it." 
+                                    "tag"       : "strong",
+                                    "content"   : "Completing this application does not put a “hold” on any properties." 
                                 }
                             ]
                         }
@@ -414,24 +458,53 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "To apply for a film permit:" 
+                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
-                                    "content"   : "Apply now" 
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "list-0",
+                                            "tag"       : "a",
+                                            "link"      : "https://pta.waynecounty.com/",
+                                            "content"   : "Pay County Taxes Here" 
+                                        }, 
+                                        {
+                                            "id"        : "list-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://bsaonline.com/?uid=155",
+                                            "content"   : "Pay City Taxes Here" 
+                                        }, 
+                                        {
+                                            "id"        : "list-2",
+                                            "tag"       : "a",
+                                            "link"      : "http://app.detroitmi.gov/dahonline/",
+                                            "content"   : "Pay Blight Tickets Here" 
+                                        }
+                                    ]
                                 },
                                 {
                                     "id"        : "hint-0-body-2",
                                     "tag"       : "p",
-                                    "content"   : "To apply for a special events permit: " 
-                                }, 
+                                    "content"   : "To apply for a film permit:" 
+                                },
                                 {
                                     "id"        : "hint-0-body-3",
                                     "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
+                                    "content"   : "Apply for Film Permit" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-4",
+                                    "tag"       : "p",
+                                    "content"   : "To apply for a special events permit: " 
+                                }, 
+                                {
+                                    "id"        : "hint-0-body-5",
+                                    "tag"       : "a",
                                     "link"      : "https://detroitmi.gov/departments/media-services-department/special-events",
-                                    "content"   : "Apply now" 
+                                    "content"   : "Apply for Special Event Permit" 
                                 }
                             ]
                         }
@@ -659,7 +732,7 @@
                                     {   
                                         "id"            : "phone",
                                         "tag"           : "input",
-                                        "type"          : "number",
+                                        "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. (313)333-3333",
@@ -1208,7 +1281,20 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 7,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -1280,7 +1366,7 @@
                                     {   
                                         "id"            : "phone",
                                         "tag"           : "input",
-                                        "type"          : "number",
+                                        "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. (313)333-3333",
@@ -1646,7 +1732,20 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 7,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -1688,7 +1787,7 @@
                                     {   
                                         "id"            : "phone",
                                         "tag"           : "input",
-                                        "type"          : "number",
+                                        "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. (313)333-3333",
@@ -2042,7 +2141,20 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 8,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
