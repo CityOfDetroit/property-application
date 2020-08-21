@@ -441,21 +441,9 @@ function Form(props) {
                     break;
 
                 case 'loadApplication':
-                    // e.json().then(data => {
-                    //     setAppID(data.id);
-                    //     setFormData(data.answers);
-                    //     tempHistory = stepHistory;
-                    //     tempHistory.push(currentStep);
-                    //     setStepHistory(tempHistory);
-                    //     setStep(1);
-                    // });
                     break;
 
-                default:
-                    // tempHistory = stepHistory;
-                    // tempHistory.push(currentStep);
-                    // setStepHistory(tempHistory);
-                    // setStep(nextStep);
+                default:;
                     break;
             }
         }else{
@@ -467,21 +455,9 @@ function Form(props) {
                     break;
 
                 case 'loadApplication':
-                    // e.json().then(data => {
-                    //     setAppID(data.id);
-                    //     setFormData(data.answers);
-                    //     tempHistory = stepHistory;
-                    //     tempHistory.push(currentStep);
-                    //     setStepHistory(tempHistory);
-                    //     setStep(1);
-                    // });
                     break;
 
                 default:
-                    // tempHistory = stepHistory;
-                    // tempHistory.push(currentStep);
-                    // setStepHistory(tempHistory);
-                    // setStep(nextStep);
                     break;
             }
         }
