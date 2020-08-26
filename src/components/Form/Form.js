@@ -602,7 +602,7 @@ function Form(props) {
             }
             if(requirements.isPosting){
                 for (let index = 0; index < ev.target.elements.length; index++) {
-                    if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT'){
+                    if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
                         inputData.push(ev.target.elements[index].value);
                     }
                 }
@@ -808,20 +808,6 @@ function Form(props) {
                 break;
         }
         switch (step) {
-            case 8:
-                tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: btnState
-                }
-                setFormData(tempFormData);
-                if(btnState == "Yes"){
-                    nextStep = 9;
-                }else{
-                    nextStep = 10;
-                }
-                postData.answers = tempFormData;
-                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                break;
 
             case 9:
                 for (let index = 0; index < e.target.elements.length; index++) {
