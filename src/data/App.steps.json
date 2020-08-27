@@ -64,6 +64,16 @@
                                     "tag"       : "strong",
                                     "content"   : "SAVE YOUR APPLICATION ID!" 
                                 },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "br",
+                                    "content"   : null 
+                                },
+                                {
+                                    "id"        : "card-0-body-4",
+                                    "tag"       : "strong",
+                                    "content"   : "Incomplete applications will be saved in the system for 30 days." 
+                                }
                             ]
                         }
                     }
@@ -191,7 +201,7 @@
                                         {
                                             "id"        : "item-2",
                                             "tag"       : "span",
-                                            "content"   : " to identify eligible properties." 
+                                            "content"   : " to identify eligible properties that are owned by the City of Detroit or DLBA." 
                                         }
                                     ]
                                 },
@@ -217,7 +227,12 @@
                                         {
                                             "id"        : "list-2",
                                             "tag"       : "p",
-                                            "content"   : "Auction  or Own it Now" 
+                                            "content"   : "Auctions" 
+                                        },
+                                        {
+                                            "id"        : "list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Own It Now" 
                                         }
                                     ] 
                                 },
@@ -228,7 +243,7 @@
                                         {
                                             "id"        : "body-3-item-0",
                                             "tag"       : "span",
-                                            "content"   : "Please use those " 
+                                            "content"   : "Please apply via those " 
                                         },
                                         {
                                             "id"        : "body-3-item-1",
@@ -348,12 +363,7 @@
                                         {
                                             "id"        : "card-1-body-1-list-3",
                                             "tag"       : "p",
-                                            "content"   : "Cost of materials and activities" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-4",
-                                            "tag"       : "p",
-                                            "content"   : "Source of funds" 
+                                            "content"   : "Budget details (i.e sources and uses)" 
                                         }
                                     ]
                                 },
@@ -654,6 +664,195 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Is the applicant an individual or business? (check one)" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "applicantType",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 5,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "individual",
+                                    "validationType"        : "equal",
+                                    "next"                  : 4,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null,
+                                    "multiLogic"            : true,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactBusiness"
+                                        }
+                                   }
+                                },
+                                {
+                                    "validation"            : "non-profit",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactIndividual"
+                                        }
+                                   } 
+                                },
+                                {
+                                    "validation"            : "business",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactIndividual"
+                                        }
+                                   } 
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-3-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "individual",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "individual",
+                                        "placeholder"           : null,
+                                        "name"                  : "individual-business",
+                                        "description"           : "Broker",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Individual",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "non-profit",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "non-profit",
+                                        "placeholder"           : null,
+                                        "name"                  : "individual-business",
+                                        "description"           : "Broker",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Non-Profit Organization",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "business",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "business",
+                                        "placeholder"           : null,
+                                        "name"                  : "individual-business",
+                                        "description"           : "business",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Business",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter good/service of business",
+                                        "otherLabel"            : "Business Type",
+                                        "otherID"               : "business-type",
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints" :[]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-4-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : [
                                         {
                                             "id"        : "card-0-body-0-item-0",
@@ -663,7 +862,7 @@
                                         {
                                             "id"        : "card-0-body-0-item-1",
                                             "tag"       : "span",
-                                            "content"   : "Input the best contact information to reach the applicant and/or the representative." 
+                                            "content"   : "Input the best contact information to reach the applicant." 
                                         }
                                     ]
                                 }
@@ -673,7 +872,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "contact",
+                        "id"            : "contactIndividual",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
@@ -683,7 +882,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 4,
+                            "nextGlobal"                : 5,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -1055,7 +1254,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-2-hint-0",
+                        "id"        : "step-4-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -1067,180 +1266,22 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the next few slides." 
+                                    "content"   : "Please include the best way to get in tough touch with the applicant" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "As a reminder, the applicant is the person or entity that will obtain the final deed and title to the property" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Provide contact information for representatives acting on behalf of applicants on following screen" 
                                 }
                             ]
                         }
                     }
                 ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-4-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Is the applicant an individual or business? (check one)" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "applicantType",
-                        "type"          : "radio-buttons plus-other",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "radio",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : false,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : null,
-                            "isFinalStep"               : false,
-                            "logic": [
-                                {
-                                    "validation"            : "individual",
-                                    "validationType"        : "equal",
-                                    "next"                  : null,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : "application",
-                                    "postingType"           : null,
-                                    "multiLogic"            : true,
-                                    "multiLogicOpts"        : [
-                                        {
-                                            "validation"    : "Myself",
-                                            "validationType": "equal",
-                                            "question"      : "represent",
-                                            "next"          : 7,
-                                            "specialTask"   : {
-                                                "taskType"      : "copy",
-                                                "copyCommand"   : {
-                                                    "origin"        : "contact",
-                                                    "destination"   : "contactIndividual"
-                                                }
-                                            }    
-                                        },
-                                        {
-                                            "validation"    : "Someone else / entity",
-                                            "validationType": "equal",
-                                            "question"      : "represent",
-                                            "next"          : 6,
-                                            "specialTask"   : null 
-                                        }
-                                    ],
-                                    "specialTask"           : null
-                                },
-                                {
-                                    "validation"            : "business",
-                                    "validationType"        : "equal",
-                                    "next"                  : 5,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "status",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"   : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : "contactIndividual"
-                                        }
-                                    } 
-                                }
-                            ]
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-4-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"                    : "individual",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "individual",
-                                        "placeholder"           : null,
-                                        "name"                  : "individual-business",
-                                        "description"           : "Broker",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Individual",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
-                                    },
-                                    {   
-                                        "id"                    : "business",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "business",
-                                        "placeholder"           : null,
-                                        "name"                  : "individual-business",
-                                        "description"           : "business",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Business",
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "other",
-                                        "otherPlaceholder"      : "Enter good/service of business",
-                                        "otherLabel"            : "Business Type",
-                                        "otherID"               : "business-type",
-                                        "required"              : true
-                                    },
-                                    {   
-                                        "id"                    : "submit",
-                                        "tag"                   : "button",
-                                        "type"                  : "submit",
-                                        "value"                 : "submit",
-                                        "placeholder"           : null,
-                                        "name"                  : "submit",
-                                        "description"           : "Submit information",
-                                        "text"                  : "Next",
-                                        "label"                 : false,
-                                        "labelText"             : null
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints" :[]
             }
         },
         {
@@ -1315,36 +1356,6 @@
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Name",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "business-name",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Please enter business name.",
-                                        "name"          : "business-name",
-                                        "description"   : "Name of business",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Business Name",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "business-type",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Please enter business type.",
-                                        "name"          : "business-type",
-                                        "description"   : "Type of business",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Business Type",
                                         "labelPosition" : "before",
                                         "required"      : true
                                     },
@@ -1657,6 +1668,36 @@
                                                 "text"  : "Other"
                                             }
                                         ]
+                                    },
+                                    {   
+                                        "id"            : "business-name",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. Always Pizza",
+                                        "name"          : "business-name",
+                                        "description"   : "Name of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Business Name",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"            : "business-type",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. Restaurant",
+                                        "name"          : "business-type",
+                                        "description"   : "Type of business",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Business Type",
+                                        "labelPosition" : "before",
+                                        "required"      : false
                                     },
                                     {   
                                         "id"    : "next-step",
