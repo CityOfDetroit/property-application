@@ -244,9 +244,9 @@ function Form(props) {
 
             case 'textarea':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                    markup = <textarea id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                    markup = <textarea id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} maxLength={item.maxLength} required={item.required} aria-required={item.required}></textarea>;
                 }else{
-                    markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} required={item.required} aria-required={item.required}></textarea>;
+                    markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} maxLength={item.maxLength} required={item.required} aria-required={item.required}></textarea>;
                 }
                 break;
 
@@ -531,9 +531,9 @@ function Form(props) {
                     if(formData != undefined){
                         tempFormData = formData;
                     }
-                    tempFormData[ev.target.id] = {
-                        values: btnState
-                    }
+                    let tempObj = {};
+                    tempObj[ev.target.id] = btnState;
+                    tempFormData[ev.target.id] = tempObj;
                     setFormData(tempFormData);
                     postData.answers = tempFormData;
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.logic[currentLogic].next, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -558,9 +558,9 @@ function Form(props) {
                 if(formData != undefined){
                     tempFormData = formData;
                 }
-                tempFormData[ev.target.id] = {
-                    values: btnState
-                }
+                let tempObj = {};
+                tempObj[ev.target.id] = btnState;
+                tempFormData[ev.target.id] = tempObj;
                 setFormData(tempFormData);
                 postData.answers = tempFormData;
                 switch (requirements.postingTypeGlobal) {
@@ -588,7 +588,7 @@ function Form(props) {
     };
 
     const handleInputTextForms = (ev, requirements) => {
-        let inputData    = [];
+        let inputData    = {};
         let tempFormData = {};
         let postData     = {answers:null};
         let tempHistory  = [];
@@ -603,15 +603,13 @@ function Form(props) {
             if(requirements.isPosting){
                 for (let index = 0; index < ev.target.elements.length; index++) {
                     if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
-                        inputData.push(ev.target.elements[index].value);
+                        inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                     }
                 }
                 if(formData != undefined){
                     tempFormData = formData;
                 }
-                tempFormData[ev.target.id] = {
-                    values: inputData
-                }
+                tempFormData[ev.target.id] = inputData
                 setFormData(tempFormData);
                 postData.answers = tempFormData;
                 Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
@@ -621,8 +619,8 @@ function Form(props) {
                     
                 }else{
                     for (let index = 0; index < ev.target.elements.length; index++) {
-                        if(ev.target.elements[index].tagName == 'INPUT'){
-                            inputData.push(ev.target.elements[index].value);
+                        if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
+                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                         }
                     }
                     switch (requirements.postingTypeGlobal) {
@@ -644,7 +642,7 @@ function Form(props) {
 
     const handleRadioForms = (ev, requirements) => {
         let specialType  = false;
-        let inputData    = [];
+        let inputData    = {};
         let tempFormData = {};
         let postData     = {answers:null};
         let tempHistory  = [];
@@ -654,10 +652,10 @@ function Form(props) {
                 if(ev.target.elements[index].tagName == 'INPUT'){
                     if(ev.target.elements[index].type == 'radio'){
                         if(ev.target.elements[index].checked == true){
-                            inputData.push(ev.target.elements[index].value);
+                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                         }
                     }else{
-                        inputData.push(ev.target.elements[index].value);
+                        inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                     }
                 }
             }
@@ -714,7 +712,9 @@ function Form(props) {
                             if(formData != undefined){
                                 tempFormData = formData;
                             }
-                            delete tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.deleteCommand.item];
+                            if(tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.deleteCommand.item] != undefined){
+                                delete tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.deleteCommand.item];   
+                            }
                             setFormData(tempFormData);
                             break;
                     
@@ -743,7 +743,9 @@ function Form(props) {
                             if(formData != undefined){
                                 tempFormData = formData;
                             }
-                            delete tempFormData[requirements.logic[currentLogic].specialTask.deleteCommand.item];
+                            if(tempFormData[requirements.logic[currentLogic].specialTask.deleteCommand.item] != undefined){
+                                delete tempFormData[requirements.logic[currentLogic].specialTask.deleteCommand.item];
+                            }
                             setFormData(tempFormData);
                             break;
                     

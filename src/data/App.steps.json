@@ -141,7 +141,7 @@
                                 "id"    : "step-0-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-0-form-0-section-0-item-0",
+                                        "id"    : "start-form",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "start-form",
@@ -150,7 +150,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-0-form-0-section-0-item-1",
+                                        "id"    : "check-status",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "check-status",
@@ -159,7 +159,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-0-form-0-section-0-item-2",
+                                        "id"    : "load",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "load",
@@ -441,7 +441,7 @@
                                 "id"    : "step-1-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-1-form-0-section-0-item-0",
+                                        "id"    : "ready",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "ready",
@@ -594,7 +594,7 @@
                                 "id"    : "step-2-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-2-form-0-section-0-item-0",
+                                        "id"    : "myself",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "myself",
@@ -603,7 +603,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-2-form-0-section-0-item-1",
+                                        "id"    : "someone-else-entity",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "someone-else-entity",
@@ -682,7 +682,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 5,
+                            "nextGlobal"                : null,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -696,7 +696,7 @@
                                     "isSwitchingFormType"   : false,
                                     "formType"              : "application",
                                     "postingType"           : null,
-                                    "multiLogic"            : true,
+                                    "multiLogic"            : false,
                                     "multiLogicOpts"        : [],
                                     "specialTask"           : {
                                         "taskType"      : "delete",
@@ -800,11 +800,11 @@
                                         "label"                 : true,
                                         "labelPosition"         : "after",
                                         "labelText"             : "Business",
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "other",
-                                        "otherPlaceholder"      : "Enter good/service of business",
-                                        "otherLabel"            : "Business Type",
-                                        "otherID"               : "business-type",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
                                         "required"              : true
                                     },
                                     {   
@@ -857,7 +857,7 @@
                                         {
                                             "id"        : "card-0-body-0-item-0",
                                             "tag"       : "strong",
-                                            "content"   : "Q1: " 
+                                            "content"   : "Q: " 
                                         },
                                         {
                                             "id"        : "card-0-body-0-item-1",
@@ -882,7 +882,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 5,
+                            "nextGlobal"                : 6,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -896,7 +896,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-3-form-0-section-0",
+                                "id"    : "step-4-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "name",
@@ -972,21 +972,6 @@
                                         "labelText"     : "City",
                                         "labelPosition" : "before",
                                         "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "zip-code",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. 48300",
-                                        "name"          : "zip-code",
-                                        "description"   : "Zip code of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Zip Code",
-                                        "labelPosition" : "before",
-                                        "required"      : false
                                     },
                                     {   
                                         "id"            : "state",
@@ -1210,6 +1195,21 @@
                                         ]
                                     },
                                     {   
+                                        "id"            : "zip-code",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. 48300",
+                                        "name"          : "zip-code",
+                                        "description"   : "Zip code of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Zip Code",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
                                         "id"            : "country",
                                         "tag"           : "select",
                                         "type"          : "text",
@@ -1310,7 +1310,18 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Information" 
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Input the best contact information to reach the applicant." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -1328,7 +1339,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 7,
+                            "nextGlobal"                : 6,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -1641,6 +1652,21 @@
                                         ]
                                     },
                                     {   
+                                        "id"            : "zip-code",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Ex. 48300",
+                                        "name"          : "zip-code",
+                                        "description"   : "Zip code of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Zip Code",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
                                         "id"            : "country",
                                         "tag"           : "select",
                                         "type"          : "text",
@@ -1761,501 +1787,6 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Information" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "contactIndividual",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "input-text",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : 7,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : "answers",
-                            "isFinalStep"               : false,
-                            "logic": []
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-6-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "name",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Please enter full name.",
-                                        "name"          : "name",
-                                        "description"   : "Name of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Name",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "email",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. name@gmai.com",
-                                        "name"          : "email",
-                                        "description"   : "Email of business",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Email",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "phone",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. (313)333-3333",
-                                        "name"          : "phone",
-                                        "description"   : "Phone of business",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Phone",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "address",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. 1550 Woodward",
-                                        "name"          : "address",
-                                        "description"   : "Address of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Address",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "city",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. Detroit",
-                                        "name"          : "city",
-                                        "description"   : "City of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "City",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {
-                                        "id"            : "state",
-                                        "tag"           : "select",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. MI",
-                                        "name"          : "state",
-                                        "description"   : "State of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "State",
-                                        "labelPosition" : "before",
-                                        "required"      : false,
-                                        "selectOptions" : [
-                                            { 
-                                                "value" : "",
-                                                "text"  : "-- Please choose a state --"
-                                            },
-                                            {
-                                                "value" : "AL",
-                                                "text"  : "Alabama"
-                                            },
-                                            {
-                                                "value" : "AK",
-                                                "text"  : "Alaska"
-                                            },
-                                            {
-                                                "value" : "AZ",
-                                                "text"  : "Arizona"
-                                            },
-                                            {
-                                                "value" : "AR",
-                                                "text"  : "Arkansas"
-                                            },
-                                            {
-                                                "value" : "CA",
-                                                "text"  : "California"
-                                            },
-                                            {
-                                                "value" : "CO",
-                                                "text"  : "Colorado"
-                                            },
-                                            {
-                                                "value" : "CT",
-                                                "text"  : "Connecticut"
-                                            },
-                                            {
-                                                "value" : "DE",
-                                                "text"  : "Delaware"
-                                            },
-                                            {
-                                                "value" : "FL",
-                                                "text"  : "Florida"
-                                            },
-                                            {
-                                                "value" : "GA",
-                                                "text"  : "Georgia"
-                                            },
-                                            {
-                                                "value" : "HI",
-                                                "text"  : "Hawaii"
-                                            },
-                                            {
-                                                "value" : "ID",
-                                                "text"  : "Idaho"
-                                            },
-                                            {
-                                                "value" : "IL",
-                                                "text"  : "Illinois"
-                                            },
-                                            {
-                                                "value" : "IN",
-                                                "text"  : "Indiana"
-                                            },
-                                            {
-                                                "value" : "IA",
-                                                "text"  : "Iowa"
-                                            },
-                                            {
-                                                "value" : "KS",
-                                                "text"  : "Kansas"
-                                            },
-                                            {
-                                                "value" : "KY",
-                                                "text"  : "Kentucky"
-                                            },
-                                            {
-                                                "value" : "LA",
-                                                "text"  : "Louisiana"
-                                            },
-                                            {
-                                                "value" : "ME",
-                                                "text"  : "Maine"
-                                            },
-                                            {
-                                                "value" : "MD",
-                                                "text"  : "Maryland"
-                                            },
-                                            {
-                                                "value" : "MA",
-                                                "text"  : "Massachusetts"
-                                            },
-                                            {
-                                                "value" : "MI",
-                                                "text"  : "Michigan"
-                                            },
-                                            {
-                                                "value" : "MN",
-                                                "text"  : "Minnesota"
-                                            },
-                                            {
-                                                "value" : "MS",
-                                                "text"  : "Mississippi"
-                                            },
-                                            {
-                                                "value" : "MO",
-                                                "text"  : "Missouri"
-                                            },
-                                            {
-                                                "value" : "MT",
-                                                "text"  : "Montana"
-                                            },
-                                            {
-                                                "value" : "NE",
-                                                "text"  : "Nebraska"
-                                            },
-                                            {
-                                                "value" : "NV",
-                                                "text"  : "Nevada"
-                                            },
-                                            {
-                                                "value" : "NH",
-                                                "text"  : "New Hampshire"
-                                            },
-                                            {
-                                                "value" : "NJ",
-                                                "text"  : "New Jersey"
-                                            },
-                                            {
-                                                "value" : "NM",
-                                                "text"  : "New Mexico"
-                                            },
-                                            {
-                                                "value" : "NY",
-                                                "text"  : "New York"
-                                            },
-                                            {
-                                                "value" : "NC",
-                                                "text"  : "North Carolina"
-                                            },
-                                            {
-                                                "value" : "ND",
-                                                "text"  : "North Dakota"
-                                            },
-                                            {
-                                                "value" : "OH",
-                                                "text"  : "Ohio"
-                                            },
-                                            {
-                                                "value" : "OK",
-                                                "text"  : "Oklahoma"
-                                            },
-                                            {
-                                                "value" : "OR",
-                                                "text"  : "Oregon"
-                                            },
-                                            {
-                                                "value" : "PA",
-                                                "text"  : "Pennsylvania"
-                                            },
-                                            {
-                                                "value" : "RI",
-                                                "text"  : "Rhode Island"
-                                            },
-                                            {
-                                                "value" : "SC",
-                                                "text"  : "South Carolina"
-                                            },
-                                            {
-                                                "value" : "SD",
-                                                "text"  : "South Dakota"
-                                            },
-                                            {
-                                                "value" : "TN",
-                                                "text"  : "Tennessee"
-                                            },
-                                            {
-                                                "value" : "TX",
-                                                "text"  : "Texas"
-                                            },
-                                            {
-                                                "value" : "UT",
-                                                "text"  : "Utah"
-                                            },
-                                            {
-                                                "value" : "VT",
-                                                "text"  : "Vermont"
-                                            },
-                                            {
-                                                "value" : "VA",
-                                                "text"  : "Virginia"
-                                            },
-                                            {
-                                                "value" : "WA",
-                                                "text"  : "Washington"
-                                            },
-                                            {
-                                                "value" : "WV",
-                                                "text"  : "West Virginia"
-                                            },
-                                            {
-                                                "value" : "WI",
-                                                "text"  : "Wisconsin"
-                                            },
-                                            {
-                                                "value" : "WY",
-                                                "text"  : "Wyoming"
-                                            }
-                                        ]
-                                    },
-                                    {   
-                                        "id"            : "country",
-                                        "tag"           : "select",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Ex. United States",
-                                        "name"          : "country",
-                                        "description"   : "Country of applicant or representative",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Country",
-                                        "labelPosition" : "before",
-                                        "required"      : true,
-                                        "selectOptions" : [
-                                            {
-                                                "value" : "",
-                                                "text"  : "-- Please choose a Country --"
-                                            },
-                                            {
-                                                "value" : "US",
-                                                "text"  : "United States"
-                                            },
-                                            {
-                                                "value" : "other",
-                                                "text"  : "Other"
-                                            }
-                                        ]
-                                    },
-                                    {   
-                                        "id"    : "next-step",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step",
-                                        "text"  : "Next",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-7-card-0",
-                        "type"      : "center pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "link"      : null,
-                                    "content"   : "Is the applicant or business in Detroit?*" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "small",
-                                    "link"      : null,
-                                    "content"   : "Resident includes renters in the City of Detroit." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "inDetroit",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "button",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : 8,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : "answers",
-                            "isFinalStep"               : false,
-                            "logic": []
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-7-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-7-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "in-detroit",
-                                        "description"   : "Applicant or business is in Detroit",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-7-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "not-in-detroit",
-                                        "description"   : "Applicant or business is not Detroit",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-8-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
                                     "content"   : "Is the applicant apart of the Detroit Land Bank Authority  Community Partnership Program or is working with a partner?" 
                                 }
                             ]
@@ -2284,7 +1815,7 @@
                                 {
                                     "validation"            : "Yes",
                                     "validationType"        : "equal",
-                                    "next"                  : 9,
+                                    "next"                  : 7,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -2295,7 +1826,7 @@
                                 {
                                     "validation"            : "No",
                                     "validationType"        : "equal",
-                                    "next"                  : 10,
+                                    "next"                  : 8,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -2311,10 +1842,10 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-8-form-0-section-0",
+                                "id"    : "step-6-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-8-form-0-section-0-item-0",
+                                        "id"    : "part-of-program",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "part-of-program",
@@ -2323,7 +1854,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-8-form-0-section-0-item-1",
+                                        "id"    : "not-part-of-program",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "not-part-of-program",
@@ -2338,7 +1869,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-8-hint-0",
+                        "id"        : "step-6-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2350,13 +1881,24 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Visit the Detroit Land Bank Authority Community Partnership Program page." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://buildingdetroit.org/community-partnership",
-                                    "content"   : "Detroit Land Bank Authority Community Partnership Program" 
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Visit the " 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://buildingdetroit.org/community-partnership/",
+                                            "content"   : "Detroit Land Bank Authority  Community Partnership Program" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "span",
+                                            "content"   : " to learn more." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -2378,7 +1920,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-9-card-0",
+                        "id"        : "step-7-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -2408,7 +1950,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 10,
+                            "nextGlobal"                : 8,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -2422,13 +1964,14 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-9-form-0-section-0",
+                                "id"    : "step-7-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "partners",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
+                                        "maxLength"     : "1000",
                                         "placeholder"   : "Enter all partners.",
                                         "name"          : "partners",
                                         "description"   : "List of all partners",
@@ -2456,7 +1999,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-9-hint-0",
+                        "id"        : "step-7-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2468,13 +2011,24 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Visit the Detroit Land Bank Authority Community Partnership Program page." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://buildingdetroit.org/community-partnership",
-                                    "content"   : "Detroit Land Bank Authority Community Partnership Program" 
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Visit the " 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://buildingdetroit.org/community-partnership/",
+                                            "content"   : "Detroit Land Bank Authority  Community Partnership Program" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "span",
+                                            "content"   : " to learn more." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
