@@ -625,11 +625,11 @@ function Form(props) {
                     }
                     switch (requirements.postingTypeGlobal) {
                         case 'status':
-                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/status/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'getStatus', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
+                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData['app-id']}/status/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'getStatus', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
                             break;
 
                         case 'answers':
-                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData[0]}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
+                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData['app-id']}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
                             break;
                     
                         default:
@@ -668,7 +668,8 @@ function Form(props) {
                 switch (l.validationType) {
                     case 'equal':
                         console.log(inputData);
-                        return l.validation === inputData[0];   
+                        console.log(l);
+                        return l.validation === inputData[l.id];   
                         break;
                 
                     default:
@@ -683,7 +684,7 @@ function Form(props) {
                     console.log(m);
                     switch (m.validationType) {
                         case 'equal':
-                            return formData[m.question].values == m.validation;
+                            return formData[m.question][l.id] == m.validation;
                             break;
                     
                         default:
@@ -699,9 +700,7 @@ function Form(props) {
                             if(formData != undefined){
                                 tempFormData = formData;
                             }
-                            tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.destination] = {
-                                values: formData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.origin].values
-                            }
+                            tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.destination] = formData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.origin];
                             setFormData(tempFormData);
                             break;
 
@@ -730,9 +729,7 @@ function Form(props) {
                             if(formData != undefined){
                                 tempFormData = formData;
                             }
-                            tempFormData[requirements.logic[currentLogic].specialTask.copyCommand.destination] = {
-                                values: formData[requirements.logic[currentLogic].specialTask.copyCommand.origin].values
-                            }
+                            tempFormData[requirements.logic[currentLogic].specialTask.copyCommand.destination] = formData[requirements.logic[currentLogic].specialTask.copyCommand.origin];
                             setFormData(tempFormData);
                             break;
 
@@ -753,6 +750,7 @@ function Form(props) {
                 }
                 currentNext = requirements.logic[currentLogic].next;
             }
+            console.log(currentNext);
             switch (true) {
                 case requirements.isPosting == true:
                     postData.answers = tempFormData;

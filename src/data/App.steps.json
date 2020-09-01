@@ -690,6 +690,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
+                                    "id"                    : "individual",
                                     "validation"            : "individual",
                                     "validationType"        : "equal",
                                     "next"                  : 4,
@@ -707,6 +708,7 @@
                                    }
                                 },
                                 {
+                                    "id"                    : "non-profit",
                                     "validation"            : "non-profit",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
@@ -724,6 +726,7 @@
                                    } 
                                 },
                                 {
+                                    "id"                    : "business",
                                     "validation"            : "business",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
