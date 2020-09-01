@@ -88,12 +88,12 @@ function App() {
             {
                 "id"        : "app-id-0-body-1",
                 "tag"       : "b",
-                "content"   : "Application ID:" 
+                "content"   : "Application ID: " 
             },
             {
                 "id"        : "app-id-0-body-2",
                 "tag"       : "span",
-                "content"   : `${appID} `
+                "content"   : `${appID}`
             }
         ];
         if(appID != undefined && step >= 2){

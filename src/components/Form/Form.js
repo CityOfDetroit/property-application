@@ -139,7 +139,10 @@ function Form(props) {
                 }else{
                     switch (tag) {
                         case 'button':
-                            if(formData[props.id].values == item.text){
+                            console.log(formData[props.id][props.id]);
+                            console.log(item.text);
+                            if(formData[props.id][props.id] == item.text){
+                                console.log('returning true');
                                 return true;
                             }else{
                                 return false;
@@ -162,17 +165,18 @@ function Form(props) {
                             switch (type) {
                                 case 'radio':
                                     let isFound;
-                                    for (let value of formData[props.id].values) {
-                                        if (value === item.value) {
-                                          isFound = true;
-                                          break;
-                                        }
+                                    console.log(formData[props.id][item.id]);
+                                    console.log(item.value);
+                                    if (formData[props.id][item.id] === item.value) {
+                                        console.log('returning true');
+                                        isFound = true;
+                                        break;
                                     }
                                     return isFound;
                                     break;
 
                                 case 'checkbox':
-                                    if(formData[props.id].values == item.value){
+                                    if(formData[props.id][item.id] == item.value){
                                         return true;
                                     }else{
                                         return false;
@@ -236,7 +240,7 @@ function Form(props) {
 
             case 'select':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                    markup = markup = <select id={item.id} name={item.name} aria-label={item.name} defaultValue={formData[props.id].values[index]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
+                    markup = markup = <select id={item.id} name={item.name} aria-label={item.name} defaultValue={formData[props.id][item.id]}>{buildSelectOptions(item.id, item.selectOptions)}</select>;
                 }else{
                     markup = <select id={item.id} name={item.name} aria-label={item.name} >{buildSelectOptions(item.id, item.selectOptions)}</select>;
                 }
@@ -244,7 +248,7 @@ function Form(props) {
 
             case 'textarea':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                    markup = <textarea id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} placeholder={item.placeholder} maxLength={item.maxLength} required={item.required} aria-required={item.required}></textarea>;
+                    markup = <textarea id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} placeholder={item.placeholder} maxLength={item.maxLength} required={item.required} aria-required={item.required}></textarea>;
                 }else{
                     markup = <textarea id={item.id} name={item.name} aria-label={item.name} placeholder={item.placeholder} maxLength={item.maxLength} required={item.required} aria-required={item.required}></textarea>;
                 }
@@ -288,7 +292,7 @@ function Form(props) {
                     
                     case 'text':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
@@ -300,7 +304,7 @@ function Form(props) {
 
                     case 'number':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
@@ -308,7 +312,7 @@ function Form(props) {
 
                     case 'date':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id].values[index]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }else{
                             markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
                         }
