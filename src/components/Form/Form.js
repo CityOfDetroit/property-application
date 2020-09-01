@@ -662,9 +662,7 @@ function Form(props) {
             if(formData != undefined){
                 tempFormData = formData;
             }
-            tempFormData[ev.target.id] = {
-                values: inputData
-            }
+            tempFormData[ev.target.id] = inputData;
             requirements.logic.some((l, index) => {
                 currentLogic = index;
                 switch (l.validationType) {
