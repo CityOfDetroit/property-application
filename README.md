@@ -21,22 +21,22 @@ Please make sure these are installed locally
 2. Install node dependencies.
 
     ```
-    $ npm install
+    $ yarn install
     ```
 
 3. Run local instance.
     ```
-    $ npm start
+    $ yarn start
     ```
 
 4. Run test suite.
     ```
-    $ npm test
+    $ yarn test
     ```
 
 4. Create production build.
     ```
-    $ npm run-script build
+    $ yarn run-script build
     ```
 ## Resources
 
