@@ -47,51 +47,92 @@ function Form(props) {
         return markup;
     }
 
+    const buildExtra = (extra) => {
+        let markup;
+        console.log(extra);
+        switch (extra.type) {
+            case "geocoder":
+                markup = <Geocoder 
+                key={extra.id}
+                id={extra.id} 
+                name={extra.id} 
+                placeholder={extra.placeholder} 
+                required={true}
+                ariaRequired={true}
+                label={extra.label} 
+                ></Geocoder>;
+                break;
+
+            case "text":
+                markup = 
+                <div>
+                    <label htmlFor={extra.id} className={getLabelClass(true)}>{extra.label}</label>
+                    <input key={extra.id} type={extra.type} id={extra.id} name={extra.name} aria-label={extra.id} placeholder={extra.placeholder} required={true} aria-required={true}></input>
+                </div>;
+                break;
+
+            case "checkbox":
+                markup = 
+                <div>
+                   <input type={extra.type} id={extra.id} name={extra.name} aria-label={extra.name} value={extra.value} onChange={handleChange} required={extra.required} aria-required={extra.required} onChange={handleGroupingRequired} data-grouping={extra.grouping}></input>
+                   <label htmlFor={extra.id} className={getLabelClass(true)}>{extra.label}</label>
+                </div>;
+                break;
+
+            case "file":
+                markup =
+                <div>
+                    <label htmlFor={extra.id} className={getLabelClass(true)}>{extra.label}</label>
+                    <input key={extra.id} type={extra.type} id={extra.id} name={extra.name} aria-label={extra.id} required={true} aria-required={true}></input>
+                </div>;
+                break;
+        
+            default:
+                break;
+        }
+        console.log(markup);
+        return markup;
+    }
+
     const buildExtras = () => {
         let extrasArr = [];
-        let markup = "";
-        for (let index = 0; index < extrasCount; index++) {
-            extrasArr.push(`${extras.getAttribute('data-special-id')}-${index + 1}`);
-        }
+        let markup;
         if(extrasCount > 0){
-            switch (extras.getAttribute('data-special-type')) {
-                case "geocoder":
-                    markup = extrasArr.map((extra) =>
-                    <Geocoder 
-                    key={extra}
-                    id={extra} 
-                    name={extra} 
-                    placeholder={extras.getAttribute('data-special-text')} 
-                    required={true}
-                    ariaRequired={true}
-                    label={extras.getAttribute('data-special-label')} 
-                    ></Geocoder>
-                    );
-                    break;
-
-                case "text":
-                    markup = extrasArr.map((extra) =>
-                    <div>
-                        <label htmlFor={extra} className={getLabelClass(true)}>{extras.getAttribute('data-special-label')}</label>
-                        <input key={extra} type={extras.getAttribute('data-special-type')} id={extra} name={extra} aria-label={extra} placeholder={extras.getAttribute('data-special-text')} required={true} aria-required={true}></input>
-                    </div>
-                    );
-                    break;
-
-                case "file":
-                    markup = extrasArr.map((extra) =>
-                    <div>
-                        <label htmlFor={extra} className={getLabelClass(true)}>{extras.getAttribute('data-special-label')}</label>
-                        <input key={extra} type={extras.getAttribute('data-special-type')} id={extra} name={extra} aria-label={extra} required={true} aria-required={true}></input>
-                    </div>
-                    );
-                    break;
-            
-                default:
-                    break;
+            if(extras.getAttribute('data-ismulti-component')){
+                console.log(JSON.parse(extras.getAttribute('data-multicomponents')));
+                for (let index = 0; index < extrasCount; index++){
+                    JSON.parse(extras.getAttribute('data-multicomponents')).forEach((comp) => {
+                        console.log(comp);
+                        let tempComponent = {};
+                        tempComponent.id = `${comp.otherID}-${index + 1}`;
+                        tempComponent.placeholder = comp.otherPlaceholder;
+                        tempComponent.value = comp.otherValue;
+                        tempComponent.label = comp.otherLabel;
+                        tempComponent.required = comp.otherRequire;
+                        tempComponent.grouping = comp.otherGrouping;
+                        tempComponent.type = comp.specialAttribute;
+                        if(comp.otherName != null){
+                            tempComponent.name = `${comp.otherName}-${index + 1}`;
+                        }
+                        extrasArr.push(tempComponent);
+                    });
+                }
+            }else{
+                for (let index = 0; index < extrasCount; index++) {
+                    let tempComponent = {};
+                    tempComponent.id = `${extras.getAttribute('data-special-id')}-${index + 1}`;
+                    tempComponent.placeholder = extras.getAttribute('data-special-text');
+                    tempComponent.value = null;
+                    tempComponent.label = extras.getAttribute('data-special-label');
+                    tempComponent.type = extras.getAttribute('data-special-type');
+                    extrasArr.push(tempComponent);
+                }
             }
+            
         }
-       
+        console.log(extrasArr);
+        markup = extrasArr.map((extra) => buildExtra(extra));
+        console.log(markup);
         return markup;
     }
 
@@ -220,7 +261,7 @@ function Form(props) {
                     case 'button':
                         switch (item.text) {
                             case 'Add':
-                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
+                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
 
                             case 'Remove':
@@ -230,7 +271,7 @@ function Form(props) {
                             onClick={(e)=>{
                                 if(extrasCount > 0){setExtrasCount(extrasCount - 1);setExtras(e.target);} 
                             }} 
-                            type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}>{item.text}</button>;
+                            type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
                         
                             default:
@@ -343,12 +384,6 @@ function Form(props) {
             <option key={buildNewKey(id,index)} value={option.value}>{option.text}</option>
         );
         return markup;
-        // Array.from(options).forEach((option, index) => {
-        //     console.log(option);
-        //     console.log(index);
-        //     let tempKey = `${id}-option-${index}`;
-        //     return <option key={tempKey} value={option.value}>{option.text}</option>
-        // });
     }
 
     const buildNewKey = (id, index) => {

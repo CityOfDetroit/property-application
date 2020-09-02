@@ -2143,18 +2143,25 @@
                                         "text"  : "Add",
                                         "label" : false,
                                         "hasSpecialAttribute"   : true,
-                                        "isMultiAttributes"     : true,
-                                        "multiAttributes"       : [
+                                        "isMultiComponent"     : true,
+                                        "multiComponents"       : [
                                             {
                                                 "specialAttribute"  : "text",
+                                                "otherRequire"      : false,
+                                                "otherGrouping"     : false,
                                                 "otherPlaceholder"  : "Enter LLC's name",
+                                                "otherValue"        : null,
+                                                "otherName"         : null,
                                                 "otherLabel"        : "LLC's Name",
                                                 "otherID"           : "llc-entities"  
                                             },
                                             {
                                                 "specialAttribute"  : "checkbox",
+                                                "otherRequire"      : false,
+                                                "otherGrouping"     : false,
                                                 "otherPlaceholder"  : null,
                                                 "otherValue"        : "in detroit",
+                                                "otherName"         : "llc-entities",
                                                 "otherLabel"        : "In Detroit",
                                                 "otherID"           : "llc-entities-in-detroit"  
                                             }
@@ -2173,8 +2180,8 @@
                                         "text"  : "Remove",
                                         "label" : false,
                                         "hasSpecialAttribute"   : true,
-                                        "isMultiAttributes"     : true,
-                                        "multiAttributes"       : [
+                                        "isMultiComponent"     : true,
+                                        "multiComponents"       : [
                                             {
                                                 "specialAttribute"  : "text",
                                                 "otherPlaceholder"  : "Enter LLC's name",
@@ -2183,6 +2190,7 @@
                                             },
                                             {
                                                 "specialAttribute"  : "checkbox",
+                                                "otherGrouping"     : false,
                                                 "otherPlaceholder"  : null,
                                                 "otherValue"        : "in detroit",
                                                 "otherLabel"        : "In Detroit",
