@@ -2053,7 +2053,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-10-card-0",
+                        "id"        : "step-8-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -2065,7 +2065,12 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Does the applicant or any affiliated company currently own property in Detroit?" 
+                                    "content"   : "What LLCs/entities does the applicant operate under?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "small",
+                                    "content"   : "Applicant must list all entities they do business under. Any omissions will delay processing the application." 
                                 }
                             ]
                         }
@@ -2073,35 +2078,129 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "ownDetroitProperty",
-                        "type"          : "single-button",
+                        "id"            : "LLCs",
+                        "type"          : "input-checkbox",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-checkbox",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 9,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-10-form-0-section-0",
+                                "id"    : "step-8-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-10-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "own-property-in-detroit",
-                                        "description"   : "Applicant does own property in Detroit",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "llc-entities-0",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter LLC's name",
+                                        "name"          : "llc",
+                                        "description"   : "Name of LLCs or entities that the applicant operates",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "LLC's Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-10-form-0-section-0-item-1",
+                                        "id"            : "llc-entities-in-detroit-0",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "in detroit",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "llc-entities-0",
+                                        "description"   : "Information about LLCs located in Detroit",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "In Detroit"
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more properties",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "isMultiAttributes"     : true,
+                                        "multiAttributes"       : [
+                                            {
+                                                "specialAttribute"  : "text",
+                                                "otherPlaceholder"  : "Enter LLC's name",
+                                                "otherLabel"        : "LLC's Name",
+                                                "otherID"           : "llc-entities"  
+                                            },
+                                            {
+                                                "specialAttribute"  : "checkbox",
+                                                "otherPlaceholder"  : null,
+                                                "otherValue"        : "in detroit",
+                                                "otherLabel"        : "In Detroit",
+                                                "otherID"           : "llc-entities-in-detroit"  
+                                            }
+                                        ],
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra properties",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "isMultiAttributes"     : true,
+                                        "multiAttributes"       : [
+                                            {
+                                                "specialAttribute"  : "text",
+                                                "otherPlaceholder"  : "Enter LLC's name",
+                                                "otherLabel"        : "LLC's Name",
+                                                "otherID"           : "llc-entities"  
+                                            },
+                                            {
+                                                "specialAttribute"  : "checkbox",
+                                                "otherPlaceholder"  : null,
+                                                "otherValue"        : "in detroit",
+                                                "otherLabel"        : "In Detroit",
+                                                "otherID"           : "llc-entities-in-detroit"  
+                                            }
+                                        ],
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null
+                                    },
+                                    {   
+                                        "id"    : "next-step",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-own-property-in-detroit",
-                                        "description"   : "Applicant does not own property in Detroit",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -2201,196 +2300,6 @@
                                     },
                                     {   
                                         "id"    : "step-11-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step",
-                                        "text"  : "Next",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-12-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Does the applicant operate under any LLC’s or Entities in the City of Detroit?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "small",
-                                    "content"   : "Applicant must disclose all entities they do business under in the City of Detroit. Any omissions will delay processing the application." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "hasLLC",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-12-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-12-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "operates-under-llc",
-                                        "description"   : "Applicant operates under a LLC",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-12-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "does-not-operates-under-llc",
-                                        "description"   : "Applicant does not operates under a LLC",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-13-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "What LLCs/Entities does the applicant operate under?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "small",
-                                    "content"   : "Applicant must list all entities they do business under.  Any omissions will delay processing the application." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "LLCs",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-13-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "llc-entities-0",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter LLC's name",
-                                        "name"          : "llc",
-                                        "description"   : "Name of LLCs or entities that the applicant operates",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "LLC's Name",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"    : "add",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "add",
-                                        "description"   : "Add more properties",
-                                        "text"  : "Add",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "text",
-                                        "otherPlaceholder"      : "Enter LLC's name",
-                                        "otherLabel"            : "LLC's Name",
-                                        "otherID"               : "llc-entities"
-                                    },
-                                    {   
-                                        "id"    : "remove",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "remove",
-                                        "description"   : "Remove extra properties",
-                                        "text"  : "Remove",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "text",
-                                        "otherPlaceholder"      : "Enter LLC's name",
-                                        "otherLabel"            : "LLC's Name",
-                                        "otherID"               : "llc-entities"
-                                    },
-                                    {   
-                                        "id"    : "step-13-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",

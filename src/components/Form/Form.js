@@ -170,17 +170,22 @@ function Form(props) {
                                     if (formData[props.id][item.id] === item.value) {
                                         console.log('returning true');
                                         isFound = true;
-                                        break;
+                                    }else{
+                                        isFound = false;
                                     }
                                     return isFound;
                                     break;
 
                                 case 'checkbox':
+                                    let isChecked;
+                                    console.log(formData[props.id][item.id]);
+                                    console.log(item.value);
                                     if(formData[props.id][item.id] == item.value){
-                                        return true;
+                                        isChecked = true;
                                     }else{
-                                        return false;
+                                        isChecked = false;
                                     }
+                                    return isChecked;
                                     break;
                             
                                 default:
@@ -287,7 +292,11 @@ function Form(props) {
                         break;
 
                     case 'checkbox':
-                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping}></input>;
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping} defaultChecked={true}></input>;
+                        }else{
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} onChange={handleGroupingRequired} data-grouping={item.grouping}></input>;
+                        }
                         break;
                     
                     case 'text':
@@ -349,6 +358,7 @@ function Form(props) {
     const addspecialType = (item, index) => {
         if(item.hasSpecialAttribute){
             if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                console.log('loading previous radio');
                 return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} defaultChecked={true}></input>;
             }else{
                 return <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} required={item.required} aria-required={item.required} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID}></input>;
@@ -589,7 +599,7 @@ function Form(props) {
                 setStep(requirements.nextGlobal);
             }
         }
-    };
+    }
 
     const handleInputTextForms = (ev, requirements) => {
         let inputData    = {};
@@ -642,7 +652,7 @@ function Form(props) {
                 }
             }
         }
-    };
+    }
 
     const handleRadioForms = (ev, requirements) => {
         let specialType  = false;
@@ -781,7 +791,184 @@ function Form(props) {
         }else{
 
         }
-    };
+    }
+
+    const handleInputCheckboxForms = (ev, requirements) => {
+        let specialType  = false;
+        let inputData    = {};
+        let tempFormData = {};
+        let postData     = {answers:null};
+        let tempHistory  = [];
+        let currentLogic, currentMultiLogic, currentNext; 
+        if(requirements.logic.length){
+            for (let index = 0; index < ev.target.elements.length; index++) {
+                if(ev.target.elements[index].tagName == 'INPUT'){
+                    if(ev.target.elements[index].type == 'checkbox'){
+                        if(ev.target.elements[index].checked == true){
+                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                        }
+                    }else{
+                        inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                    }
+                }
+            }
+            if(formData != undefined){
+                tempFormData = formData;
+            }
+            tempFormData[ev.target.id] = inputData;
+            requirements.logic.some((l, index) => {
+                currentLogic = index;
+                switch (l.validationType) {
+                    case 'equal':
+                        console.log(inputData);
+                        console.log(l);
+                        return l.validation === inputData[l.id];   
+                        break;
+                
+                    default:
+                        break;
+                }
+            }); 
+            if(requirements.logic[currentLogic].multiLogic){
+                console.log('found multilogic');
+                console.log(requirements.logic[currentLogic].multiLogicOpts);
+                requirements.logic[currentLogic].multiLogicOpts.some((m, index) => {
+                    currentMultiLogic = index;
+                    console.log(m);
+                    switch (m.validationType) {
+                        case 'equal':
+                            return formData[m.question][l.id] == m.validation;
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }); 
+                console.log(requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic]);
+                if(requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask != null){
+                    console.log('found special task');
+                    switch (requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.taskType) {
+                        case 'copy':
+                            console.log('running copy task');
+                            if(formData != undefined){
+                                tempFormData = formData;
+                            }
+                            tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.destination] = formData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.copyCommand.origin];
+                            setFormData(tempFormData);
+                            break;
+
+                        case 'delete':
+                            console.log('running copy delete');
+                            if(formData != undefined){
+                                tempFormData = formData;
+                            }
+                            if(tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.deleteCommand.item] != undefined){
+                                delete tempFormData[requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].specialTask.deleteCommand.item];   
+                            }
+                            setFormData(tempFormData);
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+                currentNext = requirements.logic[currentLogic].multiLogicOpts[currentMultiLogic].next;
+            }else{
+                if(requirements.logic[currentLogic].specialTask != null){
+                    console.log('found special task');
+                    switch (requirements.logic[currentLogic].specialTask.taskType) {
+                        case 'copy':
+                            console.log('running copy task');
+                            if(formData != undefined){
+                                tempFormData = formData;
+                            }
+                            tempFormData[requirements.logic[currentLogic].specialTask.copyCommand.destination] = formData[requirements.logic[currentLogic].specialTask.copyCommand.origin];
+                            setFormData(tempFormData);
+                            break;
+
+                        case 'delete':
+                            console.log('running copy delete');
+                            if(formData != undefined){
+                                tempFormData = formData;
+                            }
+                            if(tempFormData[requirements.logic[currentLogic].specialTask.deleteCommand.item] != undefined){
+                                delete tempFormData[requirements.logic[currentLogic].specialTask.deleteCommand.item];
+                            }
+                            setFormData(tempFormData);
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+                currentNext = requirements.logic[currentLogic].next;
+            }
+            console.log(currentNext);
+            switch (true) {
+                case requirements.isPosting == true:
+                    postData.answers = tempFormData;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, currentNext, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                    break;
+
+                case requirements.isGetting == true:
+                    break;
+            
+                default:
+                    if(requirements.isSwitchingFormTypeGlobal){
+                        setBuildType(requirements.formTypeGlobal);
+                    }
+                    if(requirements.historyOverrite != null){
+                        setStepHistory(requirements.historyOverrite);
+                    }else{
+                        tempHistory = stepHistory;
+                        tempHistory.push(step);
+                        setStepHistory(tempHistory);
+                    }
+                    setStep(currentNext);
+                    break;
+            }
+        }else{
+            for (let index = 0; index < ev.target.elements.length; index++) {
+                if(ev.target.elements[index].tagName == 'INPUT'){
+                    if(ev.target.elements[index].type == 'checkbox'){
+                        if(ev.target.elements[index].checked == true){
+                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                        }
+                    }else{
+                        inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                    }
+                }
+            }
+            if(formData != undefined){
+                tempFormData = formData;
+            }
+            tempFormData[ev.target.id] = inputData;
+            currentNext = requirements.nextGlobal;
+            switch (true) {
+                case requirements.isPosting == true:
+                    postData.answers = tempFormData;
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, currentNext, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                    break;
+
+                case requirements.isGetting == true:
+                    break;
+            
+                default:
+                    if(requirements.isSwitchingFormTypeGlobal){
+                        setBuildType(requirements.formTypeGlobal);
+                    }
+                    if(requirements.historyOverrite != null){
+                        setStepHistory(requirements.historyOverrite);
+                    }else{
+                        tempHistory = stepHistory;
+                        tempHistory.push(step);
+                        setStepHistory(tempHistory);
+                    }
+                    setStep(currentNext);
+                    break;
+            }
+        }
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -805,7 +992,11 @@ function Form(props) {
             case 'radio':
                 handleRadioForms(e, props.requirements);
                 break;
-        
+
+            case 'input-checkbox':
+                handleInputCheckboxForms(e, props.requirements);
+                break;
+                
             default:
                 break;
         }
