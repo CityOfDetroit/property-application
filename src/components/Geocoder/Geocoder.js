@@ -5,7 +5,7 @@ function Geocoder(props) {
   // Declare a new state variable, which we'll call when changing panel render
   const [sugg, setSugg]       = useState();
   const [address, setAddress] = useState();
-  const [parcel, setParcel]   = useState();
+  const [parcel, setParcel]   = useState(props.parcel);
 
   const getAddressSuggestions = (addr) => {
     let tempAddr = addr.split(",");
@@ -40,7 +40,6 @@ function Geocoder(props) {
         sugg.forEach((item) => {
           if(ev.target.value == item.address){
             setParcel(item.attributes.User_fld);
-            ev.target.setAttribute('data-parcel', item.attributes.User_fld);
           }
         })
       }
@@ -68,7 +67,7 @@ function Geocoder(props) {
   return (
       <div>
         <label className={getClassName()} htmlFor={props.id}>{props.label}</label>
-        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} placeholder={props.placeholder} onChange={handleChange} aria-required={props.required} required={props.required}></input>
+        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} defaultValue={props.savedValue} placeholder={props.placeholder} data-parcel={parcel} onChange={handleChange} aria-required={props.required} required={props.required} autocomplete="off"></input>
         <datalist id={buildNames()}>
             {(sugg) ? buildOptions() : ''}
         </datalist>

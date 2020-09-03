@@ -2342,7 +2342,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-11-card-0",
+                        "id"        : "step-10-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -2354,7 +2354,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Part of the City’s initial screening of the applicants inquiry includes a review of the property that the applicant owns to confirm tax status  and blight ticket status. Please add any addresses of property that the applicant owns in Detroit." 
+                                    "content"   : "The initial screening of applicants by the City includes a review of the property that the applicant owns to confirm tax and blight ticket status. Please list any and all addresses of property that the applicant or affiliated entities owns in Detroit." 
                                 }
                             ]
                         }
@@ -2366,26 +2366,40 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 11,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-11-form-0-section-0",
+                                "id"    : "step-10-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "detroit-property-0",
-                                        "tag"   : "GEOCODER",
-                                        "type"  : "text",
-                                        "name"  : "detroit-property",
+                                        "id"            : "detroit-property-0",
+                                        "tag"           : "GEOCODER",
+                                        "type"          : "text",
+                                        "name"          : "detroit-property",
                                         "description"   : "Address of Detroit property",
                                         "placeholder"   : "Ex. 1301 Third st.",
-                                        "text"  : "Yes",
-                                        "label" : false,
-                                        "labelText" : "Property Address",
-                                        "required"  : true
+                                        "percel"        : null,
+                                        "text"          : "Yes",
+                                        "label"         : false,
+                                        "labelText"     : "Property Address",
+                                        "required"      : true
                                     },
                                     {   
                                         "id"    : "add",

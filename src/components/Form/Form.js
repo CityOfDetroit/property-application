@@ -306,10 +306,12 @@ function Form(props) {
                     <Geocoder 
                     id={item.id} 
                     name={item.name} 
-                    placeholder={formData[props.id].values[index]} 
+                    placeholder={item.placeholder} 
                     required={false}
                     ariaRequired={item.required}
                     label={item.labelText}
+                    parcel={formData[props.id][`${item.id}-parcel`]}
+                    savedValue={formData[props.id][item.id]}
                     value={item.value}
                     ></Geocoder>;
                 }else{
@@ -321,6 +323,7 @@ function Form(props) {
                     required={item.required} 
                     ariaRequired={item.required}
                     label={item.labelText}
+                    parcel={null}
                     value={item.value}
                     ></Geocoder>;
                 }
@@ -653,6 +656,9 @@ function Form(props) {
                 for (let index = 0; index < ev.target.elements.length; index++) {
                     if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
                         inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                        if(ev.target.elements[index].getAttribute('data-parcel') != undefined){
+                            inputData[`${ev.target.elements[index].id}-parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                        }
                     }
                 }
                 if(formData != undefined){
@@ -1036,21 +1042,6 @@ function Form(props) {
                 break;
         }
         switch (step) {
-
-            case 10:
-                tempFormData = formData;
-                tempFormData[e.target.id] = {
-                    values: btnState
-                }
-                setFormData(tempFormData);
-                if(btnState == "Yes"){
-                    nextStep = 11;
-                }else{
-                    nextStep = 12;
-                }
-                postData.answers = tempFormData;
-                Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, nextStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                break;
 
             case 11:
                 for (let index = 0; index < e.target.elements.length; index++) {
