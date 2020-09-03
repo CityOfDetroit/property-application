@@ -2290,7 +2290,13 @@
                                     "postingType"           : null,
                                     "multiLogic"            : false,
                                     "multiLogicOpts"        : [],
-                                    "specialTask"           : null
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "detroitProperties"
+                                        }
+                                   }
                                 }
                             ]
                         },
@@ -2460,7 +2466,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-14-card-0",
+                        "id"        : "step-11-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -2489,17 +2495,53 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 12,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 13,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-14-form-0-section-0",
+                                "id"    : "step-11-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-14-form-0-section-0-item-0",
+                                        "id"    : "step-11-form-0-section-0-item-0",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "delinquent-taxes-blight",
@@ -2508,7 +2550,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-14-form-0-section-0-item-1",
+                                        "id"    : "step-11-form-0-section-0-item-1",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no-delinquent-taxes-blight",
@@ -2523,7 +2565,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-14-hint-0",
+                        "id"        : "step-11-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2539,20 +2581,325 @@
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://pta.waynecounty.com/",
-                                    "content"   : "Pay Taxes Here" 
+                                    "tag"       : "p",
+                                    "content"   : "Unsure? Check the following links:" 
                                 },
                                 {
                                     "id"        : "hint-0-body-2",
+                                    "tag"       : "a",
+                                    "link"      : "https://pta.waynecounty.com/",
+                                    "content"   : "Pay County Taxes Here" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
                                     "tag"       : "p",
                                     "content"   : "" 
                                 },
                                 {
-                                    "id"        : "hint-0-body-3",
+                                    "id"        : "hint-0-body-4",
+                                    "tag"       : "a",
+                                    "link"      : "https://bsaonline.com/?uid=155",
+                                    "content"   : "Pay City Taxes Here" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-5",
+                                    "tag"       : "p",
+                                    "content"   : "" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-6",
                                     "tag"       : "a",
                                     "link"      : "http://app.detroitmi.gov/dahonline/",
                                     "content"   : "Pay Blight Tickets Here" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-12-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please follow the instructions below:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://pta.waynecounty.com/",
+                                    "content"   : "Pay County Taxes Here" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "" 
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "a",
+                                    "link"      : "https://bsaonline.com/?uid=155",
+                                    "content"   : "Pay City Taxes Here" 
+                                },
+                                {
+                                    "id"        : "card-0-body-4",
+                                    "tag"       : "p",
+                                    "content"   : "" 
+                                },
+                                {
+                                    "id"        : "card-0-body-5",
+                                    "tag"       : "a",
+                                    "link"      : "http://app.detroitmi.gov/dahonline/",
+                                    "content"   : "Pay Blight Tickets Here" 
+                                },
+                                {
+                                    "id"        : "card-0-body-6",
+                                    "tag"       : "p",
+                                    "content"   : "Once payments are made, continue and submit this property application." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-12-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-13-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Has the applicant identified a property/properties for purchase?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "identifiedProperty",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 15,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 14,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-13-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "step-13-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "identified-property",
+                                        "description"   : "Applicant has identified a property or properties for purchase",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "step-13-form-0-section-0-item-1",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no-delinquent-taxes-blight",
+                                        "description"   : "Applicant has not identified a property or properties for purchase",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-13-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-14-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Thanks for your interest! Here are some resources that can assist your search.  Please submit this application when you have a property identified." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-14-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                    "content"   : "Visit Map" 
                                 }
                             ]
                         }
@@ -2586,249 +2933,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please follow the instructions below:" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://pta.waynecounty.com/",
-                                    "content"   : "Pay Taxes Here" 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "" 
-                                },
-                                {
-                                    "id"        : "card-0-body-3",
-                                    "tag"       : "a",
-                                    "link"      : "http://app.detroitmi.gov/dahonline/",
-                                    "content"   : "Pay Blight Tickets Here" 
-                                },
-                                {
-                                    "id"        : "card-0-body-4",
-                                    "tag"       : "p",
-                                    "content"   : "Once payments are made, continue and submit this property application." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [],
-                "hints": [
-                    {   
-                        "id"        : "step-15-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-16-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Has the applicant identified a property/properties for purchase?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "identifiedProperty",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-16-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-16-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "identified-property",
-                                        "description"   : "Applicant has identified a property or properties for purchase",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-16-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no-delinquent-taxes-blight",
-                                        "description"   : "Applicant has not identified a property or properties for purchase",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-16-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-17-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Thanks for your interest! Here are some resources that can assist your search.  Please submit this application when you have a property identified." 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [],
-                "hints": [
-                    {   
-                        "id"        : "step-17-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Use the map provided to locate addresses and find City Owned / DLBA owned property." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-18-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing." 
+                                    "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing (the “subject property” or “subject properties”)" 
                                 }
                             ]
                         }
@@ -2840,35 +2945,49 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 16,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-18-form-0-section-0",
+                                "id"    : "step-15-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "interested-property-0",
-                                        "tag"   : "GEOCODER",
-                                        "type"  : "text",
-                                        "name"  : "interested-property",
+                                        "id"            : "interested-property-0",
+                                        "tag"           : "GEOCODER",
+                                        "type"          : "text",
+                                        "name"          : "interested-property",
                                         "description"   : "Address of interested property",
                                         "placeholder"   : "Ex. 1301 Third st.",
-                                        "text"  : "Yes",
-                                        "label" : false,
-                                        "labelText" : "Property Address",
-                                        "required"  : true
+                                        "percel"        : null,
+                                        "text"          : "Yes",
+                                        "label"         : false,
+                                        "labelText"     : "Property Address",
+                                        "required"      : true
                                     },
                                     {   
-                                        "id"    : "add",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "add",
-                                        "description"   : "Add more properties",
-                                        "text"  : "Add",
-                                        "label" : false,
+                                        "id"                    : "add",
+                                        "tag"                   : "button",
+                                        "type"                  : "button",
+                                        "name"                  : "add",
+                                        "description"           : "Add more properties",
+                                        "text"                  : "Add",
+                                        "label"                 : false,
                                         "hasSpecialAttribute"   : true,
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
@@ -2876,13 +2995,13 @@
                                         "otherID"               : "interested-property"
                                     },
                                     {   
-                                        "id"    : "remove",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "remove",
-                                        "description"   : "Remove extra properties",
-                                        "text"  : "Remove",
-                                        "label" : false,
+                                        "id"                    : "remove",
+                                        "tag"                   : "button",
+                                        "type"                  : "button",
+                                        "name"                  : "remove",
+                                        "description"           : "Remove extra properties",
+                                        "text"                  : "Remove",
+                                        "label"                 : false,
                                         "hasSpecialAttribute"   : true,
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
@@ -2890,13 +3009,13 @@
                                         "otherID"               : "interested-property"
                                     },
                                     {   
-                                        "id"    : "step-18-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
+                                        "id"            : "next-step",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "name"          : "next",
                                         "description"   : "Move to next step",
-                                        "text"  : "Next",
-                                        "label" : false
+                                        "text"          : "Next",
+                                        "label"         : false
                                     }
                                 ]
                             }
@@ -2905,7 +3024,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-18-hint-0",
+                        "id"        : "step-15-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -2924,17 +3043,6 @@
                                     "tag"       : "a",
                                     "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
                                     "content"   : "Visit Map" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "Use the zoning portal to check zoning of the property." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-3",
-                                    "tag"       : "a",
-                                    "link"      : "https://zoning.detroitmi.gov/",
-                                    "content"   : "Visit Zoning Portal" 
                                 }
                             ]
                         }
