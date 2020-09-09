@@ -67,7 +67,7 @@ function Geocoder(props) {
   return (
       <div>
         <label className={getClassName()} htmlFor={props.id}>{props.label}</label>
-        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} defaultValue={props.savedValue} placeholder={props.placeholder} data-parcel={parcel} onChange={handleChange} aria-required={props.required} required={props.required} autocomplete="off"></input>
+        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} defaultValue={props.savedValue} placeholder={props.placeholder} data-parcel={parcel} onChange={handleChange} aria-required={props.required} required={props.required} autoComplete="off"></input>
         <datalist id={buildNames()}>
             {(sugg) ? buildOptions() : ''}
         </datalist>

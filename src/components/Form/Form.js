@@ -634,6 +634,7 @@ function Form(props) {
                 }
             }
             if(requirements.isPosting){
+                console.log('posting');
                 if(formData != undefined){
                     tempFormData = formData;
                 }

@@ -2117,7 +2117,7 @@
                                         "label"         : true,
                                         "labelText"     : "LLC's Name",
                                         "labelPosition" : "before",
-                                        "required"      : true
+                                        "required"      : false
                                     },
                                     {   
                                         "id"            : "llc-entities-in-detroit-0",
@@ -3103,7 +3103,7 @@
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : null,
+                            "postingTypeGlobal"         : "answers",
                             "isFinalStep"               : false,
                             "logic": []
                         },
