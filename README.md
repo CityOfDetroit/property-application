@@ -36,7 +36,7 @@ Please make sure these are installed locally
 
 4. Create production build.
     ```
-    $ yarn run-script build
+    $ yarn build
     ```
 ## Resources
 

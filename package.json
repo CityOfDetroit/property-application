@@ -10,7 +10,7 @@
   "scripts": {
     "start": "parcel src/index.html --https --no-cache -p 3000 --open",
     "test": "./node_modules/.bin/cypress open",
-    "build": "parcel build src/index.js --no-cache --public-url '.' -d build"
+    "build": "parcel build src/index.js --no-cache --public-url '.' --no-source-maps -d build"
   },
   "author": "Edgar Montes",
   "license": "MIT",

@@ -3064,7 +3064,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-19-card-0",
+                        "id"        : "step-16-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -3076,7 +3076,12 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Is the property adjacent to another property that the applicant owns?" 
+                                    "content"   : "Did the applicant previously own or rent this property?" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "em",
+                                    "content"   : "Note: Ownership will be verified via the Assessors Office" 
                                 }
                             ]
                         }
@@ -3084,34 +3089,171 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "adjacentPropertyisOwned",
+                        "id"            : "previouslyOwnRent",
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 17,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-19-form-0-section-0",
+                                "id"    : "step-16-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-19-form-0-section-0-item-0",
+                                        "id"    : "rent",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "adjacent-property",
-                                        "description"   : "Property is adjacent to another property that the applicant owns.",
+                                        "name"  : "rent",
+                                        "description"   : "Previously rent this property",
+                                        "text"  : "Yes, Rent",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "own",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "own",
+                                        "description"   : "Previously own this property",
+                                        "text"  : "Yes, Own",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "unsure",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "unsure",
+                                        "description"   : "Unsure",
+                                        "text"  : "No / Unsure",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-17-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Is the subject property adjacent to another property that the applicant owns?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "adjecentToProperty",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 18,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 19,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "adjecentProperty"
+                                        }
+                                   }
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-17-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "adjacent",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "adjacent",
+                                        "description"   : "Property is adjacent to another property",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-19-form-0-section-0-item-1",
+                                        "id"    : "not-adjacent",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-adjacent-property",
-                                        "description"   : "Property is not adjacent to another property that the applicant owns.",
+                                        "name"  : "own",
+                                        "description"   : "Property is not adjacent to another property",
                                         "text"  : "No",
                                         "label" : false
                                     }
@@ -3122,7 +3264,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-19-hint-0",
+                        "id"        : "step-17-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -3146,6 +3288,235 @@
                         }
                     }
                 ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-18-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please insert adjacent address" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "adjecentProperty",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 19,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-18-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "adjecent-property-0",
+                                        "tag"           : "GEOCODER",
+                                        "type"          : "text",
+                                        "name"          : "adjecent-property",
+                                        "description"   : "Address of adjecent property",
+                                        "placeholder"   : "Ex. 1301 Third st.",
+                                        "percel"        : null,
+                                        "text"          : "Yes",
+                                        "label"         : false,
+                                        "labelText"     : "Property Address",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "next-step",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "name"          : "next",
+                                        "description"   : "Move to next step",
+                                        "text"          : "Next",
+                                        "label"         : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                {   
+                    "id"        : "step-18-hint-0",
+                    "type"      : "hint color-1",
+                    "title"     : {
+                        "type"  : "small",
+                        "value" : "HELPFUL HINTS AND TIPS:"
+                    },
+                    "body"   : {
+                        "type"      : "text",
+                        "markup"    : [
+                            {
+                                "id"        : "hint-0-body-0",
+                                "tag"       : "p",
+                                "content"   : "Use the map to to help determine adjacency." 
+                            },
+                            {
+                                "id"        : "hint-0-body-1",
+                                "tag"       : "a",
+                                "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                "content"   : "Visit Map" 
+                            }
+                        ]
+                    }
+                }]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-19-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Is the application seeking to purchase or commercial lease the property?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "purchaseOrLease",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Purchase",
+                                    "validationType"        : "equal",
+                                    "next"                  : 20,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "Lease",
+                                    "validationType"        : "equal",
+                                    "next"                  : "NEEDSTEP",
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "offer"
+                                        }
+                                   }
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-19-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "purchase",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "purchase-property",
+                                        "description"   : "Applicant seeking to purchase.",
+                                        "text"  : "Purchase",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "lease",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "lease-property",
+                                        "description"   : "Applicant seeking to commercial lease.",
+                                        "text"  : "Lease",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
             }
         },
         {
@@ -3174,7 +3545,12 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please add the address(es) of the adjacent property." 
+                                    "content"   : "The first step in negotiating the purchase price is to put in an offer." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Enter your offer." 
                                 }
                             ]
                         }
@@ -3182,11 +3558,24 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "adjacentProperty",
+                        "id"            : "offer",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 21,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -3196,51 +3585,26 @@
                                 "id"    : "step-20-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "adjacent-property-0",
-                                        "tag"   : "GEOCODER",
-                                        "type"  : "text",
-                                        "name"  : "adjacent-property",
-                                        "description"   : "Address of adjacent property",
-                                        "placeholder"   : "Ex. 1301 Third st.",
-                                        "text"  : "Yes",
-                                        "label" : false,
-                                        "labelText" : "Property Address",
-                                        "required"  : true
+                                        "id"            : "offer",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter offer here",
+                                        "name"          : "offer",
+                                        "description"   : "Applicant's offer",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Offer",
+                                        "labelPosition" : "before",
+                                        "required"      : true
                                     },
                                     {   
-                                        "id"    : "add",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "add",
-                                        "description"   : "Add more properties",
-                                        "text"  : "Add",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "geocoder",
-                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
-                                        "otherLabel"            : "Property Address",
-                                        "otherID"               : "adjacent-property"
-                                    },
-                                    {   
-                                        "id"    : "remove",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "remove",
-                                        "description"   : "Remove extra properties",
-                                        "text"  : "Remove",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "geocoder",
-                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
-                                        "otherLabel"            : "Property Address",
-                                        "otherID"               : "adjacent-property"
-                                    },
-                                    {   
-                                        "id"    : "step-20-form-0-section-0-item-1",
+                                        "id"    : "next-step",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
-                                        "description"   : "Move to next step",
+                                        "description"   : "Move to next step.",
                                         "text"  : "Next",
                                         "label" : false
                                     }
@@ -3249,32 +3613,7 @@
                         ]
                     }
                 ],
-                "hints": [
-                    {   
-                        "id"        : "step-20-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Use the map to to help determine adjacency." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                    "content"   : "Visit Map" 
-                                }
-                            ]
-                        }
-                    }
-                ]
+                "hints": []
             }
         },
         {
@@ -3303,299 +3642,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Did the applicant previously own or rent  this property?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "small",
-                                    "content"   : "Note: Ownership will be verified via the Assessors Office" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "previouslyOwnRent",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-21-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-21-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "adjacent-property",
-                                        "description"   : "Applicant previously rent this property.",
-                                        "text"  : "Rent",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-21-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "not-adjacent-property",
-                                        "description"   : "Applicant previously own this property.",
-                                        "text"  : "Own",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-21-form-0-section-0-item-2",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "not-adjacent-property",
-                                        "description"   : "Applicant previously not rent or own this property/Applicant is unsure.",
-                                        "text"  : "No/Unsure",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-22-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Is the application seeking to purchase or commercial lease the property?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "purchaseOrLease",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-22-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-22-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "purchase-property",
-                                        "description"   : "Applicant seeking to purchase.",
-                                        "text"  : "Purchase",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-22-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "lease-property",
-                                        "description"   : "Applicant seeking to commercial lease.",
-                                        "text"  : "Lease",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-22-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "A Commercial Lease is an agreement to lease City of Detroit property for an agreed upon period of time" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-23-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "The first step to negotiating a property’s price is to put in an offer. After you submit an offer, DLBA or DBA will work with you on final pricing. Pricing is based on which Detroit Land Bank Authority or Detroit Building Authority program you are eligible for. The Detroit Land Bank Authority and Detroit Building Authority sell property at fair market value." 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Enter your offer." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "offer",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-23-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "offer",
-                                        "tag"           : "input",
-                                        "type"          : "number",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter offer here",
-                                        "name"          : "offer",
-                                        "description"   : "Applicant's offer",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Offer",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"    : "step-23-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-23-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Properties are priced using fair market value.  DBA owned land may be more expensive than land owned by the Detroit Land Bank Authority due to the location or special features. DBA brokers recommended pricing based on comparable sales and other market values." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Fair market value  for a property means that prices may be higher in an area where market demand is increasing land costs nearby.  Prices also may be higher for commercial or specially zoned properties" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "The range for a typical 3,200 sf residential lot as of 2019 is $800-$1,600, but this can be higher in some neighborhoods based onmarket demand. Commercial properties often cost far more." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-24-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Select the primary use for the property" 
+                                    "content"   : "Select the proposed primary use for the subject property (select one):" 
                                 }
                             ]
                         }
@@ -3703,7 +3750,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Land used primarily for the parking of cars or Auto related business (i.e car wash, salvage etc.)",
+                                        "labelText"             : "The parking of cars or auto-related business (i.e car wash, salvage etc.)",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -3722,7 +3769,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Land for urban gardens or farms, Green stormwater Infrastructure, and beautification",
+                                        "labelText"             : "Such as urban gardens or farms, green stormwater infrastructure, beautification and lot clean-up, public art installation",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -3741,7 +3788,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Land used primarily for industrial use / manufacturing",
+                                        "labelText"             : "Industrial use / manufacturing (i.e warehousing, production etc.)",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -3760,26 +3807,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Land or Building use for temporary filming",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
-                                    },
-                                    {   
-                                        "id"                    : "commercial-land-lease-temporary",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "commercial-land-lease-temporary",
-                                        "placeholder"           : null,
-                                        "name"                  : "property-use",
-                                        "description"           : "Commercial Land/Building Lease or Temporary Use",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Land or Building use for temporary commercial purposes",
+                                        "labelText"             : "Location for temporary filming",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -3817,7 +3845,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Land or Building use for special event",
+                                        "labelText"             : "Location for special event on City Owned property",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -3845,7 +3873,7 @@
                                         "required"              : true
                                     },
                                     {   
-                                        "id"                    : "submit",
+                                        "id"                    : "next-step",
                                         "tag"                   : "button",
                                         "type"                  : "submit",
                                         "value"                 : "submit",
