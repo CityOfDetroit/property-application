@@ -3654,7 +3654,75 @@
                         "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "commercial-retail",
+                                    "validation"            : "commercial-retail",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   }
+                                },
+                                {
+                                    "id"                    : "mixed-use",
+                                    "validation"            : "mixed-use",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "residential-multifamily",
+                                    "validation"            : "residential-multifamily",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
