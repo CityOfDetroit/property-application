@@ -3671,7 +3671,7 @@
                                     "id"                    : "commercial-retail",
                                     "validation"            : "commercial-retail",
                                     "validationType"        : "equal",
-                                    "next"                  : 22,
+                                    "next"                  : 24,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3689,7 +3689,7 @@
                                     "id"                    : "mixed-use",
                                     "validation"            : "mixed-use",
                                     "validationType"        : "equal",
-                                    "next"                  : 22,
+                                    "next"                  : 24,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3706,6 +3706,150 @@
                                 {
                                     "id"                    : "residential-multifamily",
                                     "validation"            : "residential-multifamily",
+                                    "validationType"        : "equal",
+                                    "next"                  : 24,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "residential-single-family",
+                                    "validation"            : "residential-single-family",
+                                    "validationType"        : "equal",
+                                    "next"                  : 24,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "parking-lot-auto-related",
+                                    "validation"            : "parking-lot-auto-related",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "land-based-project",
+                                    "validation"            : "land-based-project",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "industrial",
+                                    "validation"            : "industrial",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "film",
+                                    "validation"            : "film",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "cell-tower",
+                                    "validation"            : "cell-tower",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "public-gathering",
+                                    "validation"            : "public-gathering",
+                                    "validationType"        : "equal",
+                                    "next"                  : 22,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "other",
+                                    "validation"            : "other",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
                                     "isSwitchingFormType"   : false,
@@ -3974,7 +4118,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-25-card-0",
+                        "id"        : "step-22-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -3986,7 +4130,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Do you want a want to purchase a land or property for a parking lot  or Auto-related business?" 
+                                    "content"   : "Is the applicant’s proposal for the subject property a parking lot  or auto-related business?" 
                                 }
                             ]
                         }
@@ -3998,17 +4142,30 @@
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 23,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-25-form-0-section-0",
+                                "id"    : "step-22-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-25-form-0-section-0-item-0",
+                                        "id"    : "parking",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "parking-lot",
@@ -4017,7 +4174,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-25-form-0-section-0-item-1",
+                                        "id"    : "auto",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "auto-related-business",
@@ -4047,7 +4204,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-26-card-0",
+                        "id"        : "step-23-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4059,7 +4216,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "How many Parking spots do you need?" 
+                                    "content"   : "Describe the parking needs that will be served by this property:" 
                                 }
                             ]
                         }
@@ -4067,49 +4224,84 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "parkingSpots",
+                        "id"            : "parkingNeeds",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 24,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-26-form-0-section-0",
+                                "id"    : "step-23-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "parking-spots",
-                                        "tag"           : "input",
-                                        "type"          : "number",
-                                        "disabled"      : false,
+                                        "id"            : "parking-needs",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
                                         "value"         : "",
-                                        "placeholder"   : "Enter number of parking spots",
-                                        "name"          : "offer",
-                                        "description"   : "Number of parking spots needed",
+                                        "maxLength"     : "100",
+                                        "placeholder"   : "Enter description here.",
+                                        "name"          : "parking-needs",
+                                        "description"   : "Description for the parking needs",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Parking spots",
-                                        "labelPosition" : "before",
+                                        "labelText"     : "Description",
                                         "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-26-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
-                                        "label" : false
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
                                     }
                                 ]
                             }
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-23-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://library.municode.com/mi/detroit/codes/code_of_ordinances?nodeId=PTIVDECO_CH50ZO_ARTXIVDEST_DIV1OREPALOAC",
+                                    "content"   : "Visit the City of Detroit zoning ordinance off-street parking requirements" 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -4126,7 +4318,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-27-card-0",
+                        "id"        : "step-24-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4138,7 +4330,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "How many Parking spots do you currently have?" 
+                                    "content"   : "Check all work that the applicant anticipates completing on the subject property:" 
                                 }
                             ]
                         }
@@ -4146,170 +4338,31 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "currentParkingSpots",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-27-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "parking-spots",
-                                        "tag"           : "input",
-                                        "type"          : "number",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter number of parking spots",
-                                        "name"          : "offer",
-                                        "description"   : "Number of parking spots currently owned",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Parking spots",
-                                        "labelPosition" : "before",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"    : "step-27-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-28-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Did you review the PDD/BSEED requirements for parking?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "reviewParkingReq",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-28-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "step-28-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "Applicant reviewed PDD/BSEED requirements for parking.",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "step-28-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "Applicant did not reviewed PDD/BSEED requirements for parking.",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-29-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Check all work that the applicant anticipates completing on this parcel(s):" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "anticipadedWork",
+                        "id"            : "scopeOfWork",
                         "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 25,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-29-form-0-section-0",
+                                "id"    : "step-24-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "new-construction",
@@ -4361,6 +4414,25 @@
                                         "label"                 : true,
                                         "labelPosition"         : "after",
                                         "labelText"             : "Demolition/Blight Clearance",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "beautification-landscaping",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "beautification-landscaping",
+                                        "placeholder"           : null,
+                                        "name"                  : "work-anticipated",
+                                        "description"           : "Lot Beautification / Landscaping",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Lot Beautification / Landscaping",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -4421,7 +4493,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-30-card-0",
+                        "id"        : "step-25-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4433,12 +4505,12 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Detroit is actively seeking viable projects that creates the highest probability of success." 
+                                    "content"   : "Detroit is actively seeking viable projects with the highest probability of success." 
                                 },
                                 {
                                     "id"        : "card-0-body-1",
                                     "tag"       : "p",
-                                    "content"   : "Provide the applicants proposal for the property below." 
+                                    "content"   : "Provide a summary of the applicant’s proposal for the property below. The applicant will be able to upload supporting materials separately." 
                                 }
                             ]
                         }
@@ -4450,23 +4522,37 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 26,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-30-form-0-section-0",
+                                "id"    : "step-25-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "proposal",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
+                                        "maxLength"     : "500",
                                         "placeholder"   : "Enter proposal here.",
-                                        "name"          : "partners",
-                                        "description"   : "Proposal for the property",
+                                        "name"          : "proposal",
+                                        "description"   : "Summary of the applicant’s proposal",
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Proposal",
@@ -4506,7 +4592,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-31-card-0",
+                        "id"        : "step-26-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4518,12 +4604,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Is the Proposed Zoning Compliant?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "small",
-                                    "content"   : "Note: Zoning will be verified and your purchase will be fully completed once a special uses hearing is held, which is an additional cost" 
+                                    "content"   : "Is the proposed use allowed under the current  zoning?" 
                                 }
                             ]
                         }
@@ -4531,35 +4612,57 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "propozedZoning",
+                        "id"            : "zoning",
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 27,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-31-form-0-section-0",
+                                "id"    : "step-26-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-31-form-0-section-0-item-0",
+                                        "id"    : "yes",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "yes",
-                                        "description"   : "yes",
+                                        "description"   : "Allowed zoning",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-31-form-0-section-0-item-1",
+                                        "id"    : "no",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "no",
-                                        "description"   : "no",
+                                        "description"   : "Not allowed zoning",
                                         "text"  : "No",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "unsure",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "unsure",
+                                        "description"   : "Zoning unsure",
+                                        "text"  : "Unsure",
                                         "label" : false
                                     }
                                 ]
@@ -4569,7 +4672,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-31-hint-0",
+                        "id"        : "step-26-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -4581,13 +4684,23 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Use the zoning portal to check for zoning requirements." 
+                                    "content"   : "Use the Detroit Zoning portal to see which uses are permitted for the subject property." 
                                 },
                                 {
                                     "id"        : "hint-0-body-1",
                                     "tag"       : "a",
                                     "link"      : "https://zoning.detroitmi.gov",
                                     "content"   : "Visit Zoning Portal" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Proper zoning for the proposed use is required prior to closing." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : "If the proposed use is not permitted under current zoning, additional approvals may be required at an additional cost." 
                                 }
                             ]
                         }
