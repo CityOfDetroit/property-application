@@ -4339,11 +4339,11 @@
                 "forms": [
                     {
                         "id"            : "scopeOfWork",
-                        "type"          : "radio-buttons plus-other",
+                        "type"          : "checkbox-set",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : {
-                            "inputType"                 : "radio",
+                            "inputType"                 : "input-checkbox",
                             "formTypeGlobal"            : null,
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
@@ -4365,89 +4365,73 @@
                                 "id"    : "step-24-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"                    : "new-construction",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "new-construction",
-                                        "placeholder"           : null,
-                                        "name"                  : "work-anticipated",
-                                        "description"           : "new construction",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "New Construction",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "new-construction",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "new-construction",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "anticipated-work",
+                                        "description"   : "new construction",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "New Construction"
                                     },
                                     {   
-                                        "id"                    : "rehab",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "rehab",
-                                        "placeholder"           : null,
-                                        "name"                  : "work-anticipated",
-                                        "description"           : "Rehab",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Rehab",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "rehab",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "rehab",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "anticipated-work",
+                                        "description"   : "Rehab",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Rehab"
                                     },
                                     {   
-                                        "id"                    : "demolition-blight-clearance",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "demolition-blight-clearance",
-                                        "placeholder"           : null,
-                                        "name"                  : "work-anticipated",
-                                        "description"           : "Demolition/Blight Clearance",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Demolition/Blight Clearance",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "demolition-blight",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "demolition-blight",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "anticipated-work",
+                                        "description"   : "Demolition / Blight Clearance",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Demolition / Blight Clearance"
                                     },
                                     {   
-                                        "id"                    : "beautification-landscaping",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "beautification-landscaping",
-                                        "placeholder"           : null,
-                                        "name"                  : "work-anticipated",
-                                        "description"           : "Lot Beautification / Landscaping",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Lot Beautification / Landscaping",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "beautification-landscaping",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "beautification-landscaping",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "anticipated-work",
+                                        "description"   : "Lot Beautification / Landscaping",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Lot Beautification / Landscaping"
                                     },
                                     {   
                                         "id"                    : "other",
                                         "tag"                   : "input",
-                                        "type"                  : "radio",
+                                        "type"                  : "checkbox",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "work-anticipated",
-                                        "description"           : "other",
+                                        "name"                  : "anticipated-work",
+                                        "description"           : "Other",
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
@@ -4455,9 +4439,9 @@
                                         "hasSpecialAttribute"   : true,
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter anticipated work",
-                                        "otherLabel"            : "Anticipated Work",
-                                        "otherID"               : "work-anticipated",
-                                        "required"              : true
+                                        "otherLabel"            : "Anticipated work",
+                                        "otherID"               : "anticipated-work",
+                                        "required"              : false
                                     },
                                     {   
                                         "id"                    : "submit",
@@ -4722,7 +4706,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-32-card-0",
+                        "id"        : "step-27-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4734,17 +4718,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "What is the applicants total development costs?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "What is the applicants construction timeline?" 
-                                },
-                                {
-                                    "id"        : "card-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "What is the applicants funding source?" 
+                                    "content"   : "Project and Financing Details"
                                 }
                             ]
                         }
@@ -4752,18 +4726,31 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "costTimelineFunding",
-                        "type"          : "input-submit",
+                        "id"            : "projectFinincing",
+                        "type"          : "multi-input",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 28,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-32-form-0-section-0",
+                                "id"    : "step-27-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "development-cost",
@@ -4771,53 +4758,191 @@
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
-                                        "placeholder"   : "Enter total cost",
+                                        "placeholder"   : "Please enter development cost.",
                                         "name"          : "development-cost",
-                                        "description"   : "Applicants total development cost",
+                                        "description"   : "total development cost of the proposed project",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Development Cost",
+                                        "labelText"     : "What is the total development cost of the proposed project?",
                                         "labelPosition" : "before",
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "construction-timeline",
-                                        "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
+                                        "id"            : "funding-sources-text",
+                                        "tag"           : "p",
+                                        "type"          : null,
+                                        "grouping"      : true,
                                         "value"         : "",
-                                        "placeholder"   : "Enter contrunction timeline",
-                                        "name"          : "construction-timeline",
-                                        "description"   : "Applicants Construction Timeline",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Construction Timeline",
-                                        "labelPosition" : "before",
-                                        "required"      : true
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "",
+                                        "description"   : "",
+                                        "text"          : "What funding source(s) will be used? (select all that apply)?",
+                                        "label"         : false,
+                                        "labelPosition" : null,
+                                        "labelText"     : null
                                     },
                                     {   
-                                        "id"            : "funding-source",
+                                        "id"            : "equity-cash",
                                         "tag"           : "input",
-                                        "type"          : "text",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "Enter funding source",
-                                        "name"          : "offer",
-                                        "description"   : "Applicants funding source",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "equity-cash",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "funding-sources",
+                                        "description"   : "Equity / Cash on hand",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Funding Source",
-                                        "labelPosition" : "before",
-                                        "required"      : true
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Equity / Cash on hand"
                                     },
                                     {   
-                                        "id"    : "step-32-form-0-section-0-item-1",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
-                                        "label" : false
+                                        "id"            : "grants",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "grants",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "funding-sources",
+                                        "description"   : "Grants",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Grants"
+                                    },
+                                    {   
+                                        "id"            : "income-operations",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "income-operations",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "funding-sources",
+                                        "description"   : "Income from operations",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Income from operations"
+                                    },
+                                    {   
+                                        "id"            : "loan",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "loan",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "funding-sources",
+                                        "description"   : "Loan",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Loan"
+                                    },
+                                    {   
+                                        "id"            : "other",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "other",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "funding-sources",
+                                        "description"   : "Other",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Other"
+                                    },
+                                    {   
+                                        "id"            : "project-timeline-text",
+                                        "tag"           : "p",
+                                        "type"          : null,
+                                        "grouping"      : false,
+                                        "value"         : "",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "",
+                                        "description"   : "",
+                                        "text"          : "What is the proposed project’s construction timeline?",
+                                        "label"         : false,
+                                        "labelPosition" : null,
+                                        "labelText"     : null
+                                    },
+                                    {   
+                                        "id"            : "0-6",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "grouping"      : false,
+                                        "value"         : "0-6",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "project-timeline",
+                                        "description"   : "0 -6 months",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "0 -6 months"
+                                    },
+                                    {   
+                                        "id"            : "7-12",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "grouping"      : false,
+                                        "value"         : "7-12",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "project-timeline",
+                                        "description"   : "7-12 months",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "7-12 months"
+                                    },
+                                    {   
+                                        "id"            : "13-24",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "grouping"      : false,
+                                        "value"         : "13-24",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "project-timeline",
+                                        "description"   : "13-24 months",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "13-24 months"
+                                    },
+                                    {   
+                                        "id"            : "24-plus",
+                                        "tag"           : "input",
+                                        "type"          : "radio",
+                                        "grouping"      : false,
+                                        "value"         : "24-plus",
+                                        "required"      : true,
+                                        "placeholder"   : null,
+                                        "name"          : "project-timeline",
+                                        "description"   : "24+ months",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "24+ months"
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
                                     }
                                 ]
                             }
@@ -4841,7 +4966,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-33-card-0",
+                        "id"        : "step-28-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4865,14 +4990,27 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "file",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 29,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "attachments",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-33-form-0-section-0",
+                                "id"    : "step-28-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "additional-files-0",
@@ -4908,7 +5046,7 @@
                                         "tag"   : "button",
                                         "type"  : "button",
                                         "name"  : "remove",
-                                        "description"   : "Remove extra properties",
+                                        "description"   : "Remove extra file",
                                         "text"  : "Remove",
                                         "label" : false,
                                         "hasSpecialAttribute"   : true,
@@ -4918,7 +5056,7 @@
                                         "otherID"               : "additional-files"
                                     },
                                     {   
-                                        "id"    : "step-33-form-0-section-0-item-1",
+                                        "id"    : "submit",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "next",
@@ -4931,7 +5069,48 @@
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-28-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Feel free to attach:" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "p",
+                                            "content"   : "Support letters from the community" 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "p",
+                                            "content"   : "Site plans  and/or renderings" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "p",
+                                            "content"   : "Examples of past experience" 
+                                        }
+                                    ]
+                                }
+
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -4948,7 +5127,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-34-card-0",
+                        "id"        : "step-29-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5038,14 +5217,27 @@
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 30,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : true,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-34-form-0-section-0",
+                                "id"    : "step-29-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "agreement-understanding",
@@ -5078,7 +5270,7 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-34-form-0-section-0-item-1",
+                                        "id"    : "submit",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "finish",
@@ -5091,6 +5283,42 @@
                         ]
                     }
                 ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-30-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Thank you! The applicant should receive a response within 15 business days." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
                 "hints": []
             }
         },
