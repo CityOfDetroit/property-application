@@ -28,5 +28,5 @@ jobs:
     - run: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     - run: sudo apt update && sudo apt install yarn
     - run: yarn
-    - run: yarn run build --if-present
+    - run: yarn run build
     - run: yarn test
