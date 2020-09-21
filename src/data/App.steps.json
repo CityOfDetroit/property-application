@@ -5336,7 +5336,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-35-card-0",
+                        "id"        : "step-31-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5347,13 +5347,49 @@
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Please describe any training, certifications, qualifications or other background you and your partners bring to this project." 
+                                    "tag"       : "h4",
+                                    "content"   : "LAND BASED PROJECTS SUPPLEMENTAL INFORMATION: BEFORE YOU BEGIN CHECKLIST" 
                                 },
                                 {
                                     "id"        : "card-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "For example, if you plan to build a fence and benches and you are a trained carpenter, mention that. You can also mention work or volunteer activities you already do in the neighborhood and how this project relates to that work." 
+                                    "tag"       : "strong",
+                                    "content"   : "For a successful application, have the following prepared before you proceed:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "p",
+                                            "content"   : "Experience you and your partners have relevant to the success of the project" 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "p",
+                                            "content"   : "Plan for clearing the land of debris and fixing any other problems with the land" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "p",
+                                            "content"   : "A list of physical improvements you are going to make to the property" 
+                                        },
+                                        {
+                                            "id"        : "item-3",
+                                            "tag"       : "p",
+                                            "content"   : "If you are using agricultural chemicals or pesticides, create a plan on which chemicals and pesticides you will use, how often you will use them and how you will use and store them.  This applies even if you are using organic methods and products.  If you have certification to use these items, have that ready" 
+                                        },
+                                        {
+                                            "id"        : "item-4",
+                                            "tag"       : "p",
+                                            "content"   : "A plot plan / site design" 
+                                        },
+                                        {
+                                            "id"        : "item-5",
+                                            "tag"       : "p",
+                                            "content"   : "Information on the financial, volunteer resources you will rely on to complete the project" 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -5361,32 +5397,32 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "landBaseQualifications",
-                        "type"          : "input-submit",
+                        "id"            : "step-31-form-0",
+                        "type"          : "single-button",
                         "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : [],
+                        "savedData"     : false,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : true,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 32,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-35-form-0-section-0",
+                                "id"    : "step-31-form-0-section-0",
                                 "items" : [
-                                    {   
-                                        "id"            : "qualifications",
-                                        "tag"           : "textarea",
-                                        "type"          : null,
-                                        "value"         : "",
-                                        "placeholder"   : "1000 character limit.",
-                                        "name"          : "qualifications",
-                                        "description"   : "List of qualifications",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Qualifications",
-                                        "required"      : true
-                                    },
                                     {   
                                         "id"            : "submit",
                                         "tag"           : "button",
@@ -5421,7 +5457,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-36-card-0",
+                        "id"        : "step-32-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5433,7 +5469,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Are you applying to create an urban agriculture project?" 
+                                    "content"   : "Which land use below most closely aligns with the applicants intended use?" 
                                 }
                             ]
                         }
@@ -5441,35 +5477,185 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "agriculturalProject",
-                        "type"          : "single-button",
+                        "id"            : "landBasePurpose",
+                        "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "beautification-cleanup",
+                                    "validation"            : "beautification-cleanup",
+                                    "validationType"        : "equal",
+                                    "next"                  : 34,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-36-form-0-section-0",
+                                "id"    : "step-32-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-36-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"                    : "beautification-cleanup",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "beautification-cleanup",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Beautification / Lot  Cleanup",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Beautification / Lot  Cleanup",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : false
                                     },
                                     {   
-                                        "id"    : "step-36-form-0-section-0-item-1",
+                                        "id"                    : "community-gathering-social-space",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "community-gathering-social-space",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Community gathering space or social space",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Community gathering space or social space",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "urban-agriculture-1-acre",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "urban-agriculture-1-acre",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Urban Agriculture (less than or equal to 1 acre)",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Urban Agriculture (less than or equal to 1 acre)",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "urban-agriculture-1-acre-plus",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "urban-agriculture-1-acre-plus",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Urban Agriculture (greater than 1 acre)",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Urban Agriculture (greater than 1 acre)",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "orchard-tree-farm",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "orchard-tree-farm",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Orchard/ tree farm",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Orchard/ tree farm",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "art-project-sculpture",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "art-project-sculpture",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Outdoor Art Project/ sculpture garden Installation",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Outdoor Art Project/ sculpture garden Installation",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "greenstormwater",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "greenstormwater",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Greenstormwater Infrastructure Project",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Greenstormwater Infrastructure Project",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "text",
+                                        "otherPlaceholder"      : "Enter project purpose",
+                                        "otherLabel"            : "Project Purpose",
+                                        "otherID"               : "land-base-purpose",
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
