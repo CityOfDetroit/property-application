@@ -690,7 +690,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "individual",
+                                    "id"                    : "individual-business",
                                     "validation"            : "individual",
                                     "validationType"        : "equal",
                                     "next"                  : 4,
@@ -708,7 +708,7 @@
                                    }
                                 },
                                 {
-                                    "id"                    : "non-profit",
+                                    "id"                    : "individual-business",
                                     "validation"            : "non-profit",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
@@ -726,7 +726,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "business",
+                                    "id"                    : "individual-business",
                                     "validation"            : "business",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
@@ -3668,7 +3668,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "commercial-retail",
+                                    "id"                    : "property-use",
                                     "validation"            : "commercial-retail",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3686,7 +3686,7 @@
                                    }
                                 },
                                 {
-                                    "id"                    : "mixed-use",
+                                    "id"                    : "property-use",
                                     "validation"            : "mixed-use",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3704,7 +3704,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "residential-multifamily",
+                                    "id"                    : "property-use",
                                     "validation"            : "residential-multifamily",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3722,7 +3722,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "residential-single-family",
+                                    "id"                    : "property-use",
                                     "validation"            : "residential-single-family",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3740,7 +3740,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "parking-lot-auto-related",
+                                    "id"                    : "property-use",
                                     "validation"            : "parking-lot-auto-related",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3758,10 +3758,10 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "land-based-project",
+                                    "id"                    : "property-use",
                                     "validation"            : "land-based-project",
                                     "validationType"        : "equal",
-                                    "next"                  : 22,
+                                    "next"                  : 31,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3776,7 +3776,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "industrial",
+                                    "id"                    : "property-use",
                                     "validation"            : "industrial",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3794,7 +3794,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "film",
+                                    "id"                    : "property-use",
                                     "validation"            : "film",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3812,7 +3812,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "cell-tower",
+                                    "id"                    : "property-use",
                                     "validation"            : "cell-tower",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3830,7 +3830,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "public-gathering",
+                                    "id"                    : "property-use",
                                     "validation"            : "public-gathering",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3848,7 +3848,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "other",
+                                    "id"                    : "property-use",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -5495,8 +5495,80 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "beautification-cleanup",
+                                    "id"                    : "land-base-purpose",
                                     "validation"            : "beautification-cleanup",
+                                    "validationType"        : "equal",
+                                    "next"                  : 34,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "community-gathering-social-space",
+                                    "validationType"        : "equal",
+                                    "next"                  : 34,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "urban-agriculture-1-acre",
+                                    "validationType"        : "equal",
+                                    "next"                  : 33,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "urban-agriculture-1-acre-plus",
+                                    "validationType"        : "equal",
+                                    "next"                  : 33,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "orchard-tree-farm",
+                                    "validationType"        : "equal",
+                                    "next"                  : 34,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "art-project-sculpture",
+                                    "validationType"        : "equal",
+                                    "next"                  : 34,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "land-base-purpose",
+                                    "validation"            : "greenstormwater",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
                                     "isSwitchingFormType"   : false,
@@ -5642,6 +5714,25 @@
                                         "label"                 : true,
                                         "labelPosition"         : "after",
                                         "labelText"             : "Greenstormwater Infrastructure Project",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : null
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "land-base-purpose",
+                                        "description"           : "Other",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
                                         "hasSpecialAttribute"   : true,
                                         "specialAttribute"      : "text",
                                         "otherPlaceholder"      : "Enter project purpose",
@@ -5665,7 +5756,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-36-hint-0",
+                        "id"        : "step-32-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -5677,12 +5768,322 @@
                                 {
                                     "id"        : "hint-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "NEED HINT HERE" 
+                                    "content"   : "If you have more than 10 trees your project is considered an orchard . For more info on zoning relevant to land based projects visit the municode site." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://library.municode.com/mi/detroit/codes/code_of_ordinances?nodeId=PTIVDECO_CH50ZO_ARTXIIUSRE_DIV1USTA_SDFOTUS_S50-12-109AGUS",
+                                    "content"   : "Visit Municode site" 
                                 }
                             ]
                         }
                     }
                 ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-33-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If any of the following statements apply to the applicants project:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "I plan to use agricultural chemicals or pesticides (including organics) and am attaching a plan on which chemicals and pesticides I will use, how often I will use them, and how I will use and store them." 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Please attach proof of any certifications I hold related to these items." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "agriculturalFiles",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "file",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 34,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "attachments",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-33-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "agricultural-files-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "agricultural-files",
+                                        "description"   : "Agricultural files.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "agricultural-files"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra file",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "agricultural-files"
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-34-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Does the applicant have partners or supporting organizations that are helping?  (select all that apply)"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "supportingOrganizations",
+                        "type"          : "multi-input",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-checkbox",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 35,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-34-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "neighborhood-block-club",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "neighborhood-block-club",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "supporting-organizations",
+                                        "description"   : "Neighborhood Block Club",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Neighborhood Block Club"
+                                    },
+                                    {   
+                                        "id"            : "land-base-non-profit",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "land-base-non-profit",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "supporting-organizations",
+                                        "description"   : "Land Based Non-Profit",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Land Based Non-Profit"
+                                    },
+                                    {   
+                                        "id"            : "religious-intitution",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "religious-intitution",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "supporting-organizations",
+                                        "description"   : "Religious Institution",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Religious Institution"
+                                    },
+                                    {   
+                                        "id"            : "educational-institution",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "educational-institution",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "supporting-organizations",
+                                        "description"   : "Educational Institution",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Educational Institution"
+                                    },
+                                    {   
+                                        "id"            : "other",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "other",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "supporting-organizations",
+                                        "description"   : "Other",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter organization type",
+                                        "otherLabel"            : "Organization Type",
+                                        "otherID"               : "supporting-organizations"
+                                    },
+                                    { 
+                                        "id"            : "organization-names-support-description",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "maxLength"     : "500",
+                                        "placeholder"   : "Enter organization names and support description here.",
+                                        "name"          : "proposal",
+                                        "description"   : "Summary of the applicant’s proposal",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "If yes, enter their names and how are these partners / organizations supporting the project?",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
             }
         },
         {

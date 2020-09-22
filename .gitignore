@@ -63,3 +63,7 @@ typings/
 
 # local dev files
 local/
+
+# cache
+.cache
+.parcel-cache

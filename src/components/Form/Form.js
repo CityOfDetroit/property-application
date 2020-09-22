@@ -208,7 +208,7 @@ function Form(props) {
                                     let isFound;
                                     console.log(formData[props.id][item.id]);
                                     console.log(item.value);
-                                    if (formData[props.id][item.id] === item.value) {
+                                    if(formData[props.id][item.name].includes(item.value)){
                                         console.log('returning true');
                                         isFound = true;
                                     }else{
@@ -219,9 +219,9 @@ function Form(props) {
 
                                 case 'checkbox':
                                     let isChecked;
-                                    console.log(formData[props.id][item.id]);
+                                    console.log(formData[props.id][item.name]);
                                     console.log(item.value);
-                                    if(formData[props.id][item.id] == item.value){
+                                    if(formData[props.id][item.name].includes(item.value)){
                                         isChecked = true;
                                     }else{
                                         isChecked = false;
@@ -741,7 +741,11 @@ function Form(props) {
                 if(ev.target.elements[index].tagName == 'INPUT'){
                     if(ev.target.elements[index].type == 'radio'){
                         if(ev.target.elements[index].checked == true){
-                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                            if(inputData[ev.target.elements[index].name] == undefined){
+                                inputData[ev.target.elements[index].name] = [ev.target.elements[index].value];
+                            }else{
+                                inputData[ev.target.elements[index].name].push(ev.target.elements[index].value);
+                            }
                         }
                     }else{
                         inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
@@ -758,7 +762,7 @@ function Form(props) {
                     case 'equal':
                         console.log(inputData);
                         console.log(l);
-                        return l.validation === inputData[l.id];   
+                        return inputData[l.id].includes(l.validation);   
                         break;
                 
                     default:
@@ -773,7 +777,7 @@ function Form(props) {
                     console.log(m);
                     switch (m.validationType) {
                         case 'equal':
-                            return formData[m.question][l.id] == m.validation;
+                            return formData[m.question][l.id].includes(m.validation);
                             break;
                     
                         default:
@@ -880,7 +884,11 @@ function Form(props) {
                 if(ev.target.elements[index].tagName == 'INPUT'){
                     if(ev.target.elements[index].type == 'checkbox'){
                         if(ev.target.elements[index].checked == true){
-                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                            if(inputData[ev.target.elements[index].name] == undefined){
+                                inputData[ev.target.elements[index].name] = [ev.target.elements[index].value];
+                            }else{
+                                inputData[ev.target.elements[index].name].push(ev.target.elements[index].value);
+                            }
                         }
                     }else{
                         inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
@@ -897,7 +905,7 @@ function Form(props) {
                     case 'equal':
                         console.log(inputData);
                         console.log(l);
-                        return l.validation === inputData[l.id];   
+                        return  inputData[l.id].includes(l.validation);   
                         break;
                 
                     default:
@@ -912,7 +920,7 @@ function Form(props) {
                     console.log(m);
                     switch (m.validationType) {
                         case 'equal':
-                            return formData[m.question][l.id] == m.validation;
+                            return formData[m.question][l.id].includes(m.validation);
                             break;
                     
                         default:
@@ -1007,7 +1015,11 @@ function Form(props) {
                 if(ev.target.elements[index].tagName == 'INPUT'){
                     if(ev.target.elements[index].type == 'checkbox'){
                         if(ev.target.elements[index].checked == true){
-                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                            if(inputData[ev.target.elements[index].name] == undefined){
+                                inputData[ev.target.elements[index].name] = [ev.target.elements[index].value];
+                            }else{
+                                inputData[ev.target.elements[index].name].push(ev.target.elements[index].value);
+                            }
                         }
                     }else{
                         inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
