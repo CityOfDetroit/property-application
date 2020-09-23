@@ -6100,6 +6100,410 @@
                 ],
                 "cards": [
                     {   
+                        "id"        : "step-35-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Describe any support from the community:"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "communitySupport",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 36,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-35-form-0-section-0",
+                                "items" : [
+                                    { 
+                                        "id"            : "community-support-description",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "maxLength"     : "500",
+                                        "placeholder"   : "Enter support description here.",
+                                        "name"          : "community-support-description",
+                                        "description"   : "Community support description",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Community support",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-36-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Does the land-based project include (select all which apply):" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "landBaseScopeWork",
+                        "type"          : "checkbox-set",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-checkbox",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 37,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-36-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "structures",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "structures",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Structures",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Structures"
+                                    },
+                                    {   
+                                        "id"            : "fences-borders",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "fences-borders",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Fences/ Borders",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Fences/ Borders"
+                                    },
+                                    {   
+                                        "id"            : "signage",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "signage",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Signage",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Signage"
+                                    },
+                                    {   
+                                        "id"            : "compost",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "compost",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Compost",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Compost"
+                                    },
+                                    {   
+                                        "id"            : "trees",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "trees",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Trees",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Trees"
+                                    },
+                                    {   
+                                        "id"            : "plantings",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "plantings",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Planting(s)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Planting(s)"
+                                    },
+                                    {   
+                                        "id"            : "art",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "art",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Art",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Art"
+                                    },
+                                    {   
+                                        "id"            : "water-irrigation-water-tap",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "water-irrigation-water-tap",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Water irrigation/ New water tap",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Water irrigation/ New water tap"
+                                    },
+                                    {   
+                                        "id"            : "green-stormwater",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "green-stormwater",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "scope-work",
+                                        "description"   : "Green Stormwater Infrastructure",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Green Stormwater Infrastructure"
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "checkbox",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "scope-work",
+                                        "description"           : "Other",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter scope work",
+                                        "otherLabel"            : "Scope work",
+                                        "otherID"               : "other-scope-work",
+                                        "required"              : false
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-36-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "A Building permit is  required when adding  the following types of new structures:" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "list-0-item-0",
+                                            "tag"       : "p",
+                                            "content"   : "Any new structure 200 sq feet or more in residential zoning districts or 120 sq ft or more in other zoning districts" 
+                                        },
+                                        {
+                                            "id"        : "list-0-item-1",
+                                            "tag"       : "p",
+                                            "content"   : "Fences over 7 feet tall" 
+                                        },
+                                        {
+                                            "id"        : "list-0-item-2",
+                                            "tag"       : "p",
+                                            "content"   : "Walls over 3 ft tall" 
+                                        },
+                                        {
+                                            "id"        : "list-0-item-3",
+                                            "tag"       : "p",
+                                            "content"   : "Play equipment" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "A Plumbing Permit is required when if" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "list-1-item-0",
+                                            "tag"       : "p",
+                                            "content"   : "installing a new water tap, outdoor sink, sprinkler, or irrigation system" 
+                                        },
+                                        {
+                                            "id"        : "list-1-item-1",
+                                            "tag"       : "p",
+                                            "content"   : "installing new catch basins, drains, or sewers" 
+                                        },
+                                        {
+                                            "id"        : "list-1-item-2",
+                                            "tag"       : "p",
+                                            "content"   : "installing a rainwater collection system" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "hint-0-body-4",
+                                    "tag"       : "p",
+                                    "content"   : "Find additional information on permitting here" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
                         "id"        : "step-37-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
@@ -6112,7 +6516,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Do you own or manage any other gardens or farms, either directly?" 
+                                    "content"   : "Plot Plan/Site Design: Please submit a plot plan which shows all relevant elements" 
                                 }
                             ]
                         }
@@ -6120,11 +6524,24 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "agriculturalProject",
-                        "type"          : "single-button",
+                        "id"            : "plotPlanSitePlan",
+                        "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "file",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 38,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "attachments",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -6134,21 +6551,55 @@
                                 "id"    : "step-37-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-37-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "plot-plan-files-0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "plot-plan-files",
+                                        "description"   : "Plot plan files.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
                                     },
                                     {   
-                                        "id"    : "step-37-form-0-section-0-item-1",
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "plot-plan-files"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra file",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "plot-plan-files"
+                                    },
+                                    {   
+                                        "id"    : "submit",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -6156,7 +6607,32 @@
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-37-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Visit the link below for detailed guidance on creating a plot plan" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/sites/detroitmi.localhost/files/2020-01/CoD_PlotPlanGuide.pdf",
+                                    "content"   : "View plot plan guide" 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -6185,7 +6661,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please describe these other gardens or farms." 
+                                    "content"   : "Please detail volunteer support below (if applicable):" 
                                 }
                             ]
                         }
@@ -6193,11 +6669,24 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "gardensFarms",
+                        "id"            : "landBaseVolunteer",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 29,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -6207,16 +6696,47 @@
                                 "id"    : "step-38-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "gardens-farms",
+                                        "id"            : "number-volunteers",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter number of volunteers",
+                                        "name"          : "name",
+                                        "description"   : "Number of volunteers you expect to host this year",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Number of volunteers you expect to host this year",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "number-volunteer-hours",
+                                        "tag"           : "input",
+                                        "type"          : "number",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please enter number of hours",
+                                        "name"          : "name",
+                                        "description"   : "Total number of hours volunteers will contribute",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Total number of hours volunteers will contribute",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    { 
+                                        "id"            : "volunteer-duties",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
-                                        "placeholder"   : "1000 character limit.",
-                                        "name"          : "gardens-farms",
-                                        "description"   : "Description of gardens or farms owned",
+                                        "maxLength"     : "1000",
+                                        "placeholder"   : "Enter volunteer duties",
+                                        "name"          : "volunteer-duties",
+                                        "description"   : "Description of Volunteer duties",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Gardens/Farms",
+                                        "labelText"     : "Description of Volunteer duties",
                                         "required"      : true
                                     },
                                     {   
