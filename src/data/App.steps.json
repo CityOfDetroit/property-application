@@ -6785,7 +6785,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Do you have partners or supporting organizations who are helping you?" 
+                                    "content"   : "Input requested dates for the lease:" 
                                 }
                             ]
                         }
@@ -6793,11 +6793,24 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "communityEngaged",
-                        "type"          : "single-button",
+                        "id"            : "commercialLeaseDates",
+                        "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 40,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -6807,21 +6820,42 @@
                                 "id"    : "step-39-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-39-form-0-section-0-item-0",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
-                                        "text"  : "Yes",
-                                        "label" : false
+                                        "id"            : "start-date",
+                                        "tag"           : "input",
+                                        "type"          : "date",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Type in start date",
+                                        "name"          : "today-date",
+                                        "description"   : "Type in start date",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Start Date",
+                                        "labelPosition" : "before",
+                                        "required"      : true
                                     },
                                     {   
-                                        "id"    : "step-39-form-0-section-0-item-1",
+                                        "id"            : "end-date",
+                                        "tag"           : "input",
+                                        "type"          : "date",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Type in end date",
+                                        "name"          : "today-date",
+                                        "description"   : "Type in end date",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "End Date",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
-                                        "text"  : "No",
+                                        "name"  : "next",
+                                        "description"   : "Go to next step",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -6829,7 +6863,113 @@
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-39-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Special Events include (but are not limited to):" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "item-0",
+                                            "tag"       : "p",
+                                            "content"   : "Bike Race and/or Ride" 
+                                        },
+                                        {
+                                            "id"        : "item-1",
+                                            "tag"       : "p",
+                                            "content"   : "Carnival" 
+                                        },
+                                        {
+                                            "id"        : "item-2",
+                                            "tag"       : "p",
+                                            "content"   : "Circus" 
+                                        },
+                                        {
+                                            "id"        : "item-3",
+                                            "tag"       : "p",
+                                            "content"   : "Concert" 
+                                        },
+                                        {
+                                            "id"        : "item-4",
+                                            "tag"       : "p",
+                                            "content"   : "Demonstrations" 
+                                        },
+                                        {
+                                            "id"        : "item-5",
+                                            "tag"       : "p",
+                                            "content"   : "Fireworks" 
+                                        },
+                                        {
+                                            "id"        : "item-6",
+                                            "tag"       : "p",
+                                            "content"   : "Marathon" 
+                                        },
+                                        {
+                                            "id"        : "item-7",
+                                            "tag"       : "p",
+                                            "content"   : "Outdoor Festival" 
+                                        },
+                                        {
+                                            "id"        : "item-8",
+                                            "tag"       : "p",
+                                            "content"   : "Performance" 
+                                        },
+                                        {
+                                            "id"        : "item-9",
+                                            "tag"       : "p",
+                                            "content"   : "Political Ceremony" 
+                                        },
+                                        {
+                                            "id"        : "item-10",
+                                            "tag"       : "p",
+                                            "content"   : "Rally" 
+                                        },
+                                        {
+                                            "id"        : "item-11",
+                                            "tag"       : "p",
+                                            "content"   : "Sports or Recreational Activity" 
+                                        },
+                                        {
+                                            "id"        : "item-12",
+                                            "tag"       : "p",
+                                            "content"   : "Street Fair" 
+                                        },
+                                        {
+                                            "id"        : "item-12",
+                                            "tag"       : "p",
+                                            "content"   : "Walkathon" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Additional guidelines about special events are here." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/sites/detroitmi.localhost/files/2018-05/special_events_guidelines_final_1.pdf",
+                                    "content"   : "View Special Events Guidelines" 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -6858,7 +6998,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please provide examples of your community engagements." 
+                                    "content"   : "Is this for a special event?" 
                                 }
                             ]
                         }
@@ -6866,11 +7006,53 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "communityEngagementExamples",
-                        "type"          : "input-submit",
+                        "id"            : "isSpecialEvent",
+                        "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 41,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 43,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "specialEventPermit"
+                                        }
+                                   }
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -6880,36 +7062,48 @@
                                 "id"    : "step-40-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "engagement-examples",
-                                        "tag"           : "textarea",
-                                        "type"          : null,
-                                        "value"         : "",
-                                        "placeholder"   : "1000 character limit.",
-                                        "name"          : "engagement-examples",
-                                        "description"   : "Description of community engagements",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Community Engagements",
-                                        "required"      : true
+                                        "id"    : "is-special-event",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "is-special-event",
+                                        "description"   : "It is for a special event",
+                                        "text"  : "Yes",
+                                        "label" : false
                                     },
                                     {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Next step",
-                                        "text"          : "Next",
-                                        "label"         : false,
-                                        "labelText"     : null
+                                        "id"    : "not-special-event",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-special-event",
+                                        "description"   : "It is not for a special event",
+                                        "text"  : "No",
+                                        "label" : false
                                     }
                                 ]
                             }
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-40-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
@@ -6938,7 +7132,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Do you have partners or supporting organizations who are helping you with your land based project?" 
+                                    "content"   : "Do you have a special event permit?" 
                                 }
                             ]
                         }
@@ -6946,11 +7140,53 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "landBaseSupport",
+                        "id"            : "specialEventPermit",
                         "type"          : "single-button",
                         "position"      : "center",
                         "savedData"     : true,
-                        "requirements"  : [],
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 43,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 42,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   }
+                                }
+                            ]
+                        },
                         "text"          : {
                             "type"      : "text",
                             "markup"    : []
@@ -6960,20 +7196,20 @@
                                 "id"    : "step-41-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "step-41-form-0-section-0-item-0",
+                                        "id"    : "has-permit",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "yes",
-                                        "description"   : "yes",
+                                        "name"  : "has-permit",
+                                        "description"   : "Posses permit",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "step-41-form-0-section-0-item-1",
+                                        "id"    : "no-permit",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no",
-                                        "description"   : "no",
+                                        "name"  : "no-permit",
+                                        "description"   : "Does not posses permit",
                                         "text"  : "No",
                                         "label" : false
                                     }
@@ -6982,7 +7218,231 @@
                         ]
                     }
                 ],
-                "hints": []
+                "hints": [
+                    {   
+                        "id"        : "step-41-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-42-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "You can apply for a special events permit here." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/special-events",
+                                    "content"   : "Visit Special Events page" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-42-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "A Petitioner is required to obtain a Special Events Permit from the Detroit City Council to conduct any event in the public right-of-way or outdoors on private property where the general public is invited." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Events which do not need to follow this process are: Residential Block Parties and Private Invitation Only events held inside a private facility." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "Application for a special events permit can happen concurrently with application for a commercial lease" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-43-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Is this lease related to a city contract?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "leaseCityContract",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 43,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 45,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   }
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-43-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "related-city-contract",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "related-city-contract",
+                                        "description"   : "Related city contract available",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "no-related-city-contract",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no-related-city-contract",
+                                        "description"   : "Related city contract not available",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-43-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having a city contract does not guarantee access to city-owned land" 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         },
         {
