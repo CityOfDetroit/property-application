@@ -76,6 +76,30 @@
                                 }
                             ]
                         }
+                    },
+                    {   
+                        "id"        : "step-0-card-1",
+                        "type"      : "center pop-up color-3",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "For Test Purpose Only"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Any forms submitted using this test form would not be process. Please continue to use the old form." 
+                                },
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "http://app.detroitmi.gov/PropertyApplicationForm/",
+                                    "content"   : "View Active Form" 
+                                }
+                            ]
+                        }
                     }
                 ],
                 "forms": [
