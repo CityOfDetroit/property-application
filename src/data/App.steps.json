@@ -8097,7 +8097,7 @@
                                         "value"         : "",
                                         "maxLength"     : "300",
                                         "placeholder"   : "Enter proposed use (300 character limit)",
-                                        "name"          : "volunteer-duties",
+                                        "name"          : "commercial-lease-proposed-use",
                                         "description"   : "Description of what is the proposed use for the property",
                                         "text"          : "",
                                         "label"         : true,
@@ -9008,7 +9008,7 @@
                                         "specialAttribute"      : "text",
                                         "otherPlaceholder"      : "Enter gathering type",
                                         "otherLabel"            : "Public Gathering Type",
-                                        "otherID"               : "public-gathering-type",
+                                        "otherID"               : "public-gathering-type-other",
                                         "required"              : true
                                     },
                                     {   
@@ -9313,7 +9313,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "publicGatheringDates",
+                        "id"            : "publicGatheringAttendees",
                         "type"          : "input-submit",
                         "position"      : "center",
                         "savedData"     : true,
