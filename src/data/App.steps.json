@@ -714,7 +714,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "individual-business",
+                                    "id"                    : "individualBusiness",
                                     "validation"            : "individual",
                                     "validationType"        : "equal",
                                     "next"                  : 4,
@@ -732,7 +732,7 @@
                                    }
                                 },
                                 {
-                                    "id"                    : "individual-business",
+                                    "id"                    : "individualBusiness",
                                     "validation"            : "non-profit",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
@@ -750,7 +750,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "individual-business",
+                                    "id"                    : "individualBusiness",
                                     "validation"            : "business",
                                     "validationType"        : "equal",
                                     "next"                  : 5,
@@ -783,7 +783,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "individual",
                                         "placeholder"           : null,
-                                        "name"                  : "individual-business",
+                                        "name"                  : "individualBusiness",
                                         "description"           : "Broker",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -802,7 +802,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "non-profit",
                                         "placeholder"           : null,
-                                        "name"                  : "individual-business",
+                                        "name"                  : "individualBusiness",
                                         "description"           : "Broker",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -821,7 +821,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "business",
                                         "placeholder"           : null,
-                                        "name"                  : "individual-business",
+                                        "name"                  : "individualBusiness",
                                         "description"           : "business",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -1222,13 +1222,13 @@
                                         ]
                                     },
                                     {   
-                                        "id"            : "zip-code",
+                                        "id"            : "zipCode",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. 48300",
-                                        "name"          : "zip-code",
+                                        "name"          : "zipCode",
                                         "description"   : "Zip code of applicant or representative",
                                         "text"          : "",
                                         "label"         : true,
@@ -1679,13 +1679,13 @@
                                         ]
                                     },
                                     {   
-                                        "id"            : "zip-code",
+                                        "id"            : "zipCode",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. 48300",
-                                        "name"          : "zip-code",
+                                        "name"          : "zipCode",
                                         "description"   : "Zip code of applicant or representative",
                                         "text"          : "",
                                         "label"         : true,
@@ -1723,13 +1723,13 @@
                                         ]
                                     },
                                     {   
-                                        "id"            : "business-name",
+                                        "id"            : "businessName",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. Always Pizza",
-                                        "name"          : "business-name",
+                                        "name"          : "businessName",
                                         "description"   : "Name of business",
                                         "text"          : "",
                                         "label"         : true,
@@ -1738,13 +1738,13 @@
                                         "required"      : false
                                     },
                                     {   
-                                        "id"            : "business-type",
+                                        "id"            : "businessType",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Ex. Restaurant",
-                                        "name"          : "business-type",
+                                        "name"          : "businessType",
                                         "description"   : "Type of business",
                                         "text"          : "",
                                         "label"         : true,
@@ -1872,19 +1872,19 @@
                                 "id"    : "step-6-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "part-of-program",
+                                        "id"    : "partOfProgram",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "part-of-program",
+                                        "name"  : "partOfProgram",
                                         "description"   : "Part of Detroit Land Bank Authority Community Partnership Program",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "not-part-of-program",
+                                        "id"    : "notPartOfProgram",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-part-of-program",
+                                        "name"  : "notPartOfProgram",
                                         "description"   : "Not part of Detroit Land Bank Authority Community Partnership Program",
                                         "text"  : "No",
                                         "label" : false
@@ -2129,13 +2129,13 @@
                                 "id"    : "step-8-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "llc-entities-0",
+                                        "id"            : "llcEntities0",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter LLC's name",
-                                        "name"          : "llc",
+                                        "name"          : "llcEntities0",
                                         "description"   : "Name of LLCs or entities that the applicant operates",
                                         "text"          : "",
                                         "label"         : true,
@@ -2144,14 +2144,14 @@
                                         "required"      : false
                                     },
                                     {   
-                                        "id"            : "llc-entities-in-detroit-0",
+                                        "id"            : "llcEntitiesInDetroit0",
                                         "tag"           : "input",
                                         "type"          : "checkbox",
                                         "grouping"      : true,
                                         "value"         : "in detroit",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "llc-entities-0",
+                                        "name"          : "llcEntitiesInDetroit0",
                                         "description"   : "Information about LLCs located in Detroit",
                                         "text"          : "",
                                         "label"         : true,
@@ -2177,7 +2177,7 @@
                                                 "otherValue"        : null,
                                                 "otherName"         : null,
                                                 "otherLabel"        : "LLC's Name",
-                                                "otherID"           : "llc-entities"  
+                                                "otherID"           : "llcEntities"  
                                             },
                                             {
                                                 "specialAttribute"  : "checkbox",
@@ -2185,9 +2185,9 @@
                                                 "otherGrouping"     : false,
                                                 "otherPlaceholder"  : null,
                                                 "otherValue"        : "in detroit",
-                                                "otherName"         : "llc-entities",
+                                                "otherName"         : "llcEntitiesInDetroit",
                                                 "otherLabel"        : "In Detroit",
-                                                "otherID"           : "llc-entities-in-detroit"  
+                                                "otherID"           : "llcEntitiesInDetroit"  
                                             }
                                         ],
                                         "specialAttribute"      : null,
@@ -2210,15 +2210,16 @@
                                                 "specialAttribute"  : "text",
                                                 "otherPlaceholder"  : "Enter LLC's name",
                                                 "otherLabel"        : "LLC's Name",
-                                                "otherID"           : "llc-entities"  
+                                                "otherID"           : "llcEntities"  
                                             },
                                             {
                                                 "specialAttribute"  : "checkbox",
                                                 "otherGrouping"     : false,
                                                 "otherPlaceholder"  : null,
                                                 "otherValue"        : "in detroit",
+                                                "otherName"         : "llcEntitiesInDetroit",
                                                 "otherLabel"        : "In Detroit",
-                                                "otherID"           : "llc-entities-in-detroit"  
+                                                "otherID"           : "llcEntitiesInDetroit"  
                                             }
                                         ],
                                         "specialAttribute"      : null,
@@ -2333,19 +2334,19 @@
                                 "id"    : "step-9-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "part-of-program",
+                                        "id"    : "partOfProgram",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "part-of-program",
+                                        "name"  : "partOfProgram",
                                         "description"   : "Part of Detroit Land Bank Authority Community Partnership Program",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "not-part-of-program",
+                                        "id"    : "notPartOfProgram",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "not-part-of-program",
+                                        "name"  : "notPartOfProgram",
                                         "description"   : "Not part of Detroit Land Bank Authority Community Partnership Program",
                                         "text"  : "No",
                                         "label" : false
@@ -2419,10 +2420,10 @@
                                 "id"    : "step-10-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "detroit-property-0",
+                                        "id"            : "detroitProperty0",
                                         "tag"           : "GEOCODER",
                                         "type"          : "text",
-                                        "name"          : "detroit-property",
+                                        "name"          : "detroitProperty0",
                                         "description"   : "Address of Detroit property",
                                         "placeholder"   : "Ex. 1301 Third st.",
                                         "percel"        : null,
@@ -2443,7 +2444,7 @@
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
                                         "otherLabel"            : "Property Address",
-                                        "otherID"               : "detroit-property"
+                                        "otherID"               : "detroitProperty"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -2457,7 +2458,7 @@
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
                                         "otherLabel"            : "Property Address",
-                                        "otherID"               : "detroit-property"
+                                        "otherID"               : "detroitProperty"
                                     },
                                     {   
                                         "id"    : "step-11-form-0-section-0-item-1",
@@ -2992,10 +2993,10 @@
                                 "id"    : "step-15-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "interested-property-0",
+                                        "id"            : "interestedProperty0",
                                         "tag"           : "GEOCODER",
                                         "type"          : "text",
-                                        "name"          : "interested-property",
+                                        "name"          : "interestedProperty0",
                                         "description"   : "Address of interested property",
                                         "placeholder"   : "Ex. 1301 Third st.",
                                         "percel"        : null,
@@ -3016,7 +3017,7 @@
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
                                         "otherLabel"            : "Property Address",
-                                        "otherID"               : "interested-property"
+                                        "otherID"               : "interestedProperty"
                                     },
                                     {   
                                         "id"                    : "remove",
@@ -3030,7 +3031,7 @@
                                         "specialAttribute"      : "geocoder",
                                         "otherPlaceholder"      : "Ex. 1301 Third st.",
                                         "otherLabel"            : "Property Address",
-                                        "otherID"               : "interested-property"
+                                        "otherID"               : "interestedProperty"
                                     },
                                     {   
                                         "id"            : "next-step",
@@ -3273,7 +3274,7 @@
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "not-adjacent",
+                                        "id"    : "notAdjacent",
                                         "tag"   : "button",
                                         "type"  : "submit",
                                         "name"  : "own",
@@ -3375,7 +3376,7 @@
                                 "id"    : "step-18-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "adjecent-property-0",
+                                        "id"            : "adjecentProperty0",
                                         "tag"           : "GEOCODER",
                                         "type"          : "text",
                                         "name"          : "adjecent-property",
@@ -3692,7 +3693,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "commercial-retail",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3710,7 +3711,7 @@
                                    }
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "mixed-use",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3728,7 +3729,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "residential-multifamily",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3746,7 +3747,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "residential-single-family",
                                     "validationType"        : "equal",
                                     "next"                  : 24,
@@ -3764,7 +3765,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "parking-lot-auto-related",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3782,7 +3783,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "land-based-project",
                                     "validationType"        : "equal",
                                     "next"                  : 31,
@@ -3800,7 +3801,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "industrial",
                                     "validationType"        : "equal",
                                     "next"                  : 22,
@@ -3818,7 +3819,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "film",
                                     "validationType"        : "equal",
                                     "next"                  : 51,
@@ -3836,7 +3837,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "cell-tower",
                                     "validationType"        : "equal",
                                     "next"                  : 54,
@@ -3854,7 +3855,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "public-gathering",
                                     "validationType"        : "equal",
                                     "next"                  : 55,
@@ -3872,7 +3873,7 @@
                                    } 
                                 },
                                 {
-                                    "id"                    : "property-use",
+                                    "id"                    : "propertyUse",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
                                     "next"                  : 60,
@@ -3905,7 +3906,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "commercial-retail",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Commercial/Retail",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -3924,7 +3925,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "mixed-use",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Mixed Use",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -3943,7 +3944,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "residential-multifamily",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Residential Multifamily",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -3962,7 +3963,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "residential-single-family",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Residential Single Family",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -3981,7 +3982,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "parking-lot-auto-related",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Parking Lot/Auto Related",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4000,7 +4001,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "land-based-project",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Land Based Project",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4019,7 +4020,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "industrial",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Industrial",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4038,7 +4039,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "film",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Film",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4057,7 +4058,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "cell-tower",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Cell Tower",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4076,7 +4077,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "public-gathering",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "Public Gathering",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4095,7 +4096,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "property-use",
+                                        "name"                  : "propertyUse",
                                         "description"           : "other",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4105,7 +4106,7 @@
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter primary use",
                                         "otherLabel"            : "Primary Use",
-                                        "otherID"               : "property-use",
+                                        "otherID"               : "propertyUse",
                                         "required"              : true
                                     },
                                     {   
@@ -4275,13 +4276,13 @@
                                 "id"    : "step-23-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "parking-needs",
+                                        "id"            : "parkingNeeds",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "100",
                                         "placeholder"   : "Enter description here.",
-                                        "name"          : "parking-needs",
+                                        "name"          : "parkingNeeds",
                                         "description"   : "Description for the parking needs",
                                         "text"          : "",
                                         "label"         : true,
@@ -4396,7 +4397,7 @@
                                         "value"         : "new-construction",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "anticipated-work",
+                                        "name"          : "anticipatedWork",
                                         "description"   : "new construction",
                                         "text"          : "",
                                         "label"         : true,
@@ -4411,7 +4412,7 @@
                                         "value"         : "rehab",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "anticipated-work",
+                                        "name"          : "anticipatedWork",
                                         "description"   : "Rehab",
                                         "text"          : "",
                                         "label"         : true,
@@ -4426,7 +4427,7 @@
                                         "value"         : "demolition-blight",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "anticipated-work",
+                                        "name"          : "anticipatedWork",
                                         "description"   : "Demolition / Blight Clearance",
                                         "text"          : "",
                                         "label"         : true,
@@ -4441,7 +4442,7 @@
                                         "value"         : "beautification-landscaping",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "anticipated-work",
+                                        "name"          : "anticipatedWork",
                                         "description"   : "Lot Beautification / Landscaping",
                                         "text"          : "",
                                         "label"         : true,
@@ -4454,7 +4455,7 @@
                                         "type"                  : "checkbox",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "anticipated-work",
+                                        "name"                  : "anticipatedWork",
                                         "description"           : "Other",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -4464,7 +4465,7 @@
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter anticipated work",
                                         "otherLabel"            : "Anticipated work",
-                                        "otherID"               : "anticipated-work",
+                                        "otherID"               : "anticipatedWorkOther",
                                         "required"              : false
                                     },
                                     {   
@@ -4777,13 +4778,13 @@
                                 "id"    : "step-27-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "development-cost",
+                                        "id"            : "developmentCost",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Please enter development cost.",
-                                        "name"          : "development-cost",
+                                        "name"          : "developmentCost",
                                         "description"   : "total development cost of the proposed project",
                                         "text"          : "",
                                         "label"         : true,
@@ -4792,7 +4793,7 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "funding-sources-text",
+                                        "id"            : "fundingSourcesText",
                                         "tag"           : "p",
                                         "type"          : null,
                                         "grouping"      : true,
@@ -4814,7 +4815,7 @@
                                         "value"         : "equity-cash",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "funding-sources",
+                                        "name"          : "fundingSources",
                                         "description"   : "Equity / Cash on hand",
                                         "text"          : "",
                                         "label"         : true,
@@ -4829,7 +4830,7 @@
                                         "value"         : "grants",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "funding-sources",
+                                        "name"          : "fundingSources",
                                         "description"   : "Grants",
                                         "text"          : "",
                                         "label"         : true,
@@ -4844,7 +4845,7 @@
                                         "value"         : "income-operations",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "funding-sources",
+                                        "name"          : "fundingSources",
                                         "description"   : "Income from operations",
                                         "text"          : "",
                                         "label"         : true,
@@ -4859,7 +4860,7 @@
                                         "value"         : "loan",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "funding-sources",
+                                        "name"          : "fundingSources",
                                         "description"   : "Loan",
                                         "text"          : "",
                                         "label"         : true,
@@ -4874,7 +4875,7 @@
                                         "value"         : "other",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "funding-sources",
+                                        "name"          : "fundingSources",
                                         "description"   : "Other",
                                         "text"          : "",
                                         "label"         : true,
@@ -4904,7 +4905,7 @@
                                         "value"         : "0-6",
                                         "required"      : true,
                                         "placeholder"   : null,
-                                        "name"          : "project-timeline",
+                                        "name"          : "projectTimeline",
                                         "description"   : "0 -6 months",
                                         "text"          : "",
                                         "label"         : true,
@@ -4919,7 +4920,7 @@
                                         "value"         : "7-12",
                                         "required"      : true,
                                         "placeholder"   : null,
-                                        "name"          : "project-timeline",
+                                        "name"          : "projectTimeline",
                                         "description"   : "7-12 months",
                                         "text"          : "",
                                         "label"         : true,
@@ -4934,7 +4935,7 @@
                                         "value"         : "13-24",
                                         "required"      : true,
                                         "placeholder"   : null,
-                                        "name"          : "project-timeline",
+                                        "name"          : "projectTimeline",
                                         "description"   : "13-24 months",
                                         "text"          : "",
                                         "label"         : true,
@@ -4949,7 +4950,7 @@
                                         "value"         : "24-plus",
                                         "required"      : true,
                                         "placeholder"   : null,
-                                        "name"          : "project-timeline",
+                                        "name"          : "projectTimeline",
                                         "description"   : "24+ months",
                                         "text"          : "",
                                         "label"         : true,
@@ -5037,13 +5038,13 @@
                                 "id"    : "step-28-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "additional-files-0",
+                                        "id"            : "additionalFiles0",
                                         "tag"           : "input",
                                         "type"          : "file",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "additional-files",
+                                        "name"          : "additionalFiles0",
                                         "description"   : "Additional Information and files.",
                                         "text"          : "",
                                         "label"         : true,
@@ -5063,7 +5064,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "additional-files"
+                                        "otherID"               : "additionalFiles"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -5077,7 +5078,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "additional-files"
+                                        "otherID"               : "additionalFiles"
                                     },
                                     {   
                                         "id"    : "submit",
@@ -5264,13 +5265,13 @@
                                 "id"    : "step-29-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "agreement-understanding",
+                                        "id"            : "agreementUnderstanding",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type your full name here to signify your agreement and understanding.",
-                                        "name"          : "agreement-understanding",
+                                        "name"          : "agreementUnderstanding",
                                         "description"   : "Type your full name here to signify your agreement and understanding.",
                                         "text"          : "",
                                         "label"         : true,
@@ -5279,13 +5280,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "today-date",
+                                        "id"            : "todayDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in todays date",
-                                        "name"          : "today-date",
+                                        "name"          : "todayDate",
                                         "description"   : "Type in todays date",
                                         "text"          : "",
                                         "label"         : true,
@@ -5519,7 +5520,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "beautification-cleanup",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
@@ -5531,7 +5532,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "community-gathering-social-space",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
@@ -5543,7 +5544,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "urban-agriculture-1-acre",
                                     "validationType"        : "equal",
                                     "next"                  : 33,
@@ -5555,7 +5556,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "urban-agriculture-1-acre-plus",
                                     "validationType"        : "equal",
                                     "next"                  : 33,
@@ -5567,7 +5568,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "orchard-tree-farm",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
@@ -5579,7 +5580,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "art-project-sculpture",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
@@ -5591,7 +5592,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "land-base-purpose",
+                                    "id"                    : "landBasePurpose",
                                     "validation"            : "greenstormwater",
                                     "validationType"        : "equal",
                                     "next"                  : 34,
@@ -5618,7 +5619,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "beautification-cleanup",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Beautification / Lot  Cleanup",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5637,7 +5638,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "community-gathering-social-space",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Community gathering space or social space",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5656,7 +5657,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "urban-agriculture-1-acre",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Urban Agriculture (less than or equal to 1 acre)",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5675,7 +5676,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "urban-agriculture-1-acre-plus",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Urban Agriculture (greater than 1 acre)",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5694,7 +5695,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "orchard-tree-farm",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Orchard/ tree farm",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5713,7 +5714,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "art-project-sculpture",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Outdoor Art Project/ sculpture garden Installation",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5732,7 +5733,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "greenstormwater",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Greenstormwater Infrastructure Project",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5751,7 +5752,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "land-base-purpose",
+                                        "name"                  : "landBasePurpose",
                                         "description"           : "Other",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -5761,7 +5762,7 @@
                                         "specialAttribute"      : "text",
                                         "otherPlaceholder"      : "Enter project purpose",
                                         "otherLabel"            : "Project Purpose",
-                                        "otherID"               : "land-base-purpose",
+                                        "otherID"               : "landBasePurposeOther",
                                         "required"              : true
                                     },
                                     {   
@@ -5877,13 +5878,13 @@
                                 "id"    : "step-33-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "agricultural-files-0",
+                                        "id"            : "agriculturalFiles0",
                                         "tag"           : "input",
                                         "type"          : "file",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "agricultural-files",
+                                        "name"          : "agriculturalFiles",
                                         "description"   : "Agricultural files.",
                                         "text"          : "",
                                         "label"         : true,
@@ -5903,7 +5904,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "agricultural-files"
+                                        "otherID"               : "agriculturalFiles"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -5917,7 +5918,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "agricultural-files"
+                                        "otherID"               : "agriculturalFiles"
                                     },
                                     {   
                                         "id"    : "submit",
@@ -6004,7 +6005,7 @@
                                         "value"         : "neighborhood-block-club",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "supporting-organizations",
+                                        "name"          : "supportingOrganizations",
                                         "description"   : "Neighborhood Block Club",
                                         "text"          : "",
                                         "label"         : true,
@@ -6019,7 +6020,7 @@
                                         "value"         : "land-base-non-profit",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "supporting-organizations",
+                                        "name"          : "supportingOrganizations",
                                         "description"   : "Land Based Non-Profit",
                                         "text"          : "",
                                         "label"         : true,
@@ -6034,7 +6035,7 @@
                                         "value"         : "religious-intitution",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "supporting-organizations",
+                                        "name"          : "supportingOrganizations",
                                         "description"   : "Religious Institution",
                                         "text"          : "",
                                         "label"         : true,
@@ -6049,7 +6050,7 @@
                                         "value"         : "educational-institution",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "supporting-organizations",
+                                        "name"          : "supportingOrganizations",
                                         "description"   : "Educational Institution",
                                         "text"          : "",
                                         "label"         : true,
@@ -6064,7 +6065,7 @@
                                         "value"         : "other",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "supporting-organizations",
+                                        "name"          : "supportingOrganizations",
                                         "description"   : "Other",
                                         "text"          : "",
                                         "label"         : true,
@@ -6074,16 +6075,16 @@
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter organization type",
                                         "otherLabel"            : "Organization Type",
-                                        "otherID"               : "supporting-organizations"
+                                        "otherID"               : "supportingOrganizationsOther"
                                     },
                                     { 
-                                        "id"            : "organization-names-support-description",
+                                        "id"            : "organizationNamesSupportDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "500",
                                         "placeholder"   : "Enter organization names and support description here.",
-                                        "name"          : "proposal",
+                                        "name"          : "organizationNamesSupportDescription",
                                         "description"   : "Summary of the applicant’s proposal",
                                         "text"          : "",
                                         "label"         : true,
@@ -6171,13 +6172,13 @@
                                 "id"    : "step-35-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "community-support-description",
+                                        "id"            : "communitySupportDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "500",
                                         "placeholder"   : "Enter support description here.",
-                                        "name"          : "community-support-description",
+                                        "name"          : "communitySupportDescription",
                                         "description"   : "Community support description",
                                         "text"          : "",
                                         "label"         : true,
@@ -6272,7 +6273,7 @@
                                         "value"         : "structures",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Structures",
                                         "text"          : "",
                                         "label"         : true,
@@ -6287,7 +6288,7 @@
                                         "value"         : "fences-borders",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Fences/ Borders",
                                         "text"          : "",
                                         "label"         : true,
@@ -6302,7 +6303,7 @@
                                         "value"         : "signage",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Signage",
                                         "text"          : "",
                                         "label"         : true,
@@ -6317,7 +6318,7 @@
                                         "value"         : "compost",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Compost",
                                         "text"          : "",
                                         "label"         : true,
@@ -6332,7 +6333,7 @@
                                         "value"         : "trees",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Trees",
                                         "text"          : "",
                                         "label"         : true,
@@ -6347,7 +6348,7 @@
                                         "value"         : "plantings",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Planting(s)",
                                         "text"          : "",
                                         "label"         : true,
@@ -6362,7 +6363,7 @@
                                         "value"         : "art",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Art",
                                         "text"          : "",
                                         "label"         : true,
@@ -6377,7 +6378,7 @@
                                         "value"         : "water-irrigation-water-tap",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Water irrigation/ New water tap",
                                         "text"          : "",
                                         "label"         : true,
@@ -6392,7 +6393,7 @@
                                         "value"         : "green-stormwater",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "scope-work",
+                                        "name"          : "scopeWork",
                                         "description"   : "Green Stormwater Infrastructure",
                                         "text"          : "",
                                         "label"         : true,
@@ -6405,7 +6406,7 @@
                                         "type"                  : "checkbox",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "scope-work",
+                                        "name"                  : "scopeWork",
                                         "description"           : "Other",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -6415,7 +6416,7 @@
                                         "specialAttribute"      : "other",
                                         "otherPlaceholder"      : "Enter scope work",
                                         "otherLabel"            : "Scope work",
-                                        "otherID"               : "other-scope-work",
+                                        "otherID"               : "scopeWorkOther",
                                         "required"              : false
                                     },
                                     {   
@@ -6575,13 +6576,13 @@
                                 "id"    : "step-37-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "plot-plan-files-0",
+                                        "id"            : "plotPlanFiles0",
                                         "tag"           : "input",
                                         "type"          : "file",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "plot-plan-files",
+                                        "name"          : "plotPlanFiles0",
                                         "description"   : "Plot plan files.",
                                         "text"          : "",
                                         "label"         : true,
@@ -6601,7 +6602,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "plot-plan-files"
+                                        "otherID"               : "plotPlanFiles"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -6615,7 +6616,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "plot-plan-files"
+                                        "otherID"               : "plotPlanFiles"
                                     },
                                     {   
                                         "id"    : "submit",
@@ -6720,13 +6721,13 @@
                                 "id"    : "step-38-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "number-volunteers",
+                                        "id"            : "numberVolunteers",
                                         "tag"           : "input",
                                         "type"          : "number",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Please enter number of volunteers",
-                                        "name"          : "name",
+                                        "name"          : "numberVolunteers",
                                         "description"   : "Number of volunteers you expect to host this year",
                                         "text"          : "",
                                         "label"         : true,
@@ -6735,13 +6736,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "number-volunteer-hours",
+                                        "id"            : "numberVolunteerHours",
                                         "tag"           : "input",
                                         "type"          : "number",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Please enter number of hours",
-                                        "name"          : "name",
+                                        "name"          : "numberVolunteerHours",
                                         "description"   : "Total number of hours volunteers will contribute",
                                         "text"          : "",
                                         "label"         : true,
@@ -6750,13 +6751,13 @@
                                         "required"      : true
                                     },
                                     { 
-                                        "id"            : "volunteer-duties",
+                                        "id"            : "volunteerDuties",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "1000",
                                         "placeholder"   : "Enter volunteer duties",
-                                        "name"          : "volunteer-duties",
+                                        "name"          : "volunteerDuties",
                                         "description"   : "Description of Volunteer duties",
                                         "text"          : "",
                                         "label"         : true,
@@ -6844,13 +6845,13 @@
                                 "id"    : "step-39-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "start-date",
+                                        "id"            : "startDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in start date",
-                                        "name"          : "today-date",
+                                        "name"          : "startDate",
                                         "description"   : "Type in start date",
                                         "text"          : "",
                                         "label"         : true,
@@ -6859,13 +6860,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "end-date",
+                                        "id"            : "endDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in end date",
-                                        "name"          : "today-date",
+                                        "name"          : "endDate",
                                         "description"   : "Type in end date",
                                         "text"          : "",
                                         "label"         : true,
@@ -7679,13 +7680,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "contract-number",
+                                        "id"            : "contractNumber",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter contract number",
-                                        "name"          : "contract-number",
+                                        "name"          : "contractNumber",
                                         "description"   : "Contract number",
                                         "text"          : "",
                                         "label"         : true,
@@ -7997,13 +7998,13 @@
                                 "id"    : "step-48-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "staged-description",
+                                        "id"            : "stagedDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "300",
                                         "placeholder"   : "Enter description of what will be staged on the site (300 character limit)",
-                                        "name"          : "volunteer-duties",
+                                        "name"          : "stagedDescription",
                                         "description"   : "Description of what will be staged on the site",
                                         "text"          : "",
                                         "label"         : true,
@@ -8091,13 +8092,13 @@
                                 "id"    : "step-49-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "commercial-lease-proposed-use",
+                                        "id"            : "commercialLeaseProposedUse",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "300",
                                         "placeholder"   : "Enter proposed use (300 character limit)",
-                                        "name"          : "commercial-lease-proposed-use",
+                                        "name"          : "commercialLeaseProposedUse",
                                         "description"   : "Description of what is the proposed use for the property",
                                         "text"          : "",
                                         "label"         : true,
@@ -8192,7 +8193,7 @@
                                         "value"         : "traffic",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "commercial-lease-impact",
+                                        "name"          : "commercialLeaseImpact",
                                         "description"   : "Traffic",
                                         "text"          : "",
                                         "label"         : true,
@@ -8207,7 +8208,7 @@
                                         "value"         : "noise",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "commercial-lease-impact",
+                                        "name"          : "commercialLeaseImpact",
                                         "description"   : "Noise",
                                         "text"          : "",
                                         "label"         : true,
@@ -8222,7 +8223,7 @@
                                         "value"         : "parking",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "commercial-lease-impact",
+                                        "name"          : "commercialLeaseImpact",
                                         "description"   : "Parking",
                                         "text"          : "",
                                         "label"         : true,
@@ -8237,7 +8238,7 @@
                                         "value"         : "sidewalk",
                                         "required"      : false,
                                         "placeholder"   : null,
-                                        "name"          : "commercial-lease-impact",
+                                        "name"          : "commercialLeaseImpact",
                                         "description"   : "Sidewalk",
                                         "text"          : "",
                                         "label"         : true,
@@ -8458,13 +8459,13 @@
                                 "id"    : "step-52-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "film-agreement-files-0",
+                                        "id"            : "filmAgreementFiles0",
                                         "tag"           : "input",
                                         "type"          : "file",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "film-agreement-files",
+                                        "name"          : "filmAgreementFiles0",
                                         "description"   : "Film agreement files",
                                         "text"          : "",
                                         "label"         : true,
@@ -8484,7 +8485,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "film-agreement-files"
+                                        "otherID"               : "filmAgreementFiles"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -8498,7 +8499,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "film-agreement-files"
+                                        "otherID"               : "filmAgreementFiles"
                                     },
                                     {   
                                         "id"    : "submit",
@@ -8674,13 +8675,13 @@
                                 "id"    : "step-54-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "cell-tower-files-0",
+                                        "id"            : "cellTowerFiles0",
                                         "tag"           : "input",
                                         "type"          : "file",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "",
-                                        "name"          : "cell-tower-files",
+                                        "name"          : "cellTowerFiles0",
                                         "description"   : "Cell tower application files",
                                         "text"          : "",
                                         "label"         : true,
@@ -8700,7 +8701,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "cell-tower-files"
+                                        "otherID"               : "cellTowerFiles"
                                     },
                                     {   
                                         "id"    : "remove",
@@ -8714,7 +8715,7 @@
                                         "specialAttribute"      : "file",
                                         "otherPlaceholder"      : "",
                                         "otherLabel"            : "Add File",
-                                        "otherID"               : "cell-tower-files"
+                                        "otherID"               : "cellTowerFiles"
                                     },
                                     {   
                                         "id"    : "submit",
@@ -8785,7 +8786,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "concert",
                                     "validationType"        : "equal",
                                     "next"                  : 56,
@@ -8797,7 +8798,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "festival",
                                     "validationType"        : "equal",
                                     "next"                  : 56,
@@ -8809,7 +8810,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "parade",
                                     "validationType"        : "equal",
                                     "next"                  : 56,
@@ -8821,7 +8822,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "block-party",
                                     "validationType"        : "equal",
                                     "next"                  : 57,
@@ -8833,7 +8834,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "picnic",
                                     "validationType"        : "equal",
                                     "next"                  : 57,
@@ -8845,7 +8846,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "press-conference",
                                     "validationType"        : "equal",
                                     "next"                  : 57,
@@ -8857,7 +8858,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "public-gathering-type",
+                                    "id"                    : "publicGatheringType",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
                                     "next"                  : 57,
@@ -8884,7 +8885,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "concert",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Concert",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8903,7 +8904,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "festival",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Festival",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8922,7 +8923,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "parade",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Parade",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8941,7 +8942,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "block-party",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Block party",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8960,7 +8961,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "picnic",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Picnic",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8979,7 +8980,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "press-conference",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Press Conference",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -8998,7 +8999,7 @@
                                         "type"                  : "radio",
                                         "value"                 : "other",
                                         "placeholder"           : null,
-                                        "name"                  : "public-gathering-type",
+                                        "name"                  : "publicGatheringType",
                                         "description"           : "Other",
                                         "text"                  : "",
                                         "label"                 : true,
@@ -9008,7 +9009,7 @@
                                         "specialAttribute"      : "text",
                                         "otherPlaceholder"      : "Enter gathering type",
                                         "otherLabel"            : "Public Gathering Type",
-                                        "otherID"               : "public-gathering-type-other",
+                                        "otherID"               : "publicGatheringTypeOther",
                                         "required"              : true
                                     },
                                     {   
@@ -9184,13 +9185,13 @@
                                 "id"    : "step-57-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "start-date",
+                                        "id"            : "startDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in start date",
-                                        "name"          : "today-date",
+                                        "name"          : "startDate",
                                         "description"   : "Type in start date",
                                         "text"          : "",
                                         "label"         : true,
@@ -9199,13 +9200,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "end-date",
+                                        "id"            : "endDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in end date",
-                                        "name"          : "today-date",
+                                        "name"          : "endDate",
                                         "description"   : "Type in end date",
                                         "text"          : "",
                                         "label"         : true,
@@ -9214,13 +9215,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "start-event-date",
+                                        "id"            : "startEventDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in event start date",
-                                        "name"          : "today-date",
+                                        "name"          : "startEventDate",
                                         "description"   : "Type in event start date",
                                         "text"          : "",
                                         "label"         : true,
@@ -9229,13 +9230,13 @@
                                         "required"      : true
                                     },
                                     {   
-                                        "id"            : "end-event-date",
+                                        "id"            : "endEventDate",
                                         "tag"           : "input",
                                         "type"          : "date",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Type in event end date",
-                                        "name"          : "today-date",
+                                        "name"          : "endEventDate",
                                         "description"   : "Type in event end date",
                                         "text"          : "",
                                         "label"         : true,
@@ -9340,13 +9341,13 @@
                                 "id"    : "step-58-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "number-attendees",
+                                        "id"            : "numberAttendees",
                                         "tag"           : "input",
                                         "type"          : "number",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter number of expected attendees",
-                                        "name"          : "today-date",
+                                        "name"          : "numberAttendees",
                                         "description"   : "number of expected attendees",
                                         "text"          : "",
                                         "label"         : true,
@@ -9437,13 +9438,13 @@
                                 "id"    : "step-59-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "public-gathering-description",
+                                        "id"            : "publicGatheringDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "300",
                                         "placeholder"   : "Enter description",
-                                        "name"          : "public-gathering-description",
+                                        "name"          : "publicGatheringDescription",
                                         "description"   : "Description of the public gathering",
                                         "text"          : "",
                                         "label"         : true,
@@ -9536,13 +9537,13 @@
                                 "id"    : "step-60-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "special-use-description",
+                                        "id"            : "specialUseDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "300",
                                         "placeholder"   : "Enter description",
-                                        "name"          : "special-use-description",
+                                        "name"          : "specialUseDescription",
                                         "description"   : "Description of your special use",
                                         "text"          : "",
                                         "label"         : true,

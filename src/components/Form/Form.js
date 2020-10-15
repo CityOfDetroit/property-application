@@ -666,7 +666,7 @@ function Form(props) {
                             inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                         }
                         if(ev.target.elements[index].getAttribute('data-parcel') != undefined){
-                            inputData[`${ev.target.elements[index].id}-parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                            inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
                         }
                     }
                 }
