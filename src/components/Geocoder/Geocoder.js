@@ -23,7 +23,13 @@ function Geocoder(props) {
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
-            setSugg(data.candidates);
+          let candidates = [];
+          data.candidates.forEach((candidate)=>{
+            if(candidate.attributes.User_fld != ''){
+              candidates.push(candidate);
+            }
+          });
+          setSugg(candidates);
         })
         .catch((error) => {
             error(error);
