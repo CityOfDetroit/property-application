@@ -926,17 +926,32 @@
                                 "id"    : "step-4-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "name",
+                                        "id"            : "firstName",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
-                                        "placeholder"   : "Please enter full name.",
-                                        "name"          : "name",
-                                        "description"   : "Name of applicant or representative",
+                                        "placeholder"   : "Please first name.",
+                                        "name"          : "firstName",
+                                        "description"   : "First name of applicant or representative",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Name",
+                                        "labelText"     : "First Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "lastName",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please last name.",
+                                        "name"          : "lastName",
+                                        "description"   : "Last name of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Last Name",
                                         "labelPosition" : "before",
                                         "required"      : true
                                     },
@@ -1383,17 +1398,32 @@
                                 "id"    : "step-5-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "name",
+                                        "id"            : "firstName",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
-                                        "placeholder"   : "Please enter full name.",
-                                        "name"          : "name",
-                                        "description"   : "Name of applicant or representative",
+                                        "placeholder"   : "Please first name.",
+                                        "name"          : "firstName",
+                                        "description"   : "First name of applicant or representative",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Name",
+                                        "labelText"     : "First Name",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "lastName",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Please last name.",
+                                        "name"          : "lastName",
+                                        "description"   : "Last name of applicant or representative",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Last Name",
                                         "labelPosition" : "before",
                                         "required"      : true
                                     },
@@ -1730,10 +1760,10 @@
                                         "value"         : "",
                                         "placeholder"   : "Ex. Always Pizza",
                                         "name"          : "businessName",
-                                        "description"   : "Name of business",
+                                        "description"   : "Name of business / non-profit",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Business Name",
+                                        "labelText"     : "Business / Non-Profit Name",
                                         "labelPosition" : "before",
                                         "required"      : false
                                     },
@@ -1745,10 +1775,10 @@
                                         "value"         : "",
                                         "placeholder"   : "Ex. Restaurant",
                                         "name"          : "businessType",
-                                        "description"   : "Type of business",
+                                        "description"   : "Type of business / non-profit",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Business Type",
+                                        "labelText"     : "Business / Non-Profit Type",
                                         "labelPosition" : "before",
                                         "required"      : false
                                     },
@@ -1814,7 +1844,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Is the applicant apart of the Detroit Land Bank Authority  Community Partnership Program or is working with a partner?" 
+                                    "content"   : "Is the applicant a part of the Detroit Land Bank Authority  Community Partnership Program or is working with a partner?" 
                                 }
                             ]
                         }
@@ -2004,7 +2034,7 @@
                                         "description"   : "List of all partners",
                                         "text"          : "",
                                         "label"         : true,
-                                        "labelText"     : "Parter List",
+                                        "labelText"     : "Partner List",
                                         "required"      : true
                                     },
                                     {   
@@ -3612,7 +3642,7 @@
                                     {   
                                         "id"            : "offer",
                                         "tag"           : "input",
-                                        "type"          : "text",
+                                        "type"          : "currency",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter offer here",
@@ -4006,7 +4036,7 @@
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Such as urban gardens or farms, green stormwater infrastructure, beautification and lot clean-up, public art installation",
+                                        "labelText"             : "Land-base project such as urban gardens or farms, green stormwater infrastructure, beautification and lot clean-up, public art installation",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -4780,7 +4810,7 @@
                                     {   
                                         "id"            : "developmentCost",
                                         "tag"           : "input",
-                                        "type"          : "text",
+                                        "type"          : "currency",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Please enter development cost.",
@@ -4802,7 +4832,7 @@
                                         "placeholder"   : null,
                                         "name"          : "",
                                         "description"   : "",
-                                        "text"          : "What funding source(s) will be used? (select all that apply)?",
+                                        "text"          : "What funding source(s) will be used?",
                                         "label"         : false,
                                         "labelPosition" : null,
                                         "labelText"     : null

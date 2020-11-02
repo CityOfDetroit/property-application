@@ -97,7 +97,7 @@ function Form(props) {
         let markup;
         if(extrasCount > 0){
             if(extras.getAttribute('data-ismulti-component')){
-                for (let index = 0; index < extrasCount; index++){
+                for (let index = extrasCount - 1; index >= 0; index--){
                     JSON.parse(extras.getAttribute('data-multicomponents')).forEach((comp) => {
                         let tempComponent = {};
                         tempComponent.id = `${comp.otherID}-${index + 1}`;
@@ -114,7 +114,7 @@ function Form(props) {
                     });
                 }
             }else{
-                for (let index = 0; index < extrasCount; index++) {
+                for (let index = extrasCount - 1; index >= 0; index--){
                     let tempComponent = {};
                     tempComponent.id = `${extras.getAttribute('data-special-id')}-${index + 1}`;
                     tempComponent.placeholder = extras.getAttribute('data-special-text');
@@ -207,10 +207,16 @@ function Form(props) {
 
                                 case 'checkbox':
                                     let isChecked;
-                                    if(formData[props.id][item.name].includes(item.value)){
-                                        isChecked = true;
-                                    }else{
-                                        isChecked = false;
+                                    try {
+                                        if(formData[props.id][item.name]){
+                                            if(formData[props.id][item.name].includes(item.value)){
+                                                isChecked = true;
+                                            }else{
+                                                isChecked = false;
+                                            }
+                                        }
+                                    } catch (error) {
+                                        console.log(error);
                                     }
                                     return isChecked;
                                     break;
@@ -349,6 +355,14 @@ function Form(props) {
                         }
                         break;
 
+                    case 'currency':
+                        if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onKeyUp={formatCurrency}></input>;
+                        }else{
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onKeyUp={formatCurrency}></input>;
+                        }
+                        break;
+
                     case 'date':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
                             markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
@@ -366,6 +380,17 @@ function Form(props) {
                 break;
         }
         return markup;
+    }
+
+    const formatCurrency = (e) => {
+        let cleanCurrency = Number(String(e.target.value).replace(/[^0-9.-]+/g,""));
+        let options = {
+            maximumFractionDigits : 2,
+            currency              : 'USD',
+            style                 : "currency",
+            currencyDisplay       : "symbol"
+        }
+        e.target.value = cleanCurrency.toLocaleString(undefined, options);
     }
 
     const buildSelectOptions = (id,options) => {

@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 import './App.scss';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
@@ -16,17 +17,19 @@ function App() {
 
     const buildContent = () => {
         const markup = 
-        <section id="App">
-            <article className="Panel">
-            {buildPanel()}
-            </article>
-        </section>
+        <ErrorBoundary>
+            <section id="App">
+                <article className="Panel">
+                    {buildPanel()}
+                </article>
+            </section>
+        </ErrorBoundary>
         return markup;
     }
 
     const restartApp = (e) => {
         e.preventDefault();
-        if(btnState == 'x') {
+        if(btnState == 'Save & Exit') {
             setAppID(undefined);
             setStepHistory([]);
             setFormData(undefined);
@@ -50,7 +53,7 @@ function App() {
                 <p><img src={header.logoURL} alt={header.logoAlt}></img> <span>{header.text}</span></p>
                 <form onSubmit={restartApp}>
                     {(step > 0) ? <button className="back" onClick={(e)=>{setbtnState(e.target.innerText)}}><span>&laquo;</span> Back</button> : ""}
-                    <button className="restart" onClick={(e)=>{setbtnState(e.target.innerText)}}>x</button>
+                    <button className="restart" onClick={(e)=>{setbtnState(e.target.innerText)}}>Save & Exit</button>
                 </form>
             </div>
         );

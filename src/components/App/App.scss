@@ -52,7 +52,9 @@ body{
                         cursor: pointer;
                         background: $color-2;
                         color: $color-1;
-                        padding: .1em .5em .4em .5em;
+                        padding: 0.45em 1em;
+                        position: relative;
+                        top: .65em;
 
                         span{
                             font-size: 1.5em;
@@ -68,12 +70,11 @@ body{
                         font-weight: bold;
                         border: none;
                         cursor: pointer;
-                        padding: 0 .25em .1em .25em;
+                        padding: .75em;
                         color: $white;
                         background-color: $color-4;
-                        font-size: 1.75em;
                         position: relative;
-                        top: .12em;  
+                        top: .5em;  
                         margin-left: .15em;                 
                     }
 
