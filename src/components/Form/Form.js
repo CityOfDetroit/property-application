@@ -27,6 +27,18 @@ function Form(props) {
     const [otherInput, setOtherInput]   = useState();
 
     // ================== Builder Section ====================
+    const getTodayDate = () => {
+        let today = new Date();
+        let day = null;
+        if(today.getDate() < 10){
+            day = `0${today.getDate()}`;
+        }else{
+            day = today.getDate();
+        }
+        let date = `${today.getFullYear()}-${(today.getMonth()+1)}-${day}`;
+        return date;
+    }
+    const today = getTodayDate();
     const buildContent = () => {
         const formClass = `${props.type} ${props.position}`; 
         const markup = 
@@ -302,7 +314,7 @@ function Form(props) {
                     required={false}
                     ariaRequired={item.required}
                     label={item.labelText}
-                    parcel={formData[props.id][`${item.id}-parcel`]}
+                    parcel={formData[props.id][`${item.id}parcel`]}
                     savedValue={formData[props.id][item.id]}
                     value={item.value}
                     ></Geocoder>;
@@ -357,17 +369,17 @@ function Form(props) {
 
                     case 'currency':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onKeyUp={formatCurrency}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
                         }else{
-                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onKeyUp={formatCurrency}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
                         }
                         break;
 
                     case 'date':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} min={today}></input>;
                         }else{
-                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required}></input>;
+                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} min={today}></input>;
                         }
                         break;
                 
@@ -381,16 +393,28 @@ function Form(props) {
         }
         return markup;
     }
-
-    const formatCurrency = (e) => {
-        let cleanCurrency = Number(String(e.target.value).replace(/[^0-9.-]+/g,""));
+    const localStringToNumber = (s) => {
+        return Number(String(s).replace(/[^0-9.-]+/g,""))
+    }
+      
+    const currencyFocus = (e) =>{
+        let value = e.target.value;
+        e.target.value = value ? localStringToNumber(value) : ''
+    }
+      
+    const currencyBlur = (e) => {
+        let value = e.target.value
+      
         let options = {
             maximumFractionDigits : 2,
             currency              : 'USD',
             style                 : "currency",
             currencyDisplay       : "symbol"
         }
-        e.target.value = cleanCurrency.toLocaleString(undefined, options);
+        
+        e.target.value = value 
+          ? localStringToNumber(value).toLocaleString(undefined, options)
+          : ''
     }
 
     const buildSelectOptions = (id,options) => {
