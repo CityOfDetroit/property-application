@@ -209,10 +209,16 @@ function Form(props) {
                             switch (type) {
                                 case 'radio':
                                     let isFound;
-                                    if(formData[props.id][item.name].includes(item.value)){
-                                        isFound = true;
-                                    }else{
-                                        isFound = false;
+                                    try {
+                                        if(formData[props.id][item.name]){
+                                            if(formData[props.id][item.name].includes(item.value)){
+                                                isFound = true;
+                                            }else{
+                                                isFound = false;
+                                            }
+                                        }
+                                    } catch (error) {
+                                        console.log(error);
                                     }
                                     return isFound;
                                     break;
@@ -709,7 +715,7 @@ function Form(props) {
                     if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
                         if(ev.target.elements[index].type == 'checkbox' || ev.target.elements[index].type == 'radio'){
                             if(ev.target.elements[index].checked == true){
-                                inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                                inputData[ev.target.elements[index].name] = ev.target.elements[index].value;
                             }
                         }else{
                             inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
@@ -1057,7 +1063,7 @@ function Form(props) {
 
     const handleFileForms = (ev, requirements) => {
         let attachments  = 0;
-        let postData     = {answers:null};
+        let postData     = null;
         let tempHistory  = [];
         if(requirements.logic.length){
 
@@ -1069,6 +1075,7 @@ function Form(props) {
             }
             if(requirements.isPosting){
                 postData = new FormData();
+                postData.append('section', ev.target.id);
                 for (let index = 0; index < ev.target.elements.length; index++) {
                     if(ev.target.elements[index].tagName == 'INPUT'){
                         if( ev.target.elements[index].files.length > 0 ){
@@ -1078,6 +1085,7 @@ function Form(props) {
                         
                     }
                 }
+                console.log(postData);
                 if(attachments > 0){
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 }else{
