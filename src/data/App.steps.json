@@ -3484,6 +3484,116 @@
                             "markup"    : [
                                 {
                                     "id"        : "card-0-body-0",
+                                    "tag"       : "strong",
+                                    "content"   : "Does the applicant intend to use the property for marijuana use? (i.e recreational, medicinal, grow etc.)" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Please keep in mind that this question is for data purposes only.  The Detroit Building Authority will reach out with additional questions if needed." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "marijuanaUse",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 20,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-19-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "marijuanaUse",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "adjacent",
+                                        "description"   : "Property intended for marijuana use",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "notMarijuanaUse",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "own",
+                                        "description"   : "Property not intended for marijuana use",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                {   
+                    "id"        : "step-19-hint-0",
+                    "type"      : "hint color-1",
+                    "title"     : {
+                        "type"  : "small",
+                        "value" : "HELPFUL HINTS AND TIPS:"
+                    },
+                    "body"   : {
+                        "type"      : "text",
+                        "markup"    : [
+                            {
+                                "id"        : "hint-0-body-1",
+                                "tag"       : "a",
+                                "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                "content"   : "Marijuana Fact Sheet" 
+                            }
+                        ]
+                    }
+                }]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-20-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
                                     "tag"       : "p",
                                     "content"   : "Is the application seeking to purchase or commercial lease the property?" 
                                 }
@@ -3513,7 +3623,7 @@
                                 {
                                     "validation"            : "Purchase",
                                     "validationType"        : "equal",
-                                    "next"                  : 20,
+                                    "next"                  : 21,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3524,7 +3634,7 @@
                                 {
                                     "validation"            : "Lease",
                                     "validationType"        : "equal",
-                                    "next"                  : 39,
+                                    "next"                  : 40,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3546,7 +3656,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-19-form-0-section-0",
+                                "id"    : "step-20-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "purchase",
@@ -3588,7 +3698,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-20-card-0",
+                        "id"        : "step-21-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -3623,7 +3733,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 21,
+                            "nextGlobal"                : 22,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -3637,7 +3747,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-20-form-0-section-0",
+                                "id"    : "step-21-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "offer",
@@ -3685,7 +3795,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-21-card-0",
+                        "id"        : "step-22-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -3726,7 +3836,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "commercial-retail",
                                     "validationType"        : "equal",
-                                    "next"                  : 24,
+                                    "next"                  : 25,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3744,7 +3854,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "mixed-use",
                                     "validationType"        : "equal",
-                                    "next"                  : 24,
+                                    "next"                  : 25,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3762,7 +3872,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "residential-multifamily",
                                     "validationType"        : "equal",
-                                    "next"                  : 24,
+                                    "next"                  : 25,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3780,7 +3890,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "residential-single-family",
                                     "validationType"        : "equal",
-                                    "next"                  : 24,
+                                    "next"                  : 25,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3798,7 +3908,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "parking-lot-auto-related",
                                     "validationType"        : "equal",
-                                    "next"                  : 22,
+                                    "next"                  : 23,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3816,7 +3926,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "land-based-project",
                                     "validationType"        : "equal",
-                                    "next"                  : 31,
+                                    "next"                  : 32,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3834,7 +3944,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "industrial",
                                     "validationType"        : "equal",
-                                    "next"                  : 22,
+                                    "next"                  : 23,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3852,7 +3962,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "film",
                                     "validationType"        : "equal",
-                                    "next"                  : 51,
+                                    "next"                  : 52,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3870,7 +3980,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "cell-tower",
                                     "validationType"        : "equal",
-                                    "next"                  : 54,
+                                    "next"                  : 55,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3888,7 +3998,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "public-gathering",
                                     "validationType"        : "equal",
-                                    "next"                  : 55,
+                                    "next"                  : 56,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3906,7 +4016,7 @@
                                     "id"                    : "propertyUse",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
-                                    "next"                  : 60,
+                                    "next"                  : 61,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -3928,7 +4038,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-21-form-0-section-0",
+                                "id"    : "step-22-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "commercial-retail",
@@ -4173,7 +4283,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-22-card-0",
+                        "id"        : "step-23-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4203,7 +4313,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 23,
+                            "nextGlobal"                : 24,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4217,7 +4327,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-22-form-0-section-0",
+                                "id"    : "step-23-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "parking",
@@ -4259,7 +4369,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-23-card-0",
+                        "id"        : "step-24-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4289,7 +4399,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 24,
+                            "nextGlobal"                : 25,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4303,7 +4413,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-23-form-0-section-0",
+                                "id"    : "step-24-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "parkingNeeds",
@@ -4338,7 +4448,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-23-hint-0",
+                        "id"        : "step-24-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -4373,7 +4483,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-24-card-0",
+                        "id"        : "step-25-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4403,7 +4513,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 25,
+                            "nextGlobal"                : 26,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4417,7 +4527,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-24-form-0-section-0",
+                                "id"    : "step-25-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "new-construction",
@@ -4532,7 +4642,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-25-card-0",
+                        "id"        : "step-26-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4567,7 +4677,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 26,
+                            "nextGlobal"                : 27,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4581,7 +4691,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-25-form-0-section-0",
+                                "id"    : "step-26-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "proposal",
@@ -4631,7 +4741,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-26-card-0",
+                        "id"        : "step-27-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4661,7 +4771,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 27,
+                            "nextGlobal"                : 28,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4675,7 +4785,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-26-form-0-section-0",
+                                "id"    : "step-27-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "yes",
@@ -4711,7 +4821,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-26-hint-0",
+                        "id"        : "step-27-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -4761,7 +4871,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-27-card-0",
+                        "id"        : "step-28-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -4791,7 +4901,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 28,
+                            "nextGlobal"                : 29,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -4805,7 +4915,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-27-form-0-section-0",
+                                "id"    : "step-28-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "developmentCost",
@@ -5021,7 +5131,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-28-card-0",
+                        "id"        : "step-29-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5051,7 +5161,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 30,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -5065,7 +5175,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-28-form-0-section-0",
+                                "id"    : "step-29-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "additionalFiles0",
@@ -5126,7 +5236,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-28-hint-0",
+                        "id"        : "step-29-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -5182,7 +5292,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-29-card-0",
+                        "id"        : "step-30-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5278,7 +5388,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 30,
+                            "nextGlobal"                : 31,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -5292,7 +5402,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-29-form-0-section-0",
+                                "id"    : "step-30-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "agreementUnderstanding",
@@ -5355,7 +5465,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-30-card-0",
+                        "id"        : "step-31-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5391,7 +5501,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-31-card-0",
+                        "id"        : "step-32-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5462,7 +5572,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : true,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 32,
+                            "nextGlobal"                : 33,
                             "isPosting"                 : false,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : false,
@@ -5476,7 +5586,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-31-form-0-section-0",
+                                "id"    : "step-32-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "submit",
@@ -5512,7 +5622,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-32-card-0",
+                        "id"        : "step-33-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5553,7 +5663,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "beautification-cleanup",
                                     "validationType"        : "equal",
-                                    "next"                  : 34,
+                                    "next"                  : 35,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5565,7 +5675,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "community-gathering-social-space",
                                     "validationType"        : "equal",
-                                    "next"                  : 34,
+                                    "next"                  : 35,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5577,7 +5687,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "urban-agriculture-1-acre",
                                     "validationType"        : "equal",
-                                    "next"                  : 33,
+                                    "next"                  : 34,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5589,7 +5699,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "urban-agriculture-1-acre-plus",
                                     "validationType"        : "equal",
-                                    "next"                  : 33,
+                                    "next"                  : 34,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5601,7 +5711,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "orchard-tree-farm",
                                     "validationType"        : "equal",
-                                    "next"                  : 34,
+                                    "next"                  : 35,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5613,7 +5723,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "art-project-sculpture",
                                     "validationType"        : "equal",
-                                    "next"                  : 34,
+                                    "next"                  : 35,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5625,7 +5735,7 @@
                                     "id"                    : "landBasePurpose",
                                     "validation"            : "greenstormwater",
                                     "validationType"        : "equal",
-                                    "next"                  : 34,
+                                    "next"                  : 35,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -5641,7 +5751,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-32-form-0-section-0",
+                                "id"    : "step-33-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "beautification-cleanup",
@@ -5811,7 +5921,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-32-hint-0",
+                        "id"        : "step-33-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -5851,7 +5961,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-33-card-0",
+                        "id"        : "step-34-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -5891,7 +6001,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 34,
+                            "nextGlobal"                : 35,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -5905,7 +6015,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-33-form-0-section-0",
+                                "id"    : "step-34-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "agriculturalFiles0",
@@ -5981,7 +6091,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-34-card-0",
+                        "id"        : "step-35-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6011,7 +6121,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 35,
+                            "nextGlobal"                : 36,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6025,7 +6135,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-34-form-0-section-0",
+                                "id"    : "step-35-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "neighborhood-block-club",
@@ -6119,7 +6229,7 @@
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "If yes, enter their names and how are these partners / organizations supporting the project?",
-                                        "required"      : true
+                                        "required"      : false
                                     },
                                     {   
                                         "id"            : "submit",
@@ -6155,7 +6265,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-35-card-0",
+                        "id"        : "step-36-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6185,7 +6295,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 36,
+                            "nextGlobal"                : 37,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6199,7 +6309,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-35-form-0-section-0",
+                                "id"    : "step-36-form-0-section-0",
                                 "items" : [
                                     { 
                                         "id"            : "communitySupportDescription",
@@ -6249,7 +6359,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-36-card-0",
+                        "id"        : "step-37-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6261,7 +6371,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Does the land-based project include (select all which apply):" 
+                                    "content"   : "Does the land-base project include (select all which apply):" 
                                 }
                             ]
                         }
@@ -6279,7 +6389,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 37,
+                            "nextGlobal"                : 38,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6293,7 +6403,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-36-form-0-section-0",
+                                "id"    : "step-37-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "structures",
@@ -6468,7 +6578,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-36-hint-0",
+                        "id"        : "step-37-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -6559,7 +6669,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-37-card-0",
+                        "id"        : "step-38-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6589,7 +6699,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 38,
+                            "nextGlobal"                : 39,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6603,7 +6713,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-37-form-0-section-0",
+                                "id"    : "step-38-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "plotPlanFiles0",
@@ -6664,7 +6774,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-37-hint-0",
+                        "id"        : "step-38-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -6704,7 +6814,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-38-card-0",
+                        "id"        : "step-39-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6734,7 +6844,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 26,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6748,7 +6858,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-38-form-0-section-0",
+                                "id"    : "step-39-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "numberVolunteers",
@@ -6828,7 +6938,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-39-card-0",
+                        "id"        : "step-40-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -6858,7 +6968,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 40,
+                            "nextGlobal"                : 41,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -6872,7 +6982,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-39-form-0-section-0",
+                                "id"    : "step-40-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "startDate",
@@ -6920,7 +7030,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-39-hint-0",
+                        "id"        : "step-40-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7041,7 +7151,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-40-card-0",
+                        "id"        : "step-41-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -7081,7 +7191,7 @@
                                 {
                                     "validation"            : "Yes",
                                     "validationType"        : "equal",
-                                    "next"                  : 41,
+                                    "next"                  : 42,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -7092,7 +7202,7 @@
                                 {
                                     "validation"            : "No",
                                     "validationType"        : "equal",
-                                    "next"                  : 43,
+                                    "next"                  : 44,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -7114,7 +7224,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-40-form-0-section-0",
+                                "id"    : "step-41-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "is-special-event",
@@ -7131,140 +7241,6 @@
                                         "type"  : "submit",
                                         "name"  : "not-special-event",
                                         "description"   : "It is not for a special event",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-40-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-41-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Do you have a special event permit?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "specialEventPermit",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "button",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : false,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : null,
-                            "isFinalStep"               : false,
-                            "logic": [
-                                {
-                                    "validation"            : "Yes",
-                                    "validationType"        : "equal",
-                                    "next"                  : 43,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : null,
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : null
-                                },
-                                {
-                                    "validation"            : "No",
-                                    "validationType"        : "equal",
-                                    "next"                  : 42,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : null,
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : []
-                                        }
-                                   }
-                                }
-                            ]
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-41-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "has-permit",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "has-permit",
-                                        "description"   : "Posses permit",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "no-permit",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no-permit",
-                                        "description"   : "Does not posses permit",
                                         "text"  : "No",
                                         "label" : false
                                     }
@@ -7321,6 +7297,140 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Do you have a special event permit?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "specialEventPermit",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 44,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 43,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   }
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-42-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "has-permit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "has-permit",
+                                        "description"   : "Posses permit",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "no-permit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no-permit",
+                                        "description"   : "Does not posses permit",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-42-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having approval for a special event is separate from approval to use city property." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-43-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "You can apply for a special events permit here." 
                                 },
                                 {
@@ -7336,7 +7446,7 @@
                 "forms": [],
                 "hints": [
                     {   
-                        "id"        : "step-42-hint-0",
+                        "id"        : "step-43-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7380,7 +7490,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-43-card-0",
+                        "id"        : "step-44-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -7420,140 +7530,6 @@
                                 {
                                     "validation"            : "Yes",
                                     "validationType"        : "equal",
-                                    "next"                  : 44,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : null,
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : null
-                                },
-                                {
-                                    "validation"            : "No",
-                                    "validationType"        : "equal",
-                                    "next"                  : 46,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : null,
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : []
-                                        }
-                                   }
-                                }
-                            ]
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-43-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "related-city-contract",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "related-city-contract",
-                                        "description"   : "Related city contract available",
-                                        "text"  : "Yes",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "no-related-city-contract",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "no-related-city-contract",
-                                        "description"   : "Related city contract not available",
-                                        "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-43-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Having a city contract does not guarantee access to city-owned land" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-44-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Is there a city contract in place?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "cityContract",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "button",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : false,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : null,
-                            "isFinalStep"               : false,
-                            "logic": [
-                                {
-                                    "validation"            : "Yes",
-                                    "validationType"        : "equal",
                                     "next"                  : 45,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
@@ -7565,7 +7541,7 @@
                                 {
                                     "validation"            : "No",
                                     "validationType"        : "equal",
-                                    "next"                  : 46,
+                                    "next"                  : 47,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -7590,20 +7566,20 @@
                                 "id"    : "step-44-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "city-contract",
+                                        "id"    : "related-city-contract",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "city-contract",
-                                        "description"   : "City contract available",
+                                        "name"  : "related-city-contract",
+                                        "description"   : "Related city contract available",
                                         "text"  : "Yes",
                                         "label" : false
                                     },
                                     {   
-                                        "id"    : "no-city-contract",
+                                        "id"    : "no-related-city-contract",
                                         "tag"   : "button",
                                         "type"  : "submit",
-                                        "name"  : "no-city-contract",
-                                        "description"   : "City contract not available",
+                                        "name"  : "no-related-city-contract",
+                                        "description"   : "Related city contract not available",
                                         "text"  : "No",
                                         "label" : false
                                     }
@@ -7660,6 +7636,140 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Is there a city contract in place?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "cityContract",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 46,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 47,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   }
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-45-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "city-contract",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "city-contract",
+                                        "description"   : "City contract available",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "no-city-contract",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "no-city-contract",
+                                        "description"   : "City contract not available",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-45-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Having a city contract does not guarantee access to city-owned land" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-46-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "Enter contract information" 
                                 }
                             ]
@@ -7678,7 +7788,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 46,
+                            "nextGlobal"                : 47,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -7740,7 +7850,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-45-hint-0",
+                        "id"        : "step-46-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -7774,7 +7884,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-46-card-0",
+                        "id"        : "step-47-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -7804,7 +7914,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 47,
+                            "nextGlobal"                : 48,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -7818,7 +7928,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-46-form-0-section-0",
+                                "id"    : "step-47-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "vacant",
@@ -7860,7 +7970,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-47-card-0",
+                        "id"        : "step-48-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -7900,7 +8010,7 @@
                                 {
                                     "validation"            : "Yes",
                                     "validationType"        : "equal",
-                                    "next"                  : 48,
+                                    "next"                  : 49,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -7917,7 +8027,7 @@
                                 {
                                     "validation"            : "No",
                                     "validationType"        : "equal",
-                                    "next"                  : 49,
+                                    "next"                  : 50,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -7939,7 +8049,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-47 -form-0-section-0",
+                                "id"    : "step-48 -form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "construction-staging",
@@ -7981,7 +8091,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-48-card-0",
+                        "id"        : "step-49-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -8011,101 +8121,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 50,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : "answers",
-                            "isFinalStep"               : false,
-                            "logic": []
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-48-form-0-section-0",
-                                "items" : [
-                                    { 
-                                        "id"            : "stagedDescription",
-                                        "tag"           : "textarea",
-                                        "type"          : null,
-                                        "value"         : "",
-                                        "maxLength"     : "300",
-                                        "placeholder"   : "Enter description of what will be staged on the site (300 character limit)",
-                                        "name"          : "stagedDescription",
-                                        "description"   : "Description of what will be staged on the site",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Description",
-                                        "required"      : true
-                                    },
-                                    {   
-                                        "id"            : "submit",
-                                        "tag"           : "button",
-                                        "type"          : "submit",
-                                        "value"         : "submit",
-                                        "placeholder"   : null,
-                                        "name"          : "submit",
-                                        "description"   : "Next step",
-                                        "text"          : "Next",
-                                        "label"         : false,
-                                        "labelText"     : null
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": []
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-49-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "What is the proposed use for the property?" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "commercialLeaseStage",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "input-text",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : 50,
+                            "nextGlobal"                : 51,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -8122,14 +8138,14 @@
                                 "id"    : "step-49-form-0-section-0",
                                 "items" : [
                                     { 
-                                        "id"            : "commercialLeaseProposedUse",
+                                        "id"            : "stagedDescription",
                                         "tag"           : "textarea",
                                         "type"          : null,
                                         "value"         : "",
                                         "maxLength"     : "300",
-                                        "placeholder"   : "Enter proposed use (300 character limit)",
-                                        "name"          : "commercialLeaseProposedUse",
-                                        "description"   : "Description of what is the proposed use for the property",
+                                        "placeholder"   : "Enter description of what will be staged on the site (300 character limit)",
+                                        "name"          : "stagedDescription",
+                                        "description"   : "Description of what will be staged on the site",
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Description",
@@ -8181,6 +8197,100 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "What is the proposed use for the property?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "commercialLeaseStage",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 51,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-50-form-0-section-0",
+                                "items" : [
+                                    { 
+                                        "id"            : "commercialLeaseProposedUse",
+                                        "tag"           : "textarea",
+                                        "type"          : null,
+                                        "value"         : "",
+                                        "maxLength"     : "300",
+                                        "placeholder"   : "Enter proposed use (300 character limit)",
+                                        "name"          : "commercialLeaseProposedUse",
+                                        "description"   : "Description of what is the proposed use for the property",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Description",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"            : "submit",
+                                        "tag"           : "button",
+                                        "type"          : "submit",
+                                        "value"         : "submit",
+                                        "placeholder"   : null,
+                                        "name"          : "submit",
+                                        "description"   : "Next step",
+                                        "text"          : "Next",
+                                        "label"         : false,
+                                        "labelText"     : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-51-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "Will the proposed  use impact the following:" 
                                 }
                             ]
@@ -8199,7 +8309,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 30,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -8213,7 +8323,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-50-form-0-section-0",
+                                "id"    : "step-51-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "traffic",
@@ -8309,7 +8419,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-51-card-0",
+                        "id"        : "step-52-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -8349,7 +8459,7 @@
                                 {
                                     "validation"            : "Yes",
                                     "validationType"        : "equal",
-                                    "next"                  : 52,
+                                    "next"                  : 53,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8360,7 +8470,7 @@
                                 {
                                     "validation"            : "No",
                                     "validationType"        : "equal",
-                                    "next"                  : 53,
+                                    "next"                  : 54,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8376,7 +8486,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-51 -form-0-section-0",
+                                "id"    : "step-52-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"    : "has-filming-approval",
@@ -8394,150 +8504,6 @@
                                         "name"  : "no-filming-approval",
                                         "description"   : "Does not have filming approval",
                                         "text"  : "No",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-51-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "All film productions must complete a permit application prior to filming in the City of Detroit, including still photography, documentaries, drones and commercials" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "Having approval to film is separate from approval to use city property." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-52-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Please upload the signed film agreement" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "filmAgreement",
-                        "type"          : "input-submit",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "file",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : "attachments",
-                            "isFinalStep"               : false,
-                            "logic": []
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-52-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"            : "filmAgreementFiles0",
-                                        "tag"           : "input",
-                                        "type"          : "file",
-                                        "disabled"      : false,
-                                        "value"         : "",
-                                        "placeholder"   : "",
-                                        "name"          : "filmAgreementFiles0",
-                                        "description"   : "Film agreement files",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelText"     : "Add File",
-                                        "labelPosition" : "before",
-                                        "required"      : false
-                                    },
-                                    {   
-                                        "id"    : "add",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "add",
-                                        "description"   : "Add more files",
-                                        "text"  : "Add",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "file",
-                                        "otherPlaceholder"      : "",
-                                        "otherLabel"            : "Add File",
-                                        "otherID"               : "filmAgreementFiles"
-                                    },
-                                    {   
-                                        "id"    : "remove",
-                                        "tag"   : "button",
-                                        "type"  : "button",
-                                        "name"  : "remove",
-                                        "description"   : "Remove extra file",
-                                        "text"  : "Remove",
-                                        "label" : false,
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "file",
-                                        "otherPlaceholder"      : "",
-                                        "otherLabel"            : "Add File",
-                                        "otherID"               : "filmAgreementFiles"
-                                    },
-                                    {   
-                                        "id"    : "submit",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "next",
-                                        "description"   : "Move to next step.",
-                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -8598,6 +8564,150 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Please upload the signed film agreement" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "filmAgreement",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "file",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 30,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "attachments",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-53-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "filmAgreementFiles0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "filmAgreementFiles0",
+                                        "description"   : "Film agreement files",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "filmAgreementFiles"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra file",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "filmAgreementFiles"
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-53-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "All film productions must complete a permit application prior to filming in the City of Detroit, including still photography, documentaries, drones and commercials" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "Having approval to film is separate from approval to use city property." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-54-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
                                     "content"   : "A filming permit is required prior to requesting the use of city-owned land.  Please save your application ID and return once the filming permit is secured." 
                                 }
                             ]
@@ -8607,7 +8717,7 @@
                 "forms": [],
                 "hints": [
                     {   
-                        "id"        : "step-53-hint-0",
+                        "id"        : "step-54-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -8647,7 +8757,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-54-card-0",
+                        "id"        : "step-55-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -8688,7 +8798,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 30,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -8702,7 +8812,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-54-form-0-section-0",
+                                "id"    : "step-55-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "cellTowerFiles0",
@@ -8778,7 +8888,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-55-card-0",
+                        "id"        : "step-56-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -8819,7 +8929,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "concert",
                                     "validationType"        : "equal",
-                                    "next"                  : 56,
+                                    "next"                  : 57,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8831,7 +8941,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "festival",
                                     "validationType"        : "equal",
-                                    "next"                  : 56,
+                                    "next"                  : 57,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8843,7 +8953,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "parade",
                                     "validationType"        : "equal",
-                                    "next"                  : 56,
+                                    "next"                  : 57,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8855,7 +8965,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "block-party",
                                     "validationType"        : "equal",
-                                    "next"                  : 57,
+                                    "next"                  : 58,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8867,7 +8977,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "picnic",
                                     "validationType"        : "equal",
-                                    "next"                  : 57,
+                                    "next"                  : 58,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8879,7 +8989,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "press-conference",
                                     "validationType"        : "equal",
-                                    "next"                  : 57,
+                                    "next"                  : 58,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8891,7 +9001,7 @@
                                     "id"                    : "publicGatheringType",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
-                                    "next"                  : 57,
+                                    "next"                  : 58,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -8907,7 +9017,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-55-form-0-section-0",
+                                "id"    : "step-56-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"                    : "concert",
@@ -9058,7 +9168,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-55-hint-0",
+                        "id"        : "step-56-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -9097,7 +9207,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-56-card-0",
+                        "id"        : "step-57-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -9124,7 +9234,7 @@
                 "forms": [],
                 "hints": [
                     {   
-                        "id"        : "step-56-hint-0",
+                        "id"        : "step-57-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -9168,7 +9278,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-57-card-0",
+                        "id"        : "step-58-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -9198,7 +9308,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 58,
+                            "nextGlobal"                : 59,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -9212,7 +9322,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-57-form-0-section-0",
+                                "id"    : "step-58-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "startDate",
@@ -9290,7 +9400,7 @@
                 ],
                 "hints": [
                     {   
-                        "id"        : "step-57-hint-0",
+                        "id"        : "step-58-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -9324,7 +9434,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-58-card-0",
+                        "id"        : "step-59-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -9354,7 +9464,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 59,
+                            "nextGlobal"                : 60,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -9368,7 +9478,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-58-form-0-section-0",
+                                "id"    : "step-59-form-0-section-0",
                                 "items" : [
                                     {   
                                         "id"            : "numberAttendees",
@@ -9416,7 +9526,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-59-card-0",
+                        "id"        : "step-60-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -9451,7 +9561,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 30,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -9465,7 +9575,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-59-form-0-section-0",
+                                "id"    : "step-60-form-0-section-0",
                                 "items" : [
                                     { 
                                         "id"            : "publicGatheringDescription",
@@ -9515,7 +9625,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-60-card-0",
+                        "id"        : "step-61-card-0",
                         "type"      : "right pop-up",
                         "title"     : {
                             "type"  : "small",
@@ -9550,7 +9660,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 29,
+                            "nextGlobal"                : 30,
                             "isPosting"                 : true,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : true,
@@ -9564,7 +9674,7 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-60-form-0-section-0",
+                                "id"    : "step-61-form-0-section-0",
                                 "items" : [
                                     { 
                                         "id"            : "specialUseDescription",
