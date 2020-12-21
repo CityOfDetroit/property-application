@@ -4014,6 +4014,24 @@
                                 },
                                 {
                                     "id"                    : "propertyUse",
+                                    "validation"            : "marijuana-use",
+                                    "validationType"        : "equal",
+                                    "next"                  : 62,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : []
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "propertyUse",
                                     "validation"            : "other",
                                     "validationType"        : "equal",
                                     "next"                  : 61,
@@ -4223,6 +4241,25 @@
                                         "label"                 : true,
                                         "labelPosition"         : "after",
                                         "labelText"             : "Location for special event on City Owned property",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "marijuana-use",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "marijuana-use",
+                                        "placeholder"           : null,
+                                        "name"                  : "propertyUse",
+                                        "description"           : "Marijuana Use",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Marijuana based businesses / activities",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -9708,6 +9745,934 @@
                     }
                 ],
                 "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-62-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Has the applicant been approved by the Civil Rights and Inclusion Office?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "approvedCRIO",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 64,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 63,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-62-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "approved",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "approved",
+                                        "description"   : "Approved by CRIO",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "not-approved",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-approved",
+                                        "description"   : "Not approved by CRIO",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-62-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-63-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If interested in qualifying for the Detroit Legacy land discount, please apply via CRIO." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Visit CRIO's page" 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "If you continue with this application without the CRIO certification, you will not qualify for the discount." 
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : "Save the application and return to it once you obtain your certification. This application will be saved for 30 days." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-63-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-64-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Enter the ID number of your CRIO application." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "crioAppID",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 65,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-64-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "crioID",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter Application ID",
+                                        "name"          : "crioID",
+                                        "description"   : "CRIO's Application ID",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "CRIO ID",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Go to next step",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-64-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-65-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Upload the applicant CRIO certification." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "crioCertification",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "file",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 66,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "attachments",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-65-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "crioCertification0",
+                                        "tag"           : "input",
+                                        "type"          : "file",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "",
+                                        "name"          : "crioCertification0",
+                                        "description"   : "CRIO certification files",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Add File",
+                                        "labelPosition" : "before",
+                                        "required"      : false
+                                    },
+                                    {   
+                                        "id"    : "add",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "add",
+                                        "description"   : "Add more files",
+                                        "text"  : "Add",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "crioCertification"
+                                    },
+                                    {   
+                                        "id"    : "remove",
+                                        "tag"   : "button",
+                                        "type"  : "button",
+                                        "name"  : "remove",
+                                        "description"   : "Remove extra file",
+                                        "text"  : "Remove",
+                                        "label" : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "file",
+                                        "otherPlaceholder"      : "",
+                                        "otherLabel"            : "Add File",
+                                        "otherID"               : "crioCertification"
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-65-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-66-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Are you licensed by the State of Michigan?" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "marijuanaStateLicence",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 68,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "In-Process",
+                                    "validationType"        : "equal",
+                                    "next"                  : 68,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "No",
+                                    "validationType"        : "equal",
+                                    "next"                  : 67,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-66-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "licensed",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "licensed",
+                                        "description"   : "Licensed",
+                                        "text"  : "Yes",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "in-process",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "in-process",
+                                        "description"   : "in-process",
+                                        "text"  : "In-Process",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "not-licensed",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "not-licensed",
+                                        "description"   : "Not licensed",
+                                        "text"  : "No",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-66-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-67-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Initiate the process of obtaining the applicants State of Michigan Marijuana license ." 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "a",
+                                    "link"      : "https://www.michigan.gov/mra/",
+                                    "content"   : "Visit the State of Michigan License page." 
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "If you continue with this application without initiating the State of Michigan license for marijuana, you will not be able to purchase this parcel for the purpose of a mariana business." 
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : "Please, save the application and return to it once you begin to process your license. This application will be saved for 30 days." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "step-67-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-68-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "What type of marijuana business does the applicant intend to operate?  Please select all that apply:" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "marijuanaBusinessType",
+                        "type"          : "checkbox-set",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-checkbox",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 25,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-68-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "current-medical-licensee",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "current-medical-licensee",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "current medical licensee",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Current Medical Licensee"
+                                    },
+                                    {   
+                                        "id"            : "secured-transport",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "secured-transport",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Secured Transport",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Secured Transport"
+                                    },
+                                    {   
+                                        "id"            : "medical-marijuana-provisioning",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "medical-marijuana-provisioning",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Medical Marijuana Provisioning",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Medical Marijuana Provisioning"
+                                    },
+                                    {   
+                                        "id"            : "safety-compliance",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "safety-compliance",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Safety Compliance",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Safety Compliance"
+                                    },
+                                    {   
+                                        "id"            : "adult-use-retailer",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "adult-use-retailer",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Adult Use Retailer",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Adult Use Retailer"
+                                    },
+                                    {   
+                                        "id"            : "designated-consumption-lounge",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "designated-consumption-lounge",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Designated Consumption Lounge",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Designated Consumption Lounge"
+                                    },
+                                    {   
+                                        "id"            : "grower-adult-use-medical-3",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "grower-adult-use-medical-3",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Grower (Adult Use or Medical-3 classes of each)",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Grower (Adult Use or Medical-3 classes of each)"
+                                    },
+                                    {   
+                                        "id"            : "microbusiness",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "microbusiness",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Microbusiness",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Microbusiness"
+                                    },
+                                    {   
+                                        "id"            : "processor",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "processor",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "marijuanaBusinessType",
+                                        "description"   : "Processor",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Processor"
+                                    },
+                                    {   
+                                        "id"                    : "other",
+                                        "tag"                   : "input",
+                                        "type"                  : "checkbox",
+                                        "value"                 : "other",
+                                        "placeholder"           : null,
+                                        "name"                  : "marijuanaBusinessType",
+                                        "description"           : "Other",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter marijuana business type",
+                                        "otherLabel"            : "Business Type",
+                                        "otherID"               : "marijuanaBusinessType",
+                                        "required"              : false
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-68-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/government/city-council/city-council-district-1/marijuana-ordinance-fact-sheet",
+                                    "content"   : "Marijuana fact sheet" 
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         }
     ],
