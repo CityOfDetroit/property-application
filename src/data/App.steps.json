@@ -45,7 +45,7 @@
                                         {
                                             "id"        : "card-0-body-1-list-2",
                                             "tag"       : "p",
-                                            "content"   : "The whole process from intake form to purchase agreement is estimated to take 8 - 12 weeks long" 
+                                            "content"   : "For simple transactions, the sales process often takes four months from time of application until close." 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-3",
@@ -73,30 +73,6 @@
                                     "id"        : "card-0-body-4",
                                     "tag"       : "strong",
                                     "content"   : "Incomplete applications will be saved in the system for 30 days." 
-                                }
-                            ]
-                        }
-                    },
-                    {   
-                        "id"        : "step-0-card-1",
-                        "type"      : "center pop-up color-3",
-                        "title"     : {
-                            "type"  : "medium",
-                            "value" : "For Test Purpose Only"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Any forms submitted using this test form would not be process. Please continue to use the old form." 
-                                },
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "a",
-                                    "link"      : "http://app.detroitmi.gov/PropertyApplicationForm/",
-                                    "content"   : "View Active Form" 
                                 }
                             ]
                         }
@@ -5406,6 +5382,11 @@
                                             "id"        : "card-0-body-2-list-12",
                                             "tag"       : "p",
                                             "content"   : "I certify that I am authorized to execute this application on behalf of the applicant." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-2-list-13",
+                                            "tag"       : "p",
+                                            "content"   : "I certify that I have not previously defaulted on a development agreement or property reverter with respect to City of Detroit." 
                                         }
                                     ]
                                 }
