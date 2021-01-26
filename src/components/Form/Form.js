@@ -94,7 +94,7 @@ function Form(props) {
                 markup =
                 <div>
                     <label htmlFor={extra.id} className={getLabelClass(true)}>{extra.label}</label>
-                    <input key={extra.id} type={extra.type} id={extra.id} name={extra.name} aria-label={extra.id} required={true} aria-required={true}></input>
+                    <input accept=".doc,.pdf,.xls,.ppt,.odt,.pptx,.xlsx,.docx,.jpg,.gif,.jpe,.png,.csv,.txt" key={extra.id} type={extra.type} id={extra.id} name={extra.name} aria-label={extra.id} required={true} aria-required={true}></input>
                 </div>;
                 break;
         
@@ -362,7 +362,7 @@ function Form(props) {
                         break;
 
                     case 'file':
-                        markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} required={item.required} aria-required={item.required}></input>;
+                        markup = <input accept=".doc,.pdf,.xls,.ppt,.odt,.pptx,.xlsx,.docx,.jpg,.gif,.jpe,.png,.csv,.txt" type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} required={item.required} aria-required={item.required}></input>;
                         break;
 
                     case 'number':
@@ -497,6 +497,97 @@ function Form(props) {
                                 setStepHistory(tempHistory);
                                 setStep(2);
                                 break;
+
+                            case 'APPLICATION IN REVIEW':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(3);
+                                break;
+
+                            case 'APPLICATION ON HOLD':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(4);
+                                break;
+
+                            case 'AWAITING VALUATION':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(5);
+                                break;
+
+                            case 'IN NEGOTIATION':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(6);
+                                break;
+
+                            case 'OFFER LETTER SENT':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(7);
+                                break;
+
+                            case 'PA RECEIVED':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(8);
+                                break;
+
+                            case 'PA SENT':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(9);
+                                break;
+
+                            case 'RECEIVED BACK FROM HRD':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(10);
+                                break;
+
+                            case 'TRANSACTION DECLINED':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(11);
+                                break;
+
+                            case 'UNREVIEWED APPLICATION':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(12);
+                                break;
+
+                            case 'CANCELLED':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(13);
+                                break;
+
+                            case 'PA SIGNED':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(14);
+                                break;
+
+                            case 'INCOMPLETE APPLICATION':
+                                tempHistory = stepHistory;
+                                tempHistory.push(currentStep);
+                                setStepHistory(tempHistory);
+                                setStep(15);
+                                break;
                         
                             default:
                                 break;
@@ -506,12 +597,19 @@ function Form(props) {
 
                 case 'loadApplication':
                     e.json().then(data => {
-                        setAppID(data.id);
-                        setFormData(data.answers);
-                        tempHistory = stepHistory;
-                        tempHistory.push(currentStep);
-                        setStepHistory(tempHistory);
-                        setStep(1);
+                        if(data.status == 'incomplete'){
+                            setAppID(data.id);
+                            setFormData(data.answers);
+                            tempHistory = stepHistory;
+                            tempHistory.push(currentStep);
+                            setStepHistory(tempHistory);
+                            setStep(1);
+                        }else{
+                            tempHistory = stepHistory;
+                            tempHistory.push(currentStep);
+                            setStepHistory(tempHistory);
+                            setStep(2);
+                        }
                     });
                     break;
 
@@ -748,7 +846,7 @@ function Form(props) {
                             break;
 
                         case 'answers':
-                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData['app-id']}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'getStatus', step)});
+                            Connector.start('get',`https://apis.detroitmi.gov/property_applications/${inputData['app-id']}/answers/`,null,false,null,'application/json',(e)=>{handleAPICalls(e, 'loadApplication', step)},(e)=>{handleAPICalls(e, 'loadApplication', step)});
                             break;
                     
                         default:

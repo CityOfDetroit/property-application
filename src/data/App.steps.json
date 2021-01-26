@@ -10855,7 +10855,7 @@
                                 {
                                     "id"        : "card-0-body-1",
                                     "tag"       : "strong",
-                                    "content"   : "Completed," 
+                                    "content"   : "Completed" 
                                 }
                             ]
                         }
@@ -10865,6 +10865,786 @@
                 "hints": [
                     {   
                         "id"        : "status-2-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-3-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "APPLICATION IN REVIEW" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-3-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-4-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "APPLICATION ON HOLD" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-4-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-5-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "AWAITING VALUATION" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-5-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-6-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "IN NEGOTIATION" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-6-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-7-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "OFFER LETTER SENT" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-7-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-8-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "PA RECEIVED" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-8-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-9-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "PA SENT" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-9-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-10-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "RECEIVED BACK FROM HRD" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-10-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-11-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "TRANSACTION DECLINED" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-11-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-12-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "UNREVIEWED APPLICATION" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-12-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-13-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "CANCELLED" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-13-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-14-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "PA SIGNE" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-14-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-15-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "The current status of your application is:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "strong",
+                                    "content"   : "INCOMPLETE APPLICATION" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-15-hint-0",
                         "type"      : "hint color-1",
                         "title"     : {
                             "type"  : "small",
@@ -11091,6 +11871,53 @@
                         ]
                     }
                 ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-2-card-0",
+                        "type"      : "center pop-up color-3",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Finished Application: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "This application has already been submitted for review. You are not able to make any edits at this point." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
                 "hints": []
             }
         }
