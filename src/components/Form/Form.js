@@ -20,11 +20,12 @@ function Form(props) {
         buildType   : useState(),
         ...(props.state || {})
     };
-    const [error, setError]             = useState();
-    const [btnState, setbtnState]       = useState();
-    const [extras, setExtras]           = useState();
-    const [extrasCount, setExtrasCount] = useState(0);
-    const [otherInput, setOtherInput]   = useState();
+    const [error, setError]                     = useState();
+    const [btnState, setbtnState]               = useState();
+    const [extras, setExtras]                   = useState();
+    const [extrasCount, setExtrasCount]         = useState(0);
+    const [otherInput, setOtherInput]           = useState();
+    const [specialMessage, setSpecialMessage]   = useState();
 
     // ================== Builder Section ====================
     const getTodayDate = () => {
@@ -71,6 +72,7 @@ function Form(props) {
                 required={true}
                 ariaRequired={true}
                 label={extra.label} 
+                alert={specialMessage}
                 ></Geocoder>;
                 break;
 
@@ -323,6 +325,7 @@ function Form(props) {
                     parcel={formData[props.id][`${item.id}parcel`]}
                     savedValue={formData[props.id][item.id]}
                     value={item.value}
+                    alert={specialMessage}
                     ></Geocoder>;
                 }else{
                     markup = 
@@ -333,8 +336,9 @@ function Form(props) {
                     required={item.required} 
                     ariaRequired={item.required}
                     label={item.labelText}
-                    parcel={null}
+                    parcel=''
                     value={item.value}
+                    alert={specialMessage}
                     ></Geocoder>;
                 }
                 break;
@@ -818,8 +822,13 @@ function Form(props) {
                         }else{
                             inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                         }
-                        if(ev.target.elements[index].getAttribute('data-parcel') != undefined){
-                            inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                        if (ev.target.elements[index].hasAttribute("data-parcel")) {
+                            if(ev.target.elements[index].getAttribute('data-parcel') != ''){
+                                inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                            }else{
+                                setSpecialMessage('Invalid address provide. Please make sure you enter your address correctly or select one of the suggestions provided.')
+                                return;
+                            }
                         }
                     }
                 }
