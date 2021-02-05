@@ -23,9 +23,9 @@ cache:
 
 script:
   # start server in the background
-  - yarn run start:ci &
+  - yarn start &
   # run all Cypress tests and record on the dashboard
-  - yarn run cy:run -- --record
+  - yarn test -- --record
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
