@@ -23,6 +23,7 @@ cache:
 
 script:
   # start server in the background and run all Cypress tests and record on the dashboard
+  - yarn add parcel-bundler --dev
   - yarn start && yarn test --record
   
   # after all tests finish running we need
