@@ -22,10 +22,9 @@ cache:
     - yarn run cy:verify
 
 script:
-  # start server in the background
-  - yarn start &
-  # run all Cypress tests and record on the dashboard
-  - yarn test -- --record
+  # start server in the background and run all Cypress tests and record on the dashboard
+  - yarn start && yarn test --record
+  
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
