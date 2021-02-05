@@ -1,4 +1,4 @@
-anguage: node_js
+language: node_js
 
 node_js:
   # Node 10.3+ includes npm@6 which has good "npm ci" command
