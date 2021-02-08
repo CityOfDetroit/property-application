@@ -22,8 +22,8 @@ cache:
     - yarn run cy:verify
 
 install:
-  - apt-get update
-  - apt-get install jq
+  - sudo apt-get update
+  - sudo apt-get install jq
 before_script:
   - mkdir local
   - cd local
