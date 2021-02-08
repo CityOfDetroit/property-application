@@ -1,7 +1,5 @@
 language: node_js
 
-env:
-  - TOKEN=$TOKEN
 node_js:
   # Node 10.3+ includes npm@6 which has good "npm ci" command
   - 10.12
@@ -29,8 +27,7 @@ install:
 before_script:
   - mkdir local
   - cd local
-  - t=TOKEN
-  - jq -n --arg t '{"Auth-Token":$t}' > token.json
+  - jq -n --arg TOKEN '{"Auth-Token":$TOKEN}' > token.json
 script:
   # start server in the background and run all Cypress tests and record on the dashboard
   - yarn add parcel-bundler --dev
