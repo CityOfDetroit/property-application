@@ -27,7 +27,10 @@ install:
 before_script:
   - mkdir local
   - cd local
-  - jq -n --arg TOKEN '{"Auth-Token":$TOKEN}' > token.json
+  - JSON_STRING=$( jq -n \
+                  --arg t "$TOKEN" \
+                  '{Auth-Token: $t}' )
+  - JSON_STRING > token.json
 script:
   # start server in the background and run all Cypress tests and record on the dashboard
   - yarn add parcel-bundler --dev
