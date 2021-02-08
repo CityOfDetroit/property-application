@@ -20,7 +20,10 @@ cache:
   override:
     - yarn ci
     - yarn run cy:verify
-
+before_script:
+  - mkdir local
+  - cd local
+  - echo "{Auth-Token: \"$TOKEN\"}" > token.json
 script:
   # start server in the background and run all Cypress tests and record on the dashboard
   - yarn add parcel-bundler --dev
