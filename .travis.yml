@@ -30,7 +30,7 @@ before_script:
   - JSON_STRING=$( jq -n \
                   --arg t "$TOKEN" \
                   '{Auth-Token: $t}' )
-  - JSON_STRING > token.json
+  - echo JSON_STRING >> token.json
 script:
   # start server in the background and run all Cypress tests and record on the dashboard
   - yarn add parcel-bundler --dev
