@@ -22,7 +22,7 @@ function Form(props) {
     };
     const [error, setError]                     = useState();
     const [btnState, setbtnState]               = useState();
-    const [extras, setExtras]                   = useState();
+    const [extras, setExtras]                   = useState({component: null, count: 0});
     const [extrasCount, setExtrasCount]         = useState(0);
     const [otherInput, setOtherInput]           = useState();
     const [specialMessage, setSpecialMessage]   = useState();
@@ -109,10 +109,11 @@ function Form(props) {
     const buildExtras = () => {
         let extrasArr = [];
         let markup;
-        if(extrasCount > 0){
-            if(extras.getAttribute('data-ismulti-component')){
-                for (let index = extrasCount - 1; index >= 0; index--){
-                    JSON.parse(extras.getAttribute('data-multicomponents')).forEach((comp) => {
+        if(extras.count > 0){
+            console.log(extras);
+            if(extras.component.getAttribute('data-ismulti-component')){
+                for (let index = extras.count - 1; index >= 0; index--){
+                    JSON.parse(extras.component.getAttribute('data-multicomponents')).forEach((comp) => {
                         let tempComponent = {};
                         tempComponent.id = `${comp.otherID}-${index + 1}`;
                         tempComponent.placeholder = comp.otherPlaceholder;
@@ -128,13 +129,13 @@ function Form(props) {
                     });
                 }
             }else{
-                for (let index = extrasCount - 1; index >= 0; index--){
+                for (let index = extras.count - 1; index >= 0; index--){
                     let tempComponent = {};
-                    tempComponent.id = `${extras.getAttribute('data-special-id')}-${index + 1}`;
-                    tempComponent.placeholder = extras.getAttribute('data-special-text');
+                    tempComponent.id = `${extras.component.getAttribute('data-special-id')}${index + 1}`;
+                    tempComponent.placeholder = extras.component.getAttribute('data-special-text');
                     tempComponent.value = null;
-                    tempComponent.label = extras.getAttribute('data-special-label');
-                    tempComponent.type = extras.getAttribute('data-special-type');
+                    tempComponent.label = extras.component.getAttribute('data-special-label');
+                    tempComponent.type = extras.component.getAttribute('data-special-type');
                     extrasArr.push(tempComponent);
                 }
             }
@@ -257,6 +258,38 @@ function Form(props) {
         }
     }
 
+    const checkIfMultiGeocoder = () => {
+        let tempID = 'test';
+        let tempProps = Object.getOwnPropertyNames(formData[props.id]);
+        let cleanProps = [];
+        tempProps.forEach((str)=>{
+            (str.includes("parcel")) ? cleanProps.push(str) : 0;
+        });
+        cleanProps.pop();
+        console.log(cleanProps);
+        if(cleanProps.length){
+            console.log('extra geocoders found');
+            let tempExtra = document.createElement('div');
+            tempExtra.id = tempID;
+            tempExtra.setAttribute('data-special-text','Ex. 1301 Third st.');
+            tempExtra.setAttribute('data-special-label','Property Address');
+            tempExtra.setAttribute('data-special-type','geocoder');
+            if(extras.component != null){
+                console.log(extras);
+                extras.component.getAttribute('data-special-id');
+                if(extras.component.getAttribute('data-special-id') != tempID){
+                    if(extras.count != cleanProps.length){
+                        setExtras({component: tempExtra, count: cleanProps.length});
+                    }
+                }
+            }else{
+                if(extras.count != cleanProps.length){
+                    setExtras({component: tempExtra, count: cleanProps.length});
+                }
+            }
+        }
+    }
+
     const buildTag = (item, index) =>{
         let markup;
         switch (item.tag) {
@@ -273,7 +306,7 @@ function Form(props) {
                     case 'button':
                         switch (item.text) {
                             case 'Add':
-                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
+                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtras({component: e.target, count:(extras.count + 1)})}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
 
                             case 'Remove':
@@ -281,7 +314,7 @@ function Form(props) {
                             role="button" 
                             aria-label={item.name} 
                             onClick={(e)=>{
-                                if(extrasCount > 0){setExtrasCount(extrasCount - 1);setExtras(e.target);} 
+                                if(extras.count > 0){setExtras({component: e.target, count:(extras.count - 1)})} 
                             }} 
                             type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
@@ -314,6 +347,7 @@ function Form(props) {
 
             case 'GEOCODER':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    checkIfMultiGeocoder();
                     markup = 
                     <Geocoder 
                     id={item.id} 
