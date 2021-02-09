@@ -278,14 +278,12 @@ function Form(props) {
                 console.log(extras);
                 extras.component.getAttribute('data-special-id');
                 if(extras.component.getAttribute('data-special-id') != tempID){
-                    if(extras.count != cleanProps.length){
+                    if(extras.component.tagName == 'DIV' && extras.count != cleanProps.length){
                         setExtras({component: tempExtra, count: cleanProps.length});
                     }
                 }
             }else{
-                if(extras.count != cleanProps.length){
-                    setExtras({component: tempExtra, count: cleanProps.length});
-                }
+                setExtras({component: tempExtra, count: cleanProps.length});
             }
         }
     }
