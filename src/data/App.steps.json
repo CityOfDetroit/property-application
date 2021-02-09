@@ -6134,7 +6134,7 @@
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : {
-                            "inputType"                 : "input-checkbox",
+                            "inputType"                 : "input-text",
                             "formTypeGlobal"            : null,
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
