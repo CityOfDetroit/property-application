@@ -22,7 +22,7 @@ function Form(props) {
     };
     const [error, setError]                     = useState();
     const [btnState, setbtnState]               = useState();
-    const [extras, setExtras]                   = useState();
+    const [extras, setExtras]                   = useState({component: null, count: 0});
     const [extrasCount, setExtrasCount]         = useState(0);
     const [otherInput, setOtherInput]           = useState();
     const [specialMessage, setSpecialMessage]   = useState();
@@ -64,16 +64,31 @@ function Form(props) {
         let markup;
         switch (extra.type) {
             case "geocoder":
-                markup = <Geocoder 
-                key={extra.id}
-                id={extra.id} 
-                name={extra.id} 
-                placeholder={extra.placeholder} 
-                required={true}
-                ariaRequired={true}
-                label={extra.label} 
-                alert={specialMessage}
-                ></Geocoder>;
+                if(checkPreviousAnswer(extra, null, 'GEOCODER', null)){
+                    markup = 
+                    <Geocoder 
+                    id={extra.id} 
+                    name={extra.id} 
+                    placeholder={extra.placeholder} 
+                    required={true}
+                    ariaRequired={true}
+                    label={extra.label}
+                    parcel={formData[props.id][`${extra.id}parcel`]}
+                    savedValue={formData[props.id][extra.id]}
+                    alert={specialMessage}
+                    ></Geocoder>;
+                }else{
+                    markup = <Geocoder 
+                    key={extra.id}
+                    id={extra.id} 
+                    name={extra.id} 
+                    placeholder={extra.placeholder} 
+                    required={true}
+                    ariaRequired={true}
+                    label={extra.label} 
+                    alert={specialMessage}
+                    ></Geocoder>;
+                }
                 break;
 
             case "text":
@@ -109,10 +124,10 @@ function Form(props) {
     const buildExtras = () => {
         let extrasArr = [];
         let markup;
-        if(extrasCount > 0){
-            if(extras.getAttribute('data-ismulti-component')){
-                for (let index = extrasCount - 1; index >= 0; index--){
-                    JSON.parse(extras.getAttribute('data-multicomponents')).forEach((comp) => {
+        if(extras.count > 0){
+            if(extras.component.getAttribute('data-ismulti-component')){
+                for (let index = extras.count - 1; index >= 0; index--){
+                    JSON.parse(extras.component.getAttribute('data-multicomponents')).forEach((comp) => {
                         let tempComponent = {};
                         tempComponent.id = `${comp.otherID}-${index + 1}`;
                         tempComponent.placeholder = comp.otherPlaceholder;
@@ -128,13 +143,13 @@ function Form(props) {
                     });
                 }
             }else{
-                for (let index = extrasCount - 1; index >= 0; index--){
+                for (let index = extras.count - 1; index >= 0; index--){
                     let tempComponent = {};
-                    tempComponent.id = `${extras.getAttribute('data-special-id')}-${index + 1}`;
-                    tempComponent.placeholder = extras.getAttribute('data-special-text');
+                    tempComponent.id = `${extras.component.getAttribute('data-special-id')}${index + 1}`;
+                    tempComponent.placeholder = extras.component.getAttribute('data-special-text');
                     tempComponent.value = null;
-                    tempComponent.label = extras.getAttribute('data-special-label');
-                    tempComponent.type = extras.getAttribute('data-special-type');
+                    tempComponent.label = extras.component.getAttribute('data-special-label');
+                    tempComponent.type = extras.component.getAttribute('data-special-type');
                     extrasArr.push(tempComponent);
                 }
             }
@@ -200,7 +215,11 @@ function Form(props) {
                             break;
 
                         case 'GEOCODER':
-                            return true;
+                            if(formData[props.id][item.id] != undefined){
+                                return true;
+                            }else{
+                                return false;
+                            }
                             break;
 
                         case 'textarea':
@@ -220,7 +239,7 @@ function Form(props) {
                                             }
                                         }
                                     } catch (error) {
-                                        console.log(error);
+                                        // console.log(error);
                                     }
                                     return isFound;
                                     break;
@@ -236,7 +255,7 @@ function Form(props) {
                                             }
                                         }
                                     } catch (error) {
-                                        console.log(error);
+                                        // console.log(error);
                                     }
                                     return isChecked;
                                     break;
@@ -257,6 +276,35 @@ function Form(props) {
         }
     }
 
+    const checkIfMultiGeocoder = () => {
+        let tempID = 'test';
+        let tempProps = Object.getOwnPropertyNames(formData[props.id]);
+        let cleanProps = [];
+        tempProps.forEach((str)=>{
+            (str.includes("parcel")) ? cleanProps.push(str) : 0;
+        });
+        cleanProps.pop();
+        if(cleanProps.length){
+            tempID = cleanProps[0].split('parcel')[0];
+            tempID = tempID.slice(0, -1);
+            let tempExtra = document.createElement('div');
+            tempExtra.setAttribute('data-special-id', tempID);
+            tempExtra.setAttribute('data-special-text','Ex. 1301 Third st.');
+            tempExtra.setAttribute('data-special-label','Property Address');
+            tempExtra.setAttribute('data-special-type','geocoder');
+            if(extras.component != null){
+                extras.component.getAttribute('data-special-id');
+                if(extras.component.getAttribute('data-special-id') != tempID){
+                    if(extras.component.tagName == 'DIV' && extras.count != cleanProps.length){
+                        setExtras({component: tempExtra, count: cleanProps.length});
+                    }
+                }
+            }else{
+                setExtras({component: tempExtra, count: cleanProps.length});
+            }
+        }
+    }
+
     const buildTag = (item, index) =>{
         let markup;
         switch (item.tag) {
@@ -273,7 +321,7 @@ function Form(props) {
                     case 'button':
                         switch (item.text) {
                             case 'Add':
-                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtrasCount(extrasCount + 1); setExtras(e.target)}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
+                                markup = <button role="button" aria-label={item.name} onClick={(e)=>{setExtras({component: e.target, count:(extras.count + 1)})}} type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
 
                             case 'Remove':
@@ -281,7 +329,7 @@ function Form(props) {
                             role="button" 
                             aria-label={item.name} 
                             onClick={(e)=>{
-                                if(extrasCount > 0){setExtrasCount(extrasCount - 1);setExtras(e.target);} 
+                                if(extras.count > 0){setExtras({component: e.target, count:(extras.count - 1)})} 
                             }} 
                             type={item.type} data-special-type={item.specialAttribute} data-special-text={item.otherPlaceholder} data-special-label={item.otherLabel} data-special-id={item.otherID} data-ismulti-component={item.isMultiComponent} data-multicomponents={JSON.stringify(item.multiComponents)}>{item.text}</button>;
                                 break;
@@ -314,6 +362,7 @@ function Form(props) {
 
             case 'GEOCODER':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
+                    if(extras.component == null){checkIfMultiGeocoder();}
                     markup = 
                     <Geocoder 
                     id={item.id} 
@@ -1192,7 +1241,6 @@ function Form(props) {
                         
                     }
                 }
-                console.log(postData);
                 if(attachments > 0){
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 }else{
