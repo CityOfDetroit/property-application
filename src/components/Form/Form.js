@@ -65,16 +65,31 @@ function Form(props) {
         switch (extra.type) {
             case "geocoder":
                 console.log(extra);
-                markup = <Geocoder 
-                key={extra.id}
-                id={extra.id} 
-                name={extra.id} 
-                placeholder={extra.placeholder} 
-                required={true}
-                ariaRequired={true}
-                label={extra.label} 
-                alert={specialMessage}
-                ></Geocoder>;
+                if(checkPreviousAnswer(extra, null, 'GEOCODER', null)){
+                    markup = 
+                    <Geocoder 
+                    id={extra.id} 
+                    name={extra.id} 
+                    placeholder={extra.placeholder} 
+                    required={true}
+                    ariaRequired={true}
+                    label={extra.label}
+                    parcel={formData[props.id][`${extra.id}parcel`]}
+                    savedValue={formData[props.id][extra.id]}
+                    alert={specialMessage}
+                    ></Geocoder>;
+                }else{
+                    markup = <Geocoder 
+                    key={extra.id}
+                    id={extra.id} 
+                    name={extra.id} 
+                    placeholder={extra.placeholder} 
+                    required={true}
+                    ariaRequired={true}
+                    label={extra.label} 
+                    alert={specialMessage}
+                    ></Geocoder>;
+                }
                 break;
 
             case "text":
