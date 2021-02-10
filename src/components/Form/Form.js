@@ -64,7 +64,6 @@ function Form(props) {
         let markup;
         switch (extra.type) {
             case "geocoder":
-                console.log(extra);
                 if(checkPreviousAnswer(extra, null, 'GEOCODER', null)){
                     markup = 
                     <Geocoder 
@@ -126,7 +125,6 @@ function Form(props) {
         let extrasArr = [];
         let markup;
         if(extras.count > 0){
-            console.log(extras);
             if(extras.component.getAttribute('data-ismulti-component')){
                 for (let index = extras.count - 1; index >= 0; index--){
                     JSON.parse(extras.component.getAttribute('data-multicomponents')).forEach((comp) => {
@@ -217,7 +215,11 @@ function Form(props) {
                             break;
 
                         case 'GEOCODER':
-                            return true;
+                            if(formData[props.id][item.id] != undefined){
+                                return true;
+                            }else{
+                                return false;
+                            }
                             break;
 
                         case 'textarea':
@@ -237,7 +239,7 @@ function Form(props) {
                                             }
                                         }
                                     } catch (error) {
-                                        console.log(error);
+                                        // console.log(error);
                                     }
                                     return isFound;
                                     break;
@@ -253,7 +255,7 @@ function Form(props) {
                                             }
                                         }
                                     } catch (error) {
-                                        console.log(error);
+                                        // console.log(error);
                                     }
                                     return isChecked;
                                     break;
@@ -282,20 +284,15 @@ function Form(props) {
             (str.includes("parcel")) ? cleanProps.push(str) : 0;
         });
         cleanProps.pop();
-        console.log(cleanProps);
-        tempID = cleanProps[0].split('parcel')[0];
-        console.log(tempID);
-        tempID = tempID.slice(0, -1);
-        console.log(tempID);
         if(cleanProps.length){
-            console.log('extra geocoders found');
+            tempID = cleanProps[0].split('parcel')[0];
+            tempID = tempID.slice(0, -1);
             let tempExtra = document.createElement('div');
             tempExtra.setAttribute('data-special-id', tempID);
             tempExtra.setAttribute('data-special-text','Ex. 1301 Third st.');
             tempExtra.setAttribute('data-special-label','Property Address');
             tempExtra.setAttribute('data-special-type','geocoder');
             if(extras.component != null){
-                console.log(extras);
                 extras.component.getAttribute('data-special-id');
                 if(extras.component.getAttribute('data-special-id') != tempID){
                     if(extras.component.tagName == 'DIV' && extras.count != cleanProps.length){
@@ -1244,7 +1241,6 @@ function Form(props) {
                         
                     }
                 }
-                console.log(postData);
                 if(attachments > 0){
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/attachments/`,postData,true,props.token,'multipart/form',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 }else{
