@@ -64,6 +64,7 @@ function Form(props) {
         let markup;
         switch (extra.type) {
             case "geocoder":
+                console.log(extra);
                 markup = <Geocoder 
                 key={extra.id}
                 id={extra.id} 
@@ -267,10 +268,14 @@ function Form(props) {
         });
         cleanProps.pop();
         console.log(cleanProps);
+        tempID = cleanProps[0].split('parcel')[0];
+        console.log(tempID);
+        tempID = tempID.slice(0, -1);
+        console.log(tempID);
         if(cleanProps.length){
             console.log('extra geocoders found');
             let tempExtra = document.createElement('div');
-            tempExtra.id = tempID;
+            tempExtra.setAttribute('data-special-id', tempID);
             tempExtra.setAttribute('data-special-text','Ex. 1301 Third st.');
             tempExtra.setAttribute('data-special-label','Property Address');
             tempExtra.setAttribute('data-special-type','geocoder');
@@ -345,7 +350,7 @@ function Form(props) {
 
             case 'GEOCODER':
                 if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                    checkIfMultiGeocoder();
+                    if(extras.component == null){checkIfMultiGeocoder();}
                     markup = 
                     <Geocoder 
                     id={item.id} 
