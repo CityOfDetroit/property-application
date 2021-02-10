@@ -3395,6 +3395,34 @@
                                         "required"      : true
                                     },
                                     {   
+                                        "id"                    : "add",
+                                        "tag"                   : "button",
+                                        "type"                  : "button",
+                                        "name"                  : "add",
+                                        "description"           : "Add more properties",
+                                        "text"                  : "Add",
+                                        "label"                 : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "adjecentProperty"
+                                    },
+                                    {   
+                                        "id"                    : "remove",
+                                        "tag"                   : "button",
+                                        "type"                  : "button",
+                                        "name"                  : "remove",
+                                        "description"           : "Remove extra properties",
+                                        "text"                  : "Remove",
+                                        "label"                 : false,
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "geocoder",
+                                        "otherPlaceholder"      : "Ex. 1301 Third st.",
+                                        "otherLabel"            : "Property Address",
+                                        "otherID"               : "adjecentProperty"
+                                    },
+                                    {   
                                         "id"            : "next-step",
                                         "tag"           : "button",
                                         "type"          : "submit",
