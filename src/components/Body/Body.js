@@ -9,11 +9,24 @@ function Body(props) {
         return markup;
     }
 
+    const buildParentItems = (item) => {
+        return (
+            <item.tag key={item.id}>
+                {buildSubItems(item)}
+            </item.tag>
+        );
+    }
+
+    const buildSubItems = (item) => {
+        const markup = item.content.map((subItem) =>
+            buildItem(subItem)
+        );
+        return markup;
+    }
+
     const buildItem = (item) => {
         if(Array.isArray(item.content) && item.tag != 'ul'){
-            return item.content.map((subItem) => 
-                buildItem(subItem)
-            );
+            return buildParentItems(item);
         }else{
             switch (item.tag) {
                 case 'a':
