@@ -61,18 +61,25 @@
                                 },
                                 {
                                     "id"        : "card-0-body-2",
-                                    "tag"       : "strong",
-                                    "content"   : "SAVE YOUR APPLICATION ID!" 
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "SAVE YOUR APPLICATION ID!" 
+                                        }
+                                    ]
                                 },
                                 {
                                     "id"        : "card-0-body-3",
-                                    "tag"       : "br",
-                                    "content"   : null 
-                                },
-                                {
-                                    "id"        : "card-0-body-4",
-                                    "tag"       : "strong",
-                                    "content"   : "Incomplete applications will be saved in the system for 30 days." 
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-3-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Incomplete applications will be saved in the system for 30 days." 
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -188,18 +195,18 @@
                                     "tag"       : "p",
                                     "content"   : [
                                         {
-                                            "id"        : "item-0",
+                                            "id"        : "hint-0-body-0-item-0",
                                             "tag"       : "span",
                                             "content"   : "Use " 
                                         },
                                         {
-                                            "id"        : "item-1",
+                                            "id"        : "hint-0-body-0-item-1",
                                             "tag"       : "a",
                                             "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
                                             "content"   : "this map" 
                                         },
                                         {
-                                            "id"        : "item-2",
+                                            "id"        : "hint-0-body-0-item-2",
                                             "tag"       : "span",
                                             "content"   : " to identify eligible properties that are owned by the City of Detroit or DLBA." 
                                         }
@@ -215,22 +222,22 @@
                                     "tag"       : "ul",
                                     "content"   : [
                                         {
-                                            "id"        : "list-0",
+                                            "id"        : "hint-0-body-2-list-0",
                                             "tag"       : "p",
                                             "content"   : "Sidelot program" 
                                         },
                                         {
-                                            "id"        : "list-1",
+                                            "id"        : "hint-0-body-2-list-1",
                                             "tag"       : "p",
                                             "content"   : "Rehabbed and ready" 
                                         },
                                         {
-                                            "id"        : "list-2",
+                                            "id"        : "hint-0-body-2-list-2",
                                             "tag"       : "p",
                                             "content"   : "Auctions" 
                                         },
                                         {
-                                            "id"        : "list-3",
+                                            "id"        : "hint-0-body-2-list-3",
                                             "tag"       : "p",
                                             "content"   : "Own It Now" 
                                         }
