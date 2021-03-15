@@ -15,7 +15,7 @@ function App() {
     const [buildType, setBuildType]     = useState('application');
     const [btnState, setbtnState]       = useState();
     const [hint, setHint]               = useState();
-    const [status, setStatus]           = useState(1);
+    const [status, setStatus]           = useState();
 
     const buildContent = () => {
         const markup = 
@@ -174,7 +174,7 @@ function App() {
                 text={form.text}
                 sections={form.sections}
                 token={token}
-                state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
+                state={{ status: [status, setStatus], formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
             </Form>
         );
         return markup;
