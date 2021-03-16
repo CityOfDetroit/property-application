@@ -538,8 +538,11 @@ function Form(props) {
 
                 case 'getStatus':
                     e.json().then(data => {
-                        console.log(data);
-                        setStatus(data.status);
+                        if(data.processing_status == 'incomplete'){
+                            setStatus(data.status);
+                        }else{
+                            setStatus(data.processing_status);
+                        }
                         tempHistory = stepHistory;
                         tempHistory.push(currentStep);
                         setStepHistory(tempHistory);
