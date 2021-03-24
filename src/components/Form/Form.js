@@ -430,9 +430,9 @@ function Form(props) {
 
                     case 'currency':
                         if(checkPreviousAnswer(item, index, item.tag, item.type)){
-                            markup = <input type={item.type} id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
+                            markup = <input type={item.type} className="currency" id={item.id} name={item.name} defaultValue={formData[props.id][item.id]} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
                         }else{
-                            markup = <input type={item.type} id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
+                            markup = <input type={item.type} className="currency" id={item.id} name={item.name} aria-label={item.name} disabled={item.disabled} placeholder={item.placeholder} required={item.required} aria-required={item.required} onFocus={currencyFocus} onBlur={currencyBlur}></input>;
                         }
                         break;
 
@@ -771,7 +771,19 @@ function Form(props) {
                                 inputData[ev.target.elements[index].name] = ev.target.elements[index].value;
                             }
                         }else{
-                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                            if(ev.target.elements[index].type == 'currency' || ev.target.elements[index].className == 'currency'){
+                                let tempCurrency = ev.target.elements[index].value;
+                                if(tempCurrency.includes("NaN")){
+                                    let cleanCurrency = tempCurrency.replace('NaN','0.00');
+                                    inputData[ev.target.elements[index].id] = cleanCurrency;
+                                }
+                                if(tempCurrency.includes("US")){
+                                    let cleanCurrency = tempCurrency.replace('US','');
+                                    inputData[ev.target.elements[index].id] = cleanCurrency;
+                                }
+                            }else{
+                                inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
+                            }
                         }
                         if (ev.target.elements[index].hasAttribute("data-parcel")) {
                             if(ev.target.elements[index].getAttribute('data-parcel') != ''){
