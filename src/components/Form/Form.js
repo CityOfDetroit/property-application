@@ -11,13 +11,15 @@ function Form(props) {
         step        : [step, setStep],
         stepHistory : [stepHistory, setStepHistory],
         formData    : [formData, setFormData],
-        buildType   : [buildType, setBuildType]
+        buildType   : [buildType, setBuildType],
+        status      : [status, setStatus]
     } = {
         appID       : useState(),
         step        : useState(),
         stepHistory : useState(),
         formData    : useState(),
         buildType   : useState(),
+        status      : useState(),
         ...(props.state || {})
     };
     const [error, setError]                     = useState();
@@ -536,115 +538,15 @@ function Form(props) {
 
                 case 'getStatus':
                     e.json().then(data => {
-                        switch (data.status) {
-                            case 'incomplete':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(1);
-                                break;
-
-                            case 'complete':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(2);
-                                break;
-
-                            case 'APPLICATION IN REVIEW':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(3);
-                                break;
-
-                            case 'APPLICATION ON HOLD':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(4);
-                                break;
-
-                            case 'AWAITING VALUATION':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(5);
-                                break;
-
-                            case 'IN NEGOTIATION':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(6);
-                                break;
-
-                            case 'OFFER LETTER SENT':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(7);
-                                break;
-
-                            case 'PA RECEIVED':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(8);
-                                break;
-
-                            case 'PA SENT':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(9);
-                                break;
-
-                            case 'RECEIVED BACK FROM HRD':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(10);
-                                break;
-
-                            case 'TRANSACTION DECLINED':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(11);
-                                break;
-
-                            case 'UNREVIEWED APPLICATION':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(12);
-                                break;
-
-                            case 'CANCELLED':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(13);
-                                break;
-
-                            case 'PA SIGNED':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(14);
-                                break;
-
-                            case 'INCOMPLETE APPLICATION':
-                                tempHistory = stepHistory;
-                                tempHistory.push(currentStep);
-                                setStepHistory(tempHistory);
-                                setStep(15);
-                                break;
-                        
-                            default:
-                                break;
+                        if(data.processing_status == 'incomplete'){
+                            setStatus(data.status);
+                        }else{
+                            setStatus(data.processing_status);
                         }
+                        tempHistory = stepHistory;
+                        tempHistory.push(currentStep);
+                        setStepHistory(tempHistory);
+                        setStep(1);
                     });
                     break;
 

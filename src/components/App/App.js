@@ -5,6 +5,7 @@ import Card from '../Card/Card';
 import Form from '../Form/Form';
 import data from '../../data/App.steps.json';
 import token from '../../../local/token.json';
+import Status from '../Status/Status';
 
 function App() {
     const [appID, setAppID]             = useState();
@@ -14,6 +15,7 @@ function App() {
     const [buildType, setBuildType]     = useState('application');
     const [btnState, setbtnState]       = useState();
     const [hint, setHint]               = useState();
+    const [status, setStatus]           = useState();
 
     const buildContent = () => {
         const markup = 
@@ -66,6 +68,7 @@ function App() {
             {buildHeader(data[buildType][step].items)}
             <section className="intake-container">
                 <article className="intake-body">
+                    {(status != undefined) ? buildStatus() : ''}
                     {buildAppIDCard()}
                     {buildCards(data[buildType][step].items)}
                 </article>
@@ -74,6 +77,12 @@ function App() {
             </section>
         </section>
         return markup;
+    }
+
+    const buildStatus = () => {
+        return <Status
+                status={status}
+                ></Status>;
     }
 
     const buildAppIDCard = () => {
@@ -165,7 +174,7 @@ function App() {
                 text={form.text}
                 sections={form.sections}
                 token={token}
-                state={{ formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
+                state={{ status: [status, setStatus], formData: [formData, setFormData], step: [step, setStep], stepHistory: [stepHistory, setStepHistory], buildType: [buildType, setBuildType], appID: [appID, setAppID] }}>
             </Form>
         );
         return markup;
