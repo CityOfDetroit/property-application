@@ -14,12 +14,9 @@ function Geocoder(props) {
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
-          console.log(data);
           let candidates = [];
-          if(data.candidate.length){
-            data.candidates.forEach((candidate)=>{
-              candidates.push(candidate);
-            });
+          if(data.suggestions.length){
+            candidates = data.suggestions;
           }
           setSugg(candidates);
         })
@@ -45,15 +42,22 @@ function Geocoder(props) {
   }
 
   const handleChange = (ev) => {
+    if(ev.target.value == ''){
+      setAddress('')
+    }else{
       getAddressSuggestions(ev.target.value);
-      (ev.target.value == '') ? setAddress('') : setAddress(ev.target.value);
-      if(sugg != undefined){
-        sugg.forEach((item) => {
-          if(ev.target.value == item.address){
-            setParcel(item.attributes.User_fld);
-          }
-        })
+      setAddress(ev.target.value)
+    }
+  }
+
+  const handleKeyDown = (ev) => {
+    if(ev.keyCode == 13){
+      ev.preventDefault();
+      console.log(parcel);
+      if(parcel == ''){
+        findParcelID();
       }
+    }
   }
 
   const handleBlur = (ev) => {
@@ -61,33 +65,34 @@ function Geocoder(props) {
       setAddress('');
       setParcel('');
     }else{
-      console.log(parcel);
       if(parcel == ''){
-        let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/CompositeGeocoder/GeocodeServer/findAddressCandidates?Street=&City=&ZIP=&SingleLine=${addressPlitter(address)}&category=&outFields=User_fld&maxLocations=4&outSR=4326&searchExtent=&location=&distance=&magicKey=&f=json`;
-        try {
-            fetch(url)
-            .then((resp) => resp.json()) // Transform the data into json
-            .then(function(data) {
-              console.log(data);
-              // data.candidates.forEach((candidate)=>{
-              //   if(candidate.attributes.User_fld != ''){
-              //     candidates.push(candidate);
-              //   }
-              // });
-            })
-            .catch((error) => {
-                error(error);
-            });
-        }catch (error) {
-            console.log(error);
-        }
-      }
+        findParcelID();
+      } 
+    }
+  }
+
+  const findParcelID = () => {
+    let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/CompositeGeocoder/GeocodeServer/findAddressCandidates?Street=&City=&ZIP=&SingleLine=${addressPlitter(address)}&category=&outFields=User_fld&maxLocations=4&outSR=4326&searchExtent=&location=&distance=&magicKey=&f=json`;
+    try {
+        fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {
+          if(data.candidates.length && data.candidates[0].attributes.User_fld != ''){
+            setParcel(data.candidates[0].attributes.User_fld);
+          }
+          console.log(parcel);
+        })
+        .catch((error) => {
+            error(error);
+        });
+    }catch (error) {
+        console.log(error);
     }
   }
 
   const buildOptions = () => {
-    const markup = sugg.map((item, key) =>
-        <option key={key} value={item.address} data-parcel={item.attributes.User_fld}></option>
+    let markup = sugg.map((item, key) =>
+        <option key={key} value={item.text}></option>
     );
     return markup;
   }
@@ -107,7 +112,7 @@ function Geocoder(props) {
   return (
       <div>
         <label className={getClassName()} htmlFor={props.id}>{props.label}</label>
-        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} defaultValue={props.savedValue} placeholder={props.placeholder} data-parcel={parcel} onChange={handleChange} onBlur={handleBlur} aria-required={props.required} required={props.required} autoComplete="off"></input>
+        <input list={buildNames()} id={props.id} aria-label={props.label} name={props.name} value={props.value} defaultValue={props.savedValue} placeholder={props.placeholder} data-parcel={parcel} onKeyDown={handleKeyDown} onChange={handleChange} onBlur={handleBlur} aria-required={props.required} required={props.required} autoComplete="off"></input>
         <datalist id={buildNames()}>
             {(sugg) ? buildOptions() : ''}
         </datalist>
