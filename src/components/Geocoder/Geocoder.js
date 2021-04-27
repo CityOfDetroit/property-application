@@ -8,6 +8,30 @@ function Geocoder(props) {
   const [parcel, setParcel]   = useState(props.parcel);
 
   const getAddressSuggestions = (addr) => {
+    let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/AddressPointGeocoder/GeocodeServer/suggest?text=${addr}&f=pjson`;
+    
+    try {
+        fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {
+          console.log(data);
+          let candidates = [];
+          if(data.candidate.length){
+            data.candidates.forEach((candidate)=>{
+              candidates.push(candidate);
+            });
+          }
+          setSugg(candidates);
+        })
+        .catch((error) => {
+            error(error);
+        });
+    }catch (error) {
+        console.log(error);
+    }
+  }
+
+  const addressPlitter = (addr) => {
     let tempAddr = addr.split(",");
     tempAddr = tempAddr[0];
     tempAddr = tempAddr.split(" ");
@@ -17,26 +41,7 @@ function Geocoder(props) {
       newTempAddr += item;
       ((index < size) && (index + 1) !== size) ? newTempAddr += '+': 0;
     });
-    let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/CompositeGeocoder/GeocodeServer/findAddressCandidates?Street=&City=&ZIP=&SingleLine=${newTempAddr}&category=&outFields=User_fld&maxLocations=4&outSR=4326&searchExtent=&location=&distance=&magicKey=&f=json`;
-    
-    try {
-        fetch(url)
-        .then((resp) => resp.json()) // Transform the data into json
-        .then(function(data) {
-          let candidates = [];
-          data.candidates.forEach((candidate)=>{
-            if(candidate.attributes.User_fld != ''){
-              candidates.push(candidate);
-            }
-          });
-          setSugg(candidates);
-        })
-        .catch((error) => {
-            error(error);
-        });
-    }catch (error) {
-        console.log(error);
-    }
+    return newTempAddr;
   }
 
   const handleChange = (ev) => {
@@ -55,6 +60,28 @@ function Geocoder(props) {
     if(ev.target.value == ''){
       setAddress('');
       setParcel('');
+    }else{
+      console.log(parcel);
+      if(parcel == ''){
+        let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/CompositeGeocoder/GeocodeServer/findAddressCandidates?Street=&City=&ZIP=&SingleLine=${addressPlitter(address)}&category=&outFields=User_fld&maxLocations=4&outSR=4326&searchExtent=&location=&distance=&magicKey=&f=json`;
+        try {
+            fetch(url)
+            .then((resp) => resp.json()) // Transform the data into json
+            .then(function(data) {
+              console.log(data);
+              // data.candidates.forEach((candidate)=>{
+              //   if(candidate.attributes.User_fld != ''){
+              //     candidates.push(candidate);
+              //   }
+              // });
+            })
+            .catch((error) => {
+                error(error);
+            });
+        }catch (error) {
+            console.log(error);
+        }
+      }
     }
   }
 
