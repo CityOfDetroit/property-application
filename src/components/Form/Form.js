@@ -786,12 +786,13 @@ function Form(props) {
                             }
                         }
                         if (ev.target.elements[index].hasAttribute("data-parcel")) {
-                            if(ev.target.elements[index].getAttribute('data-parcel') != ''){
-                                inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
-                            }else{
-                                setSpecialMessage('Invalid address provide. Please make sure you enter your address correctly or select one of the suggestions provided.')
-                                return;
-                            }
+                            inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                            // if(ev.target.elements[index].getAttribute('data-parcel') != ''){
+                            //     inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                            // }else{
+                            //     setSpecialMessage('Invalid address provide. Please make sure you enter your address correctly or select one of the suggestions provided.')
+                            //     return;
+                            // }
                         }
                     }
                 }
