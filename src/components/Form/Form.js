@@ -773,13 +773,21 @@ function Form(props) {
                         }else{
                             if(ev.target.elements[index].type == 'currency' || ev.target.elements[index].className == 'currency'){
                                 let tempCurrency = ev.target.elements[index].value;
-                                if(tempCurrency.includes("NaN")){
-                                    let cleanCurrency = tempCurrency.replace('NaN','0.00');
-                                    inputData[ev.target.elements[index].id] = cleanCurrency;
-                                }
-                                if(tempCurrency.includes("US")){
-                                    let cleanCurrency = tempCurrency.replace('US','');
-                                    inputData[ev.target.elements[index].id] = cleanCurrency;
+                                let cleanCurrency;
+                                switch (true) {
+                                    case tempCurrency.includes("NaN"):
+                                        cleanCurrency = tempCurrency.replace('NaN','0.00');
+                                        inputData[ev.target.elements[index].id] = cleanCurrency;
+                                        break;
+
+                                    case tempCurrency.includes("US"):
+                                        cleanCurrency = tempCurrency.replace('US','');
+                                        inputData[ev.target.elements[index].id] = cleanCurrency;
+                                        break;
+                                
+                                    default:
+                                        inputData[ev.target.elements[index].id] = tempCurrency;
+                                        break;
                                 }
                             }else{
                                 inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
