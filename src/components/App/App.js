@@ -3,7 +3,7 @@ import './App.scss';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
-import data from '../../data/App.steps.json';
+import data from '../../data/property.app.json';
 import token from '../../../local/token.json';
 import Status from '../Status/Status';
 

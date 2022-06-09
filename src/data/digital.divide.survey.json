@@ -1,0 +1,1242 @@
+{
+    "application": [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Digital Divide Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-0-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "Thanks for your interest!"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Here is what you can expect:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "This intake application should take 30-45 minutes" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "This process includes a review by the various stakeholders and City Departments and final approval by the Detroit City Council" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "For simple transactions, the sales process often takes four months from time of application until close." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Check application status by saving the assigned application ID and logging in to the property intake form application." 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-4",
+                                            "tag"       : "p",
+                                            "content"   : "You can finish previously started applications by going to the Finish Previous Application section and providing your application ID." 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "SAVE YOUR APPLICATION ID!" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-3-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Incomplete applications will be saved in the system for 30 days." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-0-form-0",
+                        "savedData"     : false,
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Start New Application",
+                                    "validationType"        : "equal",
+                                    "next"                  : 1,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "Check Application Status",
+                                    "validationType"        : "equal",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "validation"            : "Finish Previous Application",
+                                    "validationType"        : "equal",
+                                    "next"                  : 0,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "load",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : null,
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "start-form",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "start-form",
+                                        "description"   : "Button to start application.",
+                                        "text"  : "Start New Application",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "check-status",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "check-status",
+                                        "description"   : "Button to check past application status.",
+                                        "text"  : "Check Application Status",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "load",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "load",
+                                        "description"   : "Load previous application.",
+                                        "text"  : "Finish Previous Application",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "hint-0-body-0-item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Use " 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-0-item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
+                                            "content"   : "this map" 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-0-item-2",
+                                            "tag"       : "span",
+                                            "content"   : " to identify eligible properties that are owned by the City of Detroit or DLBA." 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "p",
+                                    "content"   : "If a property is DLBA owned and part of a specific program:" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "hint-0-body-2-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Sidelot program" 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-2-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Rehabbed and ready" 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-2-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Auctions" 
+                                        },
+                                        {
+                                            "id"        : "hint-0-body-2-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Own It Now" 
+                                        }
+                                    ] 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "body-3-item-0",
+                                            "tag"       : "span",
+                                            "content"   : "Please apply via those " 
+                                        },
+                                        {
+                                            "id"        : "body-3-item-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://buildingdetroit.org/",
+                                            "content"   : "programs" 
+                                        },
+                                        {
+                                            "id"        : "body-3-item-2",
+                                            "tag"       : "span",
+                                            "content"   : ", and do not use this application for those purchases  inquires." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-1-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "BEFORE YOU BEGIN CHECKLIST"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "strong",
+                                    "content"   : "For a successful application, have the following prepared before you proceed:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "City of Detroit taxes are paid (or there is a payment plan in place)" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Blight tickets are paid (or there is an agreement in place)" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "City Owned or Detroit Land Bank Authority property/properties are identified" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Proposal for the intended use of the property / properties is prepared and ready to submit" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-4",
+                                            "tag"       : "p",
+                                            "content"   : "Estimate of total development costs and timeline of project" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {   
+                        "id"        : "step-1-card-1",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-1-body-0",
+                                    "tag"       : "strong",
+                                    "content"   : "Land Based Project" 
+                                },
+                                {
+                                    "id"        : "card-1-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-1-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Plot plan / site design" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Pesticide agreement certifications (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-1-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "Development timeline" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-1-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Budget details (i.e sources and uses)" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-1-body-2",
+                                    "tag"       : "strong",
+                                    "content"   : "Cell Tower, Billboard, Film, Public Gathering" 
+                                },
+                                {
+                                    "id"        : "card-1-body-3",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-1-body-3-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "Film permit (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-3-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Special events permit (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-3-list-2",
+                                            "tag"       : "p",
+                                            "content"   : "City contract number (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-3-list-3",
+                                            "tag"       : "p",
+                                            "content"   : "Event dates (if applicable)" 
+                                        },
+                                        {
+                                            "id"        : "card-1-body-3-list-4",
+                                            "tag"       : "em",
+                                            "content"   : "Note: A filming permit is required prior to applying to use the land. You will not be able to proceed without it." 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-1-body-4",
+                                    "tag"       : "strong",
+                                    "content"   : "Completing this application does not put a “hold” on any properties." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-1-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : false,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : true,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "ready",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "ready",
+                                        "description"   : "All requirements",
+                                        "text"  : "Ready to start",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-1-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
+                                },
+                                {
+                                    "id"        : "hint-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "list-0",
+                                            "tag"       : "a",
+                                            "link"      : "https://pta.waynecounty.com/",
+                                            "content"   : "Pay County Taxes Here" 
+                                        }, 
+                                        {
+                                            "id"        : "list-1",
+                                            "tag"       : "a",
+                                            "link"      : "https://bsaonline.com/?uid=155",
+                                            "content"   : "Pay City Taxes Here" 
+                                        }, 
+                                        {
+                                            "id"        : "list-2",
+                                            "tag"       : "a",
+                                            "link"      : "http://app.detroitmi.gov/dahonline/",
+                                            "content"   : "Pay Blight Tickets Here" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "hint-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : "To apply for a film permit:" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-3",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
+                                    "content"   : "Apply for Film Permit" 
+                                },
+                                {
+                                    "id"        : "hint-0-body-4",
+                                    "tag"       : "p",
+                                    "content"   : "To apply for a special events permit: " 
+                                }, 
+                                {
+                                    "id"        : "hint-0-body-5",
+                                    "tag"       : "a",
+                                    "link"      : "https://detroitmi.gov/departments/media-services-department/special-events",
+                                    "content"   : "Apply for Special Event Permit" 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-2-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : ""
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q1: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "represent",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 3,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-2-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "myself",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "myself",
+                                        "description"   : "User is representing himself/herself",
+                                        "text"  : "Myself",
+                                        "label" : false
+                                    },
+                                    {   
+                                        "id"    : "someone-else-entity",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "someone-else-entity",
+                                        "description"   : "User is representing someone else or an entity",
+                                        "text"  : "Someone else / entity",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "step-2-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the application." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-3-card-0",
+                        "type"      : "right pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Is the applicant an individual or business? (check one)" 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "applicantType",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "individualBusiness",
+                                    "validation"            : "individual",
+                                    "validationType"        : "equal",
+                                    "next"                  : 4,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactBusiness"
+                                        }
+                                   }
+                                },
+                                {
+                                    "id"                    : "individualBusiness",
+                                    "validation"            : "non-profit",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactIndividual"
+                                        }
+                                   } 
+                                },
+                                {
+                                    "id"                    : "individualBusiness",
+                                    "validation"            : "business",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : true,
+                                    "formType"              : "status",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : {
+                                        "taskType"      : "delete",
+                                        "copyCommand"   : null,
+                                        "deleteCommand" : {
+                                            "item"    : "contactIndividual"
+                                        }
+                                   } 
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-3-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "individual",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "individual",
+                                        "placeholder"           : null,
+                                        "name"                  : "individualBusiness",
+                                        "description"           : "Broker",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Individual",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "non-profit",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "non-profit",
+                                        "placeholder"           : null,
+                                        "name"                  : "individualBusiness",
+                                        "description"           : "Broker",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Non-Profit Organization",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "business",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "business",
+                                        "placeholder"           : null,
+                                        "name"                  : "individualBusiness",
+                                        "description"           : "business",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Business",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints" :[]
+            }
+        }
+    ],
+    "status" : [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-0-card-0",
+                        "type"      : "center pop-up no-margin",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please enter the Application ID you wish to check." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "status-0-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPosting"         : false,
+                            "isGetting"         : true,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : "status",
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "status-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "app-id",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter application ID",
+                                        "name"          : "app-id",
+                                        "description"   : "Applicatin ID provided when initial application was created.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "App ID",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "check",
+                                        "description"   : "Check application status",
+                                        "text"  : "Check",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "status-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "An application ID is provided when a new application is created." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-1-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "load" : [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-0-card-0",
+                        "type"      : "center pop-up no-margin",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Instructions: "
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Please enter the ID of the application you wish to finish."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-0-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "nextGlobal"                : false,
+                            "nextError"                 : 0,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "app-id",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter application ID",
+                                        "name"          : "app-id",
+                                        "description"   : "Applicatin ID provided when initial application was created.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "App ID",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "load",
+                                        "description"   : "Load old application",
+                                        "text"  : "Load",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "load-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "An application ID is provided when a new application is created." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-1-card-0",
+                        "type"      : "center pop-up color-2",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Good News. " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Your application has been loaded successfully. You can now review, edit and submit your form." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-1-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : "application",
+                            "isSwitchingFormTypeGlobal" : true,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : [0,1],
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "start-review",
+                                        "description"   : "Start the application review.",
+                                        "text"  : "Start Review",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-2-card-0",
+                        "type"      : "center pop-up color-3",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Finished Application: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "This application has already been submitted for review. You are not able to make any edits at this point." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": []
+            }
+        }
+    ]
+}
