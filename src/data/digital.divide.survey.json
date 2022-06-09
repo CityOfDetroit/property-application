@@ -5,7 +5,7 @@
                 "header": [
                     {
                         "id": "application",
-                        "text": "Digital Divide Survey",
+                        "text": "Bridging the Detroit Digital Divide",
                         "logo": true,
                         "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
                         "logoAlt": "City of Detroit",
@@ -18,7 +18,7 @@
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
-                            "value" : "Thanks for your interest!"
+                            "value" : "How equal access to resources can help equalize opportunity in business and education."
                         },
                         "body"   : {
                             "type"      : "text",
@@ -35,7 +35,7 @@
                                         {
                                             "id"        : "card-0-body-1-list-0",
                                             "tag"       : "p",
-                                            "content"   : "This intake application should take 30-45 minutes" 
+                                            "content"   : "This survey should take 10-15 minutes" 
                                         },
                                         {
                                             "id"        : "card-0-body-1-list-1",
@@ -46,16 +46,6 @@
                                             "id"        : "card-0-body-1-list-2",
                                             "tag"       : "p",
                                             "content"   : "For simple transactions, the sales process often takes four months from time of application until close." 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "Check application status by saving the assigned application ID and logging in to the property intake form application." 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-4",
-                                            "tag"       : "p",
-                                            "content"   : "You can finish previously started applications by going to the Finish Previous Application section and providing your application ID." 
                                         }
                                     ]
                                 },
@@ -105,7 +95,7 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "validation"            : "Start New Application",
+                                    "validation"            : "Start New Survey",
                                     "validationType"        : "equal",
                                     "next"                  : 1,
                                     "isSwitchingFormType"   : false,
@@ -116,7 +106,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "validation"            : "Check Application Status",
+                                    "validation"            : "Check Survey Status",
                                     "validationType"        : "equal",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
@@ -127,7 +117,7 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "validation"            : "Finish Previous Application",
+                                    "validation"            : "Finish Unfinished Surveys",
                                     "validationType"        : "equal",
                                     "next"                  : 0,
                                     "isSwitchingFormType"   : true,
@@ -153,7 +143,7 @@
                                         "type"  : "submit",
                                         "name"  : "start-form",
                                         "description"   : "Button to start application.",
-                                        "text"  : "Start New Application",
+                                        "text"  : "Start New Survey",
                                         "label" : false
                                     },
                                     {   
@@ -162,7 +152,7 @@
                                         "type"  : "submit",
                                         "name"  : "check-status",
                                         "description"   : "Button to check past application status.",
-                                        "text"  : "Check Application Status",
+                                        "text"  : "Check Survey Status",
                                         "label" : false
                                     },
                                     {   
@@ -171,7 +161,7 @@
                                         "type"  : "submit",
                                         "name"  : "load",
                                         "description"   : "Load previous application.",
-                                        "text"  : "Finish Previous Application",
+                                        "text"  : "Finish Unfinished Surveys",
                                         "label" : false
                                     }
                                 ]
