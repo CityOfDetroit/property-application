@@ -40,12 +40,7 @@
                                         {
                                             "id"        : "card-0-body-1-list-1",
                                             "tag"       : "p",
-                                            "content"   : "This process includes a review by the various stakeholders and City Departments and final approval by the Detroit City Council" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "For simple transactions, the sales process often takes four months from time of application until close." 
+                                            "content"   : "Only one survey can be submitted per household." 
                                         }
                                     ]
                                 },
@@ -56,7 +51,7 @@
                                         {
                                             "id"        : "card-0-body-2-item-0",
                                             "tag"       : "strong",
-                                            "content"   : "SAVE YOUR APPLICATION ID!" 
+                                            "content"   : "SAVE YOUR SURVEY ID!" 
                                         }
                                     ]
                                 },
@@ -67,7 +62,7 @@
                                         {
                                             "id"        : "card-0-body-3-item-0",
                                             "tag"       : "strong",
-                                            "content"   : "Incomplete applications will be saved in the system for 30 days." 
+                                            "content"   : "Incomplete surveys will be saved in the system for 30 days." 
                                         }
                                     ]
                                 }
@@ -83,6 +78,8 @@
                         "position"      : "center",
                         "requirements"  : {
                             "inputType"                 : "button",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
                             "formTypeGlobal"            : null,
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
@@ -266,7 +263,7 @@
                 "header": [
                     {
                         "id": "application",
-                        "text": "New Application",
+                        "text": "New Survey",
                         "logo": true,
                         "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
                         "logoAlt": "City of Detroit",
@@ -279,265 +276,7 @@
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
-                            "value" : "BEFORE YOU BEGIN CHECKLIST"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "strong",
-                                    "content"   : "For a successful application, have the following prepared before you proceed:" 
-                                },
-                                {
-                                    "id"        : "card-0-body-1",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "card-0-body-1-list-0",
-                                            "tag"       : "p",
-                                            "content"   : "City of Detroit taxes are paid (or there is a payment plan in place)" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-1",
-                                            "tag"       : "p",
-                                            "content"   : "Blight tickets are paid (or there is an agreement in place)" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "City Owned or Detroit Land Bank Authority property/properties are identified" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "Proposal for the intended use of the property / properties is prepared and ready to submit" 
-                                        },
-                                        {
-                                            "id"        : "card-0-body-1-list-4",
-                                            "tag"       : "p",
-                                            "content"   : "Estimate of total development costs and timeline of project" 
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    },
-                    {   
-                        "id"        : "step-1-card-1",
-                        "type"      : "center pop-up",
-                        "title"     : {
-                            "type"  : "medium",
                             "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-1-body-0",
-                                    "tag"       : "strong",
-                                    "content"   : "Land Based Project" 
-                                },
-                                {
-                                    "id"        : "card-1-body-1",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "card-1-body-1-list-0",
-                                            "tag"       : "p",
-                                            "content"   : "Plot plan / site design" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-1",
-                                            "tag"       : "p",
-                                            "content"   : "Pesticide agreement certifications (if applicable)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "Development timeline" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-1-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "Budget details (i.e sources and uses)" 
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id"        : "card-1-body-2",
-                                    "tag"       : "strong",
-                                    "content"   : "Cell Tower, Billboard, Film, Public Gathering" 
-                                },
-                                {
-                                    "id"        : "card-1-body-3",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "card-1-body-3-list-0",
-                                            "tag"       : "p",
-                                            "content"   : "Film permit (if applicable)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-3-list-1",
-                                            "tag"       : "p",
-                                            "content"   : "Special events permit (if applicable)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-3-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "City contract number (if applicable)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-3-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "Event dates (if applicable)" 
-                                        },
-                                        {
-                                            "id"        : "card-1-body-3-list-4",
-                                            "tag"       : "em",
-                                            "content"   : "Note: A filming permit is required prior to applying to use the land. You will not be able to proceed without it." 
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id"        : "card-1-body-4",
-                                    "tag"       : "strong",
-                                    "content"   : "Completing this application does not put a “hold” on any properties." 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "step-1-form-0",
-                        "type"          : "single-button",
-                        "position"      : "center",
-                        "savedData"     : false,
-                        "requirements"  : {
-                            "inputType"                 : "button",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : true,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : 2,
-                            "isPosting"                 : false,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : false,
-                            "postingTypeGlobal"         : null,
-                            "isFinalStep"               : false,
-                            "logic": []
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-1-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"    : "ready",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "ready",
-                                        "description"   : "All requirements",
-                                        "text"  : "Ready to start",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-1-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Any applicants that have outstanding taxes will receive a denial on their property application." 
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "list-0",
-                                            "tag"       : "a",
-                                            "link"      : "https://pta.waynecounty.com/",
-                                            "content"   : "Pay County Taxes Here" 
-                                        }, 
-                                        {
-                                            "id"        : "list-1",
-                                            "tag"       : "a",
-                                            "link"      : "https://bsaonline.com/?uid=155",
-                                            "content"   : "Pay City Taxes Here" 
-                                        }, 
-                                        {
-                                            "id"        : "list-2",
-                                            "tag"       : "a",
-                                            "link"      : "http://app.detroitmi.gov/dahonline/",
-                                            "content"   : "Pay Blight Tickets Here" 
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id"        : "hint-0-body-2",
-                                    "tag"       : "p",
-                                    "content"   : "To apply for a film permit:" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-3",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/departments/media-services-department/detroit-film-office",
-                                    "content"   : "Apply for Film Permit" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-4",
-                                    "tag"       : "p",
-                                    "content"   : "To apply for a special events permit: " 
-                                }, 
-                                {
-                                    "id"        : "hint-0-body-5",
-                                    "tag"       : "a",
-                                    "link"      : "https://detroitmi.gov/departments/media-services-department/special-events",
-                                    "content"   : "Apply for Special Event Permit" 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-2-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : ""
                         },
                         "body"   : {
                             "type"      : "text",
@@ -564,20 +303,22 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "represent",
-                        "type"          : "single-button",
+                        "id"            : "devices",
+                        "type"          : "checkbox-set",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : {
-                            "inputType"                 : "button",
+                            "inputType"                 : "input-checkbox",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
                             "formTypeGlobal"            : null,
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 3,
-                            "isPosting"                 : true,
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
                             "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
+                            "isPostingFullForm"         : false,
                             "postingTypeGlobal"         : "answers",
                             "isFinalStep"               : false,
                             "logic": []
@@ -588,224 +329,72 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-2-form-0-section-0",
+                                "id"    : "step-1-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"    : "myself",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "myself",
-                                        "description"   : "User is representing himself/herself",
-                                        "text"  : "Myself",
-                                        "label" : false
+                                        "id"            : "desktop-laptop",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "desktop-laptop",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "desktop-laptop",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Desktop or laptop"
                                     },
                                     {   
-                                        "id"    : "someone-else-entity",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "someone-else-entity",
-                                        "description"   : "User is representing someone else or an entity",
-                                        "text"  : "Someone else / entity",
-                                        "label" : false
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "hints": [
-                    {   
-                        "id"        : "step-2-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "If you are applying on behalf of another person or business, please use their information for the application." 
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "items" : {
-                "header": [
-                    {
-                        "id": "application",
-                        "text": "New Application",
-                        "logo": true,
-                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
-                        "logoAlt": "City of Detroit",
-                        "form": true
-                    }
-                ],
-                "cards": [
-                    {   
-                        "id"        : "step-3-card-0",
-                        "type"      : "right pop-up",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : null
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "card-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : "Is the applicant an individual or business? (check one)" 
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "forms": [
-                    {
-                        "id"            : "applicantType",
-                        "type"          : "radio-buttons plus-other",
-                        "position"      : "center",
-                        "savedData"     : true,
-                        "requirements"  : {
-                            "inputType"                 : "radio",
-                            "formTypeGlobal"            : null,
-                            "isSwitchingFormTypeGlobal" : null,
-                            "needsNewID"                : false,
-                            "historyOverrite"           : null,
-                            "nextGlobal"                : null,
-                            "isPosting"                 : true,
-                            "isGetting"                 : false,
-                            "isPostingFullForm"         : true,
-                            "postingTypeGlobal"         : null,
-                            "isFinalStep"               : false,
-                            "logic": [
-                                {
-                                    "id"                    : "individualBusiness",
-                                    "validation"            : "individual",
-                                    "validationType"        : "equal",
-                                    "next"                  : 4,
-                                    "isSwitchingFormType"   : false,
-                                    "formType"              : "application",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : "contactBusiness"
-                                        }
-                                   }
-                                },
-                                {
-                                    "id"                    : "individualBusiness",
-                                    "validation"            : "non-profit",
-                                    "validationType"        : "equal",
-                                    "next"                  : 5,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "status",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : "contactIndividual"
-                                        }
-                                   } 
-                                },
-                                {
-                                    "id"                    : "individualBusiness",
-                                    "validation"            : "business",
-                                    "validationType"        : "equal",
-                                    "next"                  : 5,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "status",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : {
-                                        "taskType"      : "delete",
-                                        "copyCommand"   : null,
-                                        "deleteCommand" : {
-                                            "item"    : "contactIndividual"
-                                        }
-                                   } 
-                                }
-                            ]
-                        },
-                        "text"          : {
-                            "type"      : "text",
-                            "markup"    : []
-                        },
-                        "sections"      : [
-                            {
-                                "id"    : "step-3-form-0-section-0",
-                                "items" : [
-                                    {   
-                                        "id"                    : "individual",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "individual",
-                                        "placeholder"           : null,
-                                        "name"                  : "individualBusiness",
-                                        "description"           : "Broker",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Individual",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "smartphone",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "smartphone",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "smartphone",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Smartphone"
                                     },
                                     {   
-                                        "id"                    : "non-profit",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "non-profit",
-                                        "placeholder"           : null,
-                                        "name"                  : "individualBusiness",
-                                        "description"           : "Broker",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Non-Profit Organization",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "tablet",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "tablet",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "tablet",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Tablet or other portable wireless computer"
                                     },
                                     {   
-                                        "id"                    : "business",
-                                        "tag"                   : "input",
-                                        "type"                  : "radio",
-                                        "value"                 : "business",
-                                        "placeholder"           : null,
-                                        "name"                  : "individualBusiness",
-                                        "description"           : "business",
-                                        "text"                  : "",
-                                        "label"                 : true,
-                                        "labelPosition"         : "after",
-                                        "labelText"             : "Business",
-                                        "hasSpecialAttribute"   : false,
-                                        "specialAttribute"      : null,
-                                        "otherPlaceholder"      : null,
-                                        "otherLabel"            : null,
-                                        "otherID"               : null,
-                                        "required"              : true
+                                        "id"            : "other",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "other",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "Other",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter other types",
+                                        "otherLabel"            : "Device Type",
+                                        "otherID"               : "shomeDevicesOther"
                                     },
                                     {   
                                         "id"                    : "submit",
@@ -824,7 +413,227 @@
                         ]
                     }
                 ],
-                "hints" :[]
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-2-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q2: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household have access to the internet?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "yes-paid",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "yes-not-paid",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "no",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-56-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "yes-paid",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes-paid",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "yes-paid",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes, by paying a cell phone company or internet service provider.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "yes-not-paid",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes-not-paid",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "yes-not-paid",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes, without paying a cell phone company or internet service provider.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "no",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "no",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "no",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "No access to the internet at this house, apartment, or mobile home.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Submit",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Bridging the Detroit Digital Divide",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-2-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "Your survey has been submitted."
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Thank you for finishing this survey." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": []
             }
         }
     ],
