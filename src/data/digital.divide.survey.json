@@ -1,0 +1,912 @@
+{
+    "application": [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Bridging the Detroit Digital Divide",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-0-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "Help equalize opportunity in business and education."
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Here is what you can expect:" 
+                                },
+                                {
+                                    "id"        : "card-0-body-1",
+                                    "tag"       : "ul",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-list-0",
+                                            "tag"       : "p",
+                                            "content"   : "This survey should take 10-15 minutes" 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-list-1",
+                                            "tag"       : "p",
+                                            "content"   : "Only one survey can be submitted per household." 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-0-body-2",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-2-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "SAVE YOUR SURVEY ID!" 
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id"        : "card-0-body-3",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-3-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Incomplete surveys will be saved in the system for 30 days." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "step-0-form-0",
+                        "savedData"     : false,
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : false,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "validation"            : "Start Survey",
+                                    "validationType"        : "equal",
+                                    "next"                  : 1,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : "application",
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : null,
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "start-form",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "start-form",
+                                        "description"   : "Button to start application.",
+                                        "text"  : "Start Survey",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-1-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q1: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household own or use any of the following types of computer?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "devices",
+                        "type"          : "checkbox-set",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "input-checkbox",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "desktop-laptop",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "desktop-laptop",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "desktop-laptop",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Desktop or laptop"
+                                    },
+                                    {   
+                                        "id"            : "smartphone",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "smartphone",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "smartphone",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Smartphone"
+                                    },
+                                    {   
+                                        "id"            : "tablet",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "tablet",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "tablet",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Tablet or other portable wireless computer"
+                                    },
+                                    {   
+                                        "id"            : "other",
+                                        "tag"           : "input",
+                                        "type"          : "checkbox",
+                                        "grouping"      : true,
+                                        "value"         : "other",
+                                        "required"      : false,
+                                        "placeholder"   : null,
+                                        "name"          : "homeDevices",
+                                        "description"   : "Other",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelPosition" : "after",
+                                        "labelText"     : "Other",
+                                        "hasSpecialAttribute"   : true,
+                                        "specialAttribute"      : "other",
+                                        "otherPlaceholder"      : "Enter other types",
+                                        "otherLabel"            : "Device Type",
+                                        "otherID"               : "shomeDevicesOther"
+                                    },
+                                    {   
+                                        "id"                    : "submit",
+                                        "tag"                   : "button",
+                                        "type"                  : "submit",
+                                        "value"                 : "submit",
+                                        "placeholder"           : null,
+                                        "name"                  : "submit",
+                                        "description"           : "Submit information",
+                                        "text"                  : "Next",
+                                        "label"                 : false,
+                                        "labelText"             : null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-2-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q2: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household have access to the internet?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "yes-paid",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "yes-not-paid",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "no",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-56-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "yes-paid",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes-paid",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "yes-paid",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes, by paying a cell phone company or internet service provider.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "yes-not-paid",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes-not-paid",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "yes-not-paid",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes, without paying a cell phone company or internet service provider.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "no",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "no",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "no",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "No access to the internet at this house, apartment, or mobile home.",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Submit",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Bridging the Detroit Digital Divide",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-2-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : "Your survey has been submitted."
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Thank you for finishing this survey." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": []
+            }
+        }
+    ],
+    "status" : [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "status-0-card-0",
+                        "type"      : "center pop-up no-margin",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Please enter the Application ID you wish to check." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "status-0-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"         : "input-text",
+                            "needsNewID"        : false,
+                            "nextGlobal"        : false,
+                            "isPosting"         : false,
+                            "isGetting"         : true,
+                            "isPostingFullForm" : false,
+                            "postingTypeGlobal" : "status",
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "status-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "app-id",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter application ID",
+                                        "name"          : "app-id",
+                                        "description"   : "Applicatin ID provided when initial application was created.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "App ID",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "check",
+                                        "description"   : "Check application status",
+                                        "text"  : "Check",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "status-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "An application ID is provided when a new application is created." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "check-application",
+                        "text": "Check Application Status",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [],
+                "forms": [],
+                "hints": [
+                    {   
+                        "id"        : "status-1-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "Applications status are updated once a day." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "load" : [
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-0-card-0",
+                        "type"      : "center pop-up no-margin",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-1-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Instructions: "
+                                        },
+                                        {
+                                            "id"        : "card-0-body-1-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Please enter the ID of the application you wish to finish."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-0-form-0",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "nextGlobal"                : false,
+                            "nextError"                 : 0,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-0-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"            : "app-id",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter application ID",
+                                        "name"          : "app-id",
+                                        "description"   : "Applicatin ID provided when initial application was created.",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "App ID",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "load",
+                                        "description"   : "Load old application",
+                                        "text"  : "Load",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": [
+                    {   
+                        "id"        : "load-0-hint-0",
+                        "type"      : "hint color-1",
+                        "title"     : {
+                            "type"  : "small",
+                            "value" : "HELPFUL HINTS AND TIPS:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "hint-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "An application ID is provided when a new application is created." 
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-1-card-0",
+                        "type"      : "center pop-up color-2",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Good News. " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Your application has been loaded successfully. You can now review, edit and submit your form." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "load-1-form-0",
+                        "type"          : "single-button",
+                        "position"      : "center",
+                        "requirements"  : {
+                            "inputType"                 : "button",
+                            "formTypeGlobal"            : "application",
+                            "isSwitchingFormTypeGlobal" : true,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : [0,1],
+                            "nextGlobal"                : 2,
+                            "isPosting"                 : false,
+                            "isGetting"                 : true,
+                            "isPostingFullForm"         : false,
+                            "postingTypeGlobal"         : "answers",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "load-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"    : "status-0-form-0-section-0-item-0",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "start-review",
+                                        "description"   : "Start the application review.",
+                                        "text"  : "Start Review",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "load-application",
+                        "text": "Load Application",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "load-2-card-0",
+                        "type"      : "center pop-up color-3",
+                        "title"     : {
+                            "type"  : "Medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Finished Application: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "This application has already been submitted for review. You are not able to make any edits at this point." 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [],
+                "hints": []
+            }
+        }
+    ]
+}

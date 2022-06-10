@@ -115,6 +115,15 @@ form.radio-buttons{
                 width: 100%;
             }
 
+            input[type=radio]{
+                height: auto;
+                margin-right: .5em;
+            }
+
+            input[type=radio] + label{
+                max-width: calc(100% - 2em);
+            }
+
             button:hover,button.selected{
                 background-color: $color-3;
                 color: $black;
@@ -169,6 +178,15 @@ form.checkbox-set{
                 background-color: $color-3;
                 color: $black;
             }
+
+            input[type=checkbox]{
+                height: auto;
+                margin-right: .5em;
+            }
+
+            input[type=checkbox] + label{
+                max-width: calc(100% - 2em);
+            }
         }
     }
 }
@@ -193,6 +211,15 @@ form.input-checkbox{
     
             input[type="text"]:focus, textarea:focus, select:focus{
                 outline: none;
+            }
+
+            input[type=checkbox]{
+                height: auto;
+                margin-right: .5em;
+            }
+
+            input[type=checkbox] + label{
+                max-width: calc(100% - 2em);
             }
     
             label.required-field:after{
@@ -250,6 +277,15 @@ form.multi-input{
     
             input[type="text"]:focus, input[type="currency"]:focus, textarea:focus, select:focus{
                 outline: none;
+            }
+
+            input[type=checkbox]{
+                height: auto;
+                margin-right: .5em;
+            }
+
+            input[type=checkbox] + label{
+                max-width: calc(100% - 2em);
             }
     
             label.required-field:after{

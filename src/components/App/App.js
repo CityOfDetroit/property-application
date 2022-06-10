@@ -3,8 +3,8 @@ import './App.scss';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
-import data from '../../data/App.steps.json';
-import token from '../../../local/token.json';
+import data from '../../data/digital.divide.survey.json';
+import token from '../../../local/survey_token.json';
 import Status from '../Status/Status';
 
 function App() {

@@ -6,9 +6,9 @@ Intake form for property purchase application for the City of Detroit.
 
 This project was created using:
  - [React](https://reactjs.org/) for application state management.
- - [Parcel](https://parceljs.org/) as a web application bundler.
+ - [Webpack](https://webpack.js.org/) as a web application bundler.
+ - [Yarn](https://classic.yarnpkg.com/en/) to manage project dependencies.
  - [Cypress](https://www.cypress.io/) for testing.
- - [Yarn](https://yarnpkg.com/en/) for 3rd party library use and management.
 
 Please make sure these are installed locally
 
@@ -34,9 +34,14 @@ Please make sure these are installed locally
     $ yarn test
     ```
 
-4. Create production build.
+5. Create production build for property app.
     ```
-    $ yarn build
+    $ yarn build:property-app
+    ```
+
+6. Create production build for digital divide survey.
+    ```
+    $ yarn build:digital-divide
     ```
 ## Resources
 
