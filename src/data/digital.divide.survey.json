@@ -17,8 +17,8 @@
                         "id"        : "step-0-card-0",
                         "type"      : "center pop-up",
                         "title"     : {
-                            "type"  : "medium",
-                            "value" : "How equal access to resources can help equalize opportunity in business and education."
+                            "type"  : "small",
+                            "value" : "Help equalize opportunity in business and education."
                         },
                         "body"   : {
                             "type"      : "text",
@@ -92,33 +92,11 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "validation"            : "Start New Survey",
+                                    "validation"            : "Start Survey",
                                     "validationType"        : "equal",
                                     "next"                  : 1,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : "application",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : null
-                                },
-                                {
-                                    "validation"            : "Check Survey Status",
-                                    "validationType"        : "equal",
-                                    "next"                  : 0,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "status",
-                                    "postingType"           : null,
-                                    "multiLogic"            : false,
-                                    "multiLogicOpts"        : [],
-                                    "specialTask"           : null
-                                },
-                                {
-                                    "validation"            : "Finish Unfinished Surveys",
-                                    "validationType"        : "equal",
-                                    "next"                  : 0,
-                                    "isSwitchingFormType"   : true,
-                                    "formType"              : "load",
                                     "postingType"           : null,
                                     "multiLogic"            : false,
                                     "multiLogicOpts"        : [],
@@ -140,25 +118,7 @@
                                         "type"  : "submit",
                                         "name"  : "start-form",
                                         "description"   : "Button to start application.",
-                                        "text"  : "Start New Survey",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "check-status",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "check-status",
-                                        "description"   : "Button to check past application status.",
-                                        "text"  : "Check Survey Status",
-                                        "label" : false
-                                    },
-                                    {   
-                                        "id"    : "load",
-                                        "tag"   : "button",
-                                        "type"  : "submit",
-                                        "name"  : "load",
-                                        "description"   : "Load previous application.",
-                                        "text"  : "Finish Unfinished Surveys",
+                                        "text"  : "Start Survey",
                                         "label" : false
                                     }
                                 ]
@@ -166,96 +126,7 @@
                         ]
                     }
                 ],
-                "hints": [
-                    {   
-                        "id"        : "step-0-hint-0",
-                        "type"      : "hint color-1",
-                        "title"     : {
-                            "type"  : "small",
-                            "value" : "HELPFUL HINTS AND TIPS:"
-                        },
-                        "body"   : {
-                            "type"      : "text",
-                            "markup"    : [
-                                {
-                                    "id"        : "hint-0-body-0",
-                                    "tag"       : "p",
-                                    "content"   : [
-                                        {
-                                            "id"        : "hint-0-body-0-item-0",
-                                            "tag"       : "span",
-                                            "content"   : "Use " 
-                                        },
-                                        {
-                                            "id"        : "hint-0-body-0-item-1",
-                                            "tag"       : "a",
-                                            "link"      : "https://detroitmi.gov/webapp/detroit-development-opportunities",
-                                            "content"   : "this map" 
-                                        },
-                                        {
-                                            "id"        : "hint-0-body-0-item-2",
-                                            "tag"       : "span",
-                                            "content"   : " to identify eligible properties that are owned by the City of Detroit or DLBA." 
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id"        : "hint-0-body-1",
-                                    "tag"       : "p",
-                                    "content"   : "If a property is DLBA owned and part of a specific program:" 
-                                },
-                                {
-                                    "id"        : "hint-0-body-2",
-                                    "tag"       : "ul",
-                                    "content"   : [
-                                        {
-                                            "id"        : "hint-0-body-2-list-0",
-                                            "tag"       : "p",
-                                            "content"   : "Sidelot program" 
-                                        },
-                                        {
-                                            "id"        : "hint-0-body-2-list-1",
-                                            "tag"       : "p",
-                                            "content"   : "Rehabbed and ready" 
-                                        },
-                                        {
-                                            "id"        : "hint-0-body-2-list-2",
-                                            "tag"       : "p",
-                                            "content"   : "Auctions" 
-                                        },
-                                        {
-                                            "id"        : "hint-0-body-2-list-3",
-                                            "tag"       : "p",
-                                            "content"   : "Own It Now" 
-                                        }
-                                    ] 
-                                },
-                                {
-                                    "id"        : "hint-0-body-3",
-                                    "tag"       : "p",
-                                    "content"   : [
-                                        {
-                                            "id"        : "body-3-item-0",
-                                            "tag"       : "span",
-                                            "content"   : "Please apply via those " 
-                                        },
-                                        {
-                                            "id"        : "body-3-item-1",
-                                            "tag"       : "a",
-                                            "link"      : "https://buildingdetroit.org/",
-                                            "content"   : "programs" 
-                                        },
-                                        {
-                                            "id"        : "body-3-item-2",
-                                            "tag"       : "span",
-                                            "content"   : ", and do not use this application for those purchases  inquires." 
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                ]
+                "hints": []
             }
         },
         {
@@ -293,7 +164,7 @@
                                         {
                                             "id"        : "card-0-body-0-item-1",
                                             "tag"       : "span",
-                                            "content"   : "Are you representing yourself or serving as an agent on behalf of someone else and/or an entity?" 
+                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household own or use any of the following types of computer?" 
                                         }
                                     ]
                                 }
