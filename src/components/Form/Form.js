@@ -524,6 +524,13 @@ function Form(props) {
                     setStepHistory(tempHistory);
                     setStep(nextStep);
                     break;
+                
+                case 'validate':
+                    tempHistory = stepHistory;
+                    tempHistory.push(currentStep);
+                    setStepHistory(tempHistory);
+                    setStep(nextStep);
+                    break;
 
                 case 'saveForm':
                     if(isFinalStep){
@@ -763,6 +770,7 @@ function Form(props) {
     const handleInputTextForms = (ev, requirements, savedData) => {
         let inputData    = {};
         let tempFormData = {};
+        let validateData = {};
         let postData     = {answers:null};
         let tempHistory  = [];
         if(requirements.logic.length){
@@ -773,60 +781,64 @@ function Form(props) {
                     Connector.start('post',`https://apis.detroitmi.gov/property_applications/start/`,null,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'getID', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'getID', step)});
                 }
             }
-            if(savedData){
-                for (let index = 0; index < ev.target.elements.length; index++) {
-                    if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
-                        if(ev.target.elements[index].type == 'checkbox' || ev.target.elements[index].type == 'radio'){
-                            if(ev.target.elements[index].checked == true){
-                                inputData[ev.target.elements[index].name] = ev.target.elements[index].value;
+            for (let index = 0; index < ev.target.elements.length; index++) {
+                if(ev.target.elements[index].tagName == 'INPUT' || ev.target.elements[index].tagName == 'SELECT' || ev.target.elements[index].tagName == 'TEXTAREA'){
+                    if(ev.target.elements[index].type == 'checkbox' || ev.target.elements[index].type == 'radio'){
+                        if(ev.target.elements[index].checked == true){
+                            inputData[ev.target.elements[index].name] = ev.target.elements[index].value;
+                        }
+                    }else{
+                        if(ev.target.elements[index].type == 'currency' || ev.target.elements[index].className == 'currency'){
+                            let tempCurrency = ev.target.elements[index].value;
+                            let cleanCurrency;
+                            switch (true) {
+                                case tempCurrency.includes("NaN"):
+                                    cleanCurrency = tempCurrency.replace('NaN','0.00');
+                                    inputData[ev.target.elements[index].id] = cleanCurrency;
+                                    break;
+
+                                case tempCurrency.includes("US"):
+                                    cleanCurrency = tempCurrency.replace('US','');
+                                    inputData[ev.target.elements[index].id] = cleanCurrency;
+                                    break;
+                            
+                                default:
+                                    inputData[ev.target.elements[index].id] = tempCurrency;
+                                    break;
                             }
                         }else{
-                            if(ev.target.elements[index].type == 'currency' || ev.target.elements[index].className == 'currency'){
-                                let tempCurrency = ev.target.elements[index].value;
-                                let cleanCurrency;
-                                switch (true) {
-                                    case tempCurrency.includes("NaN"):
-                                        cleanCurrency = tempCurrency.replace('NaN','0.00');
-                                        inputData[ev.target.elements[index].id] = cleanCurrency;
-                                        break;
-
-                                    case tempCurrency.includes("US"):
-                                        cleanCurrency = tempCurrency.replace('US','');
-                                        inputData[ev.target.elements[index].id] = cleanCurrency;
-                                        break;
-                                
-                                    default:
-                                        inputData[ev.target.elements[index].id] = tempCurrency;
-                                        break;
-                                }
-                            }else{
-                                inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
-                            }
-                        }
-                        if (ev.target.elements[index].hasAttribute("data-parcel")) {
-                            inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
-                            // if(ev.target.elements[index].getAttribute('data-parcel') != ''){
-                            //     inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
-                            // }else{
-                            //     setSpecialMessage('Invalid address provide. Please make sure you enter your address correctly or select one of the suggestions provided.')
-                            //     return;
-                            // }
+                            inputData[ev.target.elements[index].id] = ev.target.elements[index].value;
                         }
                     }
+                    if (ev.target.elements[index].hasAttribute("data-parcel")) {
+                        inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                        // if(ev.target.elements[index].getAttribute('data-parcel') != ''){
+                        //     inputData[`${ev.target.elements[index].id}parcel`] = ev.target.elements[index].getAttribute('data-parcel');
+                        // }else{
+                        //     setSpecialMessage('Invalid address provide. Please make sure you enter your address correctly or select one of the suggestions provided.')
+                        //     return;
+                        // }
+                    }
                 }
-                if(formData != undefined){
-                    tempFormData = formData;
-                }
-                tempFormData[ev.target.id] = inputData
+            }
+            if(formData != undefined){
+                tempFormData = formData;
+            }
+            tempFormData[ev.target.id] = inputData;
+            if(savedData){
                 setFormData(tempFormData);
-                postData.answers = tempFormData;
-                if(requirements.isPosting){
-                    if(requirements.service == 'surveys'){
-                        Connector.start('post',`https://apis.detroitmi.gov/${requirements.service}${requirements.surveyID}/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                    }else{
-                        Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
-                    }
+            }
+            postData.answers = tempFormData;
+            if(requirements.isPosting){
+                if(requirements.service == 'surveys'){
+                    Connector.start('post',`https://apis.detroitmi.gov/${requirements.service}${requirements.surveyID}/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
+                }else{
+                    Connector.start('post',`https://apis.detroitmi.gov/property_applications/${appID}/answers/`,postData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'saveForm', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'saveForm', step)});
                 }
+            }
+            if(requirements.validate){
+                validateData = tempFormData.surveyValidate;
+                Connector.start('post',`https://apis.detroitmi.gov/${requirements.service}${requirements.surveyID}/validate_address/`, validateData,true,props.token,'application/json',(e)=>{handleAPICalls(e, 'validate', step, requirements.nextGlobal, requirements.isFinalStep)},(e)=>{handleAPICalls(e, 'validate', step)});
             }
             if(requirements.isGetting){
                 if(requirements.isPostingFullForm){

@@ -18,6 +18,101 @@
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "small",
+                            "value" : "Log in:"
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-1-body-0",
+                                    "tag"       : "p",
+                                    "content"   : "In order to validate residentes. Please enter your personal code." 
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "surveyValidate",
+                        "type"          : "input-submit",
+                        "position"      : "center",
+                        "savedData"     : false,
+                        "requirements"  : {
+                            "inputType"                 : "input-text",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "validate"                  : true,
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : 1,
+                            "isPosting"                 : false,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : "validate",
+                            "isFinalStep"               : false,
+                            "logic": []
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "survey-validate-form",
+                                "items" : [
+                                    {   
+                                        "id"            : "parcel_id",
+                                        "tag"           : "input",
+                                        "type"          : "text",
+                                        "disabled"      : false,
+                                        "value"         : "",
+                                        "placeholder"   : "Enter your code",
+                                        "name"          : "parcel id",
+                                        "description"   : "parcel id",
+                                        "text"          : "",
+                                        "label"         : true,
+                                        "labelText"     : "Code:",
+                                        "labelPosition" : "before",
+                                        "required"      : true
+                                    },
+                                    {   
+                                        "id"    : "validate-btn",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "valiate",
+                                        "description"   : "Validate survey",
+                                        "text"  : "Submit",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "Bridging the Detroit Digital Divide",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-0-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "small",
                             "value" : "Help equalize opportunity in business and education."
                         },
                         "body"   : {
@@ -94,7 +189,7 @@
                                 {
                                     "validation"            : "Start Survey",
                                     "validationType"        : "equal",
-                                    "next"                  : 1,
+                                    "next"                  : 2,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : "application",
                                     "postingType"           : null,
@@ -186,7 +281,7 @@
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 2,
+                            "nextGlobal"                : 3,
                             "isPosting"                 : false,
                             "isGetting"                 : false,
                             "isPostingFullForm"         : false,
@@ -355,7 +450,7 @@
                                     "id"                    : "internet-service",
                                     "validation"            : "yes-paid",
                                     "validationType"        : "equal",
-                                    "next"                  : 3,
+                                    "next"                  : 4,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -367,7 +462,7 @@
                                     "id"                    : "internet-service",
                                     "validation"            : "yes-not-paid",
                                     "validationType"        : "equal",
-                                    "next"                  : 3,
+                                    "next"                  : 4,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -379,7 +474,7 @@
                                     "id"                    : "internet-service",
                                     "validation"            : "no",
                                     "validationType"        : "equal",
-                                    "next"                  : 3,
+                                    "next"                  : 4,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
