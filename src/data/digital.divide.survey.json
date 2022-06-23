@@ -26,6 +26,11 @@
                                 {
                                     "id"        : "card-1-body-0",
                                     "tag"       : "p",
+                                    "content"   : "Thank you for participating in our resident survey." 
+                                },
+                                {
+                                    "id"        : "card-1-body-0",
+                                    "tag"       : "p",
                                     "content"   : "In order to validate residentes. Please enter your personal code." 
                                 }
                             ]
@@ -64,14 +69,14 @@
                                 "id"    : "survey-validate-form",
                                 "items" : [
                                     {   
-                                        "id"            : "parcel_id",
+                                        "id"            : "code",
                                         "tag"           : "input",
                                         "type"          : "text",
                                         "disabled"      : false,
                                         "value"         : "",
                                         "placeholder"   : "Enter your code",
-                                        "name"          : "parcel id",
-                                        "description"   : "parcel id",
+                                        "name"          : "property code",
+                                        "description"   : "property code",
                                         "text"          : "",
                                         "label"         : true,
                                         "labelText"     : "Code:",
@@ -146,18 +151,7 @@
                                         {
                                             "id"        : "card-0-body-2-item-0",
                                             "tag"       : "strong",
-                                            "content"   : "SAVE YOUR SURVEY ID!" 
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id"        : "card-0-body-3",
-                                    "tag"       : "p",
-                                    "content"   : [
-                                        {
-                                            "id"        : "card-0-body-3-item-0",
-                                            "tag"       : "strong",
-                                            "content"   : "Incomplete surveys will be saved in the system for 30 days." 
+                                            "content"   : "SAVE YOUR CODE!" 
                                         }
                                     ]
                                 }
@@ -259,7 +253,7 @@
                                         {
                                             "id"        : "card-0-body-0-item-1",
                                             "tag"       : "span",
-                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household own or use any of the following types of computer?" 
+                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household have access to the internet?" 
                                         }
                                     ]
                                 }
@@ -269,25 +263,50 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "devices",
-                        "type"          : "checkbox-set",
+                        "id"            : "internet-service",
+                        "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
                         "requirements"  : {
-                            "inputType"                 : "input-checkbox",
+                            "inputType"                 : "radio",
                             "service"                   : "surveys",
                             "surveyID"                  : "/digital_inclusion",
                             "formTypeGlobal"            : null,
                             "isSwitchingFormTypeGlobal" : null,
                             "needsNewID"                : false,
                             "historyOverrite"           : null,
-                            "nextGlobal"                : 3,
-                            "isPosting"                 : false,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
                             "isGetting"                 : false,
-                            "isPostingFullForm"         : false,
-                            "postingTypeGlobal"         : "answers",
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
                             "isFinalStep"               : false,
-                            "logic": []
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 4,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service",
+                                    "validation"            : "no",
+                                    "validationType"        : "equal",
+                                    "next"                  : 3,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
                         },
                         "text"          : {
                             "type"      : "text",
@@ -298,81 +317,51 @@
                                 "id"    : "step-1-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"            : "desktop-laptop",
-                                        "tag"           : "input",
-                                        "type"          : "checkbox",
-                                        "grouping"      : true,
-                                        "value"         : "desktop-laptop",
-                                        "required"      : false,
-                                        "placeholder"   : null,
-                                        "name"          : "homeDevices",
-                                        "description"   : "desktop-laptop",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelPosition" : "after",
-                                        "labelText"     : "Desktop or laptop"
-                                    },
-                                    {   
-                                        "id"            : "smartphone",
-                                        "tag"           : "input",
-                                        "type"          : "checkbox",
-                                        "grouping"      : true,
-                                        "value"         : "smartphone",
-                                        "required"      : false,
-                                        "placeholder"   : null,
-                                        "name"          : "homeDevices",
-                                        "description"   : "smartphone",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelPosition" : "after",
-                                        "labelText"     : "Smartphone"
-                                    },
-                                    {   
-                                        "id"            : "tablet",
-                                        "tag"           : "input",
-                                        "type"          : "checkbox",
-                                        "grouping"      : true,
-                                        "value"         : "tablet",
-                                        "required"      : false,
-                                        "placeholder"   : null,
-                                        "name"          : "homeDevices",
-                                        "description"   : "tablet",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelPosition" : "after",
-                                        "labelText"     : "Tablet or other portable wireless computer"
-                                    },
-                                    {   
-                                        "id"            : "other",
-                                        "tag"           : "input",
-                                        "type"          : "checkbox",
-                                        "grouping"      : true,
-                                        "value"         : "other",
-                                        "required"      : false,
-                                        "placeholder"   : null,
-                                        "name"          : "homeDevices",
-                                        "description"   : "Other",
-                                        "text"          : "",
-                                        "label"         : true,
-                                        "labelPosition" : "after",
-                                        "labelText"     : "Other",
-                                        "hasSpecialAttribute"   : true,
-                                        "specialAttribute"      : "other",
-                                        "otherPlaceholder"      : "Enter other types",
-                                        "otherLabel"            : "Device Type",
-                                        "otherID"               : "shomeDevicesOther"
-                                    },
-                                    {   
-                                        "id"                    : "submit",
-                                        "tag"                   : "button",
-                                        "type"                  : "submit",
-                                        "value"                 : "submit",
+                                        "id"                    : "yes",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes",
                                         "placeholder"           : null,
-                                        "name"                  : "submit",
-                                        "description"           : "Submit information",
-                                        "text"                  : "Next",
-                                        "label"                 : false,
-                                        "labelText"             : null
+                                        "name"                  : "internet-service",
+                                        "description"           : "yes",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "no",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "no",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service",
+                                        "description"           : "no",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "No access to the internet",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
                                     }
                                 ]
                             }
@@ -412,12 +401,12 @@
                                         {
                                             "id"        : "card-0-body-0-item-0",
                                             "tag"       : "strong",
-                                            "content"   : "Q2: " 
+                                            "content"   : "Q3: " 
                                         },
                                         {
                                             "id"        : "card-0-body-0-item-1",
                                             "tag"       : "span",
-                                            "content"   : "At this house, apartment, or mobile home - do you or any member of this household have access to the internet?" 
+                                            "content"   : "What's the reason for not having internet access?" 
                                         }
                                     ]
                                 }
@@ -427,7 +416,7 @@
                 ],
                 "forms": [
                     {
-                        "id"            : "internet-service",
+                        "id"            : "internet-service-reason",
                         "type"          : "radio-buttons plus-other",
                         "position"      : "center",
                         "savedData"     : true,
@@ -447,10 +436,10 @@
                             "isFinalStep"               : false,
                             "logic": [
                                 {
-                                    "id"                    : "internet-service",
-                                    "validation"            : "yes-paid",
+                                    "id"                    : "internet-service-reason",
+                                    "validation"            : "cost",
                                     "validationType"        : "equal",
-                                    "next"                  : 4,
+                                    "next"                  : 9,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -459,10 +448,10 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "internet-service",
-                                    "validation"            : "yes-not-paid",
+                                    "id"                    : "internet-service-reason",
+                                    "validation"            : "not-available",
                                     "validationType"        : "equal",
-                                    "next"                  : 4,
+                                    "next"                  : 9,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -471,10 +460,10 @@
                                     "specialTask"           : null
                                 },
                                 {
-                                    "id"                    : "internet-service",
-                                    "validation"            : "no",
+                                    "id"                    : "internet-service-reason",
+                                    "validation"            : "no-devices",
                                     "validationType"        : "equal",
-                                    "next"                  : 4,
+                                    "next"                  : 9,
                                     "isSwitchingFormType"   : false,
                                     "formType"              : null,
                                     "postingType"           : null,
@@ -490,20 +479,20 @@
                         },
                         "sections"      : [
                             {
-                                "id"    : "step-56-form-0-section-0",
+                                "id"    : "step-2-form-0-section-0",
                                 "items" : [
                                     {   
-                                        "id"                    : "yes-paid",
+                                        "id"                    : "cost",
                                         "tag"                   : "input",
                                         "type"                  : "radio",
-                                        "value"                 : "yes-paid",
+                                        "value"                 : "cost",
                                         "placeholder"           : null,
-                                        "name"                  : "internet-service",
-                                        "description"           : "yes-paid",
+                                        "name"                  : "internet-service-reason",
+                                        "description"           : "cost",
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Yes, by paying a cell phone company or internet service provider.",
+                                        "labelText"             : "Cost",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -512,17 +501,17 @@
                                         "required"              : true
                                     },
                                     {   
-                                        "id"                    : "yes-not-paid",
+                                        "id"                    : "not-available",
                                         "tag"                   : "input",
                                         "type"                  : "radio",
-                                        "value"                 : "yes-not-paid",
+                                        "value"                 : "not-available",
                                         "placeholder"           : null,
-                                        "name"                  : "internet-service",
-                                        "description"           : "yes-not-paid",
+                                        "name"                  : "internet-service-reason",
+                                        "description"           : "not-available",
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "Yes, without paying a cell phone company or internet service provider.",
+                                        "labelText"             : "Service is not available in my area",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -531,17 +520,17 @@
                                         "required"              : true
                                     },
                                     {   
-                                        "id"                    : "no",
+                                        "id"                    : "no-devices",
                                         "tag"                   : "input",
                                         "type"                  : "radio",
-                                        "value"                 : "no",
+                                        "value"                 : "no-devices",
                                         "placeholder"           : null,
-                                        "name"                  : "internet-service",
-                                        "description"           : "no",
+                                        "name"                  : "internet-service-reason",
+                                        "description"           : "no-devices",
                                         "text"                  : "",
                                         "label"                 : true,
                                         "labelPosition"         : "after",
-                                        "labelText"             : "No access to the internet at this house, apartment, or mobile home.",
+                                        "labelText"             : "No computer/electronic device to access the internet",
                                         "hasSpecialAttribute"   : false,
                                         "specialAttribute"      : null,
                                         "otherPlaceholder"      : null,
@@ -555,7 +544,1175 @@
                                         "type"  : "submit",
                                         "name"  : "next",
                                         "description"   : "Move to next step.",
-                                        "text"  : "Submit",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-3-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q3: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "How much are you paying for your current internet service?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service-cost",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "0-20",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "21-40",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "41-60",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "61-80",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "81-100",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-cost",
+                                    "validation"            : "100+",
+                                    "validationType"        : "equal",
+                                    "next"                  : 5,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-2-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "0-20",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "0-20",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "0-20",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$0 - $20",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "21-40",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "21-40",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "21-40",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$21 - $40",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "41-60",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "41-60",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "41-60",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$41 - $60",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "61-80",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "61-80",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "61-80",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$61 - $80",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "81-100",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "81-100",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "81-100",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$81 - $100",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "100+",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "100+",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-cost",
+                                        "description"           : "100+",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "$100+",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-4-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q4: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Do you consider your internet service fast?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service-speed",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service-speed",
+                                    "validation"            : "yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 6,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-speed",
+                                    "validation"            : "no",
+                                    "validationType"        : "equal",
+                                    "next"                  : 6,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-4-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "yes",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-speed",
+                                        "description"           : "yes",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "no",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "no",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-speed",
+                                        "description"           : "no",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "No",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-5-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q5: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "How do you feel about your service?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service-rating",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service-rating",
+                                    "validation"            : "terrible",
+                                    "validationType"        : "equal",
+                                    "next"                  : 7,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-rating",
+                                    "validation"            : "bad",
+                                    "validationType"        : "equal",
+                                    "next"                  : 7,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-rating",
+                                    "validation"            : "ok",
+                                    "validationType"        : "equal",
+                                    "next"                  : 7,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-rating",
+                                    "validation"            : "good",
+                                    "validationType"        : "equal",
+                                    "next"                  : 7,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-rating",
+                                    "validation"            : "excellent",
+                                    "validationType"        : "equal",
+                                    "next"                  : 7,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-4-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "terrible",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "terrible",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-rating",
+                                        "description"           : "terrible",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Terrible",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "bad",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "bad",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-rating",
+                                        "description"           : "bad",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Bad",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "ok",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "ok",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-rating",
+                                        "description"           : "ok",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Ok",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "good",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "good",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-rating",
+                                        "description"           : "good",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Good",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "excellent",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "excellent",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-rating",
+                                        "description"           : "excellent",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Excellent",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-6-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q6: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "Have you had an outage since March 2020?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service-outage",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service-outage",
+                                    "validation"            : "yes",
+                                    "validationType"        : "equal",
+                                    "next"                  : 8,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage",
+                                    "validation"            : "no",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "yes",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "yes",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage",
+                                        "description"           : "yes",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "Yes",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "no",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "no",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage",
+                                        "description"           : "no",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "No",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
+                                        "label" : false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "hints": []
+            }
+        },
+        {
+            "items" : {
+                "header": [
+                    {
+                        "id": "application",
+                        "text": "New Survey",
+                        "logo": true,
+                        "logoURL": "https://detroitmi.gov/themes/custom/detroitmi/logo-white.png",
+                        "logoAlt": "City of Detroit",
+                        "form": true
+                    }
+                ],
+                "cards": [
+                    {   
+                        "id"        : "step-7-card-0",
+                        "type"      : "center pop-up",
+                        "title"     : {
+                            "type"  : "medium",
+                            "value" : null
+                        },
+                        "body"   : {
+                            "type"      : "text",
+                            "markup"    : [
+                                {
+                                    "id"        : "card-0-body-0",
+                                    "tag"       : "p",
+                                    "content"   : [
+                                        {
+                                            "id"        : "card-0-body-0-item-0",
+                                            "tag"       : "strong",
+                                            "content"   : "Q7: " 
+                                        },
+                                        {
+                                            "id"        : "card-0-body-0-item-1",
+                                            "tag"       : "span",
+                                            "content"   : "How long did the outage last (# of days)?" 
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "forms": [
+                    {
+                        "id"            : "internet-service-outage-duration",
+                        "type"          : "radio-buttons plus-other",
+                        "position"      : "center",
+                        "savedData"     : true,
+                        "requirements"  : {
+                            "inputType"                 : "radio",
+                            "service"                   : "surveys",
+                            "surveyID"                  : "/digital_inclusion",
+                            "formTypeGlobal"            : null,
+                            "isSwitchingFormTypeGlobal" : null,
+                            "needsNewID"                : false,
+                            "historyOverrite"           : null,
+                            "nextGlobal"                : null,
+                            "isPosting"                 : true,
+                            "isGetting"                 : false,
+                            "isPostingFullForm"         : true,
+                            "postingTypeGlobal"         : null,
+                            "isFinalStep"               : false,
+                            "logic": [
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "1",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "2",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "3",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "4",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "5-10",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "11-20",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "21-30",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                },
+                                {
+                                    "id"                    : "internet-service-outage-duration",
+                                    "validation"            : "30+",
+                                    "validationType"        : "equal",
+                                    "next"                  : 9,
+                                    "isSwitchingFormType"   : false,
+                                    "formType"              : null,
+                                    "postingType"           : null,
+                                    "multiLogic"            : false,
+                                    "multiLogicOpts"        : [],
+                                    "specialTask"           : null
+                                }
+                            ]
+                        },
+                        "text"          : {
+                            "type"      : "text",
+                            "markup"    : []
+                        },
+                        "sections"      : [
+                            {
+                                "id"    : "step-1-form-0-section-0",
+                                "items" : [
+                                    {   
+                                        "id"                    : "1",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "1",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "1",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "1 day",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "2",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "2",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "2",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "2 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "3",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "3",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "3",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "3 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "4",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "4",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "4",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "4 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "5-10",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "5-10",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "5-10",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "5-10 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "11-20",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "11-20",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "11-20",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "11-20 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "21-30",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "21-30",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "21-30",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "21-30 days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"                    : "30+",
+                                        "tag"                   : "input",
+                                        "type"                  : "radio",
+                                        "value"                 : "30+",
+                                        "placeholder"           : null,
+                                        "name"                  : "internet-service-outage-duration",
+                                        "description"           : "30+",
+                                        "text"                  : "",
+                                        "label"                 : true,
+                                        "labelPosition"         : "after",
+                                        "labelText"             : "30+ days",
+                                        "hasSpecialAttribute"   : false,
+                                        "specialAttribute"      : null,
+                                        "otherPlaceholder"      : null,
+                                        "otherLabel"            : null,
+                                        "otherID"               : null,
+                                        "required"              : true
+                                    },
+                                    {   
+                                        "id"    : "submit",
+                                        "tag"   : "button",
+                                        "type"  : "submit",
+                                        "name"  : "next",
+                                        "description"   : "Move to next step.",
+                                        "text"  : "Next",
                                         "label" : false
                                     }
                                 ]
@@ -580,7 +1737,7 @@
                 ],
                 "cards": [
                     {   
-                        "id"        : "step-2-card-0",
+                        "id"        : "step-8-card-0",
                         "type"      : "center pop-up",
                         "title"     : {
                             "type"  : "medium",
