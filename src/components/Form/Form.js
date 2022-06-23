@@ -972,6 +972,9 @@ function Form(props) {
                 }
                 currentNext = requirements.logic[currentLogic].next;
             }
+            if(savedData){
+                setFormData(tempFormData);
+            }
             switch (true) {
                 case requirements.isPosting == true:
                     postData.answers = tempFormData;
