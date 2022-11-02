@@ -8,20 +8,20 @@ function Geocoder(props) {
   const [parcel, setParcel]   = useState(props.parcel);
 
   const getAddressSuggestions = (addr) => {
-    let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/AddressPointGeocoder/GeocodeServer/suggest?text=${addr}&f=pjson`;
+    let url = `https://opengis.detroitmi.gov/opengis/rest/services/BaseUnits/BaseUnitGeocoder/GeocodeServer/findAddressCandidates?Address=&Address2=&Address3=&Neighborhood=&City=&Subregion=&Region=&Postal=&PostalExt=&CountryCode=&SingleLine=${addr}&outFields=*&maxLocations=&matchOutOfRange=true&langCode=&locationType=&sourceCountry=&category=&location=&distance=&searchExtent=&outSR=&magicKey=&f=json`;
     
     try {
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
           let candidates = [];
-          if(data.suggestions.length){
-            candidates = data.suggestions;
+          if(data.candidates.length){
+            candidates = data.candidates;
           }
           setSugg(candidates);
         })
         .catch((error) => {
-            error(error);
+          console.log(error);
         });
     }catch (error) {
         console.log(error);
@@ -53,7 +53,6 @@ function Geocoder(props) {
   const handleKeyDown = (ev) => {
     if(ev.keyCode == 13){
       ev.preventDefault();
-      console.log(parcel);
       if(parcel == ''){
         findParcelID();
       }
@@ -72,18 +71,18 @@ function Geocoder(props) {
   }
 
   const findParcelID = () => {
-    let url = `https://gis.detroitmi.gov/arcgis/rest/services/DoIT/CompositeGeocoder/GeocodeServer/findAddressCandidates?Street=&City=&ZIP=&SingleLine=${addressPlitter(address)}&category=&outFields=User_fld&maxLocations=4&outSR=4326&searchExtent=&location=&distance=&magicKey=&f=json`;
+    let url = `https://opengis.detroitmi.gov/opengis/rest/services/BaseUnits/BaseUnitGeocoder/GeocodeServer/findAddressCandidates?Address=&Address2=&Address3=&Neighborhood=&City=&Subregion=&Region=&Postal=&PostalExt=&CountryCode=&SingleLine=${addressPlitter(address)}&outFields=*&maxLocations=&matchOutOfRange=true&langCode=&locationType=&sourceCountry=&category=&location=&distance=&searchExtent=&outSR=&magicKey=&f=json`;
     try {
         fetch(url)
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
-          if(data.candidates.length && data.candidates[0].attributes.User_fld != ''){
-            setParcel(data.candidates[0].attributes.User_fld);
+          if(data.candidates.length && data.candidates[0].attributes.parcel_id != ''){
+            setParcel(data.candidates[0].attributes.parcel_id);
           }
           console.log(parcel);
         })
         .catch((error) => {
-            error(error);
+          console.log(error);
         });
     }catch (error) {
         console.log(error);
@@ -92,7 +91,7 @@ function Geocoder(props) {
 
   const buildOptions = () => {
     let markup = sugg.map((item, key) =>
-        <option key={key} value={item.text}></option>
+        <option key={key} value={item.attributes.StAddr}></option>
     );
     return markup;
   }

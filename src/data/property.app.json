@@ -2398,7 +2398,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "The initial screening of applicants by the City includes a review of the property that the applicant owns to confirm tax and blight ticket status. Please list any and all addresses of property that the applicant or affiliated entities owns in Detroit." 
+                                    "content"   : "The initial screening of applicants by the City includes a review of the property that the applicant owns to confirm tax and blight ticket status. Please list any and all addresses of property that the applicant or affiliated entities owns in Detroit. If you own multiple properties, please add those in separate fields. To add another address please use the 'Add' button on the form. Applications where multiple addresses are entered on a single field would need to be revised and would delay the review process." 
                                 }
                             ]
                         }
@@ -2971,7 +2971,7 @@
                                 {
                                     "id"        : "card-0-body-0",
                                     "tag"       : "p",
-                                    "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing (the “subject property” or “subject properties”)" 
+                                    "content"   : "Please add the address(es) of all properties the applicant is interested in purchasing (the “subject property” or “subject properties”). If you are applying for multiple properties, please add those in separate fields. To add another address please use the 'Add' button on the form. Applications where multiple addresses are entered on a single field would need to be revised and would delay the review process. " 
                                 }
                             ]
                         }
